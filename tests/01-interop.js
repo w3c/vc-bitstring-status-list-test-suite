@@ -87,7 +87,7 @@ describe('Template Credentials Test', function() {
           // this sends a credential issued by the implementation
           // to each verifier
           for(const verifier of testAPIs) {
-            it.skip(`should be verified by ${verifier.name}`, async function() {
+            it(`should be verified by ${verifier.name}`, async function() {
               // this tells the test report which cell
               // in the interop matrix the result goes in
               this.test.cell = {columnId: verifier.name, rowId: issuer.name};
