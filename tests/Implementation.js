@@ -3,12 +3,11 @@
  */
 'use strict';
 
-//FIXME replace this with @digitalbazaar/http-client
-const axios = require('axios');
 const https = require('https');
-const {v4: uuidv4} = require('uuid');
-const httpsAgent = new https.Agent({rejectUnauthorized: false});
+const agent = new https.Agent({rejectUnauthorized: false});
+const {httpClient} = require('@digitalbazaar/http-client');
 const {ISOTimeStamp} = require('./helpers');
+const {v4: uuidv4} = require('uuid');
 
 const _headers = {
   Accept: 'application/ld+json,application/json',
@@ -37,10 +36,9 @@ class Implementation {
           '@context': credential['@context']
         }
       };
-      const result = await axios.post(
+      const result = await httpClient.post(
         this.settings.issuer.endpoint,
-        JSON.stringify(body),
-        {headers, httpsAgent}
+        {headers, agent, json: body}
       );
       return result;
     } catch(e) {
@@ -61,10 +59,9 @@ class Implementation {
           checks: ['proof'],
         },
       };
-      const result = await axios.post(
+      const result = await httpClient.post(
         this.settings.verifier,
-        body,
-        {headers, httpsAgent}
+        {headers, agent, json: body}
       );
       return result;
     } catch(e) {
