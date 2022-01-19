@@ -1,0 +1,9 @@
+{
+  "name": "Danube Tech",
+  "implementation": "uni",
+  "issuer": {
+    "id": "did:key:z6MkvfambyLsugwe8DCHeUGVJbYZyKne59RDHx2dqmXRG6nB",
+    "endpoint": "https://uniissuer.io/1.0/credentials/issue"
+  },
+  "verifier": "https://univerifier.io/1.0/credentials/verify"
+}

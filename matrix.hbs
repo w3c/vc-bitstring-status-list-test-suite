@@ -1,0 +1,96 @@
+<section class="informative" id="{{matrix.title}}">
+  <h2>{{matrix.title}}</h2>
+  <style>
+    .no-wrap {
+      white-space: nowrap;
+    }
+    td.optional {
+      background-color: #b9b7b7;
+    }
+   .text-right {
+      text-align: right;
+    }
+   .text-left {
+      text-align: left;
+    }
+   .text-center {
+     text-align: center;
+   }
+   .qr-code {
+     margin-left: 25px;
+   }
+   .row {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+   }
+   .row.justify-center {
+     justify-content: center;
+   }
+   .small-font {
+     font-size: 0.75rem;
+   }
+   pre, code.hljs{
+     overflow: auto;
+   }
+  </style>
+  <div class="row justify-center">
+    <table class="simple">
+      <thead>
+        <th width="20%">
+          <div class="text-right small-font">
+          {{matrix.columnLabel}} &#8658;
+          </div>
+          <div class="text-left small-font">
+          <span>&#8659;</span><span>{{matrix.rowLabel}}</span>
+          </div>
+        </th>
+          {{#each matrix.columns}}
+            <th class="no-wrap small-font">{{this}}</th>
+          {{/each}} 
+        </thead>
+      <tbody>
+    {{#each matrix.rows}}
+      <tr>
+        <!--This is the name of the test-->
+        <td class="subtest">{{id}}</td>
+        <!--These contain if the test passed, failed, or was skipped-->
+        {{#each cells}}
+          <td class="{{state}} {{getOptional optional}}">{{getStatusMark state}}</td>
+        {{/each}}
+      </tr>
+    {{/each}}
+    </tbody>
+    </table>
+  </div>
+  <div>
+    <div class="flex-center">
+      <div class="row">
+        {{#if matrix.images}}
+          {{#each matrix.images}}
+            <img class="qr-code" src={{{this.src}}} />
+            {{#each this.meta}}
+              <div class="text-center small-font">
+                {{this}}
+              </div>
+            {{/each}}
+          {{/each}}
+        {{/if}}
+      </div>
+      <div class="">
+        {{#if matrix.reportData}}
+          {{#each matrix.reportData}}
+            {{#if this.details}}
+              <details>
+                <summary>{{this.label}}</summary>
+                <pre class="small-font">{{{this.data}}}</pre>
+              </details>
+            {{else}}
+              <pre class="small-font">{{{this.data}}}</pre>
+            {{/if}}
+          {{/each}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</section>

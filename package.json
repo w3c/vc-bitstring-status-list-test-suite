@@ -1,0 +1,44 @@
+{
+  "name": "test-suite",
+  "version": "0.1.0",
+  "description": "Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests --require esm --reporter ./node_modules/mocha-w3c-interop-reporter/index.js --reporter-options body=\"$PWD/body.hbs\",matrix=\"$PWD/matrix.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Ed25519 2020 Signature Interoperability Report 1.0\",helpers=\"$PWD/templateHelpers.js\",suiteLog='./suite.log' --timeout 15000",
+    "lint": "eslint *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalbazaar/w3c-test-suite-template.git"
+  },
+  "keywords": [
+    "Test",
+    "W3C",
+    "VC",
+    "Reporter"
+  ],
+  "author": {
+    "name": "Digital Bazaar, Inc.",
+    "email": "support@digitalbazaar.com",
+    "url": "https://digitalbazaar.com/"
+  },
+  "engines": {
+    "node": "14.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3",
+    "mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter#extend-helpers",
+    "require-dir": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-digitalbazaar": "^2.6.1",
+    "eslint-plugin-jsdoc": "^32.3.0"
+  },
+  "bugs": {
+    "url": "https://github.com/digitalbazaar/w3c-test-suite-template/issues"
+  },
+  "homepage": "https://github.com/digitalbazaar/w3c-test-suite-template#readme"
+}

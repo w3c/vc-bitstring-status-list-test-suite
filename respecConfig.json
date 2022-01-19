@@ -1,0 +1,19 @@
+{
+  "specStatus": "unofficial",
+  "shortName": "test-verifiable-credentials-test-suite",
+  "subtitle": "Test Interoperability Report for Verifiable Credentials",
+  "github": "https://github.com/digitalbazaar/w3c-test-suite-template",
+  "edDraftURI": "https://digitalbazaar.github.io/w3c-test-suite-template/",
+  "doJsonLd": true,
+  "includePermalinks": false,
+  "editors": [
+    { "name": "Tashi D. Gyeltshen", "url": "https://github.com/jsAssassin",
+      "company": "Digital Bazaar", "companyURL": "http://digitalbazaar.com/" }
+  ],
+  "authors": [
+    { "name": "Tashi D. Gyeltshen", "url": "https://github.com/jsAssassin",
+      "company": "Digital Bazaar", "companyURL": "http://digitalbazaar.com/" },
+    { "name": "Manu Sporny", "url": "http://manu.sporny.org/",
+      "company": "Digital Bazaar", "companyURL": "http://digitalbazaar.com/" }
+    ]
+}
