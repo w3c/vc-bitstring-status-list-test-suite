@@ -1,7 +1,7 @@
 {
-  "name": "test-suite",
+  "name": "status-list-2021-test-suite",
   "version": "0.1.0",
-  "description": "Test",
+  "description": "Interoperability Tests for StatusList2021",
   "main": "index.js",
   "scripts": {
     "test": "mocha tests --require esm --reporter ./node_modules/mocha-w3c-interop-reporter/index.js --reporter-options body=\"$PWD/body.hbs\",matrix=\"$PWD/matrix.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Status List 2021 Interoperability Report 1.0\",helpers=\"$PWD/templateHelpers.js\",suiteLog='./suite.log' --timeout 15000",
@@ -9,13 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/digitalbazaar/w3c-test-suite-template.git"
+    "url": "git+https://github.com/digitalbazaar/status-list-2021-test-suite.git"
   },
   "keywords": [
     "Test",
-    "W3C",
-    "VC",
-    "Reporter"
+    "SVIP",
+    "w3c",
+    "Conformance",
+    "Interoperability"
   ],
   "author": {
     "name": "Digital Bazaar, Inc.",
@@ -38,7 +39,7 @@
     "eslint-plugin-jsdoc": "^32.3.0"
   },
   "bugs": {
-    "url": "https://github.com/digitalbazaar/w3c-test-suite-template/issues"
+    "url": "https://github.com/digitalbazaar/status-list-2021-test-suite/issues"
   },
-  "homepage": "https://github.com/digitalbazaar/w3c-test-suite-template#readme"
+  "homepage": "https://github.com/digitalbazaar/status-list-2021-test-suite#readme"
 }
