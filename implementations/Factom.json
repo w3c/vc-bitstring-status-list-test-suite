@@ -1,0 +1,9 @@
+{
+  "name": "Factom",
+  "implementation": "Sphereon",
+  "issuer": {
+    "id": "did:factom:5d0dd58757119dd437c70d92b44fbf86627ee275f0f2146c3d99e441da342d9f",
+    "endpoint": "https://vc.api.factom.sphereon.com/services/issue/credentials"
+  },
+  "verifier": "https://vc.api.factom.sphereon.com/services/verify/credentials"
+}

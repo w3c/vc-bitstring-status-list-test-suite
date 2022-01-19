@@ -1,0 +1,9 @@
+{
+  "name": "Dock",
+  "implementation": "Dock",
+  "issuer": {
+    "id": "did:dock:5ENAMn7nCVtrnXRVBSptnx6m4MrzQRKiY5AyydigCDzwPXhN",
+    "endpoint": "https://vcapi.dock.io/credentials/issueCredential"
+  },
+  "verifier": "https://vcapi.dock.io/verifier/credentials"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Trybe",
+  "implementation": "Trybe",
+  "issuer": {
+    "id": "did:key:z6MkgHxqyP3Y8ag2fRpJHZwxwecGFm21usgUyvjfZdfEabdW",
+    "endpoint": "https://api.dev.trybe.id/credentials/issue"
+  },
+  "verifier": "https://api.dev.trybe.id/credentials/verify"
+}

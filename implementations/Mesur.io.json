@@ -1,0 +1,9 @@
+{
+  "name": "mesur.io",
+  "implementation": "mesur",
+  "issuer": {
+    "id": "did:key:z6Mki93tJ2rwrDaWTMZcdMShk4xLWf75Fu559dAapKe8pdmX",
+    "endpoint": "https://vc.mesur.io/next/credentials/issue"
+  },
+  "verifier": "https://vc.mesur.io/next/credentials/verify"
+}

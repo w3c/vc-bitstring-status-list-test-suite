@@ -1,0 +1,9 @@
+{
+  "name": "Mavennet",
+  "implementation": "neo-flow",
+  "issuer": {
+    "id": "did:key:z6MkiTsvjrrPNDZ1rrg9QDEYCFWCmEswT6U2cEkScb7edQ9b",
+    "endpoint": "https://api.neo-flow.com/credentials/issueCredential"
+  },
+  "verifier": "https://api.neo-flow.com/verifier/credentials"
+}

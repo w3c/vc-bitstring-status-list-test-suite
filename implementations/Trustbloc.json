@@ -1,0 +1,9 @@
+{
+  "name": "Trustbloc",
+  "implementation": "SecureKey",
+  "issuer": {
+    "id": "did:key:z6MkjRagNiMu91DduvCvgEsqLZDVzrJzFrwahc4tXLt9DoHd",
+    "endpoint": "https://issuer.sandbox.trustbloc.dev/vc-issuer-interop/credentials/issue"
+  },
+  "verifier": "https://verifier.sandbox.trustbloc.dev/vc-verifier-interop/verifier/credentials/verify"
+}
