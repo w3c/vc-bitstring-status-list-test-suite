@@ -4,10 +4,11 @@
 'use strict';
 
 const https = require('https');
-const agent = new https.Agent({rejectUnauthorized: false});
 const {httpClient} = require('@digitalbazaar/http-client');
 const {ISOTimeStamp} = require('./helpers');
 const {v4: uuidv4} = require('uuid');
+
+const agent = new https.Agent({rejectUnauthorized: false});
 
 const _headers = {
   Accept: 'application/ld+json,application/json',
