@@ -49,8 +49,7 @@ describe('Template Credentials Test', function() {
       for(const issuer of testAPIs) {
         // this is the credential for the verifier tests
         let issuedVC = null;
-        //FIXME issuerResponse should be used to check status 201
-        //let issuerResponse = null;
+        let issuerResponse = null;
         let error = null;
         describe(issuer.name, function() {
           before(async function() {
@@ -58,12 +57,8 @@ describe('Template Credentials Test', function() {
               // ensure this implementation is a column in the matrix
               columnNames.push(issuer.name);
               const implementation = new Implementation(issuer);
-              const response = await implementation.issue({credential});
-              //FIXME issuerResponse should be used to check status 201
-              //issuerResponse = response;
-              // this credential is not tested
-              // we just send it to each verifier
-              issuedVC = unwrapResponse(response.data);
+              issuerResponse = await implementation.issue({credential});
+              issuedVC = unwrapResponse(issuerResponse.data);
             } catch(e) {
               console.error(`${issuer.name} failed to issue a ` +
                 'credential for verification tests', e);
@@ -71,14 +66,14 @@ describe('Template Credentials Test', function() {
             }
           });
           // this ensures the implementation issuer
-          // issues correctly
+          // issues correctly and the issuedVC properties are correct
           it(`should be issued by ${issuer.name}`, async function() {
             should.exist(
               credential, `Expected VC from ${issuer.name} to exist.`);
             should.not.exist(error, `Expected ${issuer.name} to not error.`);
-
-            // FIXME issuer should return 201
-            //issuerResponse.status.should.equal(201);
+            // FIXME issuer should return 201, some issuers like DB and
+            // Transmute returns 200 instead
+            // issuerResponse.status.should.equal(201);
 
             testCredential(issuedVC);
             issuedVC.credentialSubject.should.eql(
@@ -88,10 +83,9 @@ describe('Template Credentials Test', function() {
           // to each verifier
           for(const verifier of testAPIs) {
             it(`should be verified by ${verifier.name}`, async function() {
-              // this tells the test report which cell
-              // in the interop matrix the result goes in
+              // this tells the test report which cell in the interop matrix
+              // the result goes in
               this.test.cell = {columnId: verifier.name, rowId: issuer.name};
-              should.exist(credential);
               const implementation = new Implementation(verifier);
               const response = await implementation.verify({
                 credential: issuedVC
@@ -103,6 +97,29 @@ describe('Template Credentials Test', function() {
               // verifier responses vary but are all objects
               response.data.should.be.an('object');
             });
+            it(`should fail verification if "credentialStatus.id" is invalid`,
+              async function() {
+                // this tells the test report which cell
+                // in the interop matrix the result goes in
+                this.test.cell = {columnId: verifier.name, rowId: issuer.name};
+                const copyIssuedVC = {...issuedVC};
+                // intentionally change credentialStatus id to an invalid id
+                copyIssuedVC.credentialStatus.id = 'invalid';
+                const implementation = new Implementation(verifier);
+                let response;
+                let err;
+                try {
+                  response = await implementation.verify({
+                    credential: copyIssuedVC
+                  });
+                } catch(e) {
+                  err = e;
+                }
+                should.not.exist(response);
+                should.exist(err);
+                // verifier returns 400
+                err.status.should.equal(400);
+              });
           }
         });
       }
