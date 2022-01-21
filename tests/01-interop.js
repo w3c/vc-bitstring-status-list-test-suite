@@ -120,10 +120,14 @@ describe('Template Credentials Test', function() {
             const {encodedList} = credentialSubject;
             // encodedList MUST be zlib compressed
             // FIXME: Currently, looks like the encodedList is gzip compressed
-            console.log(encodedList, 'encodedList');
+
+            // Uncompress encodedList
             const decoded = await rl.decodeList({encodedList});
-            console.log(decoded, 'decoded');
-            console.log((decoded.length / 8) / 1024, 'size');
+            should.exist(decoded);
+
+            // decoded size should be 16kb
+            const decodedSize = (decoded.length / 8) / 1024;
+            decodedSize.should.equal(16);
           });
           // this sends a credential issued by the implementation
           // to each verifier
