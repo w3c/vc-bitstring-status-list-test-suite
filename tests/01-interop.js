@@ -42,7 +42,7 @@ const documentLoader = jdl.build();
 // only test listed implementations
 const testAPIs = implementations.filter(v => test.includes(v.name));
 
-describe('Template Credentials Test', function() {
+describe('StatusList2021 Credentials Test', function() {
   const summaries = new Set();
   this.summary = summaries;
   for(const credential of credentials) {
@@ -153,7 +153,7 @@ describe('Template Credentials Test', function() {
               // this tells the test report which cell
               // in the interop matrix the result goes in
               this.test.cell = {columnId: verifier.name, rowId: issuer.name};
-              const copyIssuedVC = {...issuedVC};
+              const copyIssuedVC = JSON.parse(JSON.stringify(issuedVC));
               // intentionally change credentialStatus id to an invalid id
               copyIssuedVC.credentialStatus.id = 'invalid-id';
               const implementation = new Implementation(verifier);
