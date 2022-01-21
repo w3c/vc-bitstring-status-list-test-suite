@@ -29,9 +29,11 @@
   "dependencies": {
     "@digitalbazaar/http-client": "^2.0.1",
     "chai": "^4.3.4",
+    "jsonld-document-loader": "^1.2.0",
     "mocha": "^9.1.3",
     "mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter#extend-helpers",
-    "require-dir": "^1.2.0"
+    "require-dir": "^1.2.0",
+    "vc-revocation-list": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^7.23.0",
