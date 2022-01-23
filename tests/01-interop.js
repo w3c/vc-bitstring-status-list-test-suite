@@ -118,9 +118,6 @@ describe('StatusList2021 Credentials Test', function() {
             // TODO: Uncomment this when RevocationList2021 has been implemented
             // credentialSubject.type.should.equal('RevocationList2021');
             const {encodedList} = credentialSubject;
-            // encodedList MUST be zlib compressed
-            // FIXME: Currently, looks like the encodedList is gzip compressed
-
             // Uncompress encodedList
             const decoded = await rl.decodeList({encodedList});
             should.exist(decoded);

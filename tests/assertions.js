@@ -10,7 +10,7 @@ const should = chai.should();
 /**
  * Tests the properties of a credential.
  *
- * @param {object} credential - A Vc issued from an issuer.
+ * @param {object} credential - A VC issued from an issuer.
  *
  * @returns {undefined} Just returns on success.
  */
