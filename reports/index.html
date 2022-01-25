@@ -69,8 +69,8 @@
     </section>
     <section id="conformance">
       <!--- This will take the tests and display them as matrices -->
-        <section class="informative" id="VC did:key:z6MkhTNL7i2etLerDK8Acz5t528giE5KA4p75T6ka1E1D74r">
-          <h2>VC did:key:z6MkhTNL7i2etLerDK8Acz5t528giE5KA4p75T6ka1E1D74r</h2>
+        <section class="informative" id="StatusList2021 Credentials Test">
+          <h2>StatusList2021 Credentials Test</h2>
           <style>
             .no-wrap {
               white-space: nowrap;
@@ -110,10 +110,10 @@
               <thead>
                 <th width="20%">
                   <div class="text-right small-font">
-                  Verfier &#8658;
+                  Implementation &#8658;
                   </div>
                   <div class="text-left small-font">
-                  <span>&#8659;</span><span>Issuer</span>
+                  <span>&#8659;</span><span>Test Name</span>
                   </div>
                 </th>
                     <th class="no-wrap small-font">Digital Bazaar</th>
@@ -121,7 +121,25 @@
               <tbody>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">Digital Bazaar</td>
+                <td class="subtest">should successfully issue a valid VC</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">should have correct properties when dereferencing the issued VC&#x27;s &quot;credentialStatus.statusListCredential&quot;</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">should successfully verify VC issued by Digital Bazaar</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">should fail to verify issued VC containing invalid &quot;credentialStatus.id&quot; by Digital Bazaar</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
               </tr>
@@ -133,9 +151,6 @@
               <div class="row">
               </div>
               <div class="">
-                      <pre class="small-font">{
-          "extra": true
-        }</pre>
               </div>
             </div>
           </div>
