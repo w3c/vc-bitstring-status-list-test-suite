@@ -46,29 +46,19 @@ describe('StatusList2021 Credentials Test', function() {
   const summaries = new Set();
   this.summary = summaries;
   for(const credential of credentials) {
-    const {credentialSubject: {id}} = credential;
-    describe(`VC ${id}`, function() {
+    describe('StatusList2021 Credentials Test', function() {
       // column names for the matrix go here
       const columnNames = [];
       const reportData = [];
-      const images = [];
       // this will tell the report
       // to make an interop matrix with this suite
       this.matrix = true;
       this.report = true;
       this.columns = columnNames;
-      this.rowLabel = 'Issuer';
-      this.columnLabel = 'Verfier';
+      this.rowLabel = 'Test Name';
+      this.columnLabel = 'Implementation';
       // the reportData will be displayed under the test title
       this.reportData = reportData;
-      this.images = images;
-
-      after(async function() {
-        reportData.push({
-          label: 'Extra Report Data',
-          data: JSON.stringify({extra: true}, null, 2)
-        });
-      });
       for(const issuer of testAPIs) {
         // this is the credential for the verifier tests
         let issuedVC = null;
@@ -90,8 +80,9 @@ describe('StatusList2021 Credentials Test', function() {
           });
           // this ensures the implementation issuer
           // issues correctly and the issuedVC properties are correct
-          it(`should successfully issue a valid VC by ${issuer.name}`,
+          it(`should successfully issue a valid VC`,
             async function() {
+              this.test.cell = {columnId: issuer.name, rowId: this.test.title};
               should.exist(
                 credential, `Expected VC from ${issuer.name} to exist.`);
               should.not.exist(error, `Expected ${issuer.name} to not error.`);
@@ -102,9 +93,10 @@ describe('StatusList2021 Credentials Test', function() {
               issuedVC.credentialSubject.should.eql(
                 credential.credentialSubject);
             });
-          it('should have correct properties when dereferencing' +
-            '"credentialStatus.statusListCredential" of VC issued by ' +
-            `${issuer.name}`, async function() {
+          it('should have correct properties when dereferencing ' +
+            'the issued VC\'s "credentialStatus.statusListCredential"',
+          async function() {
+            this.test.cell = {columnId: issuer.name, rowId: this.test.title};
             const {credentialStatus: {revocationListCredential}} = issuedVC;
             const {document: rlc} =
               await documentLoader(revocationListCredential);
@@ -133,7 +125,10 @@ describe('StatusList2021 Credentials Test', function() {
               async function() {
                 // this tells the test report which cell in the interop matrix
                 // the result goes in
-                this.test.cell = {columnId: verifier.name, rowId: issuer.name};
+                this.test.cell = {
+                  columnId: issuer.name,
+                  rowId: this.test.title
+                };
                 const implementation = new Implementation(verifier);
                 const response = await implementation.verify({
                   credential: issuedVC
@@ -149,7 +144,10 @@ describe('StatusList2021 Credentials Test', function() {
               `"credentialStatus.id" by ${verifier.name}`, async function() {
               // this tells the test report which cell
               // in the interop matrix the result goes in
-              this.test.cell = {columnId: verifier.name, rowId: issuer.name};
+              this.test.cell = {
+                columnId: issuer.name,
+                rowId: this.test.title
+              };
               const copyIssuedVC = JSON.parse(JSON.stringify(issuedVC));
               // intentionally change credentialStatus id to an invalid id
               copyIssuedVC.credentialStatus.id = 'invalid-id';
