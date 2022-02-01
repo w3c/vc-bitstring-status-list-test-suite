@@ -33,7 +33,7 @@
     "mocha": "^9.1.3",
     "mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter#extend-helpers",
     "require-dir": "^1.2.0",
-    "vc-revocation-list": "^3.0.0"
+    "vc-status-list": "digitalbazaar/vc-status-list#initial"
   },
   "devDependencies": {
     "eslint": "^7.23.0",
