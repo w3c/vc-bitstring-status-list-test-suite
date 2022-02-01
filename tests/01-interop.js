@@ -13,7 +13,7 @@ const {unwrapResponse} = require('./helpers');
 const {httpClient} = require('@digitalbazaar/http-client');
 const https = require('https');
 const agent = new https.Agent({rejectUnauthorized: false});
-const rl = require('vc-revocation-list');
+const rl = require('vc-status-list');
 
 const should = chai.should();
 // test these implementations' issuers or verifiers
@@ -80,11 +80,12 @@ describe('StatusList2021 Credentials Test', function() {
           });
           // this ensures the implementation issuer
           // issues correctly and the issuedVC properties are correct
-          it(`should successfully issue a valid VC`,
+          it.only(`should successfully issue a valid VC`,
             async function() {
               this.test.cell = {columnId: issuer.name, rowId: this.test.title};
               should.exist(
                 credential, `Expected VC from ${issuer.name} to exist.`);
+              console.log(error);
               should.not.exist(error, `Expected ${issuer.name} to not error.`);
               // FIXME issuer should return 201, some issuers like DB and
               // Transmute returns 200 instead
