@@ -80,7 +80,7 @@ describe('StatusList2021 Credentials Test', function() {
           });
           // this ensures the implementation issuer
           // issues correctly and the issuedVC properties are correct
-          it.only(`should successfully issue a valid VC`,
+          it(`should successfully issue a valid VC`,
             async function() {
               this.test.cell = {columnId: issuer.name, rowId: this.test.title};
               should.exist(

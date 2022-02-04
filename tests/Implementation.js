@@ -57,7 +57,7 @@ class Implementation {
       const body = {
         verifiableCredential: credential,
         options: {
-          checks: ['proof'],
+          checks: ['proof', 'credentialStatus'],
         },
       };
       const result = await httpClient.post(
