@@ -18,7 +18,7 @@ const rl = require('vc-status-list');
 const should = chai.should();
 // test these implementations' issuers or verifiers
 const test = [
-  'Digital Bazaar'
+  'Digital Bazaar', 'Danube Tech'
 ];
 const handler = {
   async get({url}) {
@@ -56,7 +56,7 @@ describe('StatusList2021 Credentials Test', function() {
       this.report = true;
       this.columns = columnNames;
       this.rowLabel = 'Test Name';
-      this.columnLabel = 'Implementation';
+      this.columnLabel = 'Issuer';
       // the reportData will be displayed under the test title
       this.reportData = reportData;
       for(const issuer of testAPIs) {
@@ -122,7 +122,7 @@ describe('StatusList2021 Credentials Test', function() {
           // this sends a credential issued by the implementation
           // to each verifier
           for(const verifier of testAPIs) {
-            it(`should successfully verify VC issued by ${verifier.name}`,
+            it(`${verifier.name} should successfully verify VC issued`,
               async function() {
                 // this tells the test report which cell in the interop matrix
                 // the result goes in
