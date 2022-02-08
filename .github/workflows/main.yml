@@ -1,0 +1,40 @@
+name: Generate Interop Report
+
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    # update the integration suite once per week at Sunday 5am UTC
+    - cron: '5 0 * * 0'
+
+jobs:
+  test-node:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Authenticate with github (Expires Jan 2022)
+        # run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.DB_PACKAGE_READ }}" > ~/.npmrc
+        run: git config --global url."https://${{ secrets.DB_PACKAGE_READ }}@github.com/".insteadOf ssh://git@github.com/
+      - name: Install npm dependencies
+        run: npm install
+      - name: Run test with Node.js ${{ matrix.node-version }}
+        run: npm run test
+        continue-on-error: true
+      - name: Deploy to Github Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages
+          folder: reports
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Report Github Pages Deployment Status
+        run: echo $deployment_status
