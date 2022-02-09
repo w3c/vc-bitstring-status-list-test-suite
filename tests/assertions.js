@@ -19,8 +19,13 @@ const testCredential = credential => {
   credential.should.be.an('object');
   credential.should.have.property('@context');
   // NOTE: some issuers add a revocation list context to the types
-  credential['@context'].should.include(
-    'https://www.w3.org/2018/credentials/v1');
+  credential['@context'].should.include.members([
+    'https://www.w3.org/2018/credentials/v1',
+    // FIXME: Uncomment this once status-list is implemented in issuer
+    // and verifier
+    // 'https://w3id.org/vc/status-list/v1'
+    'https://w3id.org/vc-revocation-list-2020/v1'
+  ]);
   credential.should.have.property('type');
   credential.type.should.eql([
     'VerifiableCredential',
@@ -37,6 +42,21 @@ const testCredential = credential => {
   credential.issuer.should.be.a('string');
   credential.should.have.property('proof');
   credential.proof.should.be.an('object');
+  credential.should.have.property('credentialStatus');
+  credential.credentialStatus.should.be.an('object');
+  credential.credentialStatus.should.have.keys([
+    'id',
+    'type',
+    // FIXME: once status list 2021 is implemented, change this to
+    // statusListCredential
+    'revocationListCredential',
+    // FIXME: once status list 2021 is implemented, change this to
+    // statusListIndex
+    'revocationListIndex'
+  ]);
+  // FIXME: Update this to either equal `StatusList2021Status` or
+  // `SuspensionList2021Status`
+  credential.credentialStatus.type.should.equal('RevocationList2020Status');
 };
 
 module.exports = {testCredential};
