@@ -9,7 +9,7 @@ const credentials = require('../credentials');
 const {JsonLdDocumentLoader} = require('jsonld-document-loader');
 const {testCredential} = require('./assertions');
 const implementations = require('../implementations');
-const {unwrapResponse} = require('./helpers');
+const {unwrapResponse, deepClone} = require('./helpers');
 const {httpClient} = require('@digitalbazaar/http-client');
 const https = require('https');
 const agent = new https.Agent({rejectUnauthorized: false});
@@ -18,7 +18,7 @@ const rl = require('vc-status-list');
 const should = chai.should();
 // test these implementations' issuers or verifiers
 const test = [
-  'Digital Bazaar', 'Danube Tech'
+  'Digital Bazaar'
 ];
 const handler = {
   async get({url}) {
@@ -56,7 +56,7 @@ describe('StatusList2021 Credentials Test', function() {
       this.report = true;
       this.columns = columnNames;
       this.rowLabel = 'Test Name';
-      this.columnLabel = 'Issuer';
+      this.columnLabel = 'Vendor';
       // the reportData will be displayed under the test title
       this.reportData = reportData;
       for(const issuer of testAPIs) {
@@ -80,36 +80,34 @@ describe('StatusList2021 Credentials Test', function() {
           });
           // this ensures the implementation issuer
           // issues correctly and the issuedVC properties are correct
-          it(`should successfully issue a valid VC`,
+          it(`MUST issue a VC with a "credentialStatus" property`,
             async function() {
               this.test.cell = {columnId: issuer.name, rowId: this.test.title};
               should.exist(
                 credential, `Expected VC from ${issuer.name} to exist.`);
-              console.log(error);
               should.not.exist(error, `Expected ${issuer.name} to not error.`);
-              // FIXME issuer should return 201, some issuers like DB and
+              // FIXME: issuer should return 201, some issuers like DB and
               // Transmute returns 200 instead
               // issuerResponse.status.should.equal(201);
               testCredential(issuedVC);
               issuedVC.credentialSubject.should.eql(
                 credential.credentialSubject);
             });
-          it('should have correct properties when dereferencing ' +
-            'the issued VC\'s "credentialStatus.statusListCredential"',
-          async function() {
+          it('MUST have correct properties when dereferencing' +
+            '"credentialStatus.statusListCredential"', async function() {
             this.test.cell = {columnId: issuer.name, rowId: this.test.title};
+            // FIXME: Change revocationListCredential to statusListCredential
             const {credentialStatus: {revocationListCredential}} = issuedVC;
             const {document: rlc} =
               await documentLoader(revocationListCredential);
             rlc.should.have.property('type');
-            // TODO: Uncomment this when RevocationList2021 has been implemented
-            // Currently, the rlc contains RevocationList2020 type.
-            // rlc.type.should.include('StatusList2021Credential');
+            // FIXME: Change the type to `StatusList2021Credential`.
+            rlc.type.should.include('RevocationList2020Credential');
             rlc.should.have.property('credentialSubject');
             const {credentialSubject} = rlc;
             credentialSubject.should.have.keys(['id', 'type', 'encodedList']);
-            // TODO: Uncomment this when RevocationList2021 has been implemented
-            // credentialSubject.type.should.equal('RevocationList2021');
+            // FIXME: Change type to equal 'RevocationList2021'
+            credentialSubject.type.should.equal('RevocationList2020');
             const {encodedList} = credentialSubject;
             // Uncompress encodedList
             const decoded = await rl.decodeList({encodedList});
@@ -122,12 +120,12 @@ describe('StatusList2021 Credentials Test', function() {
           // this sends a credential issued by the implementation
           // to each verifier
           for(const verifier of testAPIs) {
-            it(`${verifier.name} should successfully verify VC issued`,
+            it(`MUST successfully verify VC issued by all implementation`,
               async function() {
-                // this tells the test report which cell in the interop matrix
-                // the result goes in
+              // this tells the test report which cell in the interop matrix
+              // the result goes in
                 this.test.cell = {
-                  columnId: issuer.name,
+                  columnId: verifier.name,
                   rowId: this.test.title
                 };
                 const implementation = new Implementation(verifier);
@@ -140,33 +138,66 @@ describe('StatusList2021 Credentials Test', function() {
                 should.exist(response.data);
                 // verifier responses vary but are all objects
                 response.data.should.be.an('object');
+                response.data.verified.should.equal(true);
+                response.data.statusResult.verified.should.equal(true);
+                response.data.checks.should.eql(['proof', 'credentialStatus']);
               });
-            it('should fail to verify issued VC containing invalid ' +
-              `"credentialStatus.id" by ${verifier.name}`, async function() {
+            it('MUST fail to verify a VC with invalid "credentialStatus.id"',
+              async function() {
               // this tells the test report which cell
               // in the interop matrix the result goes in
-              this.test.cell = {
-                columnId: issuer.name,
-                rowId: this.test.title
-              };
-              const copyIssuedVC = JSON.parse(JSON.stringify(issuedVC));
-              // intentionally change credentialStatus id to an invalid id
-              copyIssuedVC.credentialStatus.id = 'invalid-id';
-              const implementation = new Implementation(verifier);
-              let response;
-              let err;
-              try {
-                response = await implementation.verify({
-                  credential: copyIssuedVC
-                });
-              } catch(e) {
-                err = e;
-              }
-              should.not.exist(response);
-              should.exist(err);
-              // verifier returns 400
-              err.status.should.equal(400);
-            });
+                this.test.cell = {
+                  columnId: verifier.name,
+                  rowId: this.test.title
+                };
+                const copyIssuedVC = deepClone(issuedVC);
+                // intentionally change credentialStatus id to an invalid id
+                copyIssuedVC.credentialStatus.id = 'invalid-id';
+                const implementation = new Implementation(verifier);
+                let response;
+                let err;
+                try {
+                  response = await implementation.verify({
+                    credential: copyIssuedVC
+                  });
+                } catch(e) {
+                  err = e;
+                }
+                should.not.exist(response);
+                should.exist(err);
+                should.exist(err.data);
+                // verifier returns 400
+                err.status.should.equal(400);
+                err.data.verified.should.equal(false);
+              });
+            it('MUST fail to verify a VC with invalid "credentialStatus.type"',
+              async function() {
+              // this tells the test report which cell
+              // in the interop matrix the result goes in
+                this.test.cell = {
+                  columnId: verifier.name,
+                  rowId: this.test.title
+                };
+                const copyIssuedVC = deepClone(issuedVC);
+                // intentionally change credentialStatus type to an invalid type
+                copyIssuedVC.credentialStatus.type = 'invalid-type';
+                const implementation = new Implementation(verifier);
+                let response;
+                let err;
+                try {
+                  response = await implementation.verify({
+                    credential: copyIssuedVC
+                  });
+                } catch(e) {
+                  err = e;
+                }
+                should.not.exist(response);
+                should.exist(err);
+                should.exist(err.data);
+                // verifier returns 400
+                err.status.should.equal(400);
+                err.data.verified.should.equal(false);
+              });
           }
         });
       }

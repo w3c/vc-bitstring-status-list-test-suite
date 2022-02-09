@@ -44,7 +44,7 @@ class Implementation {
       return result;
     } catch(e) {
       // this is just to make debugging easier
-      //console.error(e);
+      console.error(e);
       throw e;
     }
   }
