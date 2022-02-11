@@ -8,5 +8,5 @@
       "authorization": "Bearer OWYxNzUwYWUtODljNi00ZWZlLThhNDgtNGQ3ZTBmZDViNWIw"
     }
   },
-  "verifier": "https://verifier.demo.digitalbazaar.com/verifier/credentials"
+  "verifier": "https://verifier.dev.veres.app/verifier/credentials"
 }
