@@ -1,9 +1,9 @@
 {
   "specStatus": "unofficial",
-  "shortName": "test-verifiable-credentials-test-suite",
-  "subtitle": "Test Interoperability Report for Verifiable Credentials",
-  "github": "https://github.com/digitalbazaar/w3c-test-suite-template",
-  "edDraftURI": "https://digitalbazaar.github.io/w3c-test-suite-template/",
+  "shortName": "status-list-2021-test-suite",
+  "subtitle": "Test Interoperability Report for Verifiable Credentials status",
+  "github": "https://github.com/digitalbazaar/status-list-2021-test-suite",
+  "edDraftURI": "https://digitalbazaar.github.io/status-list-2021-test-suite",
   "doJsonLd": true,
   "includePermalinks": false,
   "editors": [
