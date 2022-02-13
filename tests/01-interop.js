@@ -9,11 +9,16 @@ const credentials = require('../credentials');
 const {JsonLdDocumentLoader} = require('jsonld-document-loader');
 const {testCredential} = require('./assertions');
 const implementations = require('../implementations');
-const {unwrapResponse, deepClone} = require('./helpers');
+const {unwrapResponse} = require('./helpers');
 const {httpClient} = require('@digitalbazaar/http-client');
 const https = require('https');
 const agent = new https.Agent({rejectUnauthorized: false});
 const rl = require('vc-status-list');
+const invalidCredentialStatusType =
+  require('../static-vcs/invalidCredentialStatusType.json');
+const invalidStatusListCredentialId =
+  require('../static-vcs/invalidStatusListCredentialId.json');
+const validVC = require('../static-vcs/validVC.json');
 
 const should = chai.should();
 // test these implementations' issuers or verifiers
@@ -142,64 +147,85 @@ describe('StatusList2021 Credentials Test', function() {
                 response.data.statusResult.verified.should.equal(true);
                 response.data.checks.should.eql(['proof', 'credentialStatus']);
               });
-            it('MUST fail to verify a VC with invalid "credentialStatus.id"',
-              async function() {
-              // this tells the test report which cell
-              // in the interop matrix the result goes in
-                this.test.cell = {
-                  columnId: verifier.name,
-                  rowId: this.test.title
-                };
-                const copyIssuedVC = deepClone(issuedVC);
-                // intentionally change credentialStatus id to an invalid id
-                copyIssuedVC.credentialStatus.id = 'invalid-id';
-                const implementation = new Implementation(verifier);
-                let response;
-                let err;
-                try {
-                  response = await implementation.verify({
-                    credential: copyIssuedVC
-                  });
-                } catch(e) {
-                  err = e;
-                }
-                should.not.exist(response);
-                should.exist(err);
-                should.exist(err.data);
-                // verifier returns 400
-                err.status.should.equal(400);
-                err.data.verified.should.equal(false);
-              });
-            it('MUST fail to verify a VC with invalid "credentialStatus.type"',
-              async function() {
-              // this tells the test report which cell
-              // in the interop matrix the result goes in
-                this.test.cell = {
-                  columnId: verifier.name,
-                  rowId: this.test.title
-                };
-                const copyIssuedVC = deepClone(issuedVC);
-                // intentionally change credentialStatus type to an invalid type
-                copyIssuedVC.credentialStatus.type = 'invalid-type';
-                const implementation = new Implementation(verifier);
-                let response;
-                let err;
-                try {
-                  response = await implementation.verify({
-                    credential: copyIssuedVC
-                  });
-                } catch(e) {
-                  err = e;
-                }
-                should.not.exist(response);
-                should.exist(err);
-                should.exist(err.data);
-                // verifier returns 400
-                err.status.should.equal(400);
-                err.data.verified.should.equal(false);
-              });
           }
+
         });
+      }
+      for(const verifier of testAPIs) {
+        it.skip('MUST verify a valid "StatusList2021Credential"',
+          async function() {
+            // this tells the test report which cell
+            // in the interop matrix the result goes in
+            this.test.cell = {
+              columnId: verifier.name,
+              rowId: this.test.title
+            };
+            const implementation = new Implementation(verifier);
+            let response;
+            let err;
+            try {
+              response = await implementation.verify({
+                credential: validVC
+              });
+            } catch(e) {
+              err = e;
+            }
+            should.exist(response);
+            should.not.exist(err);
+          });
+        it('MUST fail to verify a VC with invalid ' +
+          '"credentialStatus.statusListCredential"', async function() {
+          // this tells the test report which cell
+          // in the interop matrix the result goes in
+          this.test.cell = {
+            columnId: verifier.name,
+            rowId: this.test.title
+          };
+          const implementation = new Implementation(verifier);
+          let response;
+          let err;
+          try {
+            response = await implementation.verify({
+              credential: invalidStatusListCredentialId
+            });
+          } catch(e) {
+            err = e;
+          }
+          should.not.exist(response);
+          should.exist(err);
+          should.exist(err.data);
+          // verifier returns 400
+          err.status.should.equal(400);
+          err.data.verified.should.equal(false);
+          const {check} = err.data.checks[0];
+          check.should.be.an('array');
+          check.should.include.members(['credentialStatus', 'proof']);
+        });
+        it('MUST fail to verify a VC with invalid "credentialStatus.type"',
+          async function() {
+            // this tells the test report which cell
+            // in the interop matrix the result goes in
+            this.test.cell = {
+              columnId: verifier.name,
+              rowId: this.test.title
+            };
+            const implementation = new Implementation(verifier);
+            let response;
+            let err;
+            try {
+              response = await implementation.verify({
+                credential: invalidCredentialStatusType
+              });
+            } catch(e) {
+              err = e;
+            }
+            should.not.exist(response);
+            should.exist(err);
+            should.exist(err.data);
+            // verifier returns 400
+            err.status.should.equal(400);
+            err.data.verified.should.equal(false);
+          });
       }
     });
   }
