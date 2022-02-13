@@ -27,6 +27,10 @@ jobs:
         run: git config --global url."https://${{ secrets.DB_PACKAGE_READ }}@github.com/".insteadOf ssh://git@github.com/
       - name: Install npm dependencies
         run: npm install
+      - name: Clean VCs
+        run: rm -f ./static-vcs/*.json
+      - name: Generate VCs
+        run: npm run generate-vcs
       - name: Run test with Node.js ${{ matrix.node-version }}
         run: npm run test
         continue-on-error: true
