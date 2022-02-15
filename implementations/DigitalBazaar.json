@@ -4,6 +4,8 @@
   "issuer": {
     "id": "did:key:z6MkiRtEtiyPSisyTo35SrF4p8rTxjV8Pu528tX2kXfEF5bN",
     "endpoint": "https://issuer.demo.digitalbazaar.com/vc-issuer/issue",
+    "issueEndpoint2": "https://issuer.demo.digitalbazaar.com/credentials/did%3Akey%3Az6MkmDoojMzE8aWK2a926xtVgBXY1GafcpnMSgGVaCdbAr3z/issueCredential",
+    "statusEndpoint": "https://issuer.demo.digitalbazaar.com/credentials/did%3Akey%3Az6MkmDoojMzE8aWK2a926xtVgBXY1GafcpnMSgGVaCdbAr3z/updateCredentialStatus",
     "headers": {
       "authorization": "Bearer OWYxNzUwYWUtODljNi00ZWZlLThhNDgtNGQ3ZTBmZDViNWIw"
     }
