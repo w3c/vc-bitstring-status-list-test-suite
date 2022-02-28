@@ -2,13 +2,14 @@
   "name": "Digital Bazaar",
   "implementation": "Demo",
   "issuer": {
-    "id": "did:key:z6MkiRtEtiyPSisyTo35SrF4p8rTxjV8Pu528tX2kXfEF5bN",
-    "endpoint": "https://issuer.demo.digitalbazaar.com/vc-issuer/issue",
-    "issueEndpoint2": "https://issuer.demo.digitalbazaar.com/credentials/did%3Akey%3Az6MkmDoojMzE8aWK2a926xtVgBXY1GafcpnMSgGVaCdbAr3z/issueCredential",
-    "statusEndpoint": "https://issuer.demo.digitalbazaar.com/credentials/did%3Akey%3Az6MkmDoojMzE8aWK2a926xtVgBXY1GafcpnMSgGVaCdbAr3z/updateCredentialStatus",
+    "id": "https://issuer.qa.veres.app/issuers/z19wCeJafpsTzvA6hZksz7TYF",
+    "endpoint": "https://issuer.qa.veres.app/issuers/z19wCeJafpsTzvA6hZksz7TYF/credentials/issue",
     "headers": {
       "authorization": "Bearer OWYxNzUwYWUtODljNi00ZWZlLThhNDgtNGQ3ZTBmZDViNWIw"
     }
   },
-  "verifier": "https://verifier.qa.veres.app/verifier/credentials"
+  "verifier": {
+    "id": "https://verifier.qa.veres.app/verifiers/z19p2n2YMXxPDESUdwGKb3G4Z",
+    "endpoint": "https://verifier.qa.veres.app/verifiers/z19p2n2YMXxPDESUdwGKb3G4Z/credentials/verify"
+  }
 }
