@@ -22,6 +22,8 @@ class Implementation {
   async issue({credential}) {
     try {
       const headers = {..._headers, ...this.settings.issuer.headers};
+      console.log(headers, '<><><><><>headers');
+      console.log(this.settings.issuer.endpoint, 'issuer.endpoint');
       const expires = () => {
         const date = new Date();
         date.setMonth(date.getMonth() + 2);
@@ -48,47 +50,47 @@ class Implementation {
       throw e;
     }
   }
-  async issue2({credential}) {
-    try {
-      const headers = {..._headers, ...this.settings.issuer.headers};
-      const expires = () => {
-        const date = new Date();
-        date.setMonth(date.getMonth() + 2);
-        return ISOTimeStamp({date});
-      };
-      const body = {
-        credential: {
-          ...credential,
-          id: `urn:uuid:${uuidv4()}`,
-          issuanceDate: ISOTimeStamp(),
-          expirationDate: expires(),
-          issuer: this.settings.issuer.id,
-          '@context': credential['@context']
-        }
-      };
-      const result = await httpClient.post(
-        this.settings.issuer.issueEndpoint2,
-        {headers, agent, json: body}
-      );
-      return result;
-    } catch(e) {
-      // this is just to make debugging easier
-      console.error(e);
-      throw e;
-    }
-  }
-  async setStatus(body) {
-    const headers = {..._headers, ...this.settings.issuer.headers};
-    let result;
-    try {
-      result = await httpClient.post(
-        this.settings.issuer.statusEndpoint,
-        {headers, agent, json: body});
-    } catch(e) {
-      throw e;
-    }
-    return result;
-  }
+  // async issue2({credential}) {
+  //   try {
+  //     const headers = {..._headers, ...this.settings.issuer.headers};
+  //     const expires = () => {
+  //       const date = new Date();
+  //       date.setMonth(date.getMonth() + 2);
+  //       return ISOTimeStamp({date});
+  //     };
+  //     const body = {
+  //       credential: {
+  //         ...credential,
+  //         id: `urn:uuid:${uuidv4()}`,
+  //         issuanceDate: ISOTimeStamp(),
+  //         expirationDate: expires(),
+  //         issuer: this.settings.issuer.id,
+  //         '@context': credential['@context']
+  //       }
+  //     };
+  //     const result = await httpClient.post(
+  //       this.settings.issuer.issueEndpoint2,
+  //       {headers, agent, json: body}
+  //     );
+  //     return result;
+  //   } catch(e) {
+  //     // this is just to make debugging easier
+  //     console.error(e);
+  //     throw e;
+  //   }
+  // }
+  // async setStatus(body) {
+  //   const headers = {..._headers, ...this.settings.issuer.headers};
+  //   let result;
+  //   try {
+  //     result = await httpClient.post(
+  //       this.settings.issuer.statusEndpoint,
+  //       {headers, agent, json: body});
+  //   } catch(e) {
+  //     throw e;
+  //   }
+  //   return result;
+  // }
   async verify({credential, auth}) {
     try {
       const headers = {..._headers};
@@ -102,7 +104,7 @@ class Implementation {
         },
       };
       const result = await httpClient.post(
-        this.settings.verifier,
+        this.settings.verifier.endpoint,
         {headers, agent, json: body}
       );
       return result;
