@@ -5,11 +5,24 @@
     "id": "https://issuer.qa.veres.app/issuers/z19wCeJafpsTzvA6hZksz7TYF",
     "endpoint": "https://issuer.qa.veres.app/issuers/z19wCeJafpsTzvA6hZksz7TYF/credentials/issue",
     "headers": {
-      "authorization": "Bearer OWYxNzUwYWUtODljNi00ZWZlLThhNDgtNGQ3ZTBmZDViNWIw"
+      "date": "Tue, 01 Mar 2022 15:19:35 GMT",
+      "host": "issuer.qa.veres.app",
+      "capability-invocation": "zcap capability='H4sIAAAAAAAAA7VSS3PaMBD-L-7kFmMsPwCfih0DE5KMAZcCnRyEvQZhYimSDNiZ_PfKgTLT16GHzuigWe1--z30pn1OaCHhJDXvm7aVkgnPMI4WSVuUb4w6wcw4mNrt708CkpITWRmiJBKEASlyHLOnozZqNyPPtxpJNU8reeGVJUk9O7XtdtdOdMuyQbfdNNFxgizdAeRmHQe5aO2qRQ0dTvd74Go4VXM5VF7tPuZM7jA97arxZDB7zcx0tBDHyA1xtdxGE39ZMz4PopehP6p7M4XDMIdCBpjhNdkrnhcqjSKPUyq9D0U3Vv8GDdQhQpTAW6-4dQAOooUZu1aFutVm7xjAPc6YiOtD392uclF34uVArSLFgSZYElrEmG9AWXm16w-wl5ow_gppJBxSRZ7gvTh3qyVwYkQhKGzlMNLbjo56sdnxkOtZ7VUjWKnKNO9NkxUD1RaeA5mRTYFlyaEJpvGXA5aQXnGQjro_4SiiJCNnPY8gtzT9JYgcncx7exe84NFdtZxOv5pPfieoYbxc76i1psNsSiCL6tXuYfLpXwd-CIlKzqhodCTXCO9gD5sPXo2OaznYYlI03_f_5Pt8YTTH-7LhU1trZiYPbBb2x2ICfi_qVvlkZDlHcsiibJhlpOcPy7kIV4hOF1DxY4jH80nt--MvTu7XuVuIeRSzl5UbPpllGhbxsE8WM-39_TvVpZvYjwMAAA',action='write'",
+      "digest": "mh=uEiAcCd2Mw3fnILJ4gsGIkHTXm_jAsMOqs8Dmm0AwouOjGw",
+      "content-type": "application/json",
+      "authorization": "Signature keyId='did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S#z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S',headers='(key-id) (created) (expires) (request-target) host capability-invocation content-type digest',signature='r8w/Ls9u9hdCXpOXDIoisWJAjEkVRxlQUwDXH6EO92yI6mYGbE6LTrKjQcVaS50S/PuJIQKQmY8vpIOu8V4rDA==',created='1646147975',expires='1646148575'"
     }
   },
   "verifier": {
     "id": "https://verifier.qa.veres.app/verifiers/z19p2n2YMXxPDESUdwGKb3G4Z",
-    "endpoint": "https://verifier.qa.veres.app/verifiers/z19p2n2YMXxPDESUdwGKb3G4Z/credentials/verify"
+    "endpoint": "https://verifier.qa.veres.app/verifiers/z19p2n2YMXxPDESUdwGKb3G4Z/credentials/verify",
+    "headers": {
+      "date": "Tue, 01 Mar 2022 15:30:00 GMT",
+      "host": "verifier.qa.veres.app",
+      "capability-invocation": "zcap capability='H4sIAAAAAAAAA7VSXXOiMBT9L-z0rYgExcLTilqYVTsotpbu9CGSi8YqSUNAodP_vkG7zn4-7MPO5OHOTc6559yTN-1zwjIJR6m5X7WNlDx3DeNgUdJiYm3UCeZGaWrXv1_lkBSCysrICyohN4Cgbtd0dNRG7QbyfK1RorlaITK3KChx7W5iprZN9MRpO3onBVt3rFQBwEyT1Q2xILXUoEaOYLsdCAUmCvcClVvb0xcut5gdt9V4dhu9piYJHvNDaI9wFW_CmRfXXDwMwr3vBbUTKR6OBWRygDle0Z3S-SGlceQKxqR7cnRl9a_QrTolCJpSEK1X3FI15C3M-Q_9XNW16XCUoXj6eAyHo-ieHPzxyvI7T2oczUqWYElZtsBiDWqdl5X9kfrSzY2_0hqJAKJMULzLz-8rNQmOnCoSNUCtGuntro6chdlzra5rnaRwZS_V3DdNVhzUs9E5mYiuMywLAU1CzaIFYAnkwoN0dPMTz1nh2dQU5IaRXxJ5QUfzS2c72ONgWMXz-dK883qDGsbxasusFfPTOYU0rJ-2k9mnfwV8NxIWgrO88ZFcshzCDtYnXY2PS3uwwTRr_vH_C_r5Q9UD3hWNphpNxiwv72d31nRel0Ik5mJ59CZBvPCDoEyptWDeslv3uS_H1Qwi5A-zKdl3-mVvFEb-U-gxET9S4pVTYked_WiyDsg4u9Xe378BzXs1f5wDAAA',action='write'",
+      "digest": "mh=uEiDEF_V0zcnq-4_gbOBrnjexB8WzlZwY-pvBXRuNt8o6Lw",
+      "content-type": "application/json",
+      "authorization": "Signature keyId='did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S#z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S',headers='(key-id) (created) (expires) (request-target) host capability-invocation content-type digest',signature='O0D4czC8PcTRvgZEs3yy35sFZizjKBs0Wvn77IDMapSorKxy4s6B4196pMZvxTbqwT1Wt+PrGdAqadnsZexKDQ==',created='1646148600',expires='1646149200'"
+    }
   }
 }
