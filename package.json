@@ -31,6 +31,7 @@
     "@digitalbazaar/did-method-key": "^2.0.0",
     "@digitalbazaar/ed25519-signature-2020": "^3.0.0",
     "@digitalbazaar/http-client": "^2.0.1",
+    "@digitalbazaar/http-signature-zcap-invoke": "^5.0.3",
     "@digitalbazaar/vc": "^2.1.0",
     "@digitalcredentials/did-context": "^1.0.0",
     "bnid": "^2.1.0",

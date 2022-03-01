@@ -22,7 +22,7 @@ npm i
 ## Usage
 
 ```
-npm test
+CLIENT_SECRET=<client secret> npm test
 ```
 
 ## Generator
