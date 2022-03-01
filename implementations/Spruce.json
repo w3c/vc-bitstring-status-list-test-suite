@@ -5,5 +5,7 @@
     "id": "did:key:z6MkhL2wNXYZ8pSf4ctHPotrpkWggeb6ipCWYaPfDhaQ1NLM",
     "endpoint": "https://demo.spruceid.com/credentials/issue"
   },
-  "verifier": "https://demo.spruceid.com/credentials/verify"
+  "verifier": {
+    "endpoint": "https://demo.spruceid.com/credentials/verify"
+  }
 }
