@@ -50,7 +50,7 @@ class Implementation {
           url: this.settings.issuer.endpoint,
           method: 'post',
           json: body,
-          zcap: this.settings.issuer.zcap,
+          zcap: `urn:zcap:root:${encodeURIComponent(this.settings.issuer.id)}`,
           action: 'write'
         });
         Object.assign(headers, signatureHeaders);
@@ -106,6 +106,12 @@ class Implementation {
 }
 
 async function _createSignatureHeaders({url, method, json, zcap, action}) {
+  let capability;
+  if(!zcap.startsWith('urn:zcap:root:')) {
+    capability = JSON.parse(zcap);
+  } else {
+    capability = zcap;
+  }
   const secretKeySeed = process.env.CLIENT_SECRET;
   const seed = await decodeSecretKeySeed({secretKeySeed});
   const didKey = await didKeyDriver.generate({seed});
@@ -118,7 +124,7 @@ async function _createSignatureHeaders({url, method, json, zcap, action}) {
     },
     json,
     invocationSigner: didKey.keyPairs.get(capabilityInvocation[0]).signer(),
-    capability: JSON.parse(zcap),
+    capability,
     capabilityAction: action
   });
   return signatureHeaders;
