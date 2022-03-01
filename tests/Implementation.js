@@ -7,6 +7,12 @@ const https = require('https');
 const {httpClient} = require('@digitalbazaar/http-client');
 const {ISOTimeStamp} = require('./helpers');
 const {v4: uuidv4} = require('uuid');
+const {signCapabilityInvocation} =
+  require('@digitalbazaar/http-signature-zcap-invoke');
+const didKey = require('@digitalbazaar/did-method-key');
+const {decodeSecretKeySeed} = require('bnid');
+
+const didKeyDriver = didKey.driver();
 
 const agent = new https.Agent({rejectUnauthorized: false});
 
@@ -21,9 +27,6 @@ class Implementation {
   }
   async issue({credential}) {
     try {
-      const headers = {..._headers, ...this.settings.issuer.headers};
-      console.log(headers, '<><><><><>headers');
-      console.log(this.settings.issuer.endpoint, 'issuer.endpoint');
       const expires = () => {
         const date = new Date();
         date.setMonth(date.getMonth() + 2);
@@ -39,10 +42,31 @@ class Implementation {
           '@context': credential['@context']
         }
       };
+      const secretKeySeed = process.env.CLIENT_SECRET;
+      const seed = await decodeSecretKeySeed({secretKeySeed});
+      const didKey = await didKeyDriver.generate({seed});
+      const {didDocument: {capabilityInvocation}} = didKey;
+      const signatureHeaders = await signCapabilityInvocation({
+        url: this.settings.issuer.endpoint,
+        method: 'post',
+        headers: {
+          date: new Date().toUTCString()
+        },
+        json: body,
+        invocationSigner: didKey.keyPairs.get(capabilityInvocation[0]).signer(),
+        capability: JSON.parse(this.settings.issuer.zcap),
+        capabilityAction: 'write'
+      });
+      console.log(signatureHeaders, 'signatureHeaders:issuer');
+      const headers = {
+        ..._headers,
+        ...signatureHeaders
+      };
       const result = await httpClient.post(
         this.settings.issuer.endpoint,
         {headers, agent, json: body}
       );
+      console.log(JSON.stringify(result, null, 2), '<><><><><><><>result');
       return result;
     } catch(e) {
       // this is just to make debugging easier
@@ -93,16 +117,35 @@ class Implementation {
   // }
   async verify({credential, auth}) {
     try {
-      const headers = {..._headers};
-      if(auth && auth.type === 'oauth2-bearer-token') {
-        headers.Authorization = `Bearer ${auth.accessToken}`;
-      }
       const body = {
         verifiableCredential: credential,
         options: {
           checks: ['proof', 'credentialStatus'],
         },
       };
+      const secretKeySeed = process.env.CLIENT_SECRET;
+      const seed = await decodeSecretKeySeed({secretKeySeed});
+      const didKey = await didKeyDriver.generate({seed});
+      const {didDocument: {capabilityInvocation}} = didKey;
+      const signatureHeaders = await signCapabilityInvocation({
+        url: this.settings.verifier.endpoint,
+        method: 'post',
+        headers: {
+          date: new Date().toUTCString()
+        },
+        json: body,
+        invocationSigner: didKey.keyPairs.get(capabilityInvocation[0]).signer(),
+        capability: JSON.parse(this.settings.verifier.zcap),
+        capabilityAction: 'write'
+      });
+      console.log(signatureHeaders, 'signatureHeaders:issuer');
+      const headers = {
+        ..._headers,
+        ...signatureHeaders
+      };
+      if(auth && auth.type === 'oauth2-bearer-token') {
+        headers.Authorization = `Bearer ${auth.accessToken}`;
+      }
       const result = await httpClient.post(
         this.settings.verifier.endpoint,
         {headers, agent, json: body}
