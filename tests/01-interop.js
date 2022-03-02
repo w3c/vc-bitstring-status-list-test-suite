@@ -181,7 +181,6 @@ describe('StatusList2021 Credentials Test', function() {
                     type: 'RevocationList2020Status'
                   }
                 });
-                console.log(response2);
                 should.exist(response2);
                 response2.status.should.equal(200);
 
