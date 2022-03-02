@@ -7,12 +7,11 @@ const https = require('https');
 const {httpClient} = require('@digitalbazaar/http-client');
 const {ISOTimeStamp} = require('./helpers');
 const {v4: uuidv4} = require('uuid');
-const {signCapabilityInvocation} =
-  require('@digitalbazaar/http-signature-zcap-invoke');
 const didKey = require('@digitalbazaar/did-method-key');
 const {decodeSecretKeySeed} = require('bnid');
-
+const {ZcapClient} = require('@digitalbazaar/ezcap');
 const didKeyDriver = didKey.driver();
+const {Ed25519Signature2020} = require('@digitalbazaar/ed25519-signature-2020');
 
 const agent = new https.Agent({rejectUnauthorized: false});
 
@@ -46,20 +45,20 @@ class Implementation {
         ..._headers,
         ...this.settings.issuer.headers
       };
+      let result;
       if(this.settings.issuer.zcap) {
-        const signatureHeaders = await _createSignatureHeaders({
+        const zcapClient = await _getZcapClient();
+        result = await zcapClient.write({
           url: this.settings.issuer.endpoint,
-          method: 'post',
-          json: body,
-          zcap: this.settings.issuer.zcap,
-          action: 'write'
+          capability: JSON.parse(this.settings.issuer.zcap),
+          json: body
         });
-        Object.assign(headers, signatureHeaders);
+      } else {
+        result = await httpClient.post(
+          this.settings.issuer.endpoint,
+          {headers, agent, json: body}
+        );
       }
-      const result = await httpClient.post(
-        this.settings.issuer.endpoint,
-        {headers, agent, json: body}
-      );
       return result;
     } catch(e) {
       // this is just to make debugging easier
@@ -72,28 +71,26 @@ class Implementation {
       ..._headers,
       ...this.settings.issuer.headers
     };
-    if(this.settings.issuer.zcap) {
-      const signatureHeaders = await _createSignatureHeaders({
-        url: 'did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S',
-        method: 'post',
-        json: body,
-        zcap: `urn:zcap:root:${encodeURIComponent(
-          'did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S')}`,
-        action: 'write'
-      });
-      console.log(signatureHeaders, 'signatureHeaders');
-      Object.assign(headers, signatureHeaders);
-    }
-    let result;
     try {
-      result = await httpClient.post(
-        this.settings.issuer.statusEndpoint,
-        {headers, agent, json: body});
+      let result;
+      if(this.settings.issuer.zcap) {
+        const zcapClient = await _getZcapClient();
+        result = await zcapClient.write({
+          url: this.settings.issuer.statusEndpoint,
+          capability: `urn:zcap:root:${encodeURIComponent(
+            this.settings.issuer.statusEndpoint)}`,
+          json: body
+        });
+      } else {
+        result = await httpClient.post(
+          this.settings.issuer.statusEndpoint,
+          {headers, agent, json: body});
+      }
+      return result;
     } catch(e) {
-      console.log(JSON.stringify(e.data, null, 2), '<><><><>e');
+      console.log(e);
       throw e;
     }
-    return result;
   }
   async verify({credential, auth}) {
     try {
@@ -110,20 +107,20 @@ class Implementation {
       if(auth && auth.type === 'oauth2-bearer-token') {
         headers.Authorization = `Bearer ${auth.accessToken}`;
       }
+      let result;
       if(this.settings.verifier.zcap) {
-        const signatureHeaders = await _createSignatureHeaders({
+        const zcapClient = await _getZcapClient();
+        result = await zcapClient.write({
           url: this.settings.verifier.endpoint,
-          method: 'post',
-          json: body,
-          zcap: this.settings.verifier.zcap,
-          action: 'write'
+          capability: JSON.parse(this.settings.verifier.zcap),
+          json: body
         });
-        Object.assign(headers, signatureHeaders);
+      } else {
+        result = await httpClient.post(
+          this.settings.verifier.endpoint,
+          {headers, agent, json: body}
+        );
       }
-      const result = await httpClient.post(
-        this.settings.verifier.endpoint,
-        {headers, agent, json: body}
-      );
       return result;
     } catch(e) {
       // this is just to make debugging easier
@@ -135,29 +132,16 @@ class Implementation {
   }
 }
 
-async function _createSignatureHeaders({url, method, json, zcap, action}) {
-  let capability;
-  if(!zcap.startsWith('urn:zcap:root:')) {
-    capability = JSON.parse(zcap);
-  } else {
-    capability = zcap;
-  }
+async function _getZcapClient() {
   const secretKeySeed = process.env.CLIENT_SECRET;
   const seed = await decodeSecretKeySeed({secretKeySeed});
   const didKey = await didKeyDriver.generate({seed});
   const {didDocument: {capabilityInvocation}} = didKey;
-  const signatureHeaders = await signCapabilityInvocation({
-    url,
-    method,
-    headers: {
-      date: new Date().toUTCString()
-    },
-    json,
-    invocationSigner: didKey.keyPairs.get(capabilityInvocation[0]).signer(),
-    capability,
-    capabilityAction: action
+  const zcapClient = new ZcapClient({
+    SuiteClass: Ed25519Signature2020,
+    invocationSigner: didKey.keyPairs.get(capabilityInvocation[0]).signer()
   });
-  return signatureHeaders;
+  return zcapClient;
 }
 
 module.exports = Implementation;
