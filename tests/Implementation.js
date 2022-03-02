@@ -74,12 +74,14 @@ class Implementation {
     };
     if(this.settings.issuer.zcap) {
       const signatureHeaders = await _createSignatureHeaders({
-        url: this.settings.issuer.statusEndpoint,
+        url: 'did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S',
         method: 'post',
         json: body,
-        zcap: `urn:zcap:root:${encodeURIComponent(this.settings.issuer.id)}`,
+        zcap: `urn:zcap:root:${encodeURIComponent(
+          'did:key:z6MkptjaoxjyKQFSqf1dHXswP6EayYhPQBYzprVCPmGBHz9S')}`,
         action: 'write'
       });
+      console.log(signatureHeaders, 'signatureHeaders');
       Object.assign(headers, signatureHeaders);
     }
     let result;
