@@ -77,7 +77,7 @@ class Implementation {
         url: this.settings.issuer.statusEndpoint,
         method: 'post',
         json: body,
-        zcap: this.settings.issuer.zcap,
+        zcap: `urn:zcap:root:${encodeURIComponent(this.settings.issuer.id)}`,
         action: 'write'
       });
       Object.assign(headers, signatureHeaders);
