@@ -9,7 +9,7 @@ const credentials = require('../credentials');
 const {JsonLdDocumentLoader} = require('jsonld-document-loader');
 const {testCredential} = require('./assertions');
 const implementations = require('../implementations');
-const {unwrapResponse} = require('./helpers');
+const {unwrapResponse, deepClone} = require('./helpers');
 const {httpClient} = require('@digitalbazaar/http-client');
 const https = require('https');
 const agent = new https.Agent({rejectUnauthorized: false});
@@ -147,68 +147,63 @@ describe('StatusList2021 Credentials Test', function() {
                 response.data.statusResult.verified.should.equal(true);
                 response.data.checks.should.eql(['proof', 'credentialStatus']);
               });
-            // eslint-disable-next-line max-len
-            // it(`MUST revoke a credential and fail to verify revoked credential`,
-            //   async function() {
-            //   // FIXME: Currently this test uses credential with 2020 status
-            //   // type.
-            //   // this tells the test report which cell in the interop matrix
-            //   // the result goes in
-            //     this.test.cell = {
-            //       columnId: verifier.name,
-            //       rowId: this.test.title
-            //     };
-            //     const implementation1 = new Implementation(issuer);
-            //     // issue a credential
-            //     const response1 = await implementation1.issue2({credential});
-            //     const vc = response1.data;
-            //     testCredential(vc);
-            //     // verification of the credential should pass
-            //     const implementation2 = new Implementation(verifier);
-            //     const response2 = await implementation2.verify({
-            //       credential: vc
-            //     });
-            //     should.exist(response2);
-            //     response2.status.should.equal(200);
-            //     should.exist(response2.data);
-            //     // verifier responses vary but are all objects
-            //     response2.data.should.be.an('object');
-            //     response2.data.verified.should.equal(true);
-            //     response2.data.statusResult.verified.should.equal(true);
+            it(`MUST revoke a credential and fail to verify revoked credential`,
+              async function() {
+                // FIXME: Currently this test uses credential with 2020 status
+                // type.
 
-            //     const implementation3 = new Implementation(issuer);
-            //     // Revoke the issued credential
-            //     const response3 = await implementation3.setStatus({
-            //       credentialId: vc.id,
-            //       credentialStatus: [
-            //         {
-            //           type: 'RevocationList2020Status',
-            //           status: '1'
-            //         }
-            //       ]
-            //     });
-            //     should.exist(response3);
-            //     response3.status.should.equal(200);
+                // this tells the test report which cell in the interop matrix
+                // the result goes in
+                this.test.cell = {
+                  columnId: verifier.name,
+                  rowId: this.test.title
+                };
+                // copy vc issued
+                const vc = deepClone(issuedVC);
+                // verification of the credential should pass
+                const implementation1 = new Implementation(verifier);
+                const response1 = await implementation1.verify({
+                  credential: vc
+                });
+                should.exist(response1);
+                response1.status.should.equal(200);
+                should.exist(response1.data);
+                // verifier responses vary but are all objects
+                response1.data.should.be.an('object');
+                response1.data.verified.should.equal(true);
+                response1.data.statusResult.verified.should.equal(true);
 
-            //     // try to verify the credential again, should fail since it
-            //     // has been revoked
-            //     const implementation4 = new Implementation(verifier);
-            //     let response;
-            //     let err;
-            //     try {
-            //       response = await implementation4.verify({
-            //         credential: invalidStatusListCredentialId
-            //       });
-            //     } catch(e) {
-            //       err = e;
-            //     }
-            //     should.not.exist(response);
-            //     should.exist(err);
-            //     should.exist(err.data);
-            //     // verifier returns 400
-            //     err.status.should.equal(400);
-            //     err.data.verified.should.equal(false);
-            //   });
+                const implementation2 = new Implementation(issuer);
+                // Revoke the issued credential
+                const response2 = await implementation2.setStatus({
+                  credentialId: vc.id,
+                  credentialStatus: {
+                    type: 'RevocationList2020Status'
+                  }
+                });
+                console.log(response2);
+                should.exist(response2);
+                response2.status.should.equal(200);
+
+                // try to verify the credential again, should fail since it
+                // has been revoked
+                const implementation3 = new Implementation(verifier);
+                let response3;
+                let err;
+                try {
+                  response3 = await implementation3.verify({
+                    credential: invalidStatusListCredentialId
+                  });
+                } catch(e) {
+                  err = e;
+                }
+                should.not.exist(response3);
+                should.exist(err);
+                should.exist(err.data);
+                // verifier returns 400
+                err.status.should.equal(400);
+                err.data.verified.should.equal(false);
+              });
           }
 
         });
