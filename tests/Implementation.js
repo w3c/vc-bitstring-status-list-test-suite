@@ -44,6 +44,7 @@ class Implementation {
       };
       const headers = {
         ..._headers,
+        ...this.settings.issuer.headers
       };
       if(this.settings.issuer.zcap) {
         const signatureHeaders = await _createSignatureHeaders({
@@ -66,6 +67,32 @@ class Implementation {
       throw e;
     }
   }
+  async setStatus(body) {
+    const headers = {
+      ..._headers,
+      ...this.settings.issuer.headers
+    };
+    if(this.settings.issuer.zcap) {
+      const signatureHeaders = await _createSignatureHeaders({
+        url: this.settings.issuer.statusEndpoint,
+        method: 'post',
+        json: body,
+        zcap: this.settings.issuer.zcap,
+        action: 'write'
+      });
+      Object.assign(headers, signatureHeaders);
+    }
+    let result;
+    try {
+      result = await httpClient.post(
+        this.settings.issuer.statusEndpoint,
+        {headers, agent, json: body});
+    } catch(e) {
+      console.log(JSON.stringify(e.data, null, 2), '<><><><>e');
+      throw e;
+    }
+    return result;
+  }
   async verify({credential, auth}) {
     try {
       const body = {
@@ -76,6 +103,7 @@ class Implementation {
       };
       const headers = {
         ..._headers,
+        ...this.settings.issuer.headers
       };
       if(auth && auth.type === 'oauth2-bearer-token') {
         headers.Authorization = `Bearer ${auth.accessToken}`;
