@@ -12,6 +12,7 @@ const {decodeSecretKeySeed} = require('bnid');
 const {ZcapClient} = require('@digitalbazaar/ezcap');
 const didKeyDriver = didKey.driver();
 const {Ed25519Signature2020} = require('@digitalbazaar/ed25519-signature-2020');
+const {createRootCapability} = require('@digitalbazaar/zcap');
 
 const agent = new https.Agent({rejectUnauthorized: false});
 
@@ -75,10 +76,15 @@ class Implementation {
       let result;
       if(this.settings.issuer.zcap) {
         const zcapClient = await _getZcapClient();
+        const rootZcap = createRootCapability({
+          // Set profile id as controller
+          controller:
+            'did:key:z6Mkk2x1J4jCmaHDyYRRW1NB7CzeKYbjo3boGfRiefPzZjLQ',
+          invocationTarget: this.settings.issuer.id
+        });
         result = await zcapClient.write({
           url: this.settings.issuer.statusEndpoint,
-          capability: `urn:zcap:root:${encodeURIComponent(
-            this.settings.issuer.statusEndpoint)}`,
+          capability: rootZcap,
           json: body
         });
       } else {
@@ -139,7 +145,8 @@ async function _getZcapClient() {
   const {didDocument: {capabilityInvocation}} = didKey;
   const zcapClient = new ZcapClient({
     SuiteClass: Ed25519Signature2020,
-    invocationSigner: didKey.keyPairs.get(capabilityInvocation[0]).signer()
+    invocationSigner: didKey.keyPairs.get(capabilityInvocation[0]).signer(),
+    agent
   });
   return zcapClient;
 }
