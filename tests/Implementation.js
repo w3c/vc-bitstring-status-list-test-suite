@@ -76,15 +76,9 @@ class Implementation {
       let result;
       if(this.settings.issuer.zcap) {
         const zcapClient = await _getZcapClient();
-        const rootZcap = createRootCapability({
-          // Set profile id as controller
-          controller:
-            'did:key:z6Mkk2x1J4jCmaHDyYRRW1NB7CzeKYbjo3boGfRiefPzZjLQ',
-          invocationTarget: this.settings.issuer.id
-        });
         result = await zcapClient.write({
           url: this.settings.issuer.statusEndpoint,
-          capability: rootZcap,
+          capability: JSON.parse(this.settings.issuer.zcap),
           json: body
         });
       } else {
