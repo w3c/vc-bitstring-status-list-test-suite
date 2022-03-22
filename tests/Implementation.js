@@ -4,7 +4,6 @@
 'use strict';
 
 const https = require('https');
-const {httpClient} = require('@digitalbazaar/http-client');
 const {ISOTimeStamp} = require('./helpers');
 const {v4: uuidv4} = require('uuid');
 const didKey = require('@digitalbazaar/did-method-key');
@@ -12,7 +11,6 @@ const {decodeSecretKeySeed} = require('bnid');
 const {ZcapClient} = require('@digitalbazaar/ezcap');
 const didKeyDriver = didKey.driver();
 const {Ed25519Signature2020} = require('@digitalbazaar/ed25519-signature-2020');
-const {createRootCapability} = require('@digitalbazaar/zcap');
 
 const agent = new https.Agent({rejectUnauthorized: false});
 
@@ -46,20 +44,17 @@ class Implementation {
         ..._headers,
         ...this.settings.issuer.headers
       };
-      let result;
+      let capability;
       if(this.settings.issuer.zcap) {
-        const zcapClient = await _getZcapClient();
-        result = await zcapClient.write({
-          url: this.settings.issuer.endpoint,
-          capability: JSON.parse(this.settings.issuer.zcap),
-          json: body
-        });
-      } else {
-        result = await httpClient.post(
-          this.settings.issuer.endpoint,
-          {headers, agent, json: body}
-        );
+        capability = JSON.parse(this.settings.issuer.zcap);
       }
+      const zcapClient = await _getZcapClient();
+      const result = await zcapClient.write({
+        url: this.settings.issuer.endpoint,
+        headers,
+        capability,
+        json: body
+      });
       return result;
     } catch(e) {
       // this is just to make debugging easier
@@ -73,25 +68,17 @@ class Implementation {
       ...this.settings.issuer.headers
     };
     try {
-      let result;
+      let capability;
       if(this.settings.issuer.zcap) {
-        const zcapClient = await _getZcapClient();
-        const rootZcap = createRootCapability({
-          // Set profile id as controller
-          controller:
-            'did:key:z6Mkk2x1J4jCmaHDyYRRW1NB7CzeKYbjo3boGfRiefPzZjLQ',
-          invocationTarget: this.settings.issuer.id
-        });
-        result = await zcapClient.write({
-          url: this.settings.issuer.statusEndpoint,
-          capability: rootZcap,
-          json: body
-        });
-      } else {
-        result = await httpClient.post(
-          this.settings.issuer.statusEndpoint,
-          {headers, agent, json: body});
+        capability = JSON.parse(this.settings.issuer.zcap);
       }
+      const zcapClient = await _getZcapClient();
+      const result = await zcapClient.write({
+        url: this.settings.issuer.statusEndpoint,
+        headers,
+        capability,
+        json: body
+      });
       return result;
     } catch(e) {
       console.log(e);
@@ -108,25 +95,21 @@ class Implementation {
       };
       const headers = {
         ..._headers,
-        ...this.settings.issuer.headers
+        ...this.settings.verifier.headers
       };
       if(auth && auth.type === 'oauth2-bearer-token') {
         headers.Authorization = `Bearer ${auth.accessToken}`;
       }
-      let result;
+      let capability;
       if(this.settings.verifier.zcap) {
-        const zcapClient = await _getZcapClient();
-        result = await zcapClient.write({
-          url: this.settings.verifier.endpoint,
-          capability: JSON.parse(this.settings.verifier.zcap),
-          json: body
-        });
-      } else {
-        result = await httpClient.post(
-          this.settings.verifier.endpoint,
-          {headers, agent, json: body}
-        );
+        capability = JSON.parse(this.settings.verifier.zcap);
       }
+      const zcapClient = await _getZcapClient();
+      const result = await zcapClient.write({
+        url: this.settings.verifier.endpoint,
+        capability,
+        json: body
+      });
       return result;
     } catch(e) {
       // this is just to make debugging easier
@@ -139,6 +122,9 @@ class Implementation {
 }
 
 async function _getZcapClient() {
+  if(!process.env.CLIENT_SECRET) {
+    throw new Error('ENV variable CLIENT_SECRET is required.');
+  }
   const secretKeySeed = process.env.CLIENT_SECRET;
   const seed = await decodeSecretKeySeed({secretKeySeed});
   const didKey = await didKeyDriver.generate({seed});
