@@ -3,9 +3,9 @@
   "implementation": "transmute",
   "issuer": {
     "id": "did:key:z6MkjRagNiMu91DduvCvgEsqLZDVzrJzFrwahc4tXLt9DoHd",
-    "endpoint": "https://vc.transmute.world/v0.0.0/credentials/issueCredential"
+    "issueCrendentialEndpoint": "https://vc.transmute.world/v0.0.0/credentials/issueCredential"
   },
   "verifier": {
-    "endpoint": "https://vc.transmute.world/next/credentials/verify"
+    "verifyEndpoint": "https://vc.transmute.world/next/credentials/verify"
   }
 }

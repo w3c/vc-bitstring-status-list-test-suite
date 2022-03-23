@@ -9,11 +9,11 @@ const credentials = require('../credentials');
 const {JsonLdDocumentLoader} = require('jsonld-document-loader');
 const {testCredential} = require('./assertions');
 const implementations = require('../implementations');
-const {unwrapResponse, deepClone} = require('./helpers');
+const {unwrapResponse, deepClone, getCredentialStatus} = require('./helpers');
 const {httpClient} = require('@digitalbazaar/http-client');
 const https = require('https');
 const agent = new https.Agent({rejectUnauthorized: false});
-const rl = require('vc-status-list');
+const rl = require('@digitalbazaar/vc-status-list');
 const invalidCredentialStatusType =
   require('../static-vcs/invalidCredentialStatusType.json');
 const invalidStatusListCredentialId =
@@ -160,6 +160,11 @@ describe('StatusList2021 Credentials Test', function() {
                 };
                 // copy vc issued
                 const vc = deepClone(issuedVC);
+                // get the status of the VC
+                const statusInfo = await getCredentialStatus(
+                  {verifiableCredential: vc});
+                statusInfo.status.should.equal(false);
+
                 // verification of the credential should pass
                 const implementation1 = new Implementation(verifier);
                 const response1 = await implementation1.verify({
@@ -173,8 +178,8 @@ describe('StatusList2021 Credentials Test', function() {
                 response1.data.verified.should.equal(true);
                 response1.data.statusResult.verified.should.equal(true);
 
+                // Then revoke the VC
                 const implementation2 = new Implementation(issuer);
-                // Revoke the issued credential
                 const response2 = await implementation2.setStatus({
                   credentialId: vc.id,
                   credentialStatus: {
@@ -184,19 +189,29 @@ describe('StatusList2021 Credentials Test', function() {
                 should.exist(response2);
                 response2.status.should.equal(200);
 
+                // force publication of new SLC
+                const response3 = implementation2.publishSlc({});
+                should.exist(response3);
+                response2.status.should.equal(200);
+
+                // get the status of the VC
+                const {status} = await getCredentialStatus(
+                  {verifiableCredential: vc});
+                status.should.equal(true);
+
                 // try to verify the credential again, should fail since it
                 // has been revoked
                 const implementation3 = new Implementation(verifier);
-                let response3;
+                let response4;
                 let err;
                 try {
-                  response3 = await implementation3.verify({
-                    credential: invalidStatusListCredentialId
+                  response4 = await implementation3.verify({
+                    credential: vc
                   });
                 } catch(e) {
                   err = e;
                 }
-                should.not.exist(response3);
+                should.not.exist(response4);
                 should.exist(err);
                 should.exist(err.data);
                 // verifier returns 400
