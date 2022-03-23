@@ -45,12 +45,12 @@ class Implementation {
         ...this.settings.issuer.headers
       };
       let capability;
-      if(this.settings.issuer.zcap) {
-        capability = JSON.parse(this.settings.issuer.zcap);
+      if(this.settings.issuer.credentialsZcap) {
+        capability = JSON.parse(this.settings.issuer.credentialsZcap);
       }
       const zcapClient = await _getZcapClient();
       const result = await zcapClient.write({
-        url: this.settings.issuer.endpoint,
+        url: this.settings.issuer.issueCrendentialEndpoint,
         headers,
         capability,
         json: body
@@ -69,8 +69,8 @@ class Implementation {
     };
     try {
       let capability;
-      if(this.settings.issuer.zcap) {
-        capability = JSON.parse(this.settings.issuer.zcap);
+      if(this.settings.issuer.credentialsZcap) {
+        capability = JSON.parse(this.settings.issuer.credentialsZcap);
       }
       const zcapClient = await _getZcapClient();
       const result = await zcapClient.write({
@@ -81,7 +81,28 @@ class Implementation {
       });
       return result;
     } catch(e) {
-      console.log(e);
+      throw e;
+    }
+  }
+  async publishSlc(body) {
+    const headers = {
+      ..._headers,
+      ...this.settings.issuer.headers
+    };
+    try {
+      let capability;
+      if(this.settings.issuer.slcsZcap) {
+        capability = JSON.parse(this.settings.issuer.slcsZcap);
+      }
+      const zcapClient = await _getZcapClient();
+      const result = await zcapClient.write({
+        url: this.settings.issuer.publishSlcEndpoint,
+        headers,
+        capability,
+        json: body
+      });
+      return result;
+    } catch(e) {
       throw e;
     }
   }
@@ -101,12 +122,12 @@ class Implementation {
         headers.Authorization = `Bearer ${auth.accessToken}`;
       }
       let capability;
-      if(this.settings.verifier.zcap) {
-        capability = JSON.parse(this.settings.verifier.zcap);
+      if(this.settings.verifier.verifierZcap) {
+        capability = JSON.parse(this.settings.verifier.verifierZcap);
       }
       const zcapClient = await _getZcapClient();
       const result = await zcapClient.write({
-        url: this.settings.verifier.endpoint,
+        url: this.settings.verifier.verifyEndpoint,
         capability,
         json: body
       });

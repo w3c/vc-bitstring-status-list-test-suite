@@ -13,7 +13,7 @@ const {
   writeJSON,
   cloneJSON
 } = require('./helpers');
-const statusListCtx = require('vc-status-list-context');
+const statusListCtx = require('@digitalbazaar/vc-status-list-context');
 
 const VC_SL_CONTEXT_URL = statusListCtx.constants.CONTEXT_URL_V1;
 

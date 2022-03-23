@@ -3,9 +3,9 @@
   "implementation": "uni",
   "issuer": {
     "id": "did:key:z6MkvfambyLsugwe8DCHeUGVJbYZyKne59RDHx2dqmXRG6nB",
-    "endpoint": "https://uniissuer.io/1.0/credentials/issue"
+    "issueCrendentialEndpoint": "https://uniissuer.io/1.0/credentials/issue"
   },
   "verifier": {
-    "endpoint": "https://univerifier.io/1.0/credentials/verify"
+    "verifyEndpoint": "https://univerifier.io/1.0/credentials/verify"
   }
 }

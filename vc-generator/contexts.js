@@ -7,7 +7,7 @@
 const ed25519Ctx = require('ed25519-signature-2020-context');
 const didCtx = require('@digitalcredentials/did-context');
 const credentialsCtx = require('credentials-context');
-const statusListCtx = require('vc-status-list-context');
+const statusListCtx = require('@digitalbazaar/vc-status-list-context');
 
 const contextMap = new Map();
 
