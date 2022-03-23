@@ -3,9 +3,9 @@
   "implementation": "Spherity",
   "issuer": {
     "id": "did:key:z6MkjafApNWaUm4n7WHqYdjDwsjhKbZQi54LwPDb8U8fQAT9",
-    "endpoint": "https://cbp-pre-prod.api.wallet.eu.spherity.io/api/v1/vc-http-api/credentials/issue"
+    "issueCrendentialEndpoint": "https://cbp-pre-prod.api.wallet.eu.spherity.io/api/v1/vc-http-api/credentials/issue"
   },
   "verifier": {
-    "endpoint": "https://cbp-pre-prod.api.wallet.eu.spherity.io/api/v1/vc-http-api/credentials/verify"
+    "verifyEndpoint": "https://cbp-pre-prod.api.wallet.eu.spherity.io/api/v1/vc-http-api/credentials/verify"
   }
 }

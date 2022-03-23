@@ -3,9 +3,9 @@
   "implementation": "SecureKey",
   "issuer": {
     "id": "did:key:z6MkjRagNiMu91DduvCvgEsqLZDVzrJzFrwahc4tXLt9DoHd",
-    "endpoint": "https://issuer.sandbox.trustbloc.dev/vc-issuer-interop/credentials/issue"
+    "issueCrendentialEndpoint": "https://issuer.sandbox.trustbloc.dev/vc-issuer-interop/credentials/issue"
   },
   "verifier": {
-    "endpoint": "https://verifier.sandbox.trustbloc.dev/vc-verifier-interop/verifier/credentials/verify"
+    "verifyEndpoint": "https://verifier.sandbox.trustbloc.dev/vc-verifier-interop/verifier/credentials/verify"
   }
 }
