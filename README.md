@@ -21,9 +21,14 @@ npm i
 
 ## Usage
 
+For `Digital Bazaar` implementation, a secret `CLIENT_SECRET_DB` is required to
+run the test.
+
 ```
-CLIENT_SECRET=<client secret> npm test
+CLIENT_SECRET_DB=<client secret> npm test
 ```
+
+For all other implementations just run `npm test`.
 
 ## Generator
 
