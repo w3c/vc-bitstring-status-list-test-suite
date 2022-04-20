@@ -4,7 +4,7 @@
   "description": "Interoperability Tests for StatusList2021",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests --require esm --reporter ./node_modules/mocha-w3c-interop-reporter/index.js --reporter-options body=\"$PWD/body.hbs\",matrix=\"$PWD/matrix.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Status List 2021 Interoperability Report 1.0\",helpers=\"$PWD/templateHelpers.js\",suiteLog='./suite.log' --timeout 15000",
+    "test": "mocha tests --require esm --reporter ./node_modules/mocha-w3c-interop-reporter/index.js --reporter-options body=\"$PWD/body.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Status List 2021 Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000",
     "lint": "eslint *.js",
     "generate-vcs": "node vc-generator"
   },
@@ -43,7 +43,8 @@
     "mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter",
     "require-dir": "^1.2.0",
     "@digitalbazaar/vc-status-list": "^2.1.0",
-    "@digitalbazaar/vc-status-list-context": "^2.0.0"
+    "@digitalbazaar/vc-status-list-context": "^2.0.0",
+    "vc-api-test-suite-implementations": "github:digitalbazaar/vc-api-test-suite-implementations#update-db-implementation"
   },
   "devDependencies": {
     "eslint": "^7.23.0",
