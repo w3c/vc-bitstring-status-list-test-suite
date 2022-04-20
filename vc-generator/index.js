@@ -72,10 +72,10 @@ const main = async () => {
     issuer: slCredential.issuer,
   };
 
-  const {path, signedVC: data} = await _validVC(unsignedCredential, suite);
-  const validVC = data;
+  const {path, signedVc: data} = await _validVc(unsignedCredential, suite);
+  const validVc = data;
   const vcs = await Promise.all([
-    _invalidCredentialStatusType(validVC),
+    _invalidCredentialStatusType(validVc),
     _invalidStatusListCredentialId(unsignedCredential, suite),
   ]);
   console.log('writing vcs to /credentials');
@@ -92,19 +92,19 @@ const main = async () => {
 async function _invalidStatusListCredentialId(unsignedCredential, suite) {
   const copyUnsignedCredential = cloneJSON(unsignedCredential);
   copyUnsignedCredential.credentialStatus.statusListCredential = 'invalid-id';
-  const signedVC = await vc.issue({
+  const signedVc = await vc.issue({
     credential: copyUnsignedCredential,
     documentLoader,
     suite
   });
   return {
     path: `${credentialsPath}/invalidStatusListCredentialId.json`,
-    data: signedVC
+    data: signedVc
   };
 }
 
-async function _invalidCredentialStatusType(validVC) {
-  const vc = cloneJSON(validVC);
+async function _invalidCredentialStatusType(validVc) {
+  const vc = cloneJSON(validVc);
   vc.credentialStatus.type = 'invalid-type';
   return {
     path: `${credentialsPath}/invalidCredentialStatusType.json`,
@@ -112,15 +112,15 @@ async function _invalidCredentialStatusType(validVC) {
   };
 }
 
-async function _validVC(unsignedCredential, suite) {
+async function _validVc(unsignedCredential, suite) {
   const copyUnsignedCredential = cloneJSON(unsignedCredential);
-  const signedVC = await vc.issue({
+  const signedVc = await vc.issue({
     credential: copyUnsignedCredential,
     documentLoader,
     suite
   });
 
-  return {path: `${credentialsPath}/validVC.json`, signedVC};
+  return {path: `${credentialsPath}/validVc.json`, signedVc};
 }
 
 // run main by calling node ./vc-generator
