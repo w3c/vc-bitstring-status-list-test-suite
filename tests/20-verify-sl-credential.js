@@ -1,8 +1,9 @@
+
 // const invalidCredentialStatusType =
 //   require('../static-vcs/invalidCredentialStatusType.json');
 // const invalidStatusListCredentialId =
 //   require('../static-vcs/invalidStatusListCredentialId.json');
-// const validVC = require('../static-vcs/validVC.json');
+// const validVc = require('../static-vcs/validVc.json');
 
 // describe('StatusList2021 Credentials (verify)', function() {
 //   for(const [name, implementation] of implementations) {
@@ -19,7 +20,7 @@
 //           let err;
 //           try {
 //             response = await implementation.verify({
-//               credential: validVC
+//               credential: validVc
 //             });
 //           } catch(e) {
 //             err = e;

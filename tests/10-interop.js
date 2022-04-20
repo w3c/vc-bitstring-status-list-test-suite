@@ -12,7 +12,7 @@ const {JsonLdDocumentLoader} = require('jsonld-document-loader');
 const rl = require('@digitalbazaar/vc-status-list');
 const {testCredential} = require('./assertions');
 const {v4: uuidv4} = require('uuid');
-const {validVC} = require('../credentials');
+const {validVc} = require('../credentials');
 
 const agent = new https.Agent({rejectUnauthorized: false});
 const should = chai.should();
@@ -68,7 +68,7 @@ describe('StatusList2021 Credentials (interop)', function() {
         };
         const body = {
           credential: {
-            ...validVC,
+            ...validVc,
             id: `urn:uuid:${uuidv4()}`,
             issuanceDate: ISOTimeStamp(),
             expirationDate: expires(),
@@ -92,7 +92,7 @@ describe('StatusList2021 Credentials (interop)', function() {
           // Transmute returns 200 instead
           testCredential(issuedVC);
           issuedVC.credentialSubject.should.eql(
-            validVC.credentialSubject);
+            validVc.credentialSubject);
         });
       it('MUST have correct properties when dereferencing' +
             '"credentialStatus.statusListCredential"', async function() {
