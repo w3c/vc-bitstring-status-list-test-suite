@@ -5,6 +5,6 @@
 
 const requireDir = require('require-dir');
 
-const dir = requireDir('./implementations');
+const dir = requireDir('.');
 
-module.exports = Object.values(dir);
+module.exports = dir;
