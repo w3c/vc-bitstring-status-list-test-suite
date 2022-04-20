@@ -48,12 +48,12 @@ describe('StatusList2021 Credentials (interop)', function() {
   this.report = true;
   this.columns = columnNames;
   this.rowLabel = 'Test Name';
-  this.columnLabel = 'Vendor';
+  this.columnLabel = 'Implementation';
   // the reportData will be displayed under the test title
   this.reportData = reportData;
   for(const [name, implementation] of implementations) {
     describe(name, function() {
-      let issuedVC;
+      let issuedVc;
       let err;
       let issuerResponse;
       // ensure this implementation is a column in the matrix
@@ -78,7 +78,7 @@ describe('StatusList2021 Credentials (interop)', function() {
         const {result, error} = await issuer.issue({body});
         issuerResponse = result;
         err = error;
-        issuedVC = issuerResponse.data.verifiableCredential;
+        issuedVc = issuerResponse.data.verifiableCredential;
       });
       // ensure that issued VC contain correct properties.
       it(`MUST issue a VC with a "credentialStatus" property`,
@@ -87,18 +87,18 @@ describe('StatusList2021 Credentials (interop)', function() {
           should.not.exist(err, `Expected ${name} to not error.`);
           this.test.cell = {columnId: name, rowId: this.test.title};
           should.exist(
-            issuedVC, `Expected VC from ${name} to exist.`);
+            issuedVc, `Expected VC from ${name} to exist.`);
           // FIXME: issuer should return 201, some issuers like DB and
           // Transmute returns 200 instead
-          testCredential(issuedVC);
-          issuedVC.credentialSubject.should.eql(
+          testCredential(issuedVc);
+          issuedVc.credentialSubject.should.eql(
             validVc.credentialSubject);
         });
       it('MUST have correct properties when dereferencing' +
             '"credentialStatus.statusListCredential"', async function() {
         this.test.cell = {columnId: name, rowId: this.test.title};
         // FIXME: Change revocationListCredential to statusListCredential
-        const {credentialStatus: {revocationListCredential}} = issuedVC;
+        const {credentialStatus: {revocationListCredential}} = issuedVc;
         const {document: rlc} = await documentLoader(revocationListCredential);
         rlc.should.have.property('type');
         // FIXME: Change the type to `StatusList2021Credential`.
@@ -130,7 +130,7 @@ describe('StatusList2021 Credentials (interop)', function() {
             const verifier = implementation.verifiers.find(verifier =>
               verifier.tags.has('VC-HTTP-API'));
             const body = {
-              verifiableCredential: issuedVC,
+              verifiableCredential: issuedVc,
               options: {
                 checks: ['proof', 'credentialStatus']
               }
@@ -159,7 +159,7 @@ describe('StatusList2021 Credentials (interop)', function() {
               rowId: this.test.title
             };
             // copy vc issued
-            const vc = deepClone(issuedVC);
+            const vc = deepClone(issuedVc);
             // get the status of the VC
             const statusInfo = await getCredentialStatus(
               {verifiableCredential: vc});
@@ -201,14 +201,12 @@ describe('StatusList2021 Credentials (interop)', function() {
             result2.status.should.equal(200);
             const publishSlcEndpoint =
               `${statusInfo.statusListCredential}/publish`;
-            console.log(publishSlcEndpoint, 'publishSlcEndpoint');
             // force publication of new SLC
-            const {result: result3, error: err3} = issuer.publishSlc(
+            const {result: result3, error: err3} = await issuer.publishSlc(
               {endpoint: publishSlcEndpoint, body: {}});
-            console.log(result3, '<><><><>result3');
             should.not.exist(err3);
             should.exist(result3);
-            result3.status.should.equal(200);
+            result3.status.should.equal(204);
 
             // get the status of the VC
             const {status} = await getCredentialStatus(
