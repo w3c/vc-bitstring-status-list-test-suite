@@ -15,23 +15,19 @@ const validVc = require('../static-vcs/validVc.json');
 const should = chai.should();
 
 describe('StatusList2021 Credentials (Verify)', function() {
+  // column names for the matrix go here
+  const columnNames = [];
+  // this will tell the report
+  // to make an interop matrix with this suite
+  this.matrix = true;
+  this.report = true;
+  this.columns = columnNames;
+  this.rowLabel = 'Test Name';
+  this.columnLabel = 'Verifier';
   for(const [name, implementation] of implementations) {
-    const summaries = new Set();
-    this.summary = summaries;
-    // column names for the matrix go here
-    const columnNames = [];
-    const reportData = [];
-    // this will tell the report
-    // to make an interop matrix with this suite
-    this.matrix = true;
-    this.report = true;
-    this.columns = columnNames;
-    this.rowLabel = 'Test Name';
-    this.columnLabel = 'Verifier';
-    // the reportData will be displayed under the test title
-    this.reportData = reportData;
+    columnNames.push(name);
     describe(name, function() {
-      it('MUST verify a valid "StatusList2021Credential"',
+      it.skip('MUST verify a valid "StatusList2021Credential"',
         async function() {
         // this tells the test report which cell
         // in the interop matrix the result goes in
