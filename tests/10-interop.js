@@ -15,11 +15,8 @@ const {validVc} = require('../credentials');
 const should = chai.should();
 
 describe('StatusList2021 Credentials (Interop)', function() {
-  const summaries = new Set();
-  this.summary = summaries;
   // column names for the matrix go here
   const columnNames = [];
-  const reportData = [];
   // this will tell the report
   // to make an interop matrix with this suite
   this.matrix = true;
@@ -28,17 +25,16 @@ describe('StatusList2021 Credentials (Interop)', function() {
   this.rowLabel = 'Test Name';
   this.columnLabel = 'Implementation';
   // the reportData will be displayed under the test title
-  this.reportData = reportData;
   for(const [name, implementation] of implementations) {
+    // ensure this implementation is a column in the matrix
+    columnNames.push(name);
     describe(name, function() {
       let issuedVc;
       let err;
       let issuerResponse;
-      // ensure this implementation is a column in the matrix
-      columnNames.push(name);
       before(async function() {
         const issuer = implementation.issuers.find(issuer =>
-          issuer.tags.has('StatusList2021'));
+          issuer.tags.has('VC-HTTP-API'));
         const expires = () => {
           const date = new Date();
           date.setMonth(date.getMonth() + 2);
@@ -56,14 +52,16 @@ describe('StatusList2021 Credentials (Interop)', function() {
         const {result, error} = await issuer.issue({body});
         issuerResponse = result;
         err = error;
-        issuedVc = issuerResponse.data.verifiableCredential;
+        if(issuerResponse) {
+          issuedVc = issuerResponse.data.verifiableCredential;
+        }
       });
       // ensure that issued VC contain correct properties.
       it(`MUST issue a VC with a "credentialStatus" property`,
         async function() {
+          this.test.cell = {columnId: name, rowId: this.test.title};
           issuerResponse.status.should.equal(201);
           should.not.exist(err, `Expected ${name} to not error.`);
-          this.test.cell = {columnId: name, rowId: this.test.title};
           should.exist(
             issuedVc, `Expected VC from ${name} to exist.`);
           // FIXME: issuer should return 201, some issuers like DB and
@@ -73,7 +71,7 @@ describe('StatusList2021 Credentials (Interop)', function() {
             validVc.credentialSubject);
         });
       it('MUST have correct properties when dereferencing' +
-            '"credentialStatus.statusListCredential"', async function() {
+        '"credentialStatus.statusListCredential"', async function() {
         this.test.cell = {columnId: name, rowId: this.test.title};
         // FIXME: Change revocationListCredential to statusListCredential
         const {credentialStatus: {revocationListCredential}} = issuedVc;
