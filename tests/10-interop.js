@@ -4,39 +4,17 @@
 'use strict';
 
 const chai = require('chai');
-const {httpClient} = require('@digitalbazaar/http-client');
-const https = require('https');
 const {implementations} = require('vc-api-test-suite-implementations');
-const {ISOTimeStamp, deepClone, getCredentialStatus} = require('./helpers');
-const {JsonLdDocumentLoader} = require('jsonld-document-loader');
+const {ISOTimeStamp, deepClone, getCredentialStatus} = require('./helpers.js');
+const documentLoader = require('../vc-generator/documentLoader.js');
 const rl = require('@digitalbazaar/vc-status-list');
-const {testCredential} = require('./assertions');
+const {testCredential} = require('./assertions.js');
 const {v4: uuidv4} = require('uuid');
 const {validVc} = require('../credentials');
 
-const agent = new https.Agent({rejectUnauthorized: false});
 const should = chai.should();
 
-const handler = {
-  async get({url}) {
-    if(!url.startsWith('http')) {
-      throw new Error('NotFoundError');
-    }
-    let result;
-    try {
-      result = await httpClient.get(url, {agent});
-    } catch(e) {
-      throw new Error('NotFoundError');
-    }
-    return result.data;
-  }
-};
-const jdl = new JsonLdDocumentLoader();
-jdl.setProtocolHandler({protocol: 'https', handler});
-
-const documentLoader = jdl.build();
-
-describe('StatusList2021 Credentials (interop)', function() {
+describe('StatusList2021 Credentials (Interop)', function() {
   const summaries = new Set();
   this.summary = summaries;
   // column names for the matrix go here
