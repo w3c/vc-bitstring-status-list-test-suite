@@ -3,18 +3,15 @@
  */
 'use strict';
 
-const {join} = require('path');
-const credentialsPath = join(process.cwd(), 'static-vcs');
 const documentLoader = require('./documentLoader');
 const {Ed25519Signature2020} = require('@digitalbazaar/ed25519-signature-2020');
-const vc = require('@digitalbazaar/vc');
-const {
-  getDiDKey,
-  writeJSON,
-  cloneJSON
-} = require('./helpers');
+const {getDiDKey, writeJSON} = require('./helpers');
+const {join} = require('path');
+const {klona} = require('klona');
 const statusListCtx = require('@digitalbazaar/vc-status-list-context');
+const vc = require('@digitalbazaar/vc');
 
+const credentialsPath = join(process.cwd(), 'static-vcs');
 const VC_SL_CONTEXT_URL = statusListCtx.constants.CONTEXT_URL_V1;
 
 const encodedList100k =
@@ -90,7 +87,7 @@ const main = async () => {
 };
 
 async function _invalidStatusListCredentialId(unsignedCredential, suite) {
-  const copyUnsignedCredential = cloneJSON(unsignedCredential);
+  const copyUnsignedCredential = klona(unsignedCredential);
   copyUnsignedCredential.credentialStatus.statusListCredential = 'invalid-id';
   const signedVc = await vc.issue({
     credential: copyUnsignedCredential,
@@ -104,7 +101,7 @@ async function _invalidStatusListCredentialId(unsignedCredential, suite) {
 }
 
 async function _invalidCredentialStatusType(validVc) {
-  const vc = cloneJSON(validVc);
+  const vc = klona(validVc);
   vc.credentialStatus.type = 'invalid-type';
   return {
     path: `${credentialsPath}/invalidCredentialStatusType.json`,
@@ -113,7 +110,7 @@ async function _invalidCredentialStatusType(validVc) {
 }
 
 async function _validVc(unsignedCredential, suite) {
-  const copyUnsignedCredential = cloneJSON(unsignedCredential);
+  const copyUnsignedCredential = klona(unsignedCredential);
   const signedVc = await vc.issue({
     credential: copyUnsignedCredential,
     documentLoader,
