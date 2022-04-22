@@ -24,9 +24,6 @@ const writeJSON = async ({path, data}) => {
   return asyncWriteFile(path, JSON.stringify(data, null, 2));
 };
 
-// this will create a new copy of a non-circular JSON object
-const cloneJSON = data => JSON.parse(JSON.stringify(data, null, 2));
-
 /**
  * Takes in a bs58 mutlicodec multibase seed and returns a did key.
  *
@@ -43,5 +40,4 @@ const getDiDKey = async ({keySeed = _seed} = {}) => {
 module.exports = {
   getDiDKey,
   writeJSON,
-  cloneJSON
 };
