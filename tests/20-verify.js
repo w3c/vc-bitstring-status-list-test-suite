@@ -24,19 +24,16 @@ describe('StatusList2021 Credentials (Verify)', function() {
   this.columns = columnNames;
   this.rowLabel = 'Test Name';
   this.columnLabel = 'Verifier';
-  for(const [name, implementation] of implementations) {
-    columnNames.push(name);
-    describe(name, function() {
+  for(const [verifierName, {verifiers}] of implementations) {
+    columnNames.push(verifierName);
+    describe(verifierName, function() {
+      const verifier = verifiers.find(verifier =>
+        verifier.tags.has('VC-HTTP-API'));
       it.skip('MUST verify a valid "StatusList2021Credential"',
         async function() {
         // this tells the test report which cell
         // in the interop matrix the result goes in
-          this.test.cell = {
-            columnId: name,
-            rowId: this.test.title
-          };
-          const verifier = implementation.verifiers.find(verifier =>
-            verifier.tags.has('VC-HTTP-API'));
+          this.test.cell = {columnId: verifierName, rowId: this.test.title};
           const body = {
             verifiableCredential: validVc,
             options: {
@@ -51,12 +48,7 @@ describe('StatusList2021 Credentials (Verify)', function() {
       '"credentialStatus.statusListCredential"', async function() {
       // this tells the test report which cell
       // in the interop matrix the result goes in
-        this.test.cell = {
-          columnId: name,
-          rowId: this.test.title
-        };
-        const verifier = implementation.verifiers.find(verifier =>
-          verifier.tags.has('VC-HTTP-API'));
+        this.test.cell = {columnId: verifierName, rowId: this.test.title};
         const body = {
           verifiableCredential: invalidStatusListCredentialId,
           options: {
@@ -78,12 +70,7 @@ describe('StatusList2021 Credentials (Verify)', function() {
         async function() {
         // this tells the test report which cell
         // in the interop matrix the result goes in
-          this.test.cell = {
-            columnId: name,
-            rowId: this.test.title
-          };
-          const verifier = implementation.verifiers.find(verifier =>
-            verifier.tags.has('VC-HTTP-API'));
+          this.test.cell = {columnId: verifierName, rowId: this.test.title};
           const body = {
             verifiableCredential: invalidCredentialStatusType,
             options: {
