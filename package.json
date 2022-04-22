@@ -45,7 +45,7 @@
     "mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter",
     "require-dir": "^1.2.0",
     "uuid": "^8.3.2",
-    "vc-api-test-suite-implementations": "github:digitalbazaar/vc-api-test-suite-implementations#add-status-list-tag-verifier"
+    "vc-api-test-suite-implementations": "github:digitalbazaar/vc-api-test-suite-implementations#initial"
   },
   "devDependencies": {
     "eslint": "^7.23.0",
