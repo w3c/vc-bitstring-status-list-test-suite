@@ -4,8 +4,7 @@
 'use strict';
 
 const chai = require('chai');
-const {implementations} = require('vc-api-test-suite-implementations');
-
+const {filterByTag} = require('vc-api-test-suite-implementations');
 const invalidCredentialStatusType =
   require('../static-vcs/invalidCredentialStatusType.json');
 const invalidStatusListCredentialId =
@@ -13,6 +12,9 @@ const invalidStatusListCredentialId =
 const validVc = require('../static-vcs/validVc.json');
 
 const should = chai.should();
+
+// only use implementations with `VC-API` verifiers.
+const {match, nonMatch} = filterByTag({verifierTags: ['StatusList2021']});
 
 describe('StatusList2021 Credentials (Verify)', function() {
   // column names for the matrix go here
@@ -24,11 +26,12 @@ describe('StatusList2021 Credentials (Verify)', function() {
   this.columns = columnNames;
   this.rowLabel = 'Test Name';
   this.columnLabel = 'Verifier';
-  for(const [verifierName, {verifiers}] of implementations) {
+  this.notImplemented = [...nonMatch.keys()];
+  for(const [verifierName, {verifiers}] of match) {
     columnNames.push(verifierName);
     describe(verifierName, function() {
       const verifier = verifiers.find(verifier =>
-        verifier.tags.has('VC-HTTP-API'));
+        verifier.tags.has('StatusList2021'));
       it.skip('MUST verify a valid "StatusList2021Credential"',
         async function() {
         // this tells the test report which cell

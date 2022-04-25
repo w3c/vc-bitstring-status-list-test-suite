@@ -5,14 +5,17 @@
 
 const chai = require('chai');
 const documentLoader = require('../vc-generator/documentLoader.js');
+const {filterByTag} = require('vc-api-test-suite-implementations');
 const {ISOTimeStamp} = require('./helpers.js');
-const {implementations} = require('vc-api-test-suite-implementations');
 const rl = require('@digitalbazaar/vc-status-list');
 const {testCredential} = require('./assertions.js');
 const {v4: uuidv4} = require('uuid');
 const {validVc} = require('../credentials');
 
 const should = chai.should();
+
+// only use implementations with `VC-API` issuers.
+const {match, nonMatch} = filterByTag({issuerTags: ['StatusList2021']});
 
 describe('StatusList2021 Credentials (Issue)', function() {
   // column names for the matrix go here
@@ -24,14 +27,16 @@ describe('StatusList2021 Credentials (Issue)', function() {
   this.columns = columnNames;
   this.rowLabel = 'Test Name';
   this.columnLabel = 'Issuer';
-  for(const [issuerName, {issuers}] of implementations) {
+  this.notImplemented = [...nonMatch.keys()];
+  for(const [issuerName, {issuers}] of match) {
     columnNames.push(issuerName);
     describe(issuerName, function() {
       let issuerResponse;
       let err;
       let issuedVc;
       before(async function() {
-        const issuer = issuers.find(issuer => issuer.tags.has('VC-HTTP-API'));
+        const issuer = issuers.find(
+          issuer => issuer.tags.has('StatusList2021'));
         const expires = () => {
           const date = new Date();
           date.setMonth(date.getMonth() + 2);

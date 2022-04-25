@@ -4,18 +4,16 @@
 'use strict';
 
 const chai = require('chai');
-const {implementations} = require('vc-api-test-suite-implementations');
-const {ISOTimeStamp, getCredentialStatus, filterMap} = require('./helpers.js');
+const {filterByTag} = require('vc-api-test-suite-implementations');
+const {ISOTimeStamp, getCredentialStatus} = require('./helpers.js');
+const {klona} = require('klona');
 const {v4: uuidv4} = require('uuid');
 const {validVc} = require('../credentials');
-const {klona} = require('klona');
 
 const should = chai.should();
 
-const predicate = ({value}) =>
-  value.issuers.some(issuer => issuer.tags.has('StatusList2021'));
-// only use implementations that use `StatusList2021`
-const filtered = filterMap({map: implementations, predicate});
+// only use implementations with `VC-API` issuers.
+const {match, nonMatch} = filterByTag({issuerTags: ['StatusList2021']});
 
 describe('StatusList2021 Credentials (Interop)', function() {
   // column names for the matrix go here
@@ -27,8 +25,9 @@ describe('StatusList2021 Credentials (Interop)', function() {
   this.columns = columnNames;
   this.rowLabel = 'Test Name';
   this.columnLabel = 'Implementation';
+  this.notImplemented = [...nonMatch.keys()];
   // the reportData will be displayed under the test title
-  for(const [issuerName, {issuers}] of filtered) {
+  for(const [issuerName, {issuers}] of match) {
     let issuedVc;
     before(async function() {
       const issuer = issuers.find(issuer => issuer.tags.has('StatusList2021'));
@@ -54,7 +53,7 @@ describe('StatusList2021 Credentials (Interop)', function() {
     });
     // this sends a credential issued by the implementation
     // to each verifier
-    for(const [verifierName, {verifiers}] of filtered) {
+    for(const [verifierName, {verifiers}] of match) {
       columnNames.push(verifierName);
       const verifier = verifiers.find(verifier =>
         verifier.tags.has('StatusList2021'));
