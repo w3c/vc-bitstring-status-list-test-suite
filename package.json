@@ -42,10 +42,10 @@
     "jsonld-document-loader": "^1.2.0",
     "klona": "^2.0.5",
     "mocha": "^9.1.3",
-    "mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter",
+    "mocha-w3c-interop-reporter": "github:digitalbazaar/mocha-w3c-interop-reporter#add-more-status-marks",
     "require-dir": "^1.2.0",
     "uuid": "^8.3.2",
-    "vc-api-test-suite-implementations": "github:digitalbazaar/vc-api-test-suite-implementations#initial"
+    "vc-api-test-suite-implementations": "github:digitalbazaar/vc-api-test-suite-implementations#add-filter-map"
   },
   "devDependencies": {
     "eslint": "^7.23.0",
