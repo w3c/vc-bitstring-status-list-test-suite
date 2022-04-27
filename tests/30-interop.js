@@ -12,7 +12,7 @@ const {validVc} = require('../credentials');
 
 const should = chai.should();
 
-// only use implementations with `VC-API` issuers.
+// only use implementations with `StatusList2021` tags.
 const {match, nonMatch} = filterByTag({issuerTags: ['StatusList2021']});
 
 describe('StatusList2021 Credentials (Interop)', function() {
