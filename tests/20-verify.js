@@ -13,7 +13,7 @@ const validVc = require('../static-vcs/validVc.json');
 
 const should = chai.should();
 
-// only use implementations with `VC-API` verifiers.
+// only use implementations with `StatusList2021` verifiers.
 const {match, nonMatch} = filterByTag({verifierTags: ['StatusList2021']});
 
 describe('StatusList2021 Credentials (Verify)', function() {
