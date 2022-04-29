@@ -8,7 +8,6 @@
 - [Generator](#generator)
 - [Implementation](#implementation)
 
-
 ## Background
 
 Provides interoperability tests for issuers and verifiers that support [VC StatusList2021](https://w3c-ccg.github.io/vc-status-list-2021/).
@@ -21,14 +20,9 @@ npm i
 
 ## Usage
 
-For `Digital Bazaar` implementation, a secret `CLIENT_SECRET_DB` is required to
-run the test.
-
 ```
-CLIENT_SECRET_DB=<client secret> npm test
+npm test
 ```
-
-For all other implementations just run `npm test`.
 
 ## Generator
 
@@ -38,33 +32,9 @@ To generate new test data use this command:
 npm run generate-vcs
 ```
 
-
 ## Implementation
-
-To add a new Implementation simply add a new file to the Implementations dir.
-```js
-{
-  "name": "Your Company Name",
-  "implementation": "Your Implementation Name",
-  "issuer": {
-    "id": "did:your-did-method:your-did-id",
-    "endpoint": "https://your-company.com/vc-issuer/issue",
-    "headers": {
-      "authorization": "Bearer your auth token"
-    }
-  },
-  "verifier": "https://your-company.com/vc-verifier/verify"
-}
-```
-
-You will also need to whitelist the implementation in `tests/01-interop.js`.
-
-```js
-// test these implementations' issuers or verifiers
-const test = [
-  'Your Company Name'
-];
-
-// only test listed implementations
-const testAPIs = implementations.filter(v => test.includes(v.name));
-```
+To add your implementation to this test suite see the [README here.](https://github.com/w3c-ccg/vc-api-test-suite-implementations)
+Add the tag `StatusList2021` to the issuers and verifiers you want tested.
+To run the tests, some implementations require client secrets
+that can be passed as env variables to the test script. To see which ones
+require client secrets, you can check the [vc-api-test-suite-implementations](https://github.com/w3c-ccg/vc-api-test-suite-implementations) library.
