@@ -16,13 +16,11 @@ const should = chai.should();
 const {match, nonMatch} = filterByTag({issuerTags: ['StatusList2021']});
 
 describe('StatusList2021 Credentials (Interop)', function() {
-  // column names for the matrix go here
-  const columnNames = [];
   // this will tell the report
   // to make an interop matrix with this suite
   this.matrix = true;
   this.report = true;
-  this.columns = columnNames;
+  this.implemented = [...match.keys()];
   this.rowLabel = 'Test Name';
   this.columnLabel = 'Implementation';
   this.notImplemented = [...nonMatch.keys()];
@@ -54,7 +52,6 @@ describe('StatusList2021 Credentials (Interop)', function() {
     // this sends a credential issued by the implementation
     // to each verifier
     for(const [verifierName, {verifiers}] of match) {
-      columnNames.push(verifierName);
       const verifier = verifiers.find(verifier =>
         verifier.tags.has('StatusList2021'));
       it(`MUST successfully verify VC issued by ${issuerName}`,
