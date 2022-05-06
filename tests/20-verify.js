@@ -17,18 +17,15 @@ const should = chai.should();
 const {match, nonMatch} = filterByTag({verifierTags: ['StatusList2021']});
 
 describe('StatusList2021 Credentials (Verify)', function() {
-  // column names for the matrix go here
-  const columnNames = [];
   // this will tell the report
   // to make an interop matrix with this suite
   this.matrix = true;
   this.report = true;
-  this.columns = columnNames;
+  this.implemented = [...match.keys()];
   this.rowLabel = 'Test Name';
   this.columnLabel = 'Verifier';
   this.notImplemented = [...nonMatch.keys()];
   for(const [verifierName, {verifiers}] of match) {
-    columnNames.push(verifierName);
     describe(verifierName, function() {
       const verifier = verifiers.find(verifier =>
         verifier.tags.has('StatusList2021'));

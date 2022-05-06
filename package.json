@@ -4,7 +4,7 @@
   "description": "Interoperability Tests for StatusList2021",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests --require esm --reporter ./node_modules/mocha-w3c-interop-reporter/index.js --reporter-options body=\"$PWD/body.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Status List 2021 Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000",
+    "test": "mocha tests --require esm --reporter ./node_modules/mocha-w3c-interop-reporter --reporter-options body=\"$PWD/body.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Status List 2021 Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000",
     "lint": "eslint .",
     "generate-vcs": "node vc-generator"
   },
