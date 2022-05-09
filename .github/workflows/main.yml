@@ -5,7 +5,7 @@ on:
   push:
   schedule:
     # update the integration suite once per week at Sunday 5am UTC
-    - cron: '30 15 * * 1'
+    - cron: '0 20 * * 1'
 
 jobs:
   lint:
@@ -25,7 +25,7 @@ jobs:
     - name: Run eslint
       run: npm run lint
   test-node:
-    if: ${{ github.event_name != 'push'}}
+    if: ${{ github.event_name == 'schedule' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     strategy:
