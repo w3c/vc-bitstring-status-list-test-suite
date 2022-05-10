@@ -5,7 +5,7 @@ on:
   push:
   schedule:
     # update the integration suite once per week at Sunday 5am UTC
-    - cron: '0 20 * * 1'
+    - cron: '50 11 * * 2'
 
 jobs:
   lint:
