@@ -15,7 +15,7 @@ const should = chai.should();
 // only use implementations with `StatusList2021` tags.
 const {match, nonMatch} = filterByTag({issuerTags: ['StatusList2021']});
 
-describe.skip('StatusList2021 Credentials (Interop)', function() {
+describe('StatusList2021 Credentials (Interop)', function() {
   // column names for the matrix go here
   const columnNames = [];
   // this will tell the report
