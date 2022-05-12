@@ -4,12 +4,11 @@
 'use strict';
 
 const chai = require('chai');
+const {createValidVc} = require('./helpers.js');
 const documentLoader = require('../vc-generator/documentLoader.js');
 const {filterByTag} = require('vc-api-test-suite-implementations');
-const {ISOTimeStamp} = require('./helpers.js');
 const sl = require('@digitalbazaar/vc-status-list');
 const {testCredential, testSlCredential} = require('./assertions.js');
-const {v4: uuidv4} = require('uuid');
 const {validVc} = require('../credentials');
 
 const should = chai.should();
@@ -20,9 +19,7 @@ const {match, nonMatch} = filterByTag({
   tags: ['RevocationList2020']
 });
 
-describe.only('StatusList2021 Credentials (Issue)', function() {
-  // this will tell the report
-  // to make an interop matrix with this suite
+describe('StatusList2021 Credentials (Issue)', function() {
   this.matrix = true;
   this.report = true;
   this.implemented = [...match.keys()];
@@ -36,24 +33,11 @@ describe.only('StatusList2021 Credentials (Issue)', function() {
       let issuedVc;
       before(async function() {
         const issuer = issuers.find(
-          issuer => issuer.tags.has('RevocationList2020'));
-        const expires = () => {
-          const date = new Date();
-          date.setMonth(date.getMonth() + 2);
-          return ISOTimeStamp({date});
-        };
+          issuer => issuer.tags.has('StatusList2021'));
         const {settings: {id: issuerId}} = issuer;
-        const body = {
-          credential: {
-            ...validVc,
-            id: `urn:uuid:${uuidv4()}`,
-            issuanceDate: ISOTimeStamp(),
-            expirationDate: expires(),
-            issuer: issuerId
-          }
-        };
+        const credential = createValidVc({issuerId});
+        const body = {credential};
         const {result, error, data} = await issuer.post({json: body});
-        issuerResponse = result;
         err = error;
         issuerResponse = result;
         issuedVc = data;

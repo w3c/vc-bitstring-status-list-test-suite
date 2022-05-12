@@ -6,6 +6,8 @@
 const {decodeList} = require('@digitalbazaar/vc-status-list');
 const {httpClient} = require('@digitalbazaar/http-client');
 const https = require('https');
+const {v4: uuidv4} = require('uuid');
+const {validVc} = require('../credentials');
 
 const agent = new https.Agent({rejectUnauthorized: false});
 
@@ -33,7 +35,23 @@ const getCredentialStatus = async ({verifiableCredential}) => {
   return {status, statusListCredential: revocationListCredential};
 };
 
+const expires = () => {
+  const date = new Date();
+  date.setMonth(date.getMonth() + 2);
+  return ISOTimeStamp({date});
+};
+
+// copies a validVc and adds an id.
+const createValidVc = ({issuerId}) => ({
+  ...validVc,
+  id: `urn:uuid:${uuidv4()}`,
+  issuanceDate: ISOTimeStamp(),
+  expirationDate: expires(),
+  issuer: issuerId
+});
+
 module.exports = {
-  ISOTimeStamp,
-  getCredentialStatus
+  createValidVc,
+  getCredentialStatus,
+  ISOTimeStamp
 };
