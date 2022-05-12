@@ -7,8 +7,8 @@ const chai = require('chai');
 const documentLoader = require('../vc-generator/documentLoader.js');
 const {filterByTag} = require('vc-api-test-suite-implementations');
 const {ISOTimeStamp} = require('./helpers.js');
-const rl = require('@digitalbazaar/vc-status-list');
-const {testCredential} = require('./assertions.js');
+const sl = require('@digitalbazaar/vc-status-list');
+const {testCredential, testSlCredential} = require('./assertions.js');
 const {v4: uuidv4} = require('uuid');
 const {validVc} = require('../credentials');
 
@@ -20,7 +20,7 @@ const {match, nonMatch} = filterByTag({
   tags: ['RevocationList2020']
 });
 
-describe('StatusList2021 Credentials (Issue)', function() {
+describe.only('StatusList2021 Credentials (Issue)', function() {
   // this will tell the report
   // to make an interop matrix with this suite
   this.matrix = true;
@@ -52,48 +52,46 @@ describe('StatusList2021 Credentials (Issue)', function() {
             issuer: issuerId
           }
         };
-        const {result, error} = await issuer.post({json: body});
+        const {result, error, data} = await issuer.post({json: body});
         issuerResponse = result;
         err = error;
-        if(issuerResponse) {
-          // FIXME: This might need to be changed to `result.data` instead
-          issuedVc = issuerResponse.data.verifiableCredential;
-        }
+        issuerResponse = result;
+        issuedVc = data;
       });
-      it(`MUST issue a VC with a "credentialStatus" property`,
-        async function() {
-          this.test.cell = {columnId: issuerName, rowId: this.test.title};
-          should.not.exist(err, `Expected ${issuerName} to not error.`);
-          should.exist(issuerResponse);
-          issuerResponse.status.should.equal(201);
-          should.exist(
-            issuedVc, `Expected VC from ${issuerName} to exist.`);
-          testCredential(issuedVc);
-          issuedVc.credentialSubject.should.eql(
-            validVc.credentialSubject);
-        });
-      // ensure that issued VC contain correct properties.
-      it('MUST have correct properties when dereferencing' +
-      '"credentialStatus.statusListCredential"', async function() {
+      it('MUST issue a VC with a "credentialStatus" property and ' +
+        '"credentialStatus.type" StatusList2021Entry', async function() {
         this.test.cell = {columnId: issuerName, rowId: this.test.title};
-        // FIXME: Change revocationListCredential to statusListCredential
-        const {credentialStatus: {revocationListCredential}} = issuedVc;
-        const {document: rlc} = await documentLoader(revocationListCredential);
-        rlc.should.have.property('type');
-        // FIXME: Change the type to `StatusList2021Credential`.
-        rlc.type.should.include('RevocationList2020Credential');
-        rlc.should.have.property('credentialSubject');
-        const {credentialSubject} = rlc;
-        credentialSubject.should.have.keys(['id', 'type', 'encodedList']);
-        // FIXME: Change type to equal 'RevocationList2021'
-        credentialSubject.type.should.equal('RevocationList2020');
-        const {encodedList} = credentialSubject;
-        // Uncompress encodedList
-        const decoded = await rl.decodeList({encodedList});
-        should.exist(decoded);
-        // decoded size should be 16kb
-        const decodedSize = (decoded.length / 8) / 1024;
-        decodedSize.should.equal(16);
+        should.exist(issuerResponse);
+        should.not.exist(err);
+        issuerResponse.status.should.equal(201);
+        should.exist(
+          issuedVc, `Expected VC from ${issuerName} to exist.`);
+        testCredential({credential: issuedVc});
+        issuedVc.credentialSubject.should.eql(validVc.credentialSubject);
+      });
+      describe('Check SLC Properties', function() {
+        let slc;
+        before(async function() {
+          const {credentialStatus: {statusListCredential}} = issuedVc;
+          const {document} = await documentLoader(statusListCredential);
+          slc = document;
+        });
+        // ensure that issued StatusList Credential contain correct properties
+        it('MUST have correct properties when dereferencing' +
+          '"credentialStatus.statusListCredential"', async function() {
+          this.test.cell = {columnId: issuerName, rowId: this.test.title};
+          testSlCredential({slCredential: slc});
+        });
+        it('Size of decoded "encodedList" MUST be 16kb', async function() {
+          const {credentialSubject} = slc;
+          const {encodedList} = credentialSubject;
+          // Uncompress encodedList
+          const decoded = await sl.decodeList({encodedList});
+          should.exist(decoded);
+          // decoded size should be 16kb
+          const decodedSize = (decoded.length / 8) / 1024;
+          decodedSize.should.equal(16);
+        });
       });
     });
   }
