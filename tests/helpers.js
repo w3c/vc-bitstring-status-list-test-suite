@@ -20,20 +20,17 @@ const ISOTimeStamp = ({date = new Date()} = {}) => {
 };
 
 const getCredentialStatus = async ({verifiableCredential}) => {
-  // get SLC for the VC
   const {credentialStatus} = verifiableCredential;
-  // FIXME: support `statusListCredential` as well
-  const {revocationListCredential} = credentialStatus;
+  const {statusListCredential} = credentialStatus;
+  // get StatusList Credential for the VC
   const {data: slc} = await httpClient.get(
-    revocationListCredential, {agent});
-
-  const {encodedList} = slc.credentialSubject;
+    statusListCredential, {agent});
+  const {credentialSubject: {encodedList}} = slc;
   const list = await decodeList({encodedList});
-  // FIXME: support `statusListIndex` as well
   const statusListIndex = parseInt(
-    credentialStatus.revocationListIndex, 10);
+    credentialStatus.statusListIndex, 10);
   const status = list.getStatus(statusListIndex);
-  return {status, statusListCredential: revocationListCredential};
+  return {status, statusListCredential};
 };
 
 const expires = () => {
@@ -57,7 +54,40 @@ const getSlc = async ({issuedVc}) => {
   return {slc: document};
 };
 
+/**
+ * Creates a request body.
+ *
+ * @param {object} options - The options to use.
+ * @param {object} options.vc - The verifiable credential to send in request.
+ * @param {boolean} options.setStatus - The verifiable credential to send in
+ *   request.
+ * @param {string} [options.statusPurpose] - The purpose of the status entry.
+ *   "statusPurpose" must be set if "setStatus" is set to true. The values
+ *   "revocation" or "suspension" must be used.
+ *
+ * @returns {object} - A request body.
+ */
+const createRequestBody = ({vc, setStatus = false, statusPurpose}) => {
+  let body = {
+    verifiableCredential: vc,
+    options: {
+      checks: ['proof', 'credentialStatus'],
+    }
+  };
+  if(setStatus) {
+    body = {
+      credentialId: vc.id,
+      credentialStatus: {
+        type: 'StatusList2021Entry',
+        statusPurpose
+      }
+    };
+  }
+  return body;
+};
+
 module.exports = {
+  createRequestBody,
   createValidVc,
   getCredentialStatus,
   getSlc,

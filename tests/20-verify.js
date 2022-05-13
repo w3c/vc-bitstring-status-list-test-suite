@@ -4,6 +4,7 @@
 'use strict';
 
 const chai = require('chai');
+const {createRequestBody} = require('./helpers.js');
 const {filterByTag} = require('vc-api-test-suite-implementations');
 const invalidCredentialStatusType =
   require('../static-vcs/invalidCredentialStatusType.json');
@@ -33,26 +34,18 @@ describe('StatusList2021 Credentials (Verify)', function() {
       it('MUST verify a valid "StatusList2021Credential"',
         async function() {
           this.test.cell = {columnId: verifierName, rowId: this.test.title};
-          const body = {
-            verifiableCredential: validVc,
-            options: {
-              checks: ['proof', 'credentialStatus']
-            }
-          };
-          const {result, error} = await verifier.post({json: body});
+          const {result, error} = await verifier.post({
+            json: createRequestBody({vc: validVc})
+          });
           should.exist(result);
           should.not.exist(error);
         });
       it('MUST fail to verify a VC with invalid ' +
       '"credentialStatus.statusListCredential"', async function() {
         this.test.cell = {columnId: verifierName, rowId: this.test.title};
-        const body = {
-          verifiableCredential: invalidStatusListCredentialId,
-          options: {
-            checks: ['proof', 'credentialStatus']
-          }
-        };
-        const {result, error} = await verifier.post({json: body});
+        const {result, error} = await verifier.post({
+          json: createRequestBody({vc: invalidStatusListCredentialId})
+        });
         should.not.exist(result);
         should.exist(error);
         should.exist(error.data);
@@ -66,13 +59,9 @@ describe('StatusList2021 Credentials (Verify)', function() {
       it('MUST fail to verify a VC with invalid "credentialStatus.type"',
         async function() {
           this.test.cell = {columnId: verifierName, rowId: this.test.title};
-          const body = {
-            verifiableCredential: invalidCredentialStatusType,
-            options: {
-              checks: ['proof', 'credentialStatus']
-            }
-          };
-          const {result, error} = await verifier.post({json: body});
+          const {result, error} = await verifier.post({
+            json: createRequestBody({vc: invalidCredentialStatusType})
+          });
           should.not.exist(result);
           should.exist(error);
           should.exist(error.data);
