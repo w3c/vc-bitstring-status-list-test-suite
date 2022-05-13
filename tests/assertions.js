@@ -4,6 +4,7 @@
 'use strict';
 
 const chai = require('chai');
+const {validVc} = require('../credentials');
 
 const should = chai.should();
 
@@ -32,6 +33,7 @@ const testCredential = ({credential}) => {
   credential.should.have.property('id');
   credential.id.should.be.a('string');
   credential.should.have.property('credentialSubject');
+  credential.credentialSubject.should.eql(validVc.credentialSubject);
   credential.credentialSubject.should.be.an('object');
   credential.should.have.property('issuanceDate');
   credential.issuanceDate.should.be.a('string');
