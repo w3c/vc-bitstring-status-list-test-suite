@@ -7,7 +7,7 @@
 const {httpClient} = require('@digitalbazaar/http-client');
 const https = require('https');
 const {JsonLdDocumentLoader} = require('jsonld-document-loader');
-const {contextMap} = require('./contexts.js');
+const {contextMap} = require('../vc-generator/contexts.js');
 
 const agent = new https.Agent({rejectUnauthorized: false});
 
