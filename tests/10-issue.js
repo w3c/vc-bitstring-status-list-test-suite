@@ -59,17 +59,18 @@ describe('StatusList2021 Credentials (Issue)', function() {
         const {slc} = await getSlc({issuedVc});
         testSlCredential({slCredential: slc});
       });
-      it('Size of decoded "encodedList" MUST be 16kb', async function() {
-        this.test.cell = {columnId: issuerName, rowId: this.test.title};
-        const {slc: {credentialSubject}} = await getSlc({issuedVc});
-        const {encodedList} = credentialSubject;
-        // Uncompress encodedList
-        const decoded = await sl.decodeList({encodedList});
-        should.exist(decoded);
-        // decoded size should be 16kb
-        const decodedSize = (decoded.length / 8) / 1024;
-        decodedSize.should.equal(16);
-      });
+      it('MUST be 16kb in size when "encodedList" is decoded',
+        async function() {
+          this.test.cell = {columnId: issuerName, rowId: this.test.title};
+          const {slc: {credentialSubject}} = await getSlc({issuedVc});
+          const {encodedList} = credentialSubject;
+          // Uncompress encodedList
+          const decoded = await sl.decodeList({encodedList});
+          should.exist(decoded);
+          // decoded size should be 16kb
+          const decodedSize = (decoded.length / 8) / 1024;
+          decodedSize.should.equal(16);
+        });
     });
   }
 });
