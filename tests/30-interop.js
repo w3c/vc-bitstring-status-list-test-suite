@@ -7,6 +7,8 @@ const chai = require('chai');
 const {filterByTag} = require('vc-api-test-suite-implementations');
 const {createValidVc, createRequestBody, getCredentialStatus} =
   require('./helpers.js');
+const {shouldPassVerification, shouldFailVerification} =
+  require('./assertions.js');
 const {klona} = require('klona');
 
 const should = chai.should();
@@ -44,17 +46,8 @@ describe('StatusList2021 Credentials (Interop)', function() {
         async function() {
           this.test.cell = {columnId: verifierName, rowId: this.test.title};
           const body = createRequestBody({vc: issuedVc});
-          const {result, error} = await verifier.post({json: body});
-          should.exist(result);
-          should.not.exist(error);
-          // verifier returns 200
-          result.status.should.equal(200);
-          should.exist(result.data);
-          // verifier responses vary but are all objects
-          result.data.should.be.an('object');
-          result.data.verified.should.equal(true);
-          result.data.statusResult.verified.should.equal(true);
-          result.data.checks.should.eql(['proof', 'credentialStatus']);
+          const {result, error, statusCode} = await verifier.post({json: body});
+          shouldPassVerification({result, error, statusCode});
         });
       it(`MUST revoke a credential and fail to verify revoked credential`,
         async function() {
@@ -67,15 +60,14 @@ describe('StatusList2021 Credentials (Interop)', function() {
           statusInfo.status.should.equal(false);
 
           // verification of the credential should pass
-          const {result: result1, error: err1} = await verifier.post(
-            {json: createRequestBody({vc})});
-          should.exist(result1);
-          should.not.exist(err1);
-          result1.status.should.equal(200);
-          should.exist(result1.data);
-          // verifier responses vary but are all objects
-          result1.data.should.be.an('object');
-          result1.data.verified.should.equal(true);
+          const {
+            result: result1,
+            error: err1,
+            statusCode: statusCode1
+          } = await verifier.post({json: createRequestBody({vc})});
+          shouldPassVerification(
+            {result: result1, error: err1, statusCode: statusCode1});
+
           const setStatusList = setStatusLists.find(
             issuer => issuer.tags.has('Revocation'));
           // Then revoke the VC
@@ -83,11 +75,12 @@ describe('StatusList2021 Credentials (Interop)', function() {
             vc, setStatus: true, statusPurpose: 'revocation'});
           const {
             result: result2,
-            error: err2
+            error: err2,
+            statusCode: statusCode2
           } = await setStatusList.post({json: body});
           should.not.exist(err2);
           should.exist(result2);
-          result2.status.should.equal(200);
+          statusCode2.should.equal(200);
           const publishSlcEndpoint =
             `${statusInfo.statusListCredential}/publish`;
           const publishStatusList = publishStatusLists.find(issuer =>
@@ -95,11 +88,12 @@ describe('StatusList2021 Credentials (Interop)', function() {
           // force publication of new SLC
           const {
             result: result3,
-            error: err3
+            error: err3,
+            statusCode: statusCode3
           } = await publishStatusList.post({url: publishSlcEndpoint, json: {}});
           should.not.exist(err3);
           should.exist(result3);
-          result3.status.should.equal(204);
+          statusCode3.should.equal(204);
 
           // get the status of the VC
           const {status} = await getCredentialStatus(
@@ -110,14 +104,11 @@ describe('StatusList2021 Credentials (Interop)', function() {
           // has now been revoked
           const {
             result: result4,
-            error: err4
+            error: err4,
+            statusCode: statusCode4
           } = await verifier.post({json: createRequestBody({vc})});
-          should.not.exist(result4);
-          should.exist(err4);
-          should.exist(err4.data);
-          // verifier returns 400
-          err4.status.should.equal(400);
-          err4.data.verified.should.equal(false);
+          shouldFailVerification(
+            {result: result4, error: err4, statusCode: statusCode4});
         });
     }
   }
