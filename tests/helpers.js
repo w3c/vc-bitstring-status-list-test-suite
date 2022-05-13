@@ -4,6 +4,7 @@
 'use strict';
 
 const {decodeList} = require('@digitalbazaar/vc-status-list');
+const documentLoader = require('./documentLoader.js');
 const {httpClient} = require('@digitalbazaar/http-client');
 const https = require('https');
 const {v4: uuidv4} = require('uuid');
@@ -50,8 +51,15 @@ const createValidVc = ({issuerId}) => ({
   issuer: issuerId
 });
 
+const getSlc = async ({issuedVc}) => {
+  const {credentialStatus: {statusListCredential}} = issuedVc;
+  const {document} = await documentLoader(statusListCredential);
+  return {slc: document};
+};
+
 module.exports = {
   createValidVc,
   getCredentialStatus,
+  getSlc,
   ISOTimeStamp
 };

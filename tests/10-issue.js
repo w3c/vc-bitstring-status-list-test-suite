@@ -4,8 +4,7 @@
 'use strict';
 
 const chai = require('chai');
-const {createValidVc} = require('./helpers.js');
-const documentLoader = require('./documentLoader.js');
+const {createValidVc, getSlc} = require('./helpers.js');
 const {filterByTag} = require('vc-api-test-suite-implementations');
 const sl = require('@digitalbazaar/vc-status-list');
 const {testCredential, testSlCredential} = require('./assertions.js');
@@ -53,29 +52,23 @@ describe('StatusList2021 Credentials (Issue)', function() {
         testCredential({credential: issuedVc});
         issuedVc.credentialSubject.should.eql(validVc.credentialSubject);
       });
-      describe('Check SLC Properties', function() {
-        let slc;
-        before(async function() {
-          const {credentialStatus: {statusListCredential}} = issuedVc;
-          const {document} = await documentLoader(statusListCredential);
-          slc = document;
-        });
-        // ensure that issued StatusList Credential contain correct properties
-        it('MUST have correct properties when dereferencing' +
+      // ensure that issued StatusList Credential contain correct properties
+      it('MUST have correct properties when dereferencing' +
           '"credentialStatus.statusListCredential"', async function() {
-          this.test.cell = {columnId: issuerName, rowId: this.test.title};
-          testSlCredential({slCredential: slc});
-        });
-        it('Size of decoded "encodedList" MUST be 16kb', async function() {
-          const {credentialSubject} = slc;
-          const {encodedList} = credentialSubject;
-          // Uncompress encodedList
-          const decoded = await sl.decodeList({encodedList});
-          should.exist(decoded);
-          // decoded size should be 16kb
-          const decodedSize = (decoded.length / 8) / 1024;
-          decodedSize.should.equal(16);
-        });
+        this.test.cell = {columnId: issuerName, rowId: this.test.title};
+        const {slc} = await getSlc({issuedVc});
+        testSlCredential({slCredential: slc});
+      });
+      it('Size of decoded "encodedList" MUST be 16kb', async function() {
+        this.test.cell = {columnId: issuerName, rowId: this.test.title};
+        const {slc: {credentialSubject}} = await getSlc({issuedVc});
+        const {encodedList} = credentialSubject;
+        // Uncompress encodedList
+        const decoded = await sl.decodeList({encodedList});
+        should.exist(decoded);
+        // decoded size should be 16kb
+        const decodedSize = (decoded.length / 8) / 1024;
+        decodedSize.should.equal(16);
       });
     });
   }
