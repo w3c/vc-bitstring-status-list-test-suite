@@ -14,10 +14,10 @@ const credentialsPath = join(process.cwd(), 'static-vcs');
 // this will generate the signed VCs for the verifier tests
 const main = async () => {
   const {path, validVc} = await _validVc();
-  const vcs = await Promise.all([
+  const vcs = [
     _invalidCredentialStatusType(validVc),
     _invalidStatusListCredentialId(validVc),
-  ]);
+  ];
   console.log('writing vcs to /credentials');
 
   // write them to disk
@@ -28,7 +28,7 @@ const main = async () => {
   ].map(writeJSON));
   console.log('vcs generated');
 
-  async function _invalidStatusListCredentialId(validVc) {
+  function _invalidStatusListCredentialId(validVc) {
     const copyVc = klona(validVc);
     copyVc.credentialStatus.statusListCredential = 'invalid-id';
     return {
@@ -37,7 +37,7 @@ const main = async () => {
     };
   }
 
-  async function _invalidCredentialStatusType(validVc) {
+  function _invalidCredentialStatusType(validVc) {
     const copyVc = klona(validVc);
     copyVc.credentialStatus.type = 'invalid-type';
     return {
@@ -51,17 +51,13 @@ const main = async () => {
     const {match} = filterImplementations({filter: ({value}) => {
       return value.settings.name === 'Digital Bazaar';
     }});
-    let validVc;
-    // eslint-disable-next-line no-unused-vars
-    for(const [x, {issuers}] of match) {
-      const issuer = issuers.find(
-        issuer => issuer.tags.has('StatusList2021'));
-      const {issuer: {id: issuerId}} = issuer;
-      const credential = createValidVc({issuerId});
-      const body = {credential};
-      const {data} = await issuer.issue({body});
-      validVc = data;
-    }
+    const {issuers} = match.get('Digital Bazaar');
+    const issuer = issuers.find(
+      issuer => issuer.tags.has('StatusList2021'));
+    const {issuer: {id: issuerId}} = issuer;
+    const credential = createValidVc({issuerId});
+    const body = {credential};
+    const {data: validVc} = await issuer.issue({body});
     return {path: `${credentialsPath}/validVc.json`, validVc};
   }
 };
