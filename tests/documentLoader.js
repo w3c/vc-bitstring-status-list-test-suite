@@ -7,7 +7,7 @@
 const {httpClient} = require('@digitalbazaar/http-client');
 const https = require('https');
 const {JsonLdDocumentLoader} = require('jsonld-document-loader');
-const {contextMap} = require('../vc-generator/contexts.js');
+const {contextMap} = require('./contexts.js');
 
 const agent = new https.Agent({rejectUnauthorized: false});
 
@@ -29,7 +29,7 @@ const handler = {
 const jdl = new JsonLdDocumentLoader();
 jdl.setProtocolHandler({protocol: 'https', handler});
 
-// add contexts to documentLoad
+// add contexts to documentLoader
 for(const [key, value] of contextMap) {
   jdl.addStatic(key, value);
 }
