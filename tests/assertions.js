@@ -97,4 +97,28 @@ const testSlCredential = ({slCredential}) => {
   slCredential.proof.should.be.an('object');
 };
 
-module.exports = {testCredential, testSlCredential};
+const shouldFailVerification = ({result, error, statusCode}) => {
+  should.not.exist(result, 'Expected no response from verifier');
+  should.exist(error, 'Expected verifier to error');
+  statusCode.should.equal(400, 'Expected status code 400');
+  should.exist(error.data);
+  error.data.verified.should.equal(false);
+};
+
+const shouldPassVerification = ({result, error, statusCode}) => {
+  should.exist(result, 'Expected response from verifier');
+  should.not.exist(error, 'Expected verifier to not error');
+  // verifier returns 200
+  statusCode.should.equal(200, 'Expected status code 200');
+  should.exist(result.data);
+  // verifier responses vary but are all objects
+  result.data.should.be.an('object');
+  result.data.verified.should.equal(true);
+};
+
+module.exports = {
+  shouldFailVerification,
+  shouldPassVerification,
+  testCredential,
+  testSlCredential
+};

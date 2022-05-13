@@ -46,8 +46,7 @@ describe('StatusList2021 Credentials (Issue)', function() {
         should.exist(issuerResponse);
         should.not.exist(err);
         issuerResponse.status.should.equal(201);
-        should.exist(
-          issuedVc, `Expected VC from ${issuerName} to exist.`);
+        should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);
         testCredential({credential: issuedVc});
       });
       // ensure that issued StatusList Credential contain correct properties
