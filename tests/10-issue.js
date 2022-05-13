@@ -5,7 +5,7 @@
 
 const chai = require('chai');
 const {createValidVc} = require('./helpers.js');
-const documentLoader = require('../vc-generator/documentLoader.js');
+const documentLoader = require('./documentLoader.js');
 const {filterByTag} = require('vc-api-test-suite-implementations');
 const sl = require('@digitalbazaar/vc-status-list');
 const {testCredential, testSlCredential} = require('./assertions.js');

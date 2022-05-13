@@ -20,8 +20,6 @@ const {match, nonMatch} = filterByTag({
 });
 
 describe('StatusList2021 Credentials (Verify)', function() {
-  // this will tell the report
-  // to make an interop matrix with this suite
   this.matrix = true;
   this.report = true;
   this.implemented = [...match.keys()];
@@ -32,10 +30,8 @@ describe('StatusList2021 Credentials (Verify)', function() {
     describe(verifierName, function() {
       const verifier = verifiers.find(verifier =>
         verifier.tags.has('StatusList2021'));
-      it.skip('MUST verify a valid "StatusList2021Credential"',
+      it('MUST verify a valid "StatusList2021Credential"',
         async function() {
-        // this tells the test report which cell
-        // in the interop matrix the result goes in
           this.test.cell = {columnId: verifierName, rowId: this.test.title};
           const body = {
             verifiableCredential: validVc,
@@ -49,8 +45,6 @@ describe('StatusList2021 Credentials (Verify)', function() {
         });
       it('MUST fail to verify a VC with invalid ' +
       '"credentialStatus.statusListCredential"', async function() {
-      // this tells the test report which cell
-      // in the interop matrix the result goes in
         this.test.cell = {columnId: verifierName, rowId: this.test.title};
         const body = {
           verifiableCredential: invalidStatusListCredentialId,
@@ -71,8 +65,6 @@ describe('StatusList2021 Credentials (Verify)', function() {
       });
       it('MUST fail to verify a VC with invalid "credentialStatus.type"',
         async function() {
-        // this tells the test report which cell
-        // in the interop matrix the result goes in
           this.test.cell = {columnId: verifierName, rowId: this.test.title};
           const body = {
             verifiableCredential: invalidCredentialStatusType,
