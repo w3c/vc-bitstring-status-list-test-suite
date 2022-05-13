@@ -8,7 +8,6 @@ const {createValidVc, getSlc} = require('./helpers.js');
 const {filterByTag} = require('vc-api-test-suite-implementations');
 const sl = require('@digitalbazaar/vc-status-list');
 const {testCredential, testSlCredential} = require('./assertions.js');
-const {validVc} = require('../credentials');
 
 const should = chai.should();
 
@@ -50,7 +49,6 @@ describe('StatusList2021 Credentials (Issue)', function() {
         should.exist(
           issuedVc, `Expected VC from ${issuerName} to exist.`);
         testCredential({credential: issuedVc});
-        issuedVc.credentialSubject.should.eql(validVc.credentialSubject);
       });
       // ensure that issued StatusList Credential contain correct properties
       it('MUST have correct properties when dereferencing' +
