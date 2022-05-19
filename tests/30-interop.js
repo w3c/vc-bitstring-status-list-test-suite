@@ -13,7 +13,7 @@ const {validVc} = require('../credentials');
 const should = chai.should();
 
 // only use implementations with `StatusList2021` tags.
-const {match, nonMatch} = filterByTag({issuerTags: ['StatusList2021']});
+const {match, nonMatch} = filterByTag({issuerTags: ['RevocationList2020']});
 
 describe('StatusList2021 Credentials (Interop)', function() {
   // this will tell the report
@@ -28,7 +28,8 @@ describe('StatusList2021 Credentials (Interop)', function() {
   for(const [issuerName, {issuers}] of match) {
     let issuedVc;
     before(async function() {
-      const issuer = issuers.find(issuer => issuer.tags.has('StatusList2021'));
+      const issuer = issuers.find(issuer =>
+        issuer.tags.has('RevocationList2020'));
       const expires = () => {
         const date = new Date();
         date.setMonth(date.getMonth() + 2);
@@ -111,7 +112,7 @@ describe('StatusList2021 Credentials (Interop)', function() {
           result1.data.statusResult.verified.should.equal(true);
 
           const issuer = issuers.find(issuer =>
-            issuer.tags.has('StatusList2021'));
+            issuer.tags.has('RevocationList2020'));
           const body2 = {
             credentialId: vc.id,
             credentialStatus: {
