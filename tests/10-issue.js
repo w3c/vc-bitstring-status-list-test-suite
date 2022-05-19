@@ -15,7 +15,7 @@ const {validVc} = require('../credentials');
 const should = chai.should();
 
 // only use implementations with `StatusList2021` issuers.
-const {match, nonMatch} = filterByTag({issuerTags: ['StatusList2021']});
+const {match, nonMatch} = filterByTag({issuerTags: ['RevocationList2020']});
 
 describe('StatusList2021 Credentials (Issue)', function() {
   // this will tell the report
@@ -33,7 +33,7 @@ describe('StatusList2021 Credentials (Issue)', function() {
       let issuedVc;
       before(async function() {
         const issuer = issuers.find(
-          issuer => issuer.tags.has('StatusList2021'));
+          issuer => issuer.tags.has('RevocationList2020'));
         const expires = () => {
           const date = new Date();
           date.setMonth(date.getMonth() + 2);
