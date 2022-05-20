@@ -55,7 +55,6 @@ jobs:
         with:
           branch: gh-pages
           folder: reports
-          force: true
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Report Github Pages Deployment Status
         run: echo $deployment_status
