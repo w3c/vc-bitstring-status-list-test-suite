@@ -58,6 +58,8 @@ const testCredential = ({credential}) => {
     'statusListIndex',
     'statusPurpose'
   ]);
+  credential.credentialStatus.statusPurpose.should.be.oneOf(
+    ['revocation', 'suspension']);
   credential.credentialStatus.type.should.equal('StatusList2021Entry');
 };
 
