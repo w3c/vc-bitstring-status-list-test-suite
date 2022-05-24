@@ -4,7 +4,7 @@
   "description": "Interoperability Tests for StatusList2021",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests --require esm --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options body=\"$PWD/body.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Status List 2021 Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000 --preserve-symlinks",
+    "test": "mocha tests --require esm --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options abstract=\"$PWD/abstract.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Status List 2021 Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000 --preserve-symlinks",
     "lint": "eslint .",
     "generate-vcs": "node vc-generator"
   },
@@ -42,7 +42,7 @@
     "jsonld-document-loader": "^1.2.0",
     "klona": "^2.0.5",
     "mocha": "^9.1.3",
-    "@digitalbazaar/mocha-w3c-interop-reporter": "digitalbazaar/mocha-w3c-interop-reporter#add-today-helper",
+    "@digitalbazaar/mocha-w3c-interop-reporter": "digitalbazaar/mocha-w3c-interop-reporter#add-new-test-statistics-template",
     "require-dir": "^1.2.0",
     "uuid": "^8.3.2",
     "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations"
