@@ -40,13 +40,16 @@ const expires = () => {
 };
 
 // copies a validVc and adds an id.
-const createValidVc = ({issuerId}) => ({
-  ...validVc,
-  id: `urn:uuid:${uuidv4()}`,
-  issuanceDate: ISOTimeStamp(),
-  expirationDate: expires(),
-  issuer: issuerId
-});
+const createValidVc = ({issuer}) => {
+  const {issuer: {id: issuerId}} = issuer;
+  return {
+    ...validVc,
+    id: `urn:uuid:${uuidv4()}`,
+    issuanceDate: ISOTimeStamp(),
+    expirationDate: expires(),
+    issuer: issuerId
+  };
+};
 
 const getSlc = async ({issuedVc}) => {
   const {credentialStatus: {statusListCredential}} = issuedVc;
