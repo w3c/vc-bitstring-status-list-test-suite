@@ -39,7 +39,7 @@ describe('StatusList2021 Credentials (Issue "statusPurpose: revocation")',
           issuerResponse = result;
           issuedVc = data;
         });
-        it.only('MUST issue a VC with a "credentialStatus" property and ' +
+        it('MUST issue a VC with a "credentialStatus" property and ' +
         '"credentialStatus.type" StatusList2021Entry', async function() {
           this.test.cell = {columnId: issuerName, rowId: this.test.title};
           should.exist(issuerResponse);
