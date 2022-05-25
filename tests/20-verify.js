@@ -31,16 +31,16 @@ describe('StatusList2021 Credentials (Verify)', function() {
     describe(verifierName, function() {
       const verifier = verifiers.find(verifier =>
         verifier.tags.has('StatusList2021'));
-      it('MUST verify a valid "StatusList2021Credential" with statusPurpose ' +
-        '"revocation"', async function() {
+      it('MUST verify a valid "StatusList2021Credential" with "revocation" ' +
+        'status purpose', async function() {
         this.test.cell = {columnId: verifierName, rowId: this.test.title};
         const {result, error, statusCode} = await verifier.post({
           json: createRequestBody({vc: validVcForRevocation})
         });
         shouldPassVerification({result, error, statusCode});
       });
-      it('MUST verify a valid "StatusList2021Credential" with statusPurpose ' +
-        '"suspension"', async function() {
+      it('MUST verify a valid "StatusList2021Credential" with "suspension"' +
+        'status purpose', async function() {
         this.test.cell = {columnId: verifierName, rowId: this.test.title};
         const {result, error, statusCode} = await verifier.verify({
           body: createRequestBody({vc: validVcForSuspension})
@@ -48,7 +48,7 @@ describe('StatusList2021 Credentials (Verify)', function() {
         shouldPassVerification({result, error, statusCode});
       });
       it('MUST fail to verify a VC with invalid ' +
-      '"credentialStatus.statusListCredential"', async function() {
+        '"credentialStatus.statusListCredential"', async function() {
         this.test.cell = {columnId: verifierName, rowId: this.test.title};
         const {result, error, statusCode} = await verifier.post({
           json: createRequestBody({vc: invalidStatusListCredentialId})
