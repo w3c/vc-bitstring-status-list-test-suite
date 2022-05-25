@@ -11,7 +11,8 @@ const invalidStatusListCredentialId =
   require('../static-vcs/invalidStatusListCredentialId.json');
 const {shouldFailVerification, shouldPassVerification} =
   require('./assertions.js');
-const validVc = require('../static-vcs/validVc.json');
+const validVcForRevocation = require('../static-vcs/validVcForRevocation.json');
+const validVcForSuspension = require('../static-vcs/validVcForSuspension.json');
 
 // only use implementations with `StatusList2021` verifiers.
 const {match, nonMatch} = filterByTag({
@@ -30,14 +31,22 @@ describe('StatusList2021 Credentials (Verify)', function() {
     describe(verifierName, function() {
       const verifier = verifiers.find(verifier =>
         verifier.tags.has('StatusList2021'));
-      it('MUST verify a valid "StatusList2021Credential"',
-        async function() {
-          this.test.cell = {columnId: verifierName, rowId: this.test.title};
-          const {result, error, statusCode} = await verifier.post({
-            json: createRequestBody({vc: validVc})
-          });
-          shouldPassVerification({result, error, statusCode});
+      it('MUST verify a valid "StatusList2021Credential" with statusPurpose ' +
+        '"revocation"', async function() {
+        this.test.cell = {columnId: verifierName, rowId: this.test.title};
+        const {result, error, statusCode} = await verifier.post({
+          json: createRequestBody({vc: validVcForRevocation})
         });
+        shouldPassVerification({result, error, statusCode});
+      });
+      it('MUST verify a valid "StatusList2021Credential" with statusPurpose ' +
+        '"suspension"', async function() {
+        this.test.cell = {columnId: verifierName, rowId: this.test.title};
+        const {result, error, statusCode} = await verifier.verify({
+          body: createRequestBody({vc: validVcForSuspension})
+        });
+        shouldPassVerification({result, error, statusCode});
+      });
       it('MUST fail to verify a VC with invalid ' +
       '"credentialStatus.statusListCredential"', async function() {
         this.test.cell = {columnId: verifierName, rowId: this.test.title};

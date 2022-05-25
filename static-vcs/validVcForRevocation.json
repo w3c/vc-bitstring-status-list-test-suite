@@ -17,7 +17,7 @@
   "credentialStatus": {
     "id": "https://issuer.qa.veres.app/issuers/z1A7iXeMg5XKb6VjUic6SfBF3/slcs/z1A8z91REnpEKoS4JgJP7RdTs#46977",
     "type": "StatusList2021Entry",
-    "statusListCredential": "invalid-id",
+    "statusListCredential": "https://issuer.qa.veres.app/issuers/z1A7iXeMg5XKb6VjUic6SfBF3/slcs/z1A8z91REnpEKoS4JgJP7RdTs",
     "statusListIndex": "46977",
     "statusPurpose": "revocation"
   },
