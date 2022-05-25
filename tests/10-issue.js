@@ -30,8 +30,7 @@ describe('StatusList2021 Credentials (Issue "statusPurpose: revocation")',
         let err;
         let issuedVc;
         before(async function() {
-          const issuer = issuers.find(
-            issuer => issuer.tags.has('Revocation'));
+          const issuer = issuers.find(issuer => issuer.tags.has('Revocation'));
           const credential = createValidVc({issuer});
           const {result, error, data} = await issuer.post({
             json: {credential}});
@@ -85,8 +84,7 @@ describe('StatusList2021 Credentials (Issue "statusPurpose: suspension")',
         let err;
         let issuedVc;
         before(async function() {
-          const issuer = issuers.find(
-            issuer => issuer.tags.has('Suspension'));
+          const issuer = issuers.find(issuer => issuer.tags.has('Suspension'));
           const credential = createValidVc({issuer});
           const {result, error, data} = await issuer.post({
             json: {credential}});
