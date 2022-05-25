@@ -26,12 +26,14 @@ describe('StatusList2021 Credentials (Interop "statusPurpose: revocation")',
     this.rowLabel = 'Test Name';
     this.columnLabel = 'Implementation';
     this.notImplemented = [...nonMatch.keys()];
-    for(const [issuerName, {issuers}] of match) {
+    for(const [
+      issuerName,
+      {issuers, setStatusLists, publishStatusLists}
+    ] of match) {
       let issuedVc;
       before(async function() {
         const issuer = issuers.find(issuer => issuer.tags.has('Revocation'));
-        const {settings: {id: issuerId}} = issuer;
-        const credential = createValidVc({issuerId});
+        const credential = createValidVc({issuer});
         const body = {credential};
         const {data} = await issuer.post({json: body});
         issuedVc = data;
