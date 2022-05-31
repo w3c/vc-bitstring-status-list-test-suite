@@ -1,14 +1,14 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const chai = require('chai');
-const {filterByTag} = require('vc-api-test-suite-implementations');
-const {ISOTimeStamp, getCredentialStatus} = require('./helpers.js');
-const {klona} = require('klona');
-const {v4: uuidv4} = require('uuid');
-const {validVc} = require('../credentials');
+import chai from 'chai';
+import {filterByTag} from 'vc-api-test-suite-implementations';
+import {ISOTimeStamp, getCredentialStatus} from './helpers.js';
+import {klona} from 'klona';
+import {v4 as uuidv4} from 'uuid';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
+const validVc = require('../credentials/validVc.json');
 
 const should = chai.should();
 

@@ -1,16 +1,16 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const chai = require('chai');
-const documentLoader = require('../vc-generator/documentLoader.js');
-const {filterByTag} = require('vc-api-test-suite-implementations');
-const {ISOTimeStamp} = require('./helpers.js');
-const rl = require('@digitalbazaar/vc-status-list');
-const {testCredential} = require('./assertions.js');
-const {v4: uuidv4} = require('uuid');
-const {validVc} = require('../credentials');
+import chai from 'chai';
+import documentLoader from '../vc-generator/documentLoader.js';
+import {filterByTag} from 'vc-api-test-suite-implementations';
+import {ISOTimeStamp} from './helpers.js';
+import * as rl from '@digitalbazaar/vc-status-list';
+import {testCredential} from './assertions.js';
+import {v4 as uuidv4} from 'uuid';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
+const validVc = require('../credentials/validVc.json');
 
 const should = chai.should();
 

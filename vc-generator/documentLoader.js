@@ -1,13 +1,10 @@
-/**
- *
- *  Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
-*/
-'use strict';
-
-const {httpClient} = require('@digitalbazaar/http-client');
-const https = require('https');
-const {JsonLdDocumentLoader} = require('jsonld-document-loader');
-const {contextMap} = require('./contexts.js');
+/*!
+ * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
+ */
+import {httpClient} from '@digitalbazaar/http-client';
+import https from 'https';
+import {JsonLdDocumentLoader} from 'jsonld-document-loader';
+import {contextMap} from './contexts.js';
 
 const agent = new https.Agent({rejectUnauthorized: false});
 
@@ -34,4 +31,4 @@ for(const [key, value] of contextMap) {
   jdl.addStatic(key, value);
 }
 
-module.exports = jdl.build();
+export default jdl.build();

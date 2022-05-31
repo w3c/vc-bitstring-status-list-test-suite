@@ -1,9 +1,7 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const chai = require('chai');
+import chai from 'chai';
 
 const should = chai.should();
 
@@ -14,7 +12,7 @@ const should = chai.should();
  *
  * @returns {undefined} Just returns on success.
  */
-const testCredential = credential => {
+export const testCredential = credential => {
   should.exist(credential, 'expected credential to exist');
   credential.should.be.an('object');
   credential.should.have.property('@context');
@@ -58,5 +56,3 @@ const testCredential = credential => {
   // `SuspensionList2021Status`
   credential.credentialStatus.type.should.equal('RevocationList2020Status');
 };
-
-module.exports = {testCredential};

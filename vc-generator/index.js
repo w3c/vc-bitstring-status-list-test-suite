@@ -1,15 +1,14 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
+import * as vc from '@digitalbazaar/vc';
+import documentLoader from './documentLoader.js';
+import {Ed25519Signature2020} from '@digitalbazaar/ed25519-signature-2020';
+import {getDiDKey, writeJSON} from './helpers.js';
+import {join} from 'path';
+import {klona} from 'klona';
+import statusListCtx from '@digitalbazaar/vc-status-list-context';
 
-const documentLoader = require('./documentLoader');
-const {Ed25519Signature2020} = require('@digitalbazaar/ed25519-signature-2020');
-const {getDiDKey, writeJSON} = require('./helpers');
-const {join} = require('path');
-const {klona} = require('klona');
-const statusListCtx = require('@digitalbazaar/vc-status-list-context');
-const vc = require('@digitalbazaar/vc');
 
 const credentialsPath = join(process.cwd(), 'static-vcs');
 const VC_SL_CONTEXT_URL = statusListCtx.constants.CONTEXT_URL_V1;

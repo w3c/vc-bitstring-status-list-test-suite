@@ -1,10 +1,10 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const chai = require('chai');
-const {filterByTag} = require('vc-api-test-suite-implementations');
+import chai from 'chai';
+import {filterByTag} from 'vc-api-test-suite-implementations';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
 const invalidCredentialStatusType =
   require('../static-vcs/invalidCredentialStatusType.json');
 const invalidStatusListCredentialId =

@@ -1,13 +1,12 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
+import * as didKey from '@digitalbazaar/did-method-key';
+import {writeFile} from 'fs';
+import {promisify} from 'util';
+import {decodeSecretKeySeed} from 'bnid';
 
-const didKeyDriver = require('@digitalbazaar/did-method-key').driver();
-const {writeFile} = require('fs');
-const {promisify} = require('util');
-const {decodeSecretKeySeed} = require('bnid');
-
+const didKeyDriver = didKey.driver();
 const asyncWriteFile = promisify(writeFile);
 const _seed = 'z1AYMku6XEB5KV3XJbYzz9VejGJYRuqzu5wmq4JDRyUCjr8';
 
@@ -20,7 +19,7 @@ const _seed = 'z1AYMku6XEB5KV3XJbYzz9VejGJYRuqzu5wmq4JDRyUCjr8';
  *
  * @returns {Promise} Resolves on write.
  */
-const writeJSON = async ({path, data}) => {
+export const writeJSON = async ({path, data}) => {
   return asyncWriteFile(path, JSON.stringify(data, null, 2));
 };
 
@@ -32,12 +31,7 @@ const writeJSON = async ({path, data}) => {
  *
  * @returns {Promise<object>} - Returns the resulting did key driver result.
  */
-const getDiDKey = async ({keySeed = _seed} = {}) => {
+export const getDiDKey = async ({keySeed = _seed} = {}) => {
   const seed = decodeSecretKeySeed({secretKeySeed: keySeed});
   return didKeyDriver.generate({seed});
-};
-
-module.exports = {
-  getDiDKey,
-  writeJSON,
 };
