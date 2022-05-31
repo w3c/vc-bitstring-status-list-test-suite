@@ -9,7 +9,6 @@ import {join} from 'path';
 import {klona} from 'klona';
 import statusListCtx from '@digitalbazaar/vc-status-list-context';
 
-
 const credentialsPath = join(process.cwd(), 'static-vcs');
 const VC_SL_CONTEXT_URL = statusListCtx.constants.CONTEXT_URL_V1;
 
