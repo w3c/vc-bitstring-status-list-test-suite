@@ -1,10 +1,10 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
+import {contextMap} from './contexts.js';
 import {httpClient} from '@digitalbazaar/http-client';
 import https from 'https';
 import {JsonLdDocumentLoader} from 'jsonld-document-loader';
-import {contextMap} from './contexts.js';
 
 const agent = new https.Agent({rejectUnauthorized: false});
 
@@ -31,4 +31,5 @@ for(const [key, value] of contextMap) {
   jdl.addStatic(key, value);
 }
 
-export default jdl.build();
+const documentLoader = jdl.build();
+export {documentLoader};

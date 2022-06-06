@@ -1,11 +1,11 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
+import * as sl from '@digitalbazaar/vc-status-list';
 import chai from 'chai';
-import documentLoader from '../vc-generator/documentLoader.js';
+import {documentLoader} from '../vc-generator/documentLoader.js';
 import {filterByTag} from 'vc-api-test-suite-implementations';
 import {ISOTimeStamp} from './helpers.js';
-import * as rl from '@digitalbazaar/vc-status-list';
 import {testCredential} from './assertions.js';
 import {v4 as uuidv4} from 'uuid';
 import {createRequire} from 'node:module';
@@ -86,7 +86,7 @@ describe('StatusList2021 Credentials (Issue)', function() {
         credentialSubject.type.should.equal('RevocationList2020');
         const {encodedList} = credentialSubject;
         // Uncompress encodedList
-        const decoded = await rl.decodeList({encodedList});
+        const decoded = await sl.decodeList({encodedList});
         should.exist(decoded);
         // decoded size should be 16kb
         const decodedSize = (decoded.length / 8) / 1024;

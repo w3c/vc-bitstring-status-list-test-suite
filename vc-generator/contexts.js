@@ -1,9 +1,9 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-import ed25519Ctx from 'ed25519-signature-2020-context';
-import didCtx from '@digitalcredentials/did-context';
 import credentialsCtx from 'credentials-context';
+import didCtx from '@digitalcredentials/did-context';
+import ed25519Ctx from 'ed25519-signature-2020-context';
 import statusListCtx from '@digitalbazaar/vc-status-list-context';
 
 const contextMap = new Map();

@@ -2,9 +2,9 @@
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
 import * as didKey from '@digitalbazaar/did-method-key';
-import {writeFile} from 'fs';
-import {promisify} from 'util';
 import {decodeSecretKeySeed} from 'bnid';
+import {promisify} from 'util';
+import {writeFile} from 'fs';
 
 const didKeyDriver = didKey.driver();
 const asyncWriteFile = promisify(writeFile);
