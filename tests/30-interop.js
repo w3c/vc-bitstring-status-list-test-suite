@@ -32,7 +32,8 @@ describe('StatusList2021 Credentials (Interop "statusPurpose: revocation")',
     ] of match) {
       let issuedVc;
       before(async function() {
-        const issuer = issuers.find(issuer => issuer.tags.has('Revocation'));
+        const issuer = issuers.find(issuer =>
+          issuer.tags.has('StatusList2021'));
         const credential = createValidVc({issuer});
         const body = {credential};
         const {data} = await issuer.post({json: body});
