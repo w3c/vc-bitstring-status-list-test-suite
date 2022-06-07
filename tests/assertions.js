@@ -80,7 +80,8 @@ const testSlCredential = ({slCredential}) => {
   slCredential.id.should.be.a('string');
   slCredential.should.have.property('credentialSubject');
   const {credentialSubject} = slCredential;
-  credentialSubject.should.have.keys(['id', 'type', 'encodedList']);
+  credentialSubject.should.have.keys(
+    ['id', 'type', 'encodedList', 'statusPurpose']);
   credentialSubject.id.should.be.a('string');
   credentialSubject.encodedList.should.be.a('string');
   credentialSubject.type.should.be.a('string');
