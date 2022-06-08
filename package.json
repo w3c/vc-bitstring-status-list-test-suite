@@ -2,9 +2,10 @@
   "name": "status-list-2021-test-suite",
   "version": "0.1.0",
   "description": "Interoperability Tests for StatusList2021",
-  "main": "index.js",
+  "main": "/tests",
+  "type": "module",
   "scripts": {
-    "test": "mocha tests --require esm --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options abstract=\"$PWD/abstract.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Status List 2021 Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000 --preserve-symlinks",
+    "test": "mocha tests --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options body=\"$PWD/body.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Status List 2021 Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000 --preserve-symlinks",
     "lint": "eslint .",
     "generate-vcs": "node vc-generator"
   },
@@ -25,12 +26,12 @@
     "url": "https://digitalbazaar.com/"
   },
   "engines": {
-    "node": "14.0.0"
+    "node": ">=14.18.0"
   },
   "dependencies": {
-    "@digitalbazaar/http-client": "^2.0.1",
+    "@digitalbazaar/http-client": "^3.2.0",
     "@digitalbazaar/mocha-w3c-interop-reporter": "^1.2.1",
-    "@digitalbazaar/vc-status-list": "^2.1.0",
+    "@digitalbazaar/vc-status-list": "github:digitalbazaar/vc-status-list#convert-to-module",
     "@digitalbazaar/vc-status-list-context": "^2.0.0",
     "@digitalcredentials/did-context": "^1.0.0",
     "chai": "^4.3.4",
@@ -44,9 +45,10 @@
     "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations#localhost"
   },
   "devDependencies": {
-    "eslint": "^7.23.0",
+    "eslint": "^8.16.0",
     "eslint-config-digitalbazaar": "^2.6.1",
-    "eslint-plugin-jsdoc": "^32.3.0"
+    "eslint-plugin-jsdoc": "^32.3.0",
+    "eslint-plugin-unicorn": "^42.0.0"
   },
   "bugs": {
     "url": "https://github.com/w3c-ccg/status-list-2021-test-suite/issues"

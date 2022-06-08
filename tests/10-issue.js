@@ -1,13 +1,11 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const chai = require('chai');
-const {createValidVc, getSlc} = require('./helpers.js');
-const {filterByTag} = require('vc-api-test-suite-implementations');
-const sl = require('@digitalbazaar/vc-status-list');
-const {testCredential, testSlCredential} = require('./assertions.js');
+import chai from 'chai';
+import {createValidVc, getSlc} from './helpers.js';
+import {filterByTag} from 'vc-api-test-suite-implementations';
+import * as sl from '@digitalbazaar/vc-status-list';
+import {testCredential, testSlCredential} from './assertions.js';
 
 const should = chai.should();
 

@@ -10,22 +10,22 @@
   "credentialSubject": {
     "id": "did:key:z6MkhTNL7i2etLerDK8Acz5t528giE5KA4p75T6ka1E1D74r"
   },
-  "id": "urn:uuid:62326fa7-b856-4181-b074-cff17829fdee",
-  "issuanceDate": "2022-06-08T02:06:30Z",
-  "expirationDate": "2022-08-08T02:06:30Z",
-  "issuer": "did:key:z6MkpDyE8oVUY8DXo7EBhdk51r2xtJenewoD7vvdoGv9bXw9",
+  "id": "urn:uuid:98de47eb-4290-4515-a07a-a7a8acc15973",
+  "issuanceDate": "2022-06-08T14:07:29Z",
+  "expirationDate": "2022-08-08T14:07:29Z",
+  "issuer": "did:key:z6MkuEqVhEeA1YW4Aodac6Qqs6hF8E6b2WPjhobatSUWEUT9",
   "credentialStatus": {
-    "id": "https://localhost:39443/issuers/z19ufxnDUDbnVHKiw8ymwwNoU/slcs/z1A9tBgzmhYtCJztNFndyMyFN#82460",
+    "id": "https://localhost:39443/issuers/z1A9Rn9pa9VEdcrMdtw1M8SSt/slcs/z19qpDQET3mnJhPR9aF6pw2Tm#32516",
     "type": "StatusList2021Entry",
-    "statusListCredential": "https://localhost:39443/issuers/z19ufxnDUDbnVHKiw8ymwwNoU/slcs/z1A9tBgzmhYtCJztNFndyMyFN",
-    "statusListIndex": "82460",
+    "statusListCredential": "https://localhost:39443/issuers/z1A9Rn9pa9VEdcrMdtw1M8SSt/slcs/z19qpDQET3mnJhPR9aF6pw2Tm",
+    "statusListIndex": "32516",
     "statusPurpose": "revocation"
   },
   "proof": {
     "type": "Ed25519Signature2020",
-    "created": "2022-06-08T02:06:31Z",
-    "verificationMethod": "did:key:z6MkpDyE8oVUY8DXo7EBhdk51r2xtJenewoD7vvdoGv9bXw9#z6MkpDyE8oVUY8DXo7EBhdk51r2xtJenewoD7vvdoGv9bXw9",
+    "created": "2022-06-08T14:07:29Z",
+    "verificationMethod": "did:key:z6MkuEqVhEeA1YW4Aodac6Qqs6hF8E6b2WPjhobatSUWEUT9#z6MkuEqVhEeA1YW4Aodac6Qqs6hF8E6b2WPjhobatSUWEUT9",
     "proofPurpose": "assertionMethod",
-    "proofValue": "z2D8mtKoqdUL8qWwihB1sCCxrkmczkCbvXtFnfnt9HEvhP4ksNxMqmidbxHseCXrnzTmLZPSr7gQwMMYgqkdsq8F4"
+    "proofValue": "z3aAS4Y16Q53KNdAg5mAxx4nN7dnCSAffZAuqGWiPGsvM8uSyi6hntVZUyuU6CRsYC7aE3bnd4tuwjvx2uJq2QTij"
   }
 }

@@ -1,10 +1,8 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const {promisify} = require('util');
-const {writeFile} = require('fs');
+import {promisify} from 'util';
+import {writeFile} from 'fs';
 
 const asyncWriteFile = promisify(writeFile);
 
@@ -17,10 +15,6 @@ const asyncWriteFile = promisify(writeFile);
  *
  * @returns {Promise} Resolves on write.
  */
-const writeJSON = async ({path, data}) => {
+export const writeJSON = async ({path, data}) => {
   return asyncWriteFile(path, JSON.stringify(data, null, 2));
-};
-
-module.exports = {
-  writeJSON
 };
