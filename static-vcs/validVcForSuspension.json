@@ -10,22 +10,22 @@
   "credentialSubject": {
     "id": "did:key:z6MkhTNL7i2etLerDK8Acz5t528giE5KA4p75T6ka1E1D74r"
   },
-  "id": "urn:uuid:f6c8284e-c088-422e-8d84-d922e29599c4",
-  "issuanceDate": "2022-05-25T14:15:43Z",
-  "expirationDate": "2022-07-25T14:15:43Z",
-  "issuer": "did:key:z6Mkky5cnJxro8ZsRtkrnaFU6AKkoSEeabsbqAy5jLXyy7NY",
+  "id": "urn:uuid:16969ce1-39a1-4653-8ac9-2e8475d1c643",
+  "issuanceDate": "2022-06-08T02:06:30Z",
+  "expirationDate": "2022-08-08T02:06:30Z",
+  "issuer": "did:key:z6MkjVA9ntTikxqJafzcKmQq1m2tEAtsBJomBnnxffW6D6FT",
   "credentialStatus": {
-    "id": "https://issuer.qa.veres.app/issuers/z19xo4G4bDwqiWd8sFvtt2ktA/slcs/z1A1cLjQEPqjn7f39JWzLNp7v#22145",
+    "id": "https://localhost:39443/issuers/z1A7ZgBnLDZzkqHRGZjmScf43/slcs/z1A8a79yVy68qewbrSptpm9Pv#57105",
     "type": "StatusList2021Entry",
-    "statusListCredential": "https://issuer.qa.veres.app/issuers/z19xo4G4bDwqiWd8sFvtt2ktA/slcs/z1A1cLjQEPqjn7f39JWzLNp7v",
-    "statusListIndex": "22145",
+    "statusListCredential": "https://localhost:39443/issuers/z1A7ZgBnLDZzkqHRGZjmScf43/slcs/z1A8a79yVy68qewbrSptpm9Pv",
+    "statusListIndex": "57105",
     "statusPurpose": "suspension"
   },
   "proof": {
     "type": "Ed25519Signature2020",
-    "created": "2022-05-25T14:15:44Z",
-    "verificationMethod": "did:key:z6Mkky5cnJxro8ZsRtkrnaFU6AKkoSEeabsbqAy5jLXyy7NY#z6Mkky5cnJxro8ZsRtkrnaFU6AKkoSEeabsbqAy5jLXyy7NY",
+    "created": "2022-06-08T02:06:31Z",
+    "verificationMethod": "did:key:z6MkjVA9ntTikxqJafzcKmQq1m2tEAtsBJomBnnxffW6D6FT#z6MkjVA9ntTikxqJafzcKmQq1m2tEAtsBJomBnnxffW6D6FT",
     "proofPurpose": "assertionMethod",
-    "proofValue": "z4Kfdg79UhkZV9JhDMszZ8PjnveGG2E46qGuxq47NhigDKEcXpijsioWfZMpjhKCD76JCnoNHTBTQh5aMTrAYx36p"
+    "proofValue": "zqgKbbh8jsQn8qxUPqckf7RMhrcf2icLLSU6J3YvgqqhVxBGmzhv3mtFHJ6ChW4Ca3CLEBcEv3MdZ59oGSD3FG6z"
   }
 }
