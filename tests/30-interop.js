@@ -46,8 +46,8 @@ describe('StatusList2021 Credentials (Interop "statusPurpose: revocation")',
               {json: body});
             shouldPassVerification({result, error, statusCode});
           });
-        it(`MUST update StatusList2021 revocation credential status and ' +
-          'fail to verify revoked credential`, async function() {
+        it('MUST update StatusList2021 revocation credential status and ' +
+          'fail to verify revoked credential', async function() {
           this.test.cell = {columnId: verifierName, rowId: this.test.title};
           // copy vc issued
           const vc = klona(issuedVc);
@@ -142,8 +142,8 @@ describe('StatusList2021 Credentials (Interop "statusPurpose: suspension")',
               {json: body});
             shouldPassVerification({result, error, statusCode});
           });
-        it(`MUST update StatusList2021 suspension credential status and ' +
-          'fail to verify suspended credential`, async function() {
+        it('MUST update StatusList2021 suspension credential status and ' +
+          'fail to verify suspended credential', async function() {
           this.test.cell = {columnId: verifierName, rowId: this.test.title};
           // copy vc issued
           const vc = klona(issuedVc);
