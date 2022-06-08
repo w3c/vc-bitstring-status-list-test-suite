@@ -49,8 +49,8 @@ describe('StatusList2021 Credentials (Interop "statusPurpose: revocation")',
               {json: body});
             shouldPassVerification({result, error, statusCode});
           });
-        it(`MUST update StatusList2021 revocation credential status ' +
-          'and fail to verify revoked credential`, async function() {
+        it(`MUST update StatusList2021 revocation credential status and ' +
+          'fail to verify revoked credential`, async function() {
           this.test.cell = {columnId: verifierName, rowId: this.test.title};
           // copy vc issued
           const vc = klona(issuedVc);
@@ -145,8 +145,8 @@ describe('StatusList2021 Credentials (Interop "statusPurpose: suspension")',
               {json: body});
             shouldPassVerification({result, error, statusCode});
           });
-        it(`MUST update StatusList2021 suspension credential status ' +
-          'and fail to verify suspended credential`, async function() {
+        it(`MUST update StatusList2021 suspension credential status and ' +
+          'fail to verify suspended credential`, async function() {
           this.test.cell = {columnId: verifierName, rowId: this.test.title};
           // copy vc issued
           const vc = klona(issuedVc);
@@ -186,8 +186,7 @@ describe('StatusList2021 Credentials (Interop "statusPurpose: suspension")',
             result: result3,
             error: err3,
             statusCode: statusCode3
-          } = await publishStatusList.post({
-            url: publishSlcEndpoint, json: {}});
+          } = await publishStatusList.post({url: publishSlcEndpoint, json: {}});
           should.not.exist(err3);
           should.exist(result3);
           statusCode3.should.equal(204);
