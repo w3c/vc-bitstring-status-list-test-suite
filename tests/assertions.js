@@ -1,10 +1,10 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const chai = require('chai');
-const {validVc} = require('../credentials');
+import chai from 'chai';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
+const validVc = require('../credentials/validVc.json');
 
 const should = chai.should();
 
@@ -16,7 +16,7 @@ const should = chai.should();
  *
  * @returns {undefined} Just returns on success.
  */
-const testCredential = ({credential}) => {
+export const testCredential = ({credential}) => {
   should.exist(credential, 'expected credential to exist');
   credential.should.be.an('object');
   credential.should.have.property('@context');
@@ -63,7 +63,7 @@ const testCredential = ({credential}) => {
   credential.credentialStatus.type.should.equal('StatusList2021Entry');
 };
 
-const testSlCredential = ({slCredential}) => {
+export const testSlCredential = ({slCredential}) => {
   should.exist(slCredential, 'expected credential to exist');
   slCredential.should.be.an('object');
   slCredential.should.have.property('@context');
@@ -100,7 +100,7 @@ const testSlCredential = ({slCredential}) => {
   slCredential.proof.should.be.an('object');
 };
 
-const shouldFailVerification = ({result, error, statusCode}) => {
+export const shouldFailVerification = ({result, error, statusCode}) => {
   should.not.exist(result, 'Expected no response from verifier');
   should.exist(error, 'Expected verifier to error');
   statusCode.should.equal(400, 'Expected status code 400');
@@ -108,7 +108,7 @@ const shouldFailVerification = ({result, error, statusCode}) => {
   error.data.verified.should.equal(false);
 };
 
-const shouldPassVerification = ({result, error, statusCode}) => {
+export const shouldPassVerification = ({result, error, statusCode}) => {
   should.exist(result, 'Expected response from verifier');
   should.not.exist(error, 'Expected verifier to not error');
   // verifier returns 200
@@ -117,11 +117,4 @@ const shouldPassVerification = ({result, error, statusCode}) => {
   // verifier responses vary but are all objects
   result.data.should.be.an('object');
   result.data.verified.should.equal(true);
-};
-
-module.exports = {
-  shouldFailVerification,
-  shouldPassVerification,
-  testCredential,
-  testSlCredential
 };

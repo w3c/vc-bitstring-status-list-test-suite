@@ -1,25 +1,24 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const {decodeList} = require('@digitalbazaar/vc-status-list');
-const documentLoader = require('./documentLoader.js');
-const {httpClient} = require('@digitalbazaar/http-client');
-const https = require('https');
-const {v4: uuidv4} = require('uuid');
-const {validVc} = require('../credentials');
-
+import {decodeList} from '@digitalbazaar/vc-status-list';
+import {documentLoader} from './documentLoader.js';
+import {httpClient} from '@digitalbazaar/http-client';
+import https from 'https';
+import {v4 as uuidv4} from 'uuid';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
+const validVc = require('../credentials/validVc.json');
 const agent = new https.Agent({rejectUnauthorized: false});
 
 // Javascript's default ISO timestamp contains milliseconds.
 // This lops off the MS part of the UTC RFC3339 TimeStamp and replaces
 // it with a terminal Z.
-const ISOTimeStamp = ({date = new Date()} = {}) => {
+export const ISOTimeStamp = ({date = new Date()} = {}) => {
   return date.toISOString().replace(/\.\d+Z$/, 'Z');
 };
 
-const getCredentialStatus = async ({verifiableCredential}) => {
+export const getCredentialStatus = async ({verifiableCredential}) => {
   const {credentialStatus} = verifiableCredential;
   const {statusListCredential} = credentialStatus;
   // get StatusList Credential for the VC
@@ -33,14 +32,14 @@ const getCredentialStatus = async ({verifiableCredential}) => {
   return {status, statusListCredential};
 };
 
-const expires = () => {
+export const expires = () => {
   const date = new Date();
   date.setMonth(date.getMonth() + 2);
   return ISOTimeStamp({date});
 };
 
 // copies a validVc and adds an id.
-const createValidVc = ({issuer}) => {
+export const createValidVc = ({issuer}) => {
   const {issuer: {id: issuerId}} = issuer;
   return {
     ...validVc,
@@ -51,7 +50,7 @@ const createValidVc = ({issuer}) => {
   };
 };
 
-const getSlc = async ({issuedVc}) => {
+export const getSlc = async ({issuedVc}) => {
   const {credentialStatus: {statusListCredential}} = issuedVc;
   const {document} = await documentLoader(statusListCredential);
   return {slc: document};
@@ -70,7 +69,7 @@ const getSlc = async ({issuedVc}) => {
  *
  * @returns {object} - A request body.
  */
-const createRequestBody = ({vc, setStatus = false, statusPurpose}) => {
+export const createRequestBody = ({vc, setStatus = false, statusPurpose}) => {
   let body = {
     verifiableCredential: vc,
     options: {
@@ -87,12 +86,4 @@ const createRequestBody = ({vc, setStatus = false, statusPurpose}) => {
     };
   }
   return body;
-};
-
-module.exports = {
-  createRequestBody,
-  createValidVc,
-  getCredentialStatus,
-  getSlc,
-  ISOTimeStamp
 };

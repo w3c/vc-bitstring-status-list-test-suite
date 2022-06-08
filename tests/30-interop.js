@@ -1,15 +1,12 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const chai = require('chai');
-const {filterByTag} = require('vc-api-test-suite-implementations');
-const {createValidVc, createRequestBody, getCredentialStatus} =
-  require('./helpers.js');
-const {shouldPassVerification, shouldFailVerification} =
-  require('./assertions.js');
-const {klona} = require('klona');
+import chai from 'chai';
+import {createValidVc, createRequestBody, getCredentialStatus} from
+  './helpers.js';
+import {filterByTag} from 'vc-api-test-suite-implementations';
+import {klona} from 'klona';
+import {shouldPassVerification, shouldFailVerification} from './assertions.js';
 
 const should = chai.should();
 

@@ -2,12 +2,10 @@
  *
  *  Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
 */
-'use strict';
-
-const ed25519Ctx = require('ed25519-signature-2020-context');
-const didCtx = require('@digitalcredentials/did-context');
-const credentialsCtx = require('credentials-context');
-const statusListCtx = require('@digitalbazaar/vc-status-list-context');
+import credentialsCtx from 'credentials-context';
+import didCtx from '@digitalcredentials/did-context';
+import ed25519Ctx from 'ed25519-signature-2020-context';
+import statusListCtx from '@digitalbazaar/vc-status-list-context';
 
 const contextMap = new Map();
 
@@ -28,4 +26,4 @@ contextMap.set(
   statusListCtx.CONTEXT_V1
 );
 
-module.exports = {contextMap};
+export {contextMap};

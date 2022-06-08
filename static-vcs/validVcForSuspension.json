@@ -10,22 +10,22 @@
   "credentialSubject": {
     "id": "did:key:z6MkhTNL7i2etLerDK8Acz5t528giE5KA4p75T6ka1E1D74r"
   },
-  "id": "urn:uuid:16969ce1-39a1-4653-8ac9-2e8475d1c643",
-  "issuanceDate": "2022-06-08T02:06:30Z",
-  "expirationDate": "2022-08-08T02:06:30Z",
+  "id": "urn:uuid:f8f17e84-e331-4bb7-8dec-8aa50be8e163",
+  "issuanceDate": "2022-06-08T14:07:29Z",
+  "expirationDate": "2022-08-08T14:07:29Z",
   "issuer": "did:key:z6MkjVA9ntTikxqJafzcKmQq1m2tEAtsBJomBnnxffW6D6FT",
   "credentialStatus": {
-    "id": "https://localhost:39443/issuers/z1A7ZgBnLDZzkqHRGZjmScf43/slcs/z1A8a79yVy68qewbrSptpm9Pv#57105",
+    "id": "https://localhost:39443/issuers/z1A7ZgBnLDZzkqHRGZjmScf43/slcs/z1A8a79yVy68qewbrSptpm9Pv#49538",
     "type": "StatusList2021Entry",
     "statusListCredential": "https://localhost:39443/issuers/z1A7ZgBnLDZzkqHRGZjmScf43/slcs/z1A8a79yVy68qewbrSptpm9Pv",
-    "statusListIndex": "57105",
+    "statusListIndex": "49538",
     "statusPurpose": "suspension"
   },
   "proof": {
     "type": "Ed25519Signature2020",
-    "created": "2022-06-08T02:06:31Z",
+    "created": "2022-06-08T14:07:29Z",
     "verificationMethod": "did:key:z6MkjVA9ntTikxqJafzcKmQq1m2tEAtsBJomBnnxffW6D6FT#z6MkjVA9ntTikxqJafzcKmQq1m2tEAtsBJomBnnxffW6D6FT",
     "proofPurpose": "assertionMethod",
-    "proofValue": "zqgKbbh8jsQn8qxUPqckf7RMhrcf2icLLSU6J3YvgqqhVxBGmzhv3mtFHJ6ChW4Ca3CLEBcEv3MdZ59oGSD3FG6z"
+    "proofValue": "ziZwWCf6Yf8oNGUuXcZw6eaHRm4V8vWB1JDZXbgsTPJpMcxyoRwSUwtg6Kx3sdd6i2L2tzx6x8bVawbmQUaiXmMu"
   }
 }

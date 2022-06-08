@@ -1,13 +1,11 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const {createValidVc} = require('../tests/helpers.js');
-const {filterImplementations} = require('vc-api-test-suite-implementations');
-const {join} = require('path');
-const {klona} = require('klona');
-const {writeJSON} = require('./helpers');
+import {createValidVc} from '../tests/helpers.js';
+import {filterImplementations} from 'vc-api-test-suite-implementations';
+import {join} from 'path';
+import {klona} from 'klona';
+import {writeJSON} from './helpers.js';
 
 const credentialsPath = join(process.cwd(), 'static-vcs');
 

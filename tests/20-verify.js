@@ -1,16 +1,15 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-
-const {createRequestBody} = require('./helpers.js');
-const {filterByTag} = require('vc-api-test-suite-implementations');
+import {createRequestBody} from './helpers.js';
+import {filterByTag} from 'vc-api-test-suite-implementations';
+import {shouldFailVerification, shouldPassVerification} from './assertions.js';
+import {createRequire} from 'node:module';
+const require = createRequire(import.meta.url);
 const invalidCredentialStatusType =
   require('../static-vcs/invalidCredentialStatusType.json');
 const invalidStatusListCredentialId =
   require('../static-vcs/invalidStatusListCredentialId.json');
-const {shouldFailVerification, shouldPassVerification} =
-  require('./assertions.js');
 const validVcForRevocation = require('../static-vcs/validVcForRevocation.json');
 const validVcForSuspension = require('../static-vcs/validVcForSuspension.json');
 
