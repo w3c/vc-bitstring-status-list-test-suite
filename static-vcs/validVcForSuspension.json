@@ -1,7 +1,7 @@
 {
   "@context": [
     "https://www.w3.org/2018/credentials/v1",
-    "https://w3id.org/vc/status-list/v1",
+    "https://w3id.org/vc/status-list/2021/v1",
     "https://w3id.org/security/suites/ed25519-2020/v1"
   ],
   "type": [
@@ -10,22 +10,22 @@
   "credentialSubject": {
     "id": "did:key:z6MkhTNL7i2etLerDK8Acz5t528giE5KA4p75T6ka1E1D74r"
   },
-  "id": "urn:uuid:f8f17e84-e331-4bb7-8dec-8aa50be8e163",
-  "issuanceDate": "2022-06-08T14:07:29Z",
-  "expirationDate": "2022-08-08T14:07:29Z",
-  "issuer": "did:key:z6MkjVA9ntTikxqJafzcKmQq1m2tEAtsBJomBnnxffW6D6FT",
+  "id": "urn:uuid:8e6dddc7-7998-4a43-866e-2d37c2672b84",
+  "issuanceDate": "2022-06-16T15:13:48Z",
+  "expirationDate": "2022-08-16T15:13:48Z",
+  "issuer": "did:key:z6Mktq3BbtU74LtiTw1fzwuE3KCP7f4XeUNN1LHoXTCEzdCN",
   "credentialStatus": {
-    "id": "https://localhost:39443/issuers/z1A7ZgBnLDZzkqHRGZjmScf43/slcs/z1A8a79yVy68qewbrSptpm9Pv#49538",
+    "id": "https://localhost:39443/issuers/z19u3vMn3YdmoH4QkTxzypi1N/slcs/z19wSPK32CB4n9b9Aiujm7WVE#44547",
     "type": "StatusList2021Entry",
-    "statusListCredential": "https://localhost:39443/issuers/z1A7ZgBnLDZzkqHRGZjmScf43/slcs/z1A8a79yVy68qewbrSptpm9Pv",
-    "statusListIndex": "49538",
+    "statusListCredential": "https://localhost:39443/issuers/z19u3vMn3YdmoH4QkTxzypi1N/slcs/z19wSPK32CB4n9b9Aiujm7WVE",
+    "statusListIndex": "44547",
     "statusPurpose": "suspension"
   },
   "proof": {
     "type": "Ed25519Signature2020",
-    "created": "2022-06-08T14:07:29Z",
-    "verificationMethod": "did:key:z6MkjVA9ntTikxqJafzcKmQq1m2tEAtsBJomBnnxffW6D6FT#z6MkjVA9ntTikxqJafzcKmQq1m2tEAtsBJomBnnxffW6D6FT",
+    "created": "2022-06-16T15:13:49Z",
+    "verificationMethod": "did:key:z6Mktq3BbtU74LtiTw1fzwuE3KCP7f4XeUNN1LHoXTCEzdCN#z6Mktq3BbtU74LtiTw1fzwuE3KCP7f4XeUNN1LHoXTCEzdCN",
     "proofPurpose": "assertionMethod",
-    "proofValue": "ziZwWCf6Yf8oNGUuXcZw6eaHRm4V8vWB1JDZXbgsTPJpMcxyoRwSUwtg6Kx3sdd6i2L2tzx6x8bVawbmQUaiXmMu"
+    "proofValue": "z4wbXcJitcY3zFXvEkGiD8yoVBFsgqLKfdAyR7C4d9rqCVgPjQm2G1rS5AuJ7uvVVJsZEm1JRXVBUKRbtpHTZvBaS"
   }
 }
