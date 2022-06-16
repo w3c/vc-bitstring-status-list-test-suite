@@ -46,7 +46,7 @@ describe('StatusList2021 Credentials (Issue "statusPurpose: revocation")',
           testCredential({credential: issuedVc});
         });
         // ensure that issued StatusList Credential contain correct properties
-        it('MUST have correct properties when dereferencing' +
+        it('MUST have correct properties when dereferencing ' +
           '"credentialStatus.statusListCredential"', async function() {
           this.test.cell = {columnId: issuerName, rowId: this.test.title};
           const {slc} = await getSlc({issuedVc});
@@ -100,7 +100,7 @@ describe('StatusList2021 Credentials (Issue "statusPurpose: suspension")',
           testCredential({credential: issuedVc});
         });
         // ensure that issued StatusList Credential contain correct properties
-        it('MUST have correct properties when dereferencing' +
+        it('MUST have correct properties when dereferencing ' +
           '"credentialStatus.statusListCredential"', async function() {
           this.test.cell = {columnId: issuerName, rowId: this.test.title};
           const {slc} = await getSlc({issuedVc});

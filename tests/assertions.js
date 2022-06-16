@@ -22,7 +22,7 @@ export const testCredential = ({credential}) => {
   credential.should.have.property('@context');
   credential['@context'].should.include.members([
     'https://www.w3.org/2018/credentials/v1',
-    'https://w3id.org/vc/status-list/v1',
+    'https://w3id.org/vc/status-list/2021/v1',
     'https://w3id.org/security/suites/ed25519-2020/v1'
   ]);
   credential.should.have.property('type');
@@ -69,7 +69,7 @@ export const testSlCredential = ({slCredential}) => {
   slCredential.should.have.property('@context');
   slCredential['@context'].should.include.members([
     'https://www.w3.org/2018/credentials/v1',
-    'https://w3id.org/vc/status-list/v1',
+    'https://w3id.org/vc/status-list/2021/v1',
     'https://w3id.org/security/suites/ed25519-2020/v1'
   ]);
   slCredential.should.have.property('type');
