@@ -1,7 +1,6 @@
-/**
- *
- *  Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
-*/
+/*!
+ * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
+ */
 import {contextMap} from './contexts.js';
 import {httpClient} from '@digitalbazaar/http-client';
 import https from 'https';
