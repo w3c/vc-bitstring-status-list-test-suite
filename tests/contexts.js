@@ -1,7 +1,6 @@
-/**
- *
- *  Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
-*/
+/*!
+ * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
+ */
 import credentialsCtx from 'credentials-context';
 import didCtx from '@digitalcredentials/did-context';
 import ed25519Ctx from 'ed25519-signature-2020-context';
