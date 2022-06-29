@@ -32,12 +32,6 @@ export const getCredentialStatus = async ({verifiableCredential}) => {
   return {status, statusListCredential};
 };
 
-export const expires = () => {
-  const date = new Date();
-  date.setMonth(date.getMonth() + 2);
-  return ISOTimeStamp({date});
-};
-
 // copies a validVc and adds an id.
 export const createValidVc = ({issuer}) => {
   const {issuer: {id: issuerId}} = issuer;
@@ -45,7 +39,6 @@ export const createValidVc = ({issuer}) => {
     ...validVc,
     id: `urn:uuid:${uuidv4()}`,
     issuanceDate: ISOTimeStamp(),
-    expirationDate: expires(),
     issuer: issuerId
   };
 };

@@ -10,22 +10,21 @@
   "credentialSubject": {
     "id": "did:key:z6MkhTNL7i2etLerDK8Acz5t528giE5KA4p75T6ka1E1D74r"
   },
-  "id": "urn:uuid:8e6dddc7-7998-4a43-866e-2d37c2672b84",
-  "issuanceDate": "2022-06-16T15:13:48Z",
-  "expirationDate": "2022-08-16T15:13:48Z",
+  "id": "urn:uuid:d0db6513-1b91-4166-82d3-2183d1110353",
+  "issuanceDate": "2022-06-29T19:45:10Z",
   "issuer": "did:key:z6Mktq3BbtU74LtiTw1fzwuE3KCP7f4XeUNN1LHoXTCEzdCN",
   "credentialStatus": {
-    "id": "https://localhost:39443/issuers/z19u3vMn3YdmoH4QkTxzypi1N/slcs/z19wSPK32CB4n9b9Aiujm7WVE#44547",
+    "id": "https://localhost:39443/issuers/z19u3vMn3YdmoH4QkTxzypi1N/slcs/z19wSPK32CB4n9b9Aiujm7WVE#129411",
     "type": "StatusList2021Entry",
     "statusListCredential": "https://localhost:39443/issuers/z19u3vMn3YdmoH4QkTxzypi1N/slcs/z19wSPK32CB4n9b9Aiujm7WVE",
-    "statusListIndex": "44547",
+    "statusListIndex": "129411",
     "statusPurpose": "suspension"
   },
   "proof": {
     "type": "Ed25519Signature2020",
-    "created": "2022-06-16T15:13:49Z",
+    "created": "2022-06-29T19:45:10Z",
     "verificationMethod": "did:key:z6Mktq3BbtU74LtiTw1fzwuE3KCP7f4XeUNN1LHoXTCEzdCN#z6Mktq3BbtU74LtiTw1fzwuE3KCP7f4XeUNN1LHoXTCEzdCN",
     "proofPurpose": "assertionMethod",
-    "proofValue": "z4wbXcJitcY3zFXvEkGiD8yoVBFsgqLKfdAyR7C4d9rqCVgPjQm2G1rS5AuJ7uvVVJsZEm1JRXVBUKRbtpHTZvBaS"
+    "proofValue": "z3yAQivxy22hZQJQQ7jQS3sFy24A39QC7AWoTwYj2vwF9JKtCzJFe932BcX3zoyC77pqxxJACMk5D4ZxVrLS3krsN"
   }
 }

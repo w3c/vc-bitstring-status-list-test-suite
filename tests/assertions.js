@@ -37,8 +37,6 @@ export const testCredential = ({credential}) => {
   credential.credentialSubject.should.be.an('object');
   credential.should.have.property('issuanceDate');
   credential.issuanceDate.should.be.a('string');
-  credential.should.have.property('expirationDate');
-  credential.expirationDate.should.be.a('string');
   credential.should.have.property('issuer');
   const issuerType = typeof(credential.issuer);
   issuerType.should.be.oneOf(['string', 'object']);
