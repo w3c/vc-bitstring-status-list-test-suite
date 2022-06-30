@@ -13,7 +13,10 @@ const {validVc} = require('../credentials');
 const should = chai.should();
 
 // only use implementations with `StatusList2021` tags.
-const {match, nonMatch} = filterByTag({issuerTags: ['RevocationList2020']});
+const {match, nonMatch} = filterByTag({
+  property: 'issuers',
+  tags: ['RevocationList2020']
+});
 
 describe('StatusList2021 Credentials (Interop)', function() {
   // this will tell the report
