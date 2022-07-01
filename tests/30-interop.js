@@ -38,7 +38,7 @@ describe('StatusList2021 Credentials (Interop)', function() {
         date.setMonth(date.getMonth() + 2);
         return ISOTimeStamp({date});
       };
-      const {issuer: {id: issuerId}} = issuer;
+      const {settings: {id: issuerId}} = issuer;
       const body = {
         credential: {
           ...validVc,
@@ -48,7 +48,7 @@ describe('StatusList2021 Credentials (Interop)', function() {
           issuer: issuerId
         }
       };
-      const {result} = await issuer.issue({body});
+      const {result} = await issuer.post({json: body});
       if(result) {
         issuedVc = result.data.verifiableCredential;
       }

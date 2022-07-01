@@ -42,7 +42,7 @@ describe('StatusList2021 Credentials (Issue)', function() {
           date.setMonth(date.getMonth() + 2);
           return ISOTimeStamp({date});
         };
-        const {issuer: {id: issuerId}} = issuer;
+        const {settings: {id: issuerId}} = issuer;
         const body = {
           credential: {
             ...validVc,
@@ -52,7 +52,7 @@ describe('StatusList2021 Credentials (Issue)', function() {
             issuer: issuerId
           }
         };
-        const {result, error} = await issuer.issue({body});
+        const {result, error} = await issuer.post({json: body});
         issuerResponse = result;
         err = error;
         if(issuerResponse) {
