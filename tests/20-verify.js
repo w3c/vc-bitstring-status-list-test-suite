@@ -43,7 +43,7 @@ describe('StatusList2021 Credentials (Verify)', function() {
               checks: ['proof', 'credentialStatus']
             }
           };
-          const {result, error} = await verifier.verify({body});
+          const {result, error} = await verifier.post({json: body});
           should.exist(result);
           should.not.exist(error);
         });
@@ -58,7 +58,7 @@ describe('StatusList2021 Credentials (Verify)', function() {
             checks: ['proof', 'credentialStatus']
           }
         };
-        const {result, error} = await verifier.verify({body});
+        const {result, error} = await verifier.post({json: body});
         should.not.exist(result);
         should.exist(error);
         should.exist(error.data);
@@ -80,7 +80,7 @@ describe('StatusList2021 Credentials (Verify)', function() {
               checks: ['proof', 'credentialStatus']
             }
           };
-          const {result, error} = await verifier.verify({body});
+          const {result, error} = await verifier.post({json: body});
           should.not.exist(result);
           should.exist(error);
           should.exist(error.data);

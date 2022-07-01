@@ -69,7 +69,7 @@ describe('StatusList2021 Credentials (Interop)', function() {
               checks: ['proof', 'credentialStatus']
             }
           };
-          const {result, error} = await verifier.verify({body});
+          const {result, error} = await verifier.post({json: body});
           should.exist(result);
           should.not.exist(error);
           // verifier returns 200
@@ -103,8 +103,8 @@ describe('StatusList2021 Credentials (Interop)', function() {
               checks: ['proof', 'credentialStatus']
             }
           };
-          const {result: result1, error: err1} = await verifier.verify(
-            {body});
+          const {result: result1, error: err1} = await verifier.post(
+            {json: body});
           should.exist(result1);
           should.not.exist(err1);
           result1.status.should.equal(200);
@@ -150,8 +150,8 @@ describe('StatusList2021 Credentials (Interop)', function() {
               checks: ['proof', 'credentialStatus']
             }
           };
-          const {result: result4, error: err4} = await verifier.verify(
-            {body: body3});
+          const {result: result4, error: err4} = await verifier.post(
+            {json: body3});
           should.not.exist(result4);
           should.exist(err4);
           should.exist(err4.data);
