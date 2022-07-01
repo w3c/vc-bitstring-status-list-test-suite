@@ -28,7 +28,7 @@ describe('StatusList2021 Credentials (Interop)', function() {
   this.columnLabel = 'Implementation';
   this.notImplemented = [...nonMatch.keys()];
   // the reportData will be displayed under the test title
-  for(const [issuerName, {issuers}] of match) {
+  for(const [issuerName, {issuers, statusLists, publishStatusLists}] of match) {
     let issuedVc;
     before(async function() {
       const issuer = issuers.find(issuer =>
@@ -114,7 +114,9 @@ describe('StatusList2021 Credentials (Interop)', function() {
           result1.data.verified.should.equal(true);
           result1.data.statusResult.verified.should.equal(true);
 
-          const issuer = issuers.find(issuer =>
+          const statusList = statusLists.find(issuer =>
+            issuer.tags.has('RevocationList2020'));
+          const publishList = publishStatusLists.find(issuer =>
             issuer.tags.has('RevocationList2020'));
           const body2 = {
             credentialId: vc.id,
@@ -123,16 +125,16 @@ describe('StatusList2021 Credentials (Interop)', function() {
             }
           };
             // Then revoke the VC
-          const {result: result2, error: err2} = await issuer.setStatus(
-            {body: body2});
+          const {result: result2, error: err2} = await statusList.post(
+            {json: body2});
           should.not.exist(err2);
           should.exist(result2);
           result2.status.should.equal(200);
           const publishSlcEndpoint =
               `${statusInfo.statusListCredential}/publish`;
             // force publication of new SLC
-          const {result: result3, error: err3} = await issuer.publishSlc(
-            {endpoint: publishSlcEndpoint, body: {}});
+          const {result: result3, error: err3} = await publishList.post(
+            {url: publishSlcEndpoint, json: {}});
           should.not.exist(err3);
           should.exist(result3);
           result3.status.should.equal(204);
