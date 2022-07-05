@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha tests --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options  abstract=\"$PWD/abstract.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",title=\"Status List 2021 Interoperability Report 1.0\",suiteLog='./suite.log' --timeout 15000 --preserve-symlinks",
-    "lint": "eslint .",
-    "generate-vcs": "node vc-generator"
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -40,15 +39,14 @@
     "jsonld-document-loader": "^1.2.1",
     "klona": "^2.0.5",
     "mocha": "^10.0.0",
-    "require-dir": "^1.2.0",
     "uuid": "^8.3.2",
     "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations#convert-to-module"
   },
   "devDependencies": {
-    "eslint": "^8.18.0",
+    "eslint": "^8.19.0",
     "eslint-config-digitalbazaar": "^4.0.1",
     "eslint-plugin-jsdoc": "^39.3.3",
-    "eslint-plugin-unicorn": "^42.0.0"
+    "eslint-plugin-unicorn": "^43.0.0"
   },
   "bugs": {
     "url": "https://github.com/w3c-ccg/status-list-2021-test-suite/issues"
