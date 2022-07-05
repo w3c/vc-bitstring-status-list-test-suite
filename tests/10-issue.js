@@ -36,7 +36,7 @@ describe('StatusList2021 Credentials (Issue "statusPurpose: revocation")',
           issuerResponse = result;
           issuedVc = data;
         });
-        it.only('MUST issue a VC with SL 2021 "credentialStatus" and ' +
+        it('MUST issue a VC with SL 2021 "credentialStatus" and ' +
           '"revocation" status purpose', async function() {
           this.test.cell = {columnId: issuerName, rowId: this.test.title};
           should.exist(issuerResponse);
