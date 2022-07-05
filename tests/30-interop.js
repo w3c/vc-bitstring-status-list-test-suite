@@ -15,6 +15,7 @@ const {match, nonMatch} = filterByTag({
   property: 'issuers',
   tags: ['StatusList2021']
 });
+
 describe('StatusList2021 Credentials (Interop "statusPurpose: revocation")',
   function() {
     this.matrix = true;
@@ -64,7 +65,6 @@ describe('StatusList2021 Credentials (Interop "statusPurpose: revocation")',
           } = await verifier.post({json: createRequestBody({vc})});
           shouldPassVerification(
             {result: result1, error: err1, statusCode: statusCode1});
-
           const setStatusList = setStatusLists.find(
             issuer => issuer.tags.has('Revocation'));
           // Then revoke the VC
@@ -178,7 +178,7 @@ describe('StatusList2021 Credentials (Interop "statusPurpose: suspension")',
             `${statusInfo.statusListCredential}/publish`;
           const publishStatusList = publishStatusLists.find(issuer =>
             issuer.tags.has('Suspension'));
-            // force publication of new SLC
+          // force publication of new SLC
           const {
             result: result3,
             error: err3,

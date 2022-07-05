@@ -41,8 +41,8 @@ describe('StatusList2021 Credentials (Verify)', function() {
       it('MUST verify a valid "StatusList2021Credential" with "suspension"' +
         'status purpose', async function() {
         this.test.cell = {columnId: verifierName, rowId: this.test.title};
-        const {result, error, statusCode} = await verifier.verify({
-          body: createRequestBody({vc: validVcForSuspension})
+        const {result, error, statusCode} = await verifier.post({
+          json: createRequestBody({vc: validVcForSuspension})
         });
         shouldPassVerification({result, error, statusCode});
       });
