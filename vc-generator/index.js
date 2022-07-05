@@ -64,10 +64,10 @@ const main = async () => {
       issuer => issuer.tags.has('Suspension'));
     const credential1 = createValidVc({issuer: issuer1});
     const credential2 = createValidVc({issuer: issuer2});
-    const {data: validVcForRevocation} = await issuer1.issue(
-      {body: {credential: credential1}});
-    const {data: validVcForSuspension} = await issuer2.issue(
-      {body: {credential: credential2}});
+    const {data: validVcForRevocation} = await issuer1.post(
+      {json: {credential: credential1}});
+    const {data: validVcForSuspension} = await issuer2.post(
+      {json: {credential: credential2}});
     return {
       path1: `${credentialsPath}/validVcForRevocation.json`,
       validVcForRevocation,
