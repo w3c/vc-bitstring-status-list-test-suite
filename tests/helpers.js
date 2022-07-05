@@ -34,7 +34,7 @@ export const getCredentialStatus = async ({verifiableCredential}) => {
 
 // copies a validVc and adds an id.
 export const createValidVc = ({issuer}) => {
-  const {issuer: {id: issuerId}} = issuer;
+  const {settings: {id: issuerId}} = issuer;
   return {
     ...validVc,
     id: `urn:uuid:${uuidv4()}`,
