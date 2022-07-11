@@ -60,7 +60,9 @@ describe('StatusList2021 Credentials (Issue "statusPurpose: revocation")',
             // Uncompress encodedList
             const decoded = await sl.decodeList({encodedList});
             should.exist(decoded);
-            // decoded size should be 16kb
+            // decoded size should be 16kb. For more info see
+            // `credentialSubject.encoded` in
+            // https://w3c-ccg.github.io/vc-status-list-2021/#statuslist2021credential
             const decodedSize = (decoded.length / 8) / 1024;
             decodedSize.should.equal(16);
           });
