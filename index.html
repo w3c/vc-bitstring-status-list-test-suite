@@ -81,19 +81,19 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 6/6 100%
+      Tests passed 14/14 100%
       </p>
       <p>
-      Tests failed 0/6 0%
+      Tests failed 0/14 0%
       </p>
       <p>
-      Tests skipped 1
+      Tests skipped 0
       </p>
       <p>
-      Total tests 7
+      Total tests 14
       </p>
       <p>
-        These tests were run on <time>10 July 2022, 5:14 am UTC</time>
+        These tests were run on <time>17 July 2022, 5:16 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -116,8 +116,8 @@
     </section>
     <section id="conformance">
       <!--- This will take the tests and display them as matrices -->
-        <section class="informative" id="StatusList2021 Credentials (Issue)">
-          <h2>StatusList2021 Credentials (Issue)</h2>
+        <section class="informative" id="StatusList2021 Credentials (Issue &quot;statusPurpose: revocation&quot;)">
+          <h2>StatusList2021 Credentials (Issue &quot;statusPurpose: revocation&quot;)</h2>
           <style>
             .no-wrap {
               white-space: nowrap;
@@ -164,18 +164,18 @@
                   </div>
                 </th>
                     <th class="no-wrap small-font">Digital Bazaar</th>
+                    <th class="no-wrap small-font">API Catalog</th>
                     <th class="no-wrap small-font">Danube Tech</th>
                     <th class="no-wrap small-font">MATTR</th>
                     <th class="no-wrap small-font">Mavennet</th>
                     <th class="no-wrap small-font">mesur.io</th>
                     <th class="no-wrap small-font">SecureKey</th>
                     <th class="no-wrap small-font">Transmute</th>
-                    <th class="no-wrap small-font">apicatalog.com</th>
                 </thead>
               <tbody>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">MUST issue a VC with a &quot;credentialStatus&quot; property</td>
+                <td class="subtest">MUST issue a VC with SL 2021 &quot;credentialStatus&quot; and &quot;revocation&quot; status purpose</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
                   <td class="notImplemented not-optional">—</td>
@@ -188,7 +188,128 @@
               </tr>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">MUST have correct properties when dereferencing&quot;credentialStatus.statusListCredential&quot;</td>
+                <td class="subtest">MUST have correct properties when dereferencing &quot;credentialStatus.statusListCredential&quot;</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST be 16kb in size when &quot;encodedList&quot; is decoded</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+          <div>
+            <div class="flex-center">
+              <div class="row">
+              </div>
+              <div class="">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="informative" id="StatusList2021 Credentials (Issue &quot;statusPurpose: suspension&quot;)">
+          <h2>StatusList2021 Credentials (Issue &quot;statusPurpose: suspension&quot;)</h2>
+          <style>
+            .no-wrap {
+              white-space: nowrap;
+            }
+            td.optional {
+              background-color: #b9b7b7;
+            }
+           .text-right {
+              text-align: right;
+            }
+           .text-left {
+              text-align: left;
+            }
+           .text-center {
+             text-align: center;
+           }
+           .qr-code {
+             margin-left: 25px;
+           }
+           .row {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+           }
+           .row.justify-center {
+             justify-content: center;
+           }
+           .small-font {
+             font-size: 0.75rem;
+           }
+           pre, code.hljs{
+             overflow: auto;
+           }
+          </style>
+          <div class="row justify-center">
+            <table class="simple">
+              <thead>
+                <th width="20%">
+                  <div class="text-right small-font">
+                  Issuer &#8658;
+                  </div>
+                  <div class="text-left small-font">
+                  <span>&#8659;</span><span>Test Name</span>
+                  </div>
+                </th>
+                    <th class="no-wrap small-font">Digital Bazaar</th>
+                    <th class="no-wrap small-font">API Catalog</th>
+                    <th class="no-wrap small-font">Danube Tech</th>
+                    <th class="no-wrap small-font">MATTR</th>
+                    <th class="no-wrap small-font">Mavennet</th>
+                    <th class="no-wrap small-font">mesur.io</th>
+                    <th class="no-wrap small-font">SecureKey</th>
+                    <th class="no-wrap small-font">Transmute</th>
+                </thead>
+              <tbody>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST issue a VC with SL 2021 &quot;credentialStatus&quot; and &quot;suspension&quot; status purpose</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST have correct properties when dereferencing &quot;credentialStatus.statusListCredential&quot;</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST be 16kb in size when &quot;encodedList&quot; is decoded</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
                   <td class="notImplemented not-optional">—</td>
@@ -259,15 +380,41 @@
                   </div>
                 </th>
                     <th class="no-wrap small-font">Digital Bazaar</th>
+                    <th class="no-wrap small-font">API Catalog</th>
                     <th class="no-wrap small-font">Danube Tech</th>
                     <th class="no-wrap small-font">MATTR</th>
                     <th class="no-wrap small-font">Mavennet</th>
                     <th class="no-wrap small-font">mesur.io</th>
                     <th class="no-wrap small-font">SecureKey</th>
                     <th class="no-wrap small-font">Transmute</th>
-                    <th class="no-wrap small-font">apicatalog.com</th>
                 </thead>
               <tbody>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST verify a valid &quot;StatusList2021Credential&quot; with &quot;revocation&quot; status purpose</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST verify a valid &quot;StatusList2021Credential&quot; with &quot;suspension&quot;status purpose</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+              </tr>
               <tr>
                 <!--This is the name of the test-->
                 <td class="subtest">MUST fail to verify a VC with invalid &quot;credentialStatus.statusListCredential&quot;</td>
@@ -306,8 +453,8 @@
             </div>
           </div>
         </section>
-        <section class="informative" id="StatusList2021 Credentials (Interop)">
-          <h2>StatusList2021 Credentials (Interop)</h2>
+        <section class="informative" id="StatusList2021 Credentials (Interop &quot;statusPurpose: revocation&quot;)">
+          <h2>StatusList2021 Credentials (Interop &quot;statusPurpose: revocation&quot;)</h2>
           <style>
             .no-wrap {
               white-space: nowrap;
@@ -354,13 +501,13 @@
                   </div>
                 </th>
                     <th class="no-wrap small-font">Digital Bazaar</th>
+                    <th class="no-wrap small-font">API Catalog</th>
                     <th class="no-wrap small-font">Danube Tech</th>
                     <th class="no-wrap small-font">MATTR</th>
                     <th class="no-wrap small-font">Mavennet</th>
                     <th class="no-wrap small-font">mesur.io</th>
                     <th class="no-wrap small-font">SecureKey</th>
                     <th class="no-wrap small-font">Transmute</th>
-                    <th class="no-wrap small-font">apicatalog.com</th>
                 </thead>
               <tbody>
               <tr>
@@ -378,7 +525,102 @@
               </tr>
               <tr>
                 <!--This is the name of the test-->
-                <td class="subtest">MUST revoke a credential and fail to verify revoked credential</td>
+                <td class="subtest">MUST update StatusList2021 revocation credential status and fail to verify revoked credential</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+          <div>
+            <div class="flex-center">
+              <div class="row">
+              </div>
+              <div class="">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="informative" id="StatusList2021 Credentials (Interop &quot;statusPurpose: suspension&quot;)">
+          <h2>StatusList2021 Credentials (Interop &quot;statusPurpose: suspension&quot;)</h2>
+          <style>
+            .no-wrap {
+              white-space: nowrap;
+            }
+            td.optional {
+              background-color: #b9b7b7;
+            }
+           .text-right {
+              text-align: right;
+            }
+           .text-left {
+              text-align: left;
+            }
+           .text-center {
+             text-align: center;
+           }
+           .qr-code {
+             margin-left: 25px;
+           }
+           .row {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+           }
+           .row.justify-center {
+             justify-content: center;
+           }
+           .small-font {
+             font-size: 0.75rem;
+           }
+           pre, code.hljs{
+             overflow: auto;
+           }
+          </style>
+          <div class="row justify-center">
+            <table class="simple">
+              <thead>
+                <th width="20%">
+                  <div class="text-right small-font">
+                  Implementation &#8658;
+                  </div>
+                  <div class="text-left small-font">
+                  <span>&#8659;</span><span>Test Name</span>
+                  </div>
+                </th>
+                    <th class="no-wrap small-font">Digital Bazaar</th>
+                    <th class="no-wrap small-font">API Catalog</th>
+                    <th class="no-wrap small-font">Danube Tech</th>
+                    <th class="no-wrap small-font">MATTR</th>
+                    <th class="no-wrap small-font">Mavennet</th>
+                    <th class="no-wrap small-font">mesur.io</th>
+                    <th class="no-wrap small-font">SecureKey</th>
+                    <th class="no-wrap small-font">Transmute</th>
+                </thead>
+              <tbody>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST successfully verify VC issued by Digital Bazaar</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional">✓</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+                  <td class="notImplemented not-optional">—</td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST update StatusList2021 suspension credential status and fail to verify suspended credential</td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional">✓</td>
                   <td class="notImplemented not-optional">—</td>
