@@ -1,12 +1,12 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-import chai from 'chai';
-import {createValidVc, createRequestBody, getCredentialStatus} from
+import {createRequestBody, createValidVc, getCredentialStatus} from
   './helpers.js';
+import {shouldFailVerification, shouldPassVerification} from './assertions.js';
+import chai from 'chai';
 import {filterByTag} from 'vc-api-test-suite-implementations';
 import {klona} from 'klona';
-import {shouldPassVerification, shouldFailVerification} from './assertions.js';
 
 const should = chai.should();
 
@@ -78,10 +78,12 @@ describe('StatusList2021 Credentials (Interop "statusPurpose: revocation")',
           should.not.exist(err2);
           should.exist(result2);
           statusCode2.should.equal(200);
+
           const publishSlcEndpoint =
             `${statusInfo.statusListCredential}/publish`;
           const publishStatusList = publishStatusLists.find(
             issuer => issuer.tags.has('Revocation'));
+
           // force publication of new SLC
           const {
             result: result3,

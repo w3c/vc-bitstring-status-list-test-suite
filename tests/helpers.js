@@ -1,12 +1,12 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
+import {createRequire} from 'node:module';
 import {decodeList} from '@digitalbazaar/vc-status-list';
 import {documentLoader} from './documentLoader.js';
 import {httpClient} from '@digitalbazaar/http-client';
 import https from 'https';
 import {v4 as uuidv4} from 'uuid';
-import {createRequire} from 'node:module';
 const require = createRequire(import.meta.url);
 const validVc = require('../credentials/validVc.json');
 const agent = new https.Agent({rejectUnauthorized: false});

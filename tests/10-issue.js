@@ -1,11 +1,11 @@
 /*!
  * Copyright (c) 2022 Digital Bazaar, Inc. All rights reserved.
  */
-import chai from 'chai';
-import {createValidVc, getSlc} from './helpers.js';
-import {filterByTag} from 'vc-api-test-suite-implementations';
 import * as sl from '@digitalbazaar/vc-status-list';
+import {createValidVc, getSlc} from './helpers.js';
 import {testCredential, testSlCredential} from './assertions.js';
+import chai from 'chai';
+import {filterByTag} from 'vc-api-test-suite-implementations';
 
 const should = chai.should();
 
@@ -62,6 +62,7 @@ describe('StatusList2021 Credentials (Issue "statusPurpose: revocation")',
             should.exist(decoded);
             // decoded size should be 16kb. For more info see
             // `credentialSubject.encoded` in
+            // eslint-disable-next-line max-len
             // https://w3c-ccg.github.io/vc-status-list-2021/#statuslist2021credential
             const decodedSize = (decoded.length / 8) / 1024;
             decodedSize.should.equal(16);

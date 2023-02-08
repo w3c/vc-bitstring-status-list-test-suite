@@ -42,7 +42,7 @@ describe('StatusList2021 Credentials (Verify)', function() {
         const credential2 = createValidVc({issuer: issuer2});
         const {data: data2} = await issuer1.post(
           {json: {credential: credential2}});
-          validVcForSuspension = data2;
+        validVcForSuspension = data2;
       });
       it('MUST verify a valid "StatusList2021Credential" with "revocation" ' +
         'status purpose', async function() {
