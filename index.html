@@ -81,10 +81,10 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 14/14 100%
+      Tests passed 11/14 78%
       </p>
       <p>
-      Tests failed 0/14 0%
+      Tests failed 3/14 22%
       </p>
       <p>
       Tests skipped 0
@@ -93,7 +93,7 @@
       Total tests 14
       </p>
       <p>
-        These tests were run on <time>2 April 2023 at 5:10 am UTC</time>
+        These tests were run on <time>9 April 2023 at 5:10 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -196,8 +196,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST issue a VC with SL 2021 &quot;credentialStatus&quot; and &quot;revocation&quot; status purpose</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -226,6 +226,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "expected undefined to exist",
+                      "stack": "AssertionError: expected undefined to exist\n    at Object.should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:42:18)\n    at processImmediate (node:internal/timers:466:21)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="notImplemented not-optional highlight-on-hover">
@@ -553,8 +560,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST have correct properties when dereferencing &quot;credentialStatus.statusListCredential&quot;</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -583,6 +590,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'credentialStatus')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'credentialStatus')\n    at getSlc (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:47:54)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:52:31)\n    at processImmediate (node:internal/timers:466:21)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="notImplemented not-optional highlight-on-hover">
@@ -910,8 +924,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST be 16kb in size when &quot;encodedList&quot; is decoded</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -940,6 +954,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'credentialStatus')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'credentialStatus')\n    at getSlc (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:47:54)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:58:54)\n    at processImmediate (node:internal/timers:466:21)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="notImplemented not-optional highlight-on-hover">
