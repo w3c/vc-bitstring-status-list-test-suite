@@ -81,10 +81,10 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 11/14 78%
+      Tests passed 10/14 71%
       </p>
       <p>
-      Tests failed 3/14 22%
+      Tests failed 8/14 58%
       </p>
       <p>
       Tests skipped 0
@@ -93,7 +93,7 @@
       Total tests 14
       </p>
       <p>
-        These tests were run on <time>9 April 2023 at 5:10 am UTC</time>
+        These tests were run on <time>12 April 2023 at 5:15 pm UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -180,6 +180,7 @@
                   </div>
                 </th>
                     <th class="no-wrap small-font">Digital Bazaar</th>
+                    <th class="no-wrap small-font">mesur.io</th>
                     <th class="no-wrap small-font">API Catalog</th>
                     <th class="no-wrap small-font">Danube Tech</th>
                     <th class="no-wrap small-font">EWF</th>
@@ -187,7 +188,6 @@
                     <th class="no-wrap small-font">LearnCard</th>
                     <th class="no-wrap small-font">MATTR</th>
                     <th class="no-wrap small-font">Mavennet</th>
-                    <th class="no-wrap small-font">mesur.io</th>
                     <th class="no-wrap small-font">SecureKey</th>
                     <th class="no-wrap small-font">Transmute</th>
                 </thead>
@@ -196,47 +196,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST issue a VC with SL 2021 &quot;credentialStatus&quot; and &quot;revocation&quot; status purpose</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "AssertionError",
-                      "message": "expected undefined to exist",
-                      "stack": "AssertionError: expected undefined to exist\n    at Object.should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:42:18)\n    at processImmediate (node:internal/timers:466:21)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
+                  <td class="passed not-optional highlight-on-hover">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -560,47 +521,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST have correct properties when dereferencing &quot;credentialStatus.statusListCredential&quot;</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "TypeError",
-                      "message": "Cannot read properties of undefined (reading 'credentialStatus')",
-                      "stack": "TypeError: Cannot read properties of undefined (reading 'credentialStatus')\n    at getSlc (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:47:54)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:52:31)\n    at processImmediate (node:internal/timers:466:21)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
+                  <td class="passed not-optional highlight-on-hover">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -924,47 +846,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST be 16kb in size when &quot;encodedList&quot; is decoded</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                      <span class="err hide no-space-around">
-                        <pre>{
-                      "name": "TypeError",
-                      "message": "Cannot read properties of undefined (reading 'credentialStatus')",
-                      "stack": "TypeError: Cannot read properties of undefined (reading 'credentialStatus')\n    at getSlc (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:47:54)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:58:54)\n    at processImmediate (node:internal/timers:466:21)"
-                    }</pre>
-                      </span>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
+                  <td class="passed not-optional highlight-on-hover">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -1360,6 +1243,7 @@
                   </div>
                 </th>
                     <th class="no-wrap small-font">Digital Bazaar</th>
+                    <th class="no-wrap small-font">mesur.io</th>
                     <th class="no-wrap small-font">API Catalog</th>
                     <th class="no-wrap small-font">Danube Tech</th>
                     <th class="no-wrap small-font">EWF</th>
@@ -1367,7 +1251,6 @@
                     <th class="no-wrap small-font">LearnCard</th>
                     <th class="no-wrap small-font">MATTR</th>
                     <th class="no-wrap small-font">Mavennet</th>
-                    <th class="no-wrap small-font">mesur.io</th>
                     <th class="no-wrap small-font">SecureKey</th>
                     <th class="no-wrap small-font">Transmute</th>
                 </thead>
@@ -1378,38 +1261,6 @@
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional highlight-on-hover">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -2053,38 +1904,6 @@
                       </style>
                     </div>
                   </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
               </tr>
               <tr>
                 <!--This is the name of the test-->
@@ -2092,38 +1911,6 @@
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="passed not-optional highlight-on-hover">
                     <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -2519,6 +2306,7 @@
                   </div>
                 </th>
                     <th class="no-wrap small-font">Digital Bazaar</th>
+                    <th class="no-wrap small-font">mesur.io</th>
                     <th class="no-wrap small-font">API Catalog</th>
                     <th class="no-wrap small-font">Danube Tech</th>
                     <th class="no-wrap small-font">EWF</th>
@@ -2526,7 +2314,6 @@
                     <th class="no-wrap small-font">LearnCard</th>
                     <th class="no-wrap small-font">MATTR</th>
                     <th class="no-wrap small-font">Mavennet</th>
-                    <th class="no-wrap small-font">mesur.io</th>
                     <th class="no-wrap small-font">SecureKey</th>
                     <th class="no-wrap small-font">Transmute</th>
                 </thead>
@@ -2567,8 +2354,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
+                  <td class="failed not-optional highlight-on-hover">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -2597,6 +2384,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected response from verifier: expected undefined to exist",
+                      "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at Object.should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:53:9)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="notImplemented not-optional highlight-on-hover">
@@ -2924,8 +2718,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
+                  <td class="failed not-optional highlight-on-hover">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -2954,6 +2748,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected response from verifier: expected undefined to exist",
+                      "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at Object.should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:61:9)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="notImplemented not-optional highlight-on-hover">
@@ -3281,8 +3082,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
+                  <td class="failed not-optional highlight-on-hover">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -3311,6 +3112,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected status code 400: expected 401 to equal 400",
+                      "stack": "AssertionError: Expected status code 400: expected 401 to equal 400\n    at shouldFailVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:104:21)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:72:9)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="notImplemented not-optional highlight-on-hover">
@@ -3638,8 +3446,8 @@
                       </style>
                     </div>
                   </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
+                  <td class="failed not-optional highlight-on-hover">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -3668,6 +3476,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected status code 400: expected 401 to equal 400",
+                      "stack": "AssertionError: Expected status code 400: expected 401 to equal 400\n    at shouldFailVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:104:21)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:82:11)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="notImplemented not-optional highlight-on-hover">
@@ -4035,6 +3850,7 @@
                   </div>
                 </th>
                     <th class="no-wrap small-font">Digital Bazaar</th>
+                    <th class="no-wrap small-font">mesur.io</th>
                     <th class="no-wrap small-font">API Catalog</th>
                     <th class="no-wrap small-font">Danube Tech</th>
                     <th class="no-wrap small-font">EWF</th>
@@ -4042,725 +3858,10 @@
                     <th class="no-wrap small-font">LearnCard</th>
                     <th class="no-wrap small-font">MATTR</th>
                     <th class="no-wrap small-font">Mavennet</th>
-                    <th class="no-wrap small-font">mesur.io</th>
                     <th class="no-wrap small-font">SecureKey</th>
                     <th class="no-wrap small-font">Transmute</th>
                 </thead>
               <tbody>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">MUST successfully verify VC issued by Digital Bazaar</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-              </tr>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">MUST update StatusList2021 revocation credential status and fail to verify revoked credential</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-              </tr>
             </tbody>
             </table>
           </div>
@@ -4837,6 +3938,7 @@
                   </div>
                 </th>
                     <th class="no-wrap small-font">Digital Bazaar</th>
+                    <th class="no-wrap small-font">mesur.io</th>
                     <th class="no-wrap small-font">API Catalog</th>
                     <th class="no-wrap small-font">Danube Tech</th>
                     <th class="no-wrap small-font">EWF</th>
@@ -4844,725 +3946,10 @@
                     <th class="no-wrap small-font">LearnCard</th>
                     <th class="no-wrap small-font">MATTR</th>
                     <th class="no-wrap small-font">Mavennet</th>
-                    <th class="no-wrap small-font">mesur.io</th>
                     <th class="no-wrap small-font">SecureKey</th>
                     <th class="no-wrap small-font">Transmute</th>
                 </thead>
               <tbody>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">MUST successfully verify VC issued by Digital Bazaar</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-              </tr>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">MUST update StatusList2021 suspension credential status and fail to verify suspended credential</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-                  <td class="notImplemented not-optional highlight-on-hover">
-                    <div class= "highlight-on-hover">—</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
-              </tr>
             </tbody>
             </table>
           </div>
