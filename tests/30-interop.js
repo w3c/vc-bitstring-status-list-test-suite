@@ -11,7 +11,7 @@ import {klona} from 'klona';
 const should = chai.should();
 
 // only use implementations with `StatusList2021` tags.
-const {match, nonMatch} = filterByTag({
+const {match} = filterByTag({
   property: 'issuers',
   tags: ['StatusList2021']
 });
@@ -23,7 +23,6 @@ describe('StatusList2021 Credentials (Interop "statusPurpose: revocation")',
     this.implemented = [...match.keys()];
     this.rowLabel = 'Test Name';
     this.columnLabel = 'Implementation';
-    this.notImplemented = [...nonMatch.keys()];
     for(const [
       issuerName,
       {issuers, setStatusLists, publishStatusLists}
@@ -120,7 +119,6 @@ describe('StatusList2021 Credentials (Interop "statusPurpose: suspension")',
     this.implemented = [...match.keys()];
     this.rowLabel = 'Test Name';
     this.columnLabel = 'Implementation';
-    this.notImplemented = [...nonMatch.keys()];
     for(const [
       issuerName,
       {issuers, setStatusLists, publishStatusLists}

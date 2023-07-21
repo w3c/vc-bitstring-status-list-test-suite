@@ -8,7 +8,7 @@ import {shouldFailVerification, shouldPassVerification} from './assertions.js';
 import {klona} from 'klona';
 
 // only use implementations with `StatusList2021` verifiers.
-const {match, nonMatch} = filterByTag({
+const {match} = filterByTag({
   property: 'verifiers',
   tags: ['StatusList2021']
 });
@@ -19,7 +19,6 @@ describe('StatusList2021 Credentials (Verify)', function() {
   this.implemented = [...match.keys()];
   this.rowLabel = 'Test Name';
   this.columnLabel = 'Verifier';
-  this.notImplemented = [...nonMatch.keys()];
   for(const [verifierName, {verifiers}] of match) {
     describe(verifierName, function() {
       const verifier = verifiers.find(verifier =>

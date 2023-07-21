@@ -10,7 +10,7 @@ import {filterByTag} from 'vc-api-test-suite-implementations';
 const should = chai.should();
 
 // only use implementations with `StatusList2021` issuers.
-const {match, nonMatch} = filterByTag({
+const {match} = filterByTag({
   property: 'issuers',
   tags: ['StatusList2021']
 });
@@ -21,7 +21,6 @@ describe('StatusList2021 Credentials (Issue "statusPurpose: revocation")',
     this.implemented = [...match.keys()];
     this.rowLabel = 'Test Name';
     this.columnLabel = 'Issuer';
-    this.notImplemented = [...nonMatch.keys()];
     for(const [issuerName, {issuers}] of match) {
       describe(issuerName, function() {
         let issuerResponse;
@@ -78,7 +77,6 @@ describe('StatusList2021 Credentials (Issue "statusPurpose: suspension")',
     this.implemented = [...match.keys()];
     this.rowLabel = 'Test Name';
     this.columnLabel = 'Issuer';
-    this.notImplemented = [...nonMatch.keys()];
     for(const [issuerName, {issuers}] of match) {
       describe(issuerName, function() {
         let issuerResponse;
