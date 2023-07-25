@@ -1,7 +1,9 @@
 /*!
  * Copyright (c) 2022-2023 Digital Bazaar, Inc. All rights reserved.
  */
-import {createRequestBody, createValidVc} from './helpers.js';
+import {
+  createRequestBody, getCredentialStatus, issueVc, updateStatus
+} from './helpers.js';
 import {filterByTag, filterImplementations} from
   'vc-api-test-suite-implementations';
 import {shouldFailVerification, shouldPassVerification} from './assertions.js';
@@ -25,22 +27,31 @@ describe('StatusList2021 Credentials (Verify)', function() {
         verifier.tags.has('StatusList2021'));
       let validVcForRevocation;
       let validVcForSuspension;
+      let setRevocationStatusList;
+      let setSuspensionStatusList;
+      let publishRevocationStatusList;
+      let publishSuspensionStatusList;
       before(async function() {
         // get a VC issued by DB
         const {match} = filterImplementations({filter: ({value}) => {
           // FIXME: Make issuer name configurable via env variable
           return value.settings.name === 'Digital Bazaar';
         }});
-        const {issuers} = match.get('Digital Bazaar');
+        const res = match.get('Digital Bazaar');
+        const {issuers, setStatusLists, publishStatusLists} = res;
+        setRevocationStatusList = setStatusLists.find(
+          issuer => issuer.tags.has('Revocation'));
+        setSuspensionStatusList = setStatusLists.find(
+          issuer => issuer.tags.has('Suspension'));
+        publishRevocationStatusList = publishStatusLists.find(
+          issuer => issuer.tags.has('Revocation'));
+        publishSuspensionStatusList = publishStatusLists.find(
+          issuer => issuer.tags.has('Suspension'));
         const issuer1 = issuers.find(issuer => issuer.tags.has('Revocation'));
-        const credential1 = createValidVc({issuer: issuer1});
-        const {data: data1} = await issuer1.post(
-          {json: {credential: credential1}});
+        const {data: data1} = await issueVc({issuer: issuer1});
         validVcForRevocation = data1;
         const issuer2 = issuers.find(issuer => issuer.tags.has('Suspension'));
-        const credential2 = createValidVc({issuer: issuer2});
-        const {data: data2} = await issuer1.post(
-          {json: {credential: credential2}});
+        const {data: data2} = await issueVc({issuer: issuer2});
         validVcForSuspension = data2;
       });
       it('MUST verify a valid "StatusList2021Credential" with "revocation" ' +
@@ -79,6 +90,66 @@ describe('StatusList2021 Credentials (Verify)', function() {
             json: createRequestBody({vc: invalidCredentialStatusType})
           });
           shouldFailVerification({result, error, statusCode});
+        });
+      it('MUST fail to verify a revoked status list credential',
+        async function() {
+          this.test.cell = {columnId: verifierName, rowId: this.test.title};
+          // get the status of the VC
+          const statusInfo = await getCredentialStatus({
+            verifiableCredential: validVcForRevocation
+          });
+          statusInfo.status.should.equal(false);
+          // verification of the credential should pass
+          const {result, error, statusCode} = await verifier.post({
+            json: createRequestBody({vc: validVcForRevocation})
+          });
+          shouldPassVerification({result, error, statusCode});
+          // update the status of the VC and revoke it
+          const revokedVc = await updateStatus({
+            vc: validVcForRevocation, setStatusList: setRevocationStatusList,
+            publishStatusList: publishRevocationStatusList, statusInfo,
+            statusPurpose: 'revocation'
+          });
+          // try to verify the credential after revocation, should fail since it
+          // has now been revoked
+          const {
+            result: result2, error: err2, statusCode: statusCode2
+          } = await verifier.post({
+            json: createRequestBody({vc: revokedVc})
+          });
+          shouldFailVerification({
+            result: result2, error: err2, statusCode: statusCode2
+          });
+        });
+      it('MUST fail to verify a suspended status list credential',
+        async function() {
+          this.test.cell = {columnId: verifierName, rowId: this.test.title};
+          // get the status of the VC
+          const statusInfo = await getCredentialStatus({
+            verifiableCredential: validVcForSuspension
+          });
+          statusInfo.status.should.equal(false);
+          // verification of the credential should pass
+          const {result, error, statusCode} = await verifier.post({
+            json: createRequestBody({vc: validVcForSuspension})
+          });
+          shouldPassVerification({result, error, statusCode});
+          // update the status of the VC and suspend it
+          const suspendedVc = await updateStatus({
+            vc: validVcForSuspension, setStatusList: setSuspensionStatusList,
+            publishStatusList: publishSuspensionStatusList, statusInfo,
+            statusPurpose: 'suspension'
+          });
+          // try to verify the credential after suspension, should fail since it
+          // has now been suspended
+          const {
+            result: result2, error: err2, statusCode: statusCode2
+          } = await verifier.post({
+            json: createRequestBody({vc: suspendedVc})
+          });
+          shouldFailVerification({
+            result: result2, error: err2, statusCode: statusCode2
+          });
         });
     });
   }

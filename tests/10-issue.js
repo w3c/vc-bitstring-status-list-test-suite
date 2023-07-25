@@ -2,7 +2,7 @@
  * Copyright (c) 2022-2023 Digital Bazaar, Inc. All rights reserved.
  */
 import * as sl from '@digitalbazaar/vc-status-list';
-import {createValidVc, getSlc} from './helpers.js';
+import {getSlc, issueVc} from './helpers.js';
 import {testCredential, testSlCredential} from './assertions.js';
 import chai from 'chai';
 import {filterByTag} from 'vc-api-test-suite-implementations';
@@ -28,9 +28,7 @@ describe('StatusList2021 Credentials (Issue "statusPurpose: revocation")',
         let issuedVc;
         before(async function() {
           const issuer = issuers.find(issuer => issuer.tags.has('Revocation'));
-          const credential = createValidVc({issuer});
-          const {result, error, data} = await issuer.post({
-            json: {credential}});
+          const {result, error, data} = await issueVc({issuer});
           err = error;
           issuerResponse = result;
           issuedVc = data;
@@ -84,9 +82,7 @@ describe('StatusList2021 Credentials (Issue "statusPurpose: suspension")',
         let issuedVc;
         before(async function() {
           const issuer = issuers.find(issuer => issuer.tags.has('Suspension'));
-          const credential = createValidVc({issuer});
-          const {result, error, data} = await issuer.post({
-            json: {credential}});
+          const {result, error, data} = await issueVc({issuer});
           err = error;
           issuerResponse = result;
           issuedVc = data;
