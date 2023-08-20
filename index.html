@@ -82,13 +82,13 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 16/32 50%
+      Tests passed 15/32 47%
       </p>
       <p>
-      Tests failed 16/32 50%
+      Tests failed 17/32 53%
       </p>
       <p>
-      Failures 16
+      Failures 17
       </p>
       <p>
       Tests skipped 0
@@ -97,7 +97,7 @@
       Total tests 32
       </p>
       <p>
-        These tests were run on <time>13 August 2023 at 5:10 am UTC</time>
+        These tests were run on <time>20 August 2023 at 5:10 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -1100,8 +1100,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST fail to verify a revoked status list credential</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -1130,6 +1130,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "expected false to equal true",
+                      "stack": "AssertionError: expected false to equal true\n    at updateStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:107:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:108:29)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
