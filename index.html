@@ -82,13 +82,13 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 14/32 44%
+      Tests passed 0/32 0%
       </p>
       <p>
-      Tests failed 18/32 56%
+      Tests failed 32/32 100%
       </p>
       <p>
-      Failures 18
+      Failures 32
       </p>
       <p>
       Tests skipped 0
@@ -97,7 +97,7 @@
       Total tests 32
       </p>
       <p>
-        These tests were run on <time>15 October 2023 at 5:10 am UTC</time>
+        These tests were run on <time>22 October 2023 at 5:10 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -188,8 +188,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST issue a VC with SL 2021 &quot;credentialStatus&quot; and &quot;revocation&quot; status purpose</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -218,6 +218,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "expected undefined to exist",
+                      "stack": "AssertionError: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:39:18)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -253,8 +260,8 @@
                       <span class="err hide no-space-around">
                         <pre>{
                       "name": "AssertionError",
-                      "message": "expected [ …(2) ] to be a superset of [ …(3) ]",
-                      "stack": "AssertionError: expected [ …(2) ] to be a superset of [ …(3) ]\n    at testCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:23:41)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:43:11)\n    at process.processImmediate (node:internal/timers:478:21)"
+                      "message": "expected undefined to exist",
+                      "stack": "AssertionError: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:39:18)\n    at process.processImmediate (node:internal/timers:478:21)"
                     }</pre>
                       </span>
                     </div>
@@ -264,38 +271,6 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST have correct properties when dereferencing &quot;credentialStatus.statusListCredential&quot;</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
                   <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
@@ -328,48 +303,11 @@
                       </style>
                       <span class="err hide no-space-around">
                         <pre>{
-                      "name": "AssertionError",
-                      "message": "expected { statusListCredential: { …(9) } } to have property '@context'",
-                      "stack": "AssertionError: expected { statusListCredential: { …(9) } } to have property '@context'\n    at testSlCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:67:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:50:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "name": "TypeError",
+                      "message": "Cannot destructure property 'credentialStatus' of 'issuedVc' as it is undefined.",
+                      "stack": "TypeError: Cannot destructure property 'credentialStatus' of 'issuedVc' as it is undefined.\n    at getSlc (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:50:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:49:31)\n    at process.processImmediate (node:internal/timers:478:21)"
                     }</pre>
                       </span>
-                    </div>
-                  </td>
-              </tr>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">MUST be 16kb in size when &quot;encodedList&quot; is decoded</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -405,8 +343,91 @@
                       <span class="err hide no-space-around">
                         <pre>{
                       "name": "TypeError",
-                      "message": "Cannot destructure property 'encodedList' of 'credentialSubject' as it is undefined.",
-                      "stack": "TypeError: Cannot destructure property 'encodedList' of 'credentialSubject' as it is undefined.\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:56:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "message": "Cannot read properties of undefined (reading 'statusListCredential')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'statusListCredential')\n    at getSlc (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:50:29)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:49:31)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST be 16kb in size when &quot;encodedList&quot; is decoded</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot destructure property 'credentialStatus' of 'issuedVc' as it is undefined.",
+                      "stack": "TypeError: Cannot destructure property 'credentialStatus' of 'issuedVc' as it is undefined.\n    at getSlc (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:50:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:55:54)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'statusListCredential')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'statusListCredential')\n    at getSlc (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:50:29)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:55:54)\n    at process.processImmediate (node:internal/timers:478:21)"
                     }</pre>
                       </span>
                     </div>
@@ -492,8 +513,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST issue a VC with SL 2021 &quot;credentialStatus&quot; and &quot;suspension&quot; status purpose</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -522,6 +543,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "expected undefined to exist",
+                      "stack": "AssertionError: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:93:18)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -557,8 +585,8 @@
                       <span class="err hide no-space-around">
                         <pre>{
                       "name": "AssertionError",
-                      "message": "expected [ …(2) ] to be a superset of [ …(3) ]",
-                      "stack": "AssertionError: expected [ …(2) ] to be a superset of [ …(3) ]\n    at testCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:23:41)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:97:11)\n    at process.processImmediate (node:internal/timers:478:21)"
+                      "message": "expected undefined to exist",
+                      "stack": "AssertionError: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:93:18)\n    at process.processImmediate (node:internal/timers:478:21)"
                     }</pre>
                       </span>
                     </div>
@@ -568,38 +596,6 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST have correct properties when dereferencing &quot;credentialStatus.statusListCredential&quot;</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
                   <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
@@ -632,48 +628,11 @@
                       </style>
                       <span class="err hide no-space-around">
                         <pre>{
-                      "name": "AssertionError",
-                      "message": "expected { statusListCredential: { …(9) } } to have property '@context'",
-                      "stack": "AssertionError: expected { statusListCredential: { …(9) } } to have property '@context'\n    at testSlCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:67:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:104:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "name": "TypeError",
+                      "message": "Cannot destructure property 'credentialStatus' of 'issuedVc' as it is undefined.",
+                      "stack": "TypeError: Cannot destructure property 'credentialStatus' of 'issuedVc' as it is undefined.\n    at getSlc (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:50:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:103:31)\n    at process.processImmediate (node:internal/timers:478:21)"
                     }</pre>
                       </span>
-                    </div>
-                  </td>
-              </tr>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">MUST be 16kb in size when &quot;encodedList&quot; is decoded</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -709,8 +668,91 @@
                       <span class="err hide no-space-around">
                         <pre>{
                       "name": "TypeError",
-                      "message": "Cannot destructure property 'encodedList' of 'credentialSubject' as it is undefined.",
-                      "stack": "TypeError: Cannot destructure property 'encodedList' of 'credentialSubject' as it is undefined.\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:110:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "message": "Cannot read properties of undefined (reading 'statusListCredential')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'statusListCredential')\n    at getSlc (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:50:29)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:103:31)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST be 16kb in size when &quot;encodedList&quot; is decoded</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot destructure property 'credentialStatus' of 'issuedVc' as it is undefined.",
+                      "stack": "TypeError: Cannot destructure property 'credentialStatus' of 'issuedVc' as it is undefined.\n    at getSlc (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:50:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:109:54)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'statusListCredential')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'statusListCredential')\n    at getSlc (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:50:29)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:109:54)\n    at process.processImmediate (node:internal/timers:478:21)"
                     }</pre>
                       </span>
                     </div>
@@ -796,8 +838,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST verify a valid &quot;StatusList2021Credential&quot; with &quot;revocation&quot; status purpose</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -826,6 +868,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected response from verifier: expected undefined to exist",
+                      "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:63:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -872,8 +921,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST verify a valid &quot;StatusList2021Credential&quot; with &quot;suspension&quot;status purpose</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -902,6 +951,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected response from verifier: expected undefined to exist",
+                      "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:71:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -948,38 +1004,6 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST fail to verify a VC with invalid &quot;credentialStatus.statusListCredential&quot;</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
-                    </div>
-                  </td>
                   <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
@@ -1012,48 +1036,11 @@
                       </style>
                       <span class="err hide no-space-around">
                         <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected no response from verifier: expected Response{ data: { …(2) }, …(3) } to not exist",
-                      "stack": "AssertionError: Expected no response from verifier: expected Response{ data: { …(2) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at shouldFailVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:102:14)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:82:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'credentialStatus')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'credentialStatus')\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:77:37)\n    at process.processImmediate (node:internal/timers:478:21)"
                     }</pre>
                       </span>
-                    </div>
-                  </td>
-              </tr>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">MUST fail to verify a VC with invalid &quot;credentialStatus.type&quot;</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -1089,8 +1076,91 @@
                       <span class="err hide no-space-around">
                         <pre>{
                       "name": "TypeError",
-                      "message": "Cannot read properties of undefined (reading 'should')",
-                      "stack": "TypeError: Cannot read properties of undefined (reading 'should')\n    at shouldFailVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:106:23)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:92:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "message": "Cannot read properties of undefined (reading 'credentialStatus')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'credentialStatus')\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:77:37)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST fail to verify a VC with invalid &quot;credentialStatus.type&quot;</td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'credentialStatus')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'credentialStatus')\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:88:39)\n    at process.processImmediate (node:internal/timers:478:21)"
+                    }</pre>
+                      </span>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "TypeError",
+                      "message": "Cannot read properties of undefined (reading 'credentialStatus')",
+                      "stack": "TypeError: Cannot read properties of undefined (reading 'credentialStatus')\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:88:39)\n    at process.processImmediate (node:internal/timers:478:21)"
                     }</pre>
                       </span>
                     </div>
@@ -1132,9 +1202,9 @@
                       </style>
                       <span class="err hide no-space-around">
                         <pre>{
-                      "name": "AssertionError",
-                      "message": "expected false to equal true",
-                      "stack": "AssertionError: expected false to equal true\n    at updateStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:107:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:108:29)"
+                      "name": "TypeError",
+                      "message": "Cannot destructure property 'credentialStatus' of 'verifiableCredential' as it is undefined.",
+                      "stack": "TypeError: Cannot destructure property 'credentialStatus' of 'verifiableCredential' as it is undefined.\n    at getCredentialStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:26:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:98:36)\n    at process.processImmediate (node:internal/timers:478:21)"
                     }</pre>
                       </span>
                     </div>
@@ -1171,9 +1241,9 @@
                       </style>
                       <span class="err hide no-space-around">
                         <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected response from verifier: expected undefined to exist",
-                      "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:106:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "name": "TypeError",
+                      "message": "Cannot destructure property 'credentialStatus' of 'verifiableCredential' as it is undefined.",
+                      "stack": "TypeError: Cannot destructure property 'credentialStatus' of 'verifiableCredential' as it is undefined.\n    at getCredentialStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:26:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:98:36)\n    at process.processImmediate (node:internal/timers:478:21)"
                     }</pre>
                       </span>
                     </div>
@@ -1215,9 +1285,9 @@
                       </style>
                       <span class="err hide no-space-around">
                         <pre>{
-                      "name": "AssertionError",
-                      "message": "expected false to equal true",
-                      "stack": "AssertionError: expected false to equal true\n    at updateStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:107:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:138:31)"
+                      "name": "TypeError",
+                      "message": "Cannot destructure property 'credentialStatus' of 'verifiableCredential' as it is undefined.",
+                      "stack": "TypeError: Cannot destructure property 'credentialStatus' of 'verifiableCredential' as it is undefined.\n    at getCredentialStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:26:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:128:36)\n    at process.processImmediate (node:internal/timers:478:21)"
                     }</pre>
                       </span>
                     </div>
@@ -1254,9 +1324,9 @@
                       </style>
                       <span class="err hide no-space-around">
                         <pre>{
-                      "name": "AssertionError",
-                      "message": "Expected response from verifier: expected undefined to exist",
-                      "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:136:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "name": "TypeError",
+                      "message": "Cannot destructure property 'credentialStatus' of 'verifiableCredential' as it is undefined.",
+                      "stack": "TypeError: Cannot destructure property 'credentialStatus' of 'verifiableCredential' as it is undefined.\n    at getCredentialStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:26:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:128:36)\n    at process.processImmediate (node:internal/timers:478:21)"
                     }</pre>
                       </span>
                     </div>
@@ -1342,8 +1412,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">Digital Bazaar</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -1372,6 +1442,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "expected HTTPError: Request failed with status cod… { …(5) } to not exist",
+                      "stack": "AssertionError: expected HTTPError: Request failed with status cod… { …(5) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:43:22)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -1407,8 +1484,8 @@
                       <span class="err hide no-space-around">
                         <pre>{
                       "name": "AssertionError",
-                      "message": "Expected response from verifier: expected undefined to exist",
-                      "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:47:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "message": "expected HTTPError: Request failed with status cod… { …(5) } to not exist",
+                      "stack": "AssertionError: expected HTTPError: Request failed with status cod… { …(5) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:43:22)"
                     }</pre>
                       </span>
                     </div>
@@ -1451,14 +1528,14 @@
                       <span class="err hide no-space-around">
                         <pre>{
                       "name": "AssertionError",
-                      "message": "Expected response from verifier: expected undefined to exist",
-                      "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:47:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "message": "expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist",
+                      "stack": "AssertionError: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:43:22)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -1487,6 +1564,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist",
+                      "stack": "AssertionError: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:43:22)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
               </tr>
@@ -1570,8 +1654,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">Digital Bazaar</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -1600,6 +1684,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "expected HTTPError: Request failed with status cod… { …(5) } to not exist",
+                      "stack": "AssertionError: expected HTTPError: Request failed with status cod… { …(5) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:74:22)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -1635,8 +1726,8 @@
                       <span class="err hide no-space-around">
                         <pre>{
                       "name": "AssertionError",
-                      "message": "Expected response from verifier: expected undefined to exist",
-                      "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:78:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "message": "expected HTTPError: Request failed with status cod… { …(5) } to not exist",
+                      "stack": "AssertionError: expected HTTPError: Request failed with status cod… { …(5) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:74:22)"
                     }</pre>
                       </span>
                     </div>
@@ -1679,14 +1770,14 @@
                       <span class="err hide no-space-around">
                         <pre>{
                       "name": "AssertionError",
-                      "message": "Expected response from verifier: expected undefined to exist",
-                      "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:78:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "message": "expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist",
+                      "stack": "AssertionError: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:74:22)"
                     }</pre>
                       </span>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -1715,6 +1806,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist",
+                      "stack": "AssertionError: expected HTTPError: Unauthorized: This endpoint re… { …(6) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:74:22)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
               </tr>
