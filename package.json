@@ -28,7 +28,7 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@digitalbazaar/http-client": "^3.3.0",
+    "@digitalbazaar/http-client": "^4.0.0",
     "@digitalbazaar/mocha-w3c-interop-reporter": "^1.4.0",
     "@digitalbazaar/vc-status-list": "^7.0.0",
     "@digitalbazaar/vc-status-list-context": "^3.0.1",
