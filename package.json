@@ -43,10 +43,10 @@
     "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations"
   },
   "devDependencies": {
-    "eslint": "^8.33.0",
-    "eslint-config-digitalbazaar": "^4.2.0",
-    "eslint-plugin-jsdoc": "^39.8.0",
-    "eslint-plugin-unicorn": "^45.0.2"
+    "eslint": "^8.52.0",
+    "eslint-config-digitalbazaar": "^5.0.1",
+    "eslint-plugin-jsdoc": "^46.8.2",
+    "eslint-plugin-unicorn": "^48.0.1"
   },
   "bugs": {
     "url": "https://github.com/w3c-ccg/status-list-2021-test-suite/issues"
