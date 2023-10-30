@@ -40,7 +40,7 @@
     "klona": "^2.0.6",
     "mocha": "^10.2.0",
     "uuid": "^9.0.0",
-    "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations"
+    "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations#update-db-status-list-implementation"
   },
   "devDependencies": {
     "eslint": "^8.52.0",
