@@ -31,7 +31,7 @@ describe('StatusList2021 Credentials (Verify)', function() {
       let setSuspensionStatusList;
       let publishRevocationStatusList;
       let publishSuspensionStatusList;
-      before(async function() {
+      beforeEach(async function() {
         // get a VC issued by DB
         const {match} = filterImplementations({filter: ({value}) => {
           // FIXME: Make issuer name configurable via env variable
@@ -110,6 +110,11 @@ describe('StatusList2021 Credentials (Verify)', function() {
             publishStatusList: publishRevocationStatusList, statusInfo,
             statusPurpose: 'revocation'
           });
+          // get the status of the VC after it is revoked
+          const {status} = await getCredentialStatus({
+            verifiableCredential: revokedVc
+          });
+          status.should.equal(true);
           // try to verify the credential after revocation, should fail since it
           // has now been revoked
           const {
@@ -140,6 +145,11 @@ describe('StatusList2021 Credentials (Verify)', function() {
             publishStatusList: publishSuspensionStatusList, statusInfo,
             statusPurpose: 'suspension'
           });
+          // get the status of the VC after it is suspended
+          const {status} = await getCredentialStatus({
+            verifiableCredential: suspendedVc
+          });
+          status.should.equal(true);
           // try to verify the credential after suspension, should fail since it
           // has now been suspended
           const {

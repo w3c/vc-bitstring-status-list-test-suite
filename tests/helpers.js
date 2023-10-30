@@ -23,17 +23,30 @@ export const ISOTimeStamp = ({date = new Date()} = {}) => {
 };
 
 export const getCredentialStatus = async ({verifiableCredential}) => {
+  // get SLC for the VC
   const {credentialStatus} = verifiableCredential;
-  const {statusListCredential} = credentialStatus;
-  // get StatusList Credential for the VC
-  const {data: slc} = await httpClient.get(
-    statusListCredential, {agent});
-  const {credentialSubject: {encodedList}} = slc;
+  if(Array.isArray(credentialStatus)) {
+    throw new Error('Multiple credential statuses not supported.');
+  }
+  let slcUrl;
+  let statusListIndexProperty;
+  if(credentialStatus.type === 'RevocationList2020Status') {
+    slcUrl = credentialStatus.revocationListCredential;
+    statusListIndexProperty = 'revocationListIndex';
+  } else {
+    slcUrl = credentialStatus.statusListCredential;
+    statusListIndexProperty = 'statusListIndex';
+  }
+  if(!slcUrl) {
+    throw new Error('Status list credential missing from credential status.');
+  }
+  const {data: slc} = await httpClient.get(slcUrl, {agent});
+  const {encodedList} = slc.credentialSubject;
   const list = await decodeList({encodedList});
   const statusListIndex = parseInt(
-    credentialStatus.statusListIndex, 10);
+    credentialStatus[statusListIndexProperty], 10);
   const status = list.getStatus(statusListIndex);
-  return {status, statusListCredential};
+  return {status, statusListCredential: slcUrl};
 };
 
 export const issueVc = async ({issuer}) => {
@@ -102,8 +115,5 @@ export async function updateStatus({
   should.not.exist(err2);
   should.exist(result2);
   statusCode2.should.equal(204);
-  // get the status of the VC
-  const {status} = await getCredentialStatus({verifiableCredential: vc});
-  status.should.equal(true);
   return vc;
 }

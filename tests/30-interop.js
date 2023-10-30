@@ -29,17 +29,16 @@ describe('StatusList2021 Credentials (Interop "statusPurpose: revocation")',
     this.rowLabel = 'Issuer';
     this.columnLabel = 'Verifier';
     for(const [issuerName, {endpoints}] of issuerMatches) {
-      let issuedVc;
+      let issuer;
       before(async function() {
-        const [issuer] = endpoints.filter(
-          endpoint => endpoint.settings.tags.includes('Revocation'));
-        issuedVc = issueVc({issuer});
+        ([issuer] = endpoints.filter(
+          endpoint => endpoint.settings.tags.includes('Revocation')));
       });
       for(const [verifierName, {endpoints}] of verifierMatches) {
         const [verifier] = endpoints;
         it(`${verifierName} should verify ${issuerName}`, async function() {
           this.test.cell = {rowId: issuerName, columnId: verifierName};
-          const {data: vc, error: err} = await issuedVc;
+          const {data: vc, error: err} = await issueVc({issuer});
           should.not.exist(err);
           should.exist(vc);
           const body = createRequestBody({vc});
