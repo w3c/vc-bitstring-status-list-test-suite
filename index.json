@@ -1,0 +1,2971 @@
+{
+  "matrices": [
+    {
+      "title": "StatusList2021 Credentials (Issue \"statusPurpose: revocation\")",
+      "ctx": null,
+      "suites": [
+        {
+          "title": "Digital Bazaar",
+          "ctx": null,
+          "suites": [],
+          "tests": [
+            {
+              "type": "test",
+              "title": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"revocation\" status purpose",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          should.exist(issuerResponse);\n          should.not.exist(err);\n          issuerResponse.status.should.equal(201);\n          should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);\n          testCredential({credential: issuedVc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "H38i1FNfBv6jzSOZ3za5p",
+              "ctx": null,
+              "_testId": "urn:uuid:188b2010-65b1-4fc6-989d-a84f8aa3bfac",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"revocation\" status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 2171,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 4,
+              "state": "passed",
+              "speed": "fast"
+            },
+            {
+              "type": "test",
+              "title": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\"",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          const {slc} = await getSlc({issuedVc});\n          testSlCredential({slCredential: slc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "H38i1FNfBv6jzSOZ3za5p",
+              "ctx": null,
+              "_testId": "urn:uuid:08fb1ff4-b062-4588-a944-af3c055f1fcf",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 2172,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 199,
+              "state": "passed",
+              "speed": "slow"
+            },
+            {
+              "type": "test",
+              "title": "MUST be 16kb in size when \"encodedList\" is decoded",
+              "body": "async function() {\n            this.test.cell = {columnId: issuerName, rowId: this.test.title};\n            const {slc: {credentialSubject}} = await getSlc({issuedVc});\n            const {encodedList} = credentialSubject;\n            // Uncompress encodedList\n            const decoded = await sl.decodeList({encodedList});\n            should.exist(decoded);\n            // decoded size should be 16kb. For more info see\n            // `credentialSubject.encoded` in\n            // eslint-disable-next-line max-len\n            // https://w3c-ccg.github.io/vc-status-list-2021/#statuslist2021credential\n            const decodedSize = (decoded.length / 8) / 1024;\n            decodedSize.should.equal(16);\n          }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "H38i1FNfBv6jzSOZ3za5p",
+              "ctx": null,
+              "_testId": "urn:uuid:593dd091-1e67-4b0c-9399-c248aeb3b8ba",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST be 16kb in size when \"encodedList\" is decoded"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 2376,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 34,
+              "state": "passed",
+              "speed": "fast"
+            }
+          ],
+          "root": false,
+          "pending": false,
+          "_retries": -1,
+          "_beforeEach": [],
+          "_beforeAll": [
+            {
+              "title": "\"before all\" hook in \"Digital Bazaar\"",
+              "body": "async function() {\n          const issuer = issuers.find(issuer => issuer.tags.has('Revocation'));\n          const {result, error, data} = await issueVc({issuer});\n          err = error;\n          issuerResponse = result;\n          issuedVc = data;\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "type": "hook",
+              "parent": "H38i1FNfBv6jzSOZ3za5p",
+              "ctx": null,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "originalTitle": "\"before all\" hook",
+              "_events": {},
+              "_eventsCount": 1,
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 446,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 1722,
+              "_error": null
+            }
+          ],
+          "_afterEach": [],
+          "_afterAll": [],
+          "_timeout": 15000,
+          "_slow": 75,
+          "_bail": false,
+          "_onlyTests": [],
+          "_onlySuites": [],
+          "delayed": false,
+          "parent": "Mx1SfCGkfFY7O_lPtyjNp",
+          "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+          "_testId": "urn:uuid:05932782-89ca-460b-ac90-abb0d072af8b"
+        },
+        {
+          "title": "mesur.io",
+          "ctx": null,
+          "suites": [],
+          "tests": [
+            {
+              "type": "test",
+              "title": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"revocation\" status purpose",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          should.exist(issuerResponse);\n          should.not.exist(err);\n          issuerResponse.status.should.equal(201);\n          should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);\n          testCredential({credential: issuedVc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "beTTXl-OQLg2kTuJXv3IS",
+              "ctx": null,
+              "_testId": "urn:uuid:6e801f60-2f57-4d9b-93c2-2ed3274fde7a",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"revocation\" status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 2892,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 1,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "expected [ …(2) ] to be a superset of [ …(3) ]",
+                "showDiff": true,
+                "actual": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n]",
+                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/suites/ed25519-2020/v1\"\n]",
+                "operator": "deepStrictEqual",
+                "stack": "AssertionError: expected [ …(2) ] to be a superset of [ …(3) ]\n    at testCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:23:41)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:43:11)\n    at process.processImmediate (node:internal/timers:478:21)"
+              }
+            },
+            {
+              "type": "test",
+              "title": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\"",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          const {slc} = await getSlc({issuedVc});\n          testSlCredential({slCredential: slc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "beTTXl-OQLg2kTuJXv3IS",
+              "ctx": null,
+              "_testId": "urn:uuid:8758d182-95f5-4cbe-bfdc-e209e43a48ff",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 2896,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 178,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "expected { statusListCredential: { …(9) } } to have property '@context'",
+                "showDiff": false,
+                "actual": {
+                  "statusListCredential": {
+                    "@context": [
+                      "https://www.w3.org/2018/credentials/v1",
+                      "https://w3id.org/vc/status-list/2021/v1"
+                    ],
+                    "credentialSubject": {
+                      "encodedList": "H4sIAAAAAAAA/2IAAQ6GUTAKRsEoGAWjYBSMIAAIAAD//9cIqqwACAAA",
+                      "id": "https://vc.mesur.io/v1/credentials/status#list",
+                      "size": 1,
+                      "statusPurpose": "revocation",
+                      "ttl": 5000,
+                      "type": "StatusList2021"
+                    },
+                    "id": "https://vc.mesur.io/v1/credentials/status",
+                    "issuanceDate": "2023-11-12T05:11:15Z",
+                    "issuer": "did:web:vc.mesur.io:v1",
+                    "proof": {
+                      "created": "2023-11-12T05:11:15.257970536Z",
+                      "proofPurpose": "assertionMethod",
+                      "proofValue": "JFvJdaWSkrzG5sehephJV7RnZ2oUmZ2H74iWv9FA5TtyF3wylkR_9QH_WSuPzzWfBsisPeX-DDrIAV3kOmCLBA",
+                      "type": "Ed25519Signature2018",
+                      "verificationMethod": "did:key:z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV#z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV"
+                    },
+                    "type": [
+                      "VerifiableCredential",
+                      "StatusList2021Credential"
+                    ],
+                    "validFrom": "2023-11-12T05:11:15Z",
+                    "validUntil": "2023-11-13T05:11:15Z"
+                  }
+                },
+                "stack": "AssertionError: expected { statusListCredential: { …(9) } } to have property '@context'\n    at testSlCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:67:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:50:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            },
+            {
+              "type": "test",
+              "title": "MUST be 16kb in size when \"encodedList\" is decoded",
+              "body": "async function() {\n            this.test.cell = {columnId: issuerName, rowId: this.test.title};\n            const {slc: {credentialSubject}} = await getSlc({issuedVc});\n            const {encodedList} = credentialSubject;\n            // Uncompress encodedList\n            const decoded = await sl.decodeList({encodedList});\n            should.exist(decoded);\n            // decoded size should be 16kb. For more info see\n            // `credentialSubject.encoded` in\n            // eslint-disable-next-line max-len\n            // https://w3c-ccg.github.io/vc-status-list-2021/#statuslist2021credential\n            const decodedSize = (decoded.length / 8) / 1024;\n            decodedSize.should.equal(16);\n          }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "beTTXl-OQLg2kTuJXv3IS",
+              "ctx": null,
+              "_testId": "urn:uuid:7c9739a3-7a95-40c5-bdc3-72f5d5982b9c",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST be 16kb in size when \"encodedList\" is decoded"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 3075,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 39,
+              "state": "failed",
+              "err": {}
+            }
+          ],
+          "root": false,
+          "pending": false,
+          "_retries": -1,
+          "_beforeEach": [],
+          "_beforeAll": [
+            {
+              "title": "\"before all\" hook in \"mesur.io\"",
+              "body": "async function() {\n          const issuer = issuers.find(issuer => issuer.tags.has('Revocation'));\n          const {result, error, data} = await issueVc({issuer});\n          err = error;\n          issuerResponse = result;\n          issuedVc = data;\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "type": "hook",
+              "parent": "beTTXl-OQLg2kTuJXv3IS",
+              "ctx": null,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "originalTitle": "\"before all\" hook",
+              "_events": {},
+              "_eventsCount": 1,
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 2411,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 480,
+              "_error": null
+            }
+          ],
+          "_afterEach": [],
+          "_afterAll": [],
+          "_timeout": 15000,
+          "_slow": 75,
+          "_bail": false,
+          "_onlyTests": [],
+          "_onlySuites": [],
+          "delayed": false,
+          "parent": "Mx1SfCGkfFY7O_lPtyjNp",
+          "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+          "_testId": "urn:uuid:40ce10a3-ce73-4058-86d5-eb98284c5e8e"
+        }
+      ],
+      "root": false,
+      "pending": false,
+      "_retries": -1,
+      "_beforeEach": [],
+      "_beforeAll": [],
+      "_afterEach": [],
+      "_afterAll": [],
+      "_timeout": 15000,
+      "_slow": 75,
+      "_bail": false,
+      "_onlyTests": [],
+      "_onlySuites": [],
+      "delayed": false,
+      "parent": "VnifAVc5F71QJMLHlkp2n",
+      "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+      "matrix": true,
+      "report": true,
+      "rowLabel": "Test Name",
+      "columnLabel": "Issuer",
+      "_testId": "urn:uuid:bd2886c3-6e44-410e-8350-9b50bfe46e6b",
+      "columns": [
+        "Digital Bazaar",
+        "mesur.io"
+      ],
+      "rows": [
+        {
+          "id": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"revocation\" status purpose",
+          "cells": [
+            {
+              "type": "test",
+              "title": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"revocation\" status purpose",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          should.exist(issuerResponse);\n          should.not.exist(err);\n          issuerResponse.status.should.equal(201);\n          should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);\n          testCredential({credential: issuedVc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "H38i1FNfBv6jzSOZ3za5p",
+              "ctx": null,
+              "_testId": "urn:uuid:188b2010-65b1-4fc6-989d-a84f8aa3bfac",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"revocation\" status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 2171,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 4,
+              "state": "passed",
+              "speed": "fast"
+            },
+            {
+              "type": "test",
+              "title": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"revocation\" status purpose",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          should.exist(issuerResponse);\n          should.not.exist(err);\n          issuerResponse.status.should.equal(201);\n          should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);\n          testCredential({credential: issuedVc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "beTTXl-OQLg2kTuJXv3IS",
+              "ctx": null,
+              "_testId": "urn:uuid:6e801f60-2f57-4d9b-93c2-2ed3274fde7a",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"revocation\" status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 2892,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 1,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "expected [ …(2) ] to be a superset of [ …(3) ]",
+                "showDiff": true,
+                "actual": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n]",
+                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/suites/ed25519-2020/v1\"\n]",
+                "operator": "deepStrictEqual",
+                "stack": "AssertionError: expected [ …(2) ] to be a superset of [ …(3) ]\n    at testCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:23:41)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:43:11)\n    at process.processImmediate (node:internal/timers:478:21)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\"",
+          "cells": [
+            {
+              "type": "test",
+              "title": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\"",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          const {slc} = await getSlc({issuedVc});\n          testSlCredential({slCredential: slc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "H38i1FNfBv6jzSOZ3za5p",
+              "ctx": null,
+              "_testId": "urn:uuid:08fb1ff4-b062-4588-a944-af3c055f1fcf",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 2172,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 199,
+              "state": "passed",
+              "speed": "slow"
+            },
+            {
+              "type": "test",
+              "title": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\"",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          const {slc} = await getSlc({issuedVc});\n          testSlCredential({slCredential: slc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "beTTXl-OQLg2kTuJXv3IS",
+              "ctx": null,
+              "_testId": "urn:uuid:8758d182-95f5-4cbe-bfdc-e209e43a48ff",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 2896,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 178,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "expected { statusListCredential: { …(9) } } to have property '@context'",
+                "showDiff": false,
+                "actual": {
+                  "statusListCredential": {
+                    "@context": [
+                      "https://www.w3.org/2018/credentials/v1",
+                      "https://w3id.org/vc/status-list/2021/v1"
+                    ],
+                    "credentialSubject": {
+                      "encodedList": "H4sIAAAAAAAA/2IAAQ6GUTAKRsEoGAWjYBSMIAAIAAD//9cIqqwACAAA",
+                      "id": "https://vc.mesur.io/v1/credentials/status#list",
+                      "size": 1,
+                      "statusPurpose": "revocation",
+                      "ttl": 5000,
+                      "type": "StatusList2021"
+                    },
+                    "id": "https://vc.mesur.io/v1/credentials/status",
+                    "issuanceDate": "2023-11-12T05:11:15Z",
+                    "issuer": "did:web:vc.mesur.io:v1",
+                    "proof": {
+                      "created": "2023-11-12T05:11:15.257970536Z",
+                      "proofPurpose": "assertionMethod",
+                      "proofValue": "JFvJdaWSkrzG5sehephJV7RnZ2oUmZ2H74iWv9FA5TtyF3wylkR_9QH_WSuPzzWfBsisPeX-DDrIAV3kOmCLBA",
+                      "type": "Ed25519Signature2018",
+                      "verificationMethod": "did:key:z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV#z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV"
+                    },
+                    "type": [
+                      "VerifiableCredential",
+                      "StatusList2021Credential"
+                    ],
+                    "validFrom": "2023-11-12T05:11:15Z",
+                    "validUntil": "2023-11-13T05:11:15Z"
+                  }
+                },
+                "stack": "AssertionError: expected { statusListCredential: { …(9) } } to have property '@context'\n    at testSlCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:67:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:50:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "MUST be 16kb in size when \"encodedList\" is decoded",
+          "cells": [
+            {
+              "type": "test",
+              "title": "MUST be 16kb in size when \"encodedList\" is decoded",
+              "body": "async function() {\n            this.test.cell = {columnId: issuerName, rowId: this.test.title};\n            const {slc: {credentialSubject}} = await getSlc({issuedVc});\n            const {encodedList} = credentialSubject;\n            // Uncompress encodedList\n            const decoded = await sl.decodeList({encodedList});\n            should.exist(decoded);\n            // decoded size should be 16kb. For more info see\n            // `credentialSubject.encoded` in\n            // eslint-disable-next-line max-len\n            // https://w3c-ccg.github.io/vc-status-list-2021/#statuslist2021credential\n            const decodedSize = (decoded.length / 8) / 1024;\n            decodedSize.should.equal(16);\n          }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "H38i1FNfBv6jzSOZ3za5p",
+              "ctx": null,
+              "_testId": "urn:uuid:593dd091-1e67-4b0c-9399-c248aeb3b8ba",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST be 16kb in size when \"encodedList\" is decoded"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 2376,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 34,
+              "state": "passed",
+              "speed": "fast"
+            },
+            {
+              "type": "test",
+              "title": "MUST be 16kb in size when \"encodedList\" is decoded",
+              "body": "async function() {\n            this.test.cell = {columnId: issuerName, rowId: this.test.title};\n            const {slc: {credentialSubject}} = await getSlc({issuedVc});\n            const {encodedList} = credentialSubject;\n            // Uncompress encodedList\n            const decoded = await sl.decodeList({encodedList});\n            should.exist(decoded);\n            // decoded size should be 16kb. For more info see\n            // `credentialSubject.encoded` in\n            // eslint-disable-next-line max-len\n            // https://w3c-ccg.github.io/vc-status-list-2021/#statuslist2021credential\n            const decodedSize = (decoded.length / 8) / 1024;\n            decodedSize.should.equal(16);\n          }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "beTTXl-OQLg2kTuJXv3IS",
+              "ctx": null,
+              "_testId": "urn:uuid:7c9739a3-7a95-40c5-bdc3-72f5d5982b9c",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST be 16kb in size when \"encodedList\" is decoded"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 3075,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 39,
+              "state": "failed",
+              "err": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "StatusList2021 Credentials (Issue \"statusPurpose: suspension\")",
+      "ctx": null,
+      "suites": [
+        {
+          "title": "Digital Bazaar",
+          "ctx": null,
+          "suites": [],
+          "tests": [
+            {
+              "type": "test",
+              "title": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"suspension\" status purpose",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          should.exist(issuerResponse);\n          should.not.exist(err);\n          issuerResponse.status.should.equal(201);\n          should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);\n          testCredential({credential: issuedVc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "8pEolp6J-Ibk5LPJZ07rt",
+              "ctx": null,
+              "_testId": "urn:uuid:06ac37ca-f951-4300-8fea-d8626fc64fc1",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"suspension\" status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 4298,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 2,
+              "state": "passed",
+              "speed": "fast"
+            },
+            {
+              "type": "test",
+              "title": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\"",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          const {slc} = await getSlc({issuedVc});\n          testSlCredential({slCredential: slc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "8pEolp6J-Ibk5LPJZ07rt",
+              "ctx": null,
+              "_testId": "urn:uuid:965031c5-5cea-46d4-8b03-442b761fc8b5",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 4299,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 37,
+              "state": "passed",
+              "speed": "fast"
+            },
+            {
+              "type": "test",
+              "title": "MUST be 16kb in size when \"encodedList\" is decoded",
+              "body": "async function() {\n            this.test.cell = {columnId: issuerName, rowId: this.test.title};\n            const {slc: {credentialSubject}} = await getSlc({issuedVc});\n            const {encodedList} = credentialSubject;\n            // Uncompress encodedList\n            const decoded = await sl.decodeList({encodedList});\n            should.exist(decoded);\n            // decoded size should be 16kb\n            const decodedSize = (decoded.length / 8) / 1024;\n            decodedSize.should.equal(16);\n          }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "8pEolp6J-Ibk5LPJZ07rt",
+              "ctx": null,
+              "_testId": "urn:uuid:6a4f055e-c810-455b-87f7-fdb0c472957c",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST be 16kb in size when \"encodedList\" is decoded"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 4337,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 50,
+              "state": "passed",
+              "speed": "medium"
+            }
+          ],
+          "root": false,
+          "pending": false,
+          "_retries": -1,
+          "_beforeEach": [],
+          "_beforeAll": [
+            {
+              "title": "\"before all\" hook in \"Digital Bazaar\"",
+              "body": "async function() {\n          const issuer = issuers.find(issuer => issuer.tags.has('Suspension'));\n          const {result, error, data} = await issueVc({issuer});\n          err = error;\n          issuerResponse = result;\n          issuedVc = data;\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "type": "hook",
+              "parent": "8pEolp6J-Ibk5LPJZ07rt",
+              "ctx": null,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "originalTitle": "\"before all\" hook",
+              "_events": {},
+              "_eventsCount": 1,
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 3116,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 1181,
+              "_error": null
+            }
+          ],
+          "_afterEach": [],
+          "_afterAll": [],
+          "_timeout": 15000,
+          "_slow": 75,
+          "_bail": false,
+          "_onlyTests": [],
+          "_onlySuites": [],
+          "delayed": false,
+          "parent": "Z-aEf-Lv563wFOt1HZ6cd",
+          "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+          "_testId": "urn:uuid:082064ed-2ad5-439b-9739-5d660e91d682"
+        },
+        {
+          "title": "mesur.io",
+          "ctx": null,
+          "suites": [],
+          "tests": [
+            {
+              "type": "test",
+              "title": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"suspension\" status purpose",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          should.exist(issuerResponse);\n          should.not.exist(err);\n          issuerResponse.status.should.equal(201);\n          should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);\n          testCredential({credential: issuedVc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "l8h2bok4Jp4Qw3vXJwo8j",
+              "ctx": null,
+              "_testId": "urn:uuid:f0e9b520-d5c7-4e8a-b2e4-9f665f54df64",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"suspension\" status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 4413,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 1,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "expected [ …(2) ] to be a superset of [ …(3) ]",
+                "showDiff": true,
+                "actual": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n]",
+                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/suites/ed25519-2020/v1\"\n]",
+                "operator": "deepStrictEqual",
+                "stack": "AssertionError: expected [ …(2) ] to be a superset of [ …(3) ]\n    at testCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:23:41)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:97:11)\n    at process.processImmediate (node:internal/timers:478:21)"
+              }
+            },
+            {
+              "type": "test",
+              "title": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\"",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          const {slc} = await getSlc({issuedVc});\n          testSlCredential({slCredential: slc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "l8h2bok4Jp4Qw3vXJwo8j",
+              "ctx": null,
+              "_testId": "urn:uuid:e4f4d919-04bd-4956-b242-93fae9fbe39d",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 4414,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 10,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "expected { statusListCredential: { …(9) } } to have property '@context'",
+                "showDiff": false,
+                "actual": {
+                  "statusListCredential": {
+                    "@context": [
+                      "https://www.w3.org/2018/credentials/v1",
+                      "https://w3id.org/vc/status-list/2021/v1"
+                    ],
+                    "credentialSubject": {
+                      "encodedList": "H4sIAAAAAAAA/2IAAQ6GUTAKRsEoGAWjYBSMIAAIAAD//9cIqqwACAAA",
+                      "id": "https://vc.mesur.io/v1/credentials/status#list",
+                      "size": 1,
+                      "statusPurpose": "revocation",
+                      "ttl": 5000,
+                      "type": "StatusList2021"
+                    },
+                    "id": "https://vc.mesur.io/v1/credentials/status",
+                    "issuanceDate": "2023-11-12T05:11:16Z",
+                    "issuer": "did:web:vc.mesur.io:v1",
+                    "proof": {
+                      "created": "2023-11-12T05:11:16.609597302Z",
+                      "proofPurpose": "assertionMethod",
+                      "proofValue": "l138f3cpM5bPieflIg5ae1QcVhLnxHTGhPcpHnEjbWBRmi1VfRxW7sEtTIzhZdBvGcTP8BLv4hKAk8GQJhm1Dw",
+                      "type": "Ed25519Signature2018",
+                      "verificationMethod": "did:key:z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV#z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV"
+                    },
+                    "type": [
+                      "VerifiableCredential",
+                      "StatusList2021Credential"
+                    ],
+                    "validFrom": "2023-11-12T05:11:16Z",
+                    "validUntil": "2023-11-13T05:11:16Z"
+                  }
+                },
+                "stack": "AssertionError: expected { statusListCredential: { …(9) } } to have property '@context'\n    at testSlCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:67:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:104:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            },
+            {
+              "type": "test",
+              "title": "MUST be 16kb in size when \"encodedList\" is decoded",
+              "body": "async function() {\n            this.test.cell = {columnId: issuerName, rowId: this.test.title};\n            const {slc: {credentialSubject}} = await getSlc({issuedVc});\n            const {encodedList} = credentialSubject;\n            // Uncompress encodedList\n            const decoded = await sl.decodeList({encodedList});\n            should.exist(decoded);\n            // decoded size should be 16kb\n            const decodedSize = (decoded.length / 8) / 1024;\n            decodedSize.should.equal(16);\n          }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "l8h2bok4Jp4Qw3vXJwo8j",
+              "ctx": null,
+              "_testId": "urn:uuid:cfa1286d-9eca-4cd2-828e-be42f1efbcb0",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST be 16kb in size when \"encodedList\" is decoded"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 4426,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 10,
+              "state": "failed",
+              "err": {}
+            }
+          ],
+          "root": false,
+          "pending": false,
+          "_retries": -1,
+          "_beforeEach": [],
+          "_beforeAll": [
+            {
+              "title": "\"before all\" hook in \"mesur.io\"",
+              "body": "async function() {\n          const issuer = issuers.find(issuer => issuer.tags.has('Suspension'));\n          const {result, error, data} = await issueVc({issuer});\n          err = error;\n          issuerResponse = result;\n          issuedVc = data;\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "type": "hook",
+              "parent": "l8h2bok4Jp4Qw3vXJwo8j",
+              "ctx": null,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "originalTitle": "\"before all\" hook",
+              "_events": {},
+              "_eventsCount": 1,
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 4387,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 26,
+              "_error": null
+            }
+          ],
+          "_afterEach": [],
+          "_afterAll": [],
+          "_timeout": 15000,
+          "_slow": 75,
+          "_bail": false,
+          "_onlyTests": [],
+          "_onlySuites": [],
+          "delayed": false,
+          "parent": "Z-aEf-Lv563wFOt1HZ6cd",
+          "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+          "_testId": "urn:uuid:d91643e3-0dbd-456e-8101-b8e03e8696b3"
+        }
+      ],
+      "root": false,
+      "pending": false,
+      "_retries": -1,
+      "_beforeEach": [],
+      "_beforeAll": [],
+      "_afterEach": [],
+      "_afterAll": [],
+      "_timeout": 15000,
+      "_slow": 75,
+      "_bail": false,
+      "_onlyTests": [],
+      "_onlySuites": [],
+      "delayed": false,
+      "parent": "VnifAVc5F71QJMLHlkp2n",
+      "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+      "matrix": true,
+      "report": true,
+      "rowLabel": "Test Name",
+      "columnLabel": "Issuer",
+      "_testId": "urn:uuid:73e97513-cf5a-4558-8b2f-757a02233ec0",
+      "columns": [
+        "Digital Bazaar",
+        "mesur.io"
+      ],
+      "rows": [
+        {
+          "id": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"suspension\" status purpose",
+          "cells": [
+            {
+              "type": "test",
+              "title": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"suspension\" status purpose",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          should.exist(issuerResponse);\n          should.not.exist(err);\n          issuerResponse.status.should.equal(201);\n          should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);\n          testCredential({credential: issuedVc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "8pEolp6J-Ibk5LPJZ07rt",
+              "ctx": null,
+              "_testId": "urn:uuid:06ac37ca-f951-4300-8fea-d8626fc64fc1",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"suspension\" status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 4298,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 2,
+              "state": "passed",
+              "speed": "fast"
+            },
+            {
+              "type": "test",
+              "title": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"suspension\" status purpose",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          should.exist(issuerResponse);\n          should.not.exist(err);\n          issuerResponse.status.should.equal(201);\n          should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);\n          testCredential({credential: issuedVc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "l8h2bok4Jp4Qw3vXJwo8j",
+              "ctx": null,
+              "_testId": "urn:uuid:f0e9b520-d5c7-4e8a-b2e4-9f665f54df64",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"suspension\" status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 4413,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 1,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "expected [ …(2) ] to be a superset of [ …(3) ]",
+                "showDiff": true,
+                "actual": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n]",
+                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/suites/ed25519-2020/v1\"\n]",
+                "operator": "deepStrictEqual",
+                "stack": "AssertionError: expected [ …(2) ] to be a superset of [ …(3) ]\n    at testCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:23:41)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:97:11)\n    at process.processImmediate (node:internal/timers:478:21)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\"",
+          "cells": [
+            {
+              "type": "test",
+              "title": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\"",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          const {slc} = await getSlc({issuedVc});\n          testSlCredential({slCredential: slc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "8pEolp6J-Ibk5LPJZ07rt",
+              "ctx": null,
+              "_testId": "urn:uuid:965031c5-5cea-46d4-8b03-442b761fc8b5",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 4299,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 37,
+              "state": "passed",
+              "speed": "fast"
+            },
+            {
+              "type": "test",
+              "title": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\"",
+              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          const {slc} = await getSlc({issuedVc});\n          testSlCredential({slCredential: slc});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "l8h2bok4Jp4Qw3vXJwo8j",
+              "ctx": null,
+              "_testId": "urn:uuid:e4f4d919-04bd-4956-b242-93fae9fbe39d",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 4414,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 10,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "expected { statusListCredential: { …(9) } } to have property '@context'",
+                "showDiff": false,
+                "actual": {
+                  "statusListCredential": {
+                    "@context": [
+                      "https://www.w3.org/2018/credentials/v1",
+                      "https://w3id.org/vc/status-list/2021/v1"
+                    ],
+                    "credentialSubject": {
+                      "encodedList": "H4sIAAAAAAAA/2IAAQ6GUTAKRsEoGAWjYBSMIAAIAAD//9cIqqwACAAA",
+                      "id": "https://vc.mesur.io/v1/credentials/status#list",
+                      "size": 1,
+                      "statusPurpose": "revocation",
+                      "ttl": 5000,
+                      "type": "StatusList2021"
+                    },
+                    "id": "https://vc.mesur.io/v1/credentials/status",
+                    "issuanceDate": "2023-11-12T05:11:16Z",
+                    "issuer": "did:web:vc.mesur.io:v1",
+                    "proof": {
+                      "created": "2023-11-12T05:11:16.609597302Z",
+                      "proofPurpose": "assertionMethod",
+                      "proofValue": "l138f3cpM5bPieflIg5ae1QcVhLnxHTGhPcpHnEjbWBRmi1VfRxW7sEtTIzhZdBvGcTP8BLv4hKAk8GQJhm1Dw",
+                      "type": "Ed25519Signature2018",
+                      "verificationMethod": "did:key:z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV#z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV"
+                    },
+                    "type": [
+                      "VerifiableCredential",
+                      "StatusList2021Credential"
+                    ],
+                    "validFrom": "2023-11-12T05:11:16Z",
+                    "validUntil": "2023-11-13T05:11:16Z"
+                  }
+                },
+                "stack": "AssertionError: expected { statusListCredential: { …(9) } } to have property '@context'\n    at testSlCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:67:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:104:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "MUST be 16kb in size when \"encodedList\" is decoded",
+          "cells": [
+            {
+              "type": "test",
+              "title": "MUST be 16kb in size when \"encodedList\" is decoded",
+              "body": "async function() {\n            this.test.cell = {columnId: issuerName, rowId: this.test.title};\n            const {slc: {credentialSubject}} = await getSlc({issuedVc});\n            const {encodedList} = credentialSubject;\n            // Uncompress encodedList\n            const decoded = await sl.decodeList({encodedList});\n            should.exist(decoded);\n            // decoded size should be 16kb\n            const decodedSize = (decoded.length / 8) / 1024;\n            decodedSize.should.equal(16);\n          }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "8pEolp6J-Ibk5LPJZ07rt",
+              "ctx": null,
+              "_testId": "urn:uuid:6a4f055e-c810-455b-87f7-fdb0c472957c",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST be 16kb in size when \"encodedList\" is decoded"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 4337,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 50,
+              "state": "passed",
+              "speed": "medium"
+            },
+            {
+              "type": "test",
+              "title": "MUST be 16kb in size when \"encodedList\" is decoded",
+              "body": "async function() {\n            this.test.cell = {columnId: issuerName, rowId: this.test.title};\n            const {slc: {credentialSubject}} = await getSlc({issuedVc});\n            const {encodedList} = credentialSubject;\n            // Uncompress encodedList\n            const decoded = await sl.decodeList({encodedList});\n            should.exist(decoded);\n            // decoded size should be 16kb\n            const decodedSize = (decoded.length / 8) / 1024;\n            decodedSize.should.equal(16);\n          }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
+              "parent": "l8h2bok4Jp4Qw3vXJwo8j",
+              "ctx": null,
+              "_testId": "urn:uuid:cfa1286d-9eca-4cd2-828e-be42f1efbcb0",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST be 16kb in size when \"encodedList\" is decoded"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 4426,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 10,
+              "state": "failed",
+              "err": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "StatusList2021 Credentials (Verify)",
+      "ctx": null,
+      "suites": [
+        {
+          "title": "Digital Bazaar",
+          "ctx": null,
+          "suites": [],
+          "tests": [
+            {
+              "type": "test",
+              "title": "MUST verify a valid \"StatusList2021Credential\" with \"revocation\" status purpose",
+              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: validVcForRevocation})\n        });\n        shouldPassVerification({result, error, statusCode});\n      }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zXT_xl_jaf-pC9JYLtH0o",
+              "ctx": null,
+              "_testId": "urn:uuid:af7bf144-aa67-4acf-b606-e490829c961b",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST verify a valid \"StatusList2021Credential\" with \"revocation\" status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 5829,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 613,
+              "state": "passed",
+              "speed": "slow"
+            },
+            {
+              "type": "test",
+              "title": "MUST verify a valid \"StatusList2021Credential\" with \"suspension\"status purpose",
+              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: validVcForSuspension})\n        });\n        shouldPassVerification({result, error, statusCode});\n      }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zXT_xl_jaf-pC9JYLtH0o",
+              "ctx": null,
+              "_testId": "urn:uuid:a1fb6c32-3e18-47ab-825b-9df91519b072",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST verify a valid \"StatusList2021Credential\" with \"suspension\"status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 6442,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 456,
+              "state": "passed",
+              "speed": "slow"
+            },
+            {
+              "type": "test",
+              "title": "MUST fail to verify a VC with invalid \"credentialStatus.statusListCredential\"",
+              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const invalidStatusListCredential = klona(validVcForRevocation);\n        invalidStatusListCredential.credentialStatus.statusListCredential =\n          'invalid-statusListCredential';\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: invalidStatusListCredential})\n        });\n        shouldFailVerification({result, error, statusCode});\n      }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zXT_xl_jaf-pC9JYLtH0o",
+              "ctx": null,
+              "_testId": "urn:uuid:790b5778-f963-4f52-bbe3-039bf9d807ea",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST fail to verify a VC with invalid \"credentialStatus.statusListCredential\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 6899,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 54,
+              "state": "passed",
+              "speed": "medium"
+            },
+            {
+              "type": "test",
+              "title": "MUST fail to verify a VC with invalid \"credentialStatus.type\"",
+              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          const invalidCredentialStatusType = klona(validVcForRevocation);\n          invalidCredentialStatusType.credentialStatus.type = 'invalid-type';\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: invalidCredentialStatusType})\n          });\n          shouldFailVerification({result, error, statusCode});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zXT_xl_jaf-pC9JYLtH0o",
+              "ctx": null,
+              "_testId": "urn:uuid:e80b0c57-413d-4050-8f2a-10076a137929",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST fail to verify a VC with invalid \"credentialStatus.type\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 6953,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 49,
+              "state": "passed",
+              "speed": "medium"
+            },
+            {
+              "type": "test",
+              "title": "MUST fail to verify a revoked status list credential",
+              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          // get the status of the VC\n          const statusInfo = await getCredentialStatus({\n            verifiableCredential: validVcForRevocation\n          });\n          statusInfo.status.should.equal(false);\n          // verification of the credential should pass\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: validVcForRevocation})\n          });\n          shouldPassVerification({result, error, statusCode});\n          // update the status of the VC and revoke it\n          const revokedVc = await updateStatus({\n            vc: validVcForRevocation, setStatusList: setRevocationStatusList,\n            publishStatusList: publishRevocationStatusList, statusInfo,\n            statusPurpose: 'revocation'\n          });\n          // try to verify the credential after revocation, should fail since it\n          // has now been revoked\n          const {\n            result: result2, error: err2, statusCode: statusCode2\n          } = await verifier.post({\n            json: createRequestBody({vc: revokedVc})\n          });\n          shouldFailVerification({\n            result: result2, error: err2, statusCode: statusCode2\n          });\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zXT_xl_jaf-pC9JYLtH0o",
+              "ctx": null,
+              "_testId": "urn:uuid:bed05599-84a2-49a9-bfea-618e0d41773a",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST fail to verify a revoked status list credential"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 7002,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 1080,
+              "state": "passed",
+              "speed": "slow"
+            },
+            {
+              "type": "test",
+              "title": "MUST fail to verify a suspended status list credential",
+              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          // get the status of the VC\n          const statusInfo = await getCredentialStatus({\n            verifiableCredential: validVcForSuspension\n          });\n          statusInfo.status.should.equal(false);\n          // verification of the credential should pass\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: validVcForSuspension})\n          });\n          shouldPassVerification({result, error, statusCode});\n          // update the status of the VC and suspend it\n          const suspendedVc = await updateStatus({\n            vc: validVcForSuspension, setStatusList: setSuspensionStatusList,\n            publishStatusList: publishSuspensionStatusList, statusInfo,\n            statusPurpose: 'suspension'\n          });\n          // try to verify the credential after suspension, should fail since it\n          // has now been suspended\n          const {\n            result: result2, error: err2, statusCode: statusCode2\n          } = await verifier.post({\n            json: createRequestBody({vc: suspendedVc})\n          });\n          shouldFailVerification({\n            result: result2, error: err2, statusCode: statusCode2\n          });\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zXT_xl_jaf-pC9JYLtH0o",
+              "ctx": null,
+              "_testId": "urn:uuid:208314ab-9b15-45a4-96e3-dc11448ac4f3",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST fail to verify a suspended status list credential"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 8083,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 1042,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "expected false to equal true",
+                "showDiff": true,
+                "actual": "false",
+                "expected": "true",
+                "operator": "strictEqual",
+                "stack": "AssertionError: expected false to equal true\n    at updateStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:107:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:138:31)"
+              }
+            }
+          ],
+          "root": false,
+          "pending": false,
+          "_retries": -1,
+          "_beforeEach": [],
+          "_beforeAll": [
+            {
+              "title": "\"before all\" hook in \"Digital Bazaar\"",
+              "body": "async function() {\n        // get a VC issued by DB\n        const {match} = filterImplementations({filter: ({value}) => {\n          // FIXME: Make issuer name configurable via env variable\n          return value.settings.name === 'Digital Bazaar';\n        }});\n        const res = match.get('Digital Bazaar');\n        const {issuers, setStatusLists, publishStatusLists} = res;\n        setRevocationStatusList = setStatusLists.find(\n          issuer => issuer.tags.has('Revocation'));\n        setSuspensionStatusList = setStatusLists.find(\n          issuer => issuer.tags.has('Suspension'));\n        publishRevocationStatusList = publishStatusLists.find(\n          issuer => issuer.tags.has('Revocation'));\n        publishSuspensionStatusList = publishStatusLists.find(\n          issuer => issuer.tags.has('Suspension'));\n        const issuer1 = issuers.find(issuer => issuer.tags.has('Revocation'));\n        const {data: data1} = await issueVc({issuer: issuer1});\n        validVcForRevocation = data1;\n        const issuer2 = issuers.find(issuer => issuer.tags.has('Suspension'));\n        const {data: data2} = await issueVc({issuer: issuer2});\n        validVcForSuspension = data2;\n      }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "type": "hook",
+              "parent": "zXT_xl_jaf-pC9JYLtH0o",
+              "ctx": null,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "originalTitle": "\"before all\" hook",
+              "_events": {},
+              "_eventsCount": 1,
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 4436,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 1393,
+              "_error": null
+            }
+          ],
+          "_afterEach": [],
+          "_afterAll": [],
+          "_timeout": 15000,
+          "_slow": 75,
+          "_bail": false,
+          "_onlyTests": [],
+          "_onlySuites": [],
+          "delayed": false,
+          "parent": "RX_VmdahVL61fXiV6obJW",
+          "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+          "_testId": "urn:uuid:02cdac63-e1fd-483f-94c6-6e4b40ab2aab"
+        },
+        {
+          "title": "mesur.io",
+          "ctx": null,
+          "suites": [],
+          "tests": [
+            {
+              "type": "test",
+              "title": "MUST verify a valid \"StatusList2021Credential\" with \"revocation\" status purpose",
+              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: validVcForRevocation})\n        });\n        shouldPassVerification({result, error, statusCode});\n      }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zPy1MmXXgwTUuQmIEuRpz",
+              "ctx": null,
+              "_testId": "urn:uuid:05c6d200-e095-4a5f-a048-c5de8403339b",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST verify a valid \"StatusList2021Credential\" with \"revocation\" status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 9903,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 426,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "Expected response from verifier: expected undefined to exist",
+                "showDiff": false,
+                "operator": "strictEqual",
+                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:63:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            },
+            {
+              "type": "test",
+              "title": "MUST verify a valid \"StatusList2021Credential\" with \"suspension\"status purpose",
+              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: validVcForSuspension})\n        });\n        shouldPassVerification({result, error, statusCode});\n      }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zPy1MmXXgwTUuQmIEuRpz",
+              "ctx": null,
+              "_testId": "urn:uuid:a542097d-8aa9-49b1-84e2-c1772b6e5542",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST verify a valid \"StatusList2021Credential\" with \"suspension\"status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 10330,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 185,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "Expected response from verifier: expected undefined to exist",
+                "showDiff": false,
+                "operator": "strictEqual",
+                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:71:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            },
+            {
+              "type": "test",
+              "title": "MUST fail to verify a VC with invalid \"credentialStatus.statusListCredential\"",
+              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const invalidStatusListCredential = klona(validVcForRevocation);\n        invalidStatusListCredential.credentialStatus.statusListCredential =\n          'invalid-statusListCredential';\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: invalidStatusListCredential})\n        });\n        shouldFailVerification({result, error, statusCode});\n      }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zPy1MmXXgwTUuQmIEuRpz",
+              "ctx": null,
+              "_testId": "urn:uuid:655df377-85a7-4e77-9870-397c77f4930b",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST fail to verify a VC with invalid \"credentialStatus.statusListCredential\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 10515,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 8,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "Expected no response from verifier: expected Response{ data: { …(2) }, …(3) } to not exist",
+                "showDiff": false,
+                "actual": {},
+                "operator": "notStrictEqual",
+                "stack": "AssertionError: Expected no response from verifier: expected Response{ data: { …(2) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at shouldFailVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:102:14)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:82:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            },
+            {
+              "type": "test",
+              "title": "MUST fail to verify a VC with invalid \"credentialStatus.type\"",
+              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          const invalidCredentialStatusType = klona(validVcForRevocation);\n          invalidCredentialStatusType.credentialStatus.type = 'invalid-type';\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: invalidCredentialStatusType})\n          });\n          shouldFailVerification({result, error, statusCode});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zPy1MmXXgwTUuQmIEuRpz",
+              "ctx": null,
+              "_testId": "urn:uuid:5a1efe7c-e22c-4ce3-a11d-0c4625c8f80e",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST fail to verify a VC with invalid \"credentialStatus.type\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 10526,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 7,
+              "state": "failed",
+              "err": {}
+            },
+            {
+              "type": "test",
+              "title": "MUST fail to verify a revoked status list credential",
+              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          // get the status of the VC\n          const statusInfo = await getCredentialStatus({\n            verifiableCredential: validVcForRevocation\n          });\n          statusInfo.status.should.equal(false);\n          // verification of the credential should pass\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: validVcForRevocation})\n          });\n          shouldPassVerification({result, error, statusCode});\n          // update the status of the VC and revoke it\n          const revokedVc = await updateStatus({\n            vc: validVcForRevocation, setStatusList: setRevocationStatusList,\n            publishStatusList: publishRevocationStatusList, statusInfo,\n            statusPurpose: 'revocation'\n          });\n          // try to verify the credential after revocation, should fail since it\n          // has now been revoked\n          const {\n            result: result2, error: err2, statusCode: statusCode2\n          } = await verifier.post({\n            json: createRequestBody({vc: revokedVc})\n          });\n          shouldFailVerification({\n            result: result2, error: err2, statusCode: statusCode2\n          });\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zPy1MmXXgwTUuQmIEuRpz",
+              "ctx": null,
+              "_testId": "urn:uuid:ccd34415-01cd-4c09-b78b-c397419ea81c",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST fail to verify a revoked status list credential"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 10535,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 67,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "Expected response from verifier: expected undefined to exist",
+                "showDiff": false,
+                "operator": "strictEqual",
+                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:106:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            },
+            {
+              "type": "test",
+              "title": "MUST fail to verify a suspended status list credential",
+              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          // get the status of the VC\n          const statusInfo = await getCredentialStatus({\n            verifiableCredential: validVcForSuspension\n          });\n          statusInfo.status.should.equal(false);\n          // verification of the credential should pass\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: validVcForSuspension})\n          });\n          shouldPassVerification({result, error, statusCode});\n          // update the status of the VC and suspend it\n          const suspendedVc = await updateStatus({\n            vc: validVcForSuspension, setStatusList: setSuspensionStatusList,\n            publishStatusList: publishSuspensionStatusList, statusInfo,\n            statusPurpose: 'suspension'\n          });\n          // try to verify the credential after suspension, should fail since it\n          // has now been suspended\n          const {\n            result: result2, error: err2, statusCode: statusCode2\n          } = await verifier.post({\n            json: createRequestBody({vc: suspendedVc})\n          });\n          shouldFailVerification({\n            result: result2, error: err2, statusCode: statusCode2\n          });\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zPy1MmXXgwTUuQmIEuRpz",
+              "ctx": null,
+              "_testId": "urn:uuid:285c2a33-c634-417b-90db-2353f29232e5",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST fail to verify a suspended status list credential"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 10602,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 68,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "Expected response from verifier: expected undefined to exist",
+                "showDiff": false,
+                "operator": "strictEqual",
+                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:136:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            }
+          ],
+          "root": false,
+          "pending": false,
+          "_retries": -1,
+          "_beforeEach": [],
+          "_beforeAll": [
+            {
+              "title": "\"before all\" hook in \"mesur.io\"",
+              "body": "async function() {\n        // get a VC issued by DB\n        const {match} = filterImplementations({filter: ({value}) => {\n          // FIXME: Make issuer name configurable via env variable\n          return value.settings.name === 'Digital Bazaar';\n        }});\n        const res = match.get('Digital Bazaar');\n        const {issuers, setStatusLists, publishStatusLists} = res;\n        setRevocationStatusList = setStatusLists.find(\n          issuer => issuer.tags.has('Revocation'));\n        setSuspensionStatusList = setStatusLists.find(\n          issuer => issuer.tags.has('Suspension'));\n        publishRevocationStatusList = publishStatusLists.find(\n          issuer => issuer.tags.has('Revocation'));\n        publishSuspensionStatusList = publishStatusLists.find(\n          issuer => issuer.tags.has('Suspension'));\n        const issuer1 = issuers.find(issuer => issuer.tags.has('Revocation'));\n        const {data: data1} = await issueVc({issuer: issuer1});\n        validVcForRevocation = data1;\n        const issuer2 = issuers.find(issuer => issuer.tags.has('Suspension'));\n        const {data: data2} = await issueVc({issuer: issuer2});\n        validVcForSuspension = data2;\n      }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "type": "hook",
+              "parent": "zPy1MmXXgwTUuQmIEuRpz",
+              "ctx": null,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "originalTitle": "\"before all\" hook",
+              "_events": {},
+              "_eventsCount": 1,
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 9128,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 776,
+              "_error": null
+            }
+          ],
+          "_afterEach": [],
+          "_afterAll": [],
+          "_timeout": 15000,
+          "_slow": 75,
+          "_bail": false,
+          "_onlyTests": [],
+          "_onlySuites": [],
+          "delayed": false,
+          "parent": "RX_VmdahVL61fXiV6obJW",
+          "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+          "_testId": "urn:uuid:36035a7c-0097-4d68-821f-29c31962de63"
+        }
+      ],
+      "root": false,
+      "pending": false,
+      "_retries": -1,
+      "_beforeEach": [],
+      "_beforeAll": [],
+      "_afterEach": [],
+      "_afterAll": [],
+      "_timeout": 15000,
+      "_slow": 75,
+      "_bail": false,
+      "_onlyTests": [],
+      "_onlySuites": [],
+      "delayed": false,
+      "parent": "VnifAVc5F71QJMLHlkp2n",
+      "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+      "matrix": true,
+      "report": true,
+      "rowLabel": "Test Name",
+      "columnLabel": "Verifier",
+      "_testId": "urn:uuid:22477809-8b71-4619-a2ec-f266aeec5d38",
+      "columns": [
+        "Digital Bazaar",
+        "mesur.io"
+      ],
+      "rows": [
+        {
+          "id": "MUST verify a valid \"StatusList2021Credential\" with \"revocation\" status purpose",
+          "cells": [
+            {
+              "type": "test",
+              "title": "MUST verify a valid \"StatusList2021Credential\" with \"revocation\" status purpose",
+              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: validVcForRevocation})\n        });\n        shouldPassVerification({result, error, statusCode});\n      }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zXT_xl_jaf-pC9JYLtH0o",
+              "ctx": null,
+              "_testId": "urn:uuid:af7bf144-aa67-4acf-b606-e490829c961b",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST verify a valid \"StatusList2021Credential\" with \"revocation\" status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 5829,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 613,
+              "state": "passed",
+              "speed": "slow"
+            },
+            {
+              "type": "test",
+              "title": "MUST verify a valid \"StatusList2021Credential\" with \"revocation\" status purpose",
+              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: validVcForRevocation})\n        });\n        shouldPassVerification({result, error, statusCode});\n      }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zPy1MmXXgwTUuQmIEuRpz",
+              "ctx": null,
+              "_testId": "urn:uuid:05c6d200-e095-4a5f-a048-c5de8403339b",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST verify a valid \"StatusList2021Credential\" with \"revocation\" status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 9903,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 426,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "Expected response from verifier: expected undefined to exist",
+                "showDiff": false,
+                "operator": "strictEqual",
+                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:63:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "MUST verify a valid \"StatusList2021Credential\" with \"suspension\"status purpose",
+          "cells": [
+            {
+              "type": "test",
+              "title": "MUST verify a valid \"StatusList2021Credential\" with \"suspension\"status purpose",
+              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: validVcForSuspension})\n        });\n        shouldPassVerification({result, error, statusCode});\n      }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zXT_xl_jaf-pC9JYLtH0o",
+              "ctx": null,
+              "_testId": "urn:uuid:a1fb6c32-3e18-47ab-825b-9df91519b072",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST verify a valid \"StatusList2021Credential\" with \"suspension\"status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 6442,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 456,
+              "state": "passed",
+              "speed": "slow"
+            },
+            {
+              "type": "test",
+              "title": "MUST verify a valid \"StatusList2021Credential\" with \"suspension\"status purpose",
+              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: validVcForSuspension})\n        });\n        shouldPassVerification({result, error, statusCode});\n      }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zPy1MmXXgwTUuQmIEuRpz",
+              "ctx": null,
+              "_testId": "urn:uuid:a542097d-8aa9-49b1-84e2-c1772b6e5542",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST verify a valid \"StatusList2021Credential\" with \"suspension\"status purpose"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 10330,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 185,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "Expected response from verifier: expected undefined to exist",
+                "showDiff": false,
+                "operator": "strictEqual",
+                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:71:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "MUST fail to verify a VC with invalid \"credentialStatus.statusListCredential\"",
+          "cells": [
+            {
+              "type": "test",
+              "title": "MUST fail to verify a VC with invalid \"credentialStatus.statusListCredential\"",
+              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const invalidStatusListCredential = klona(validVcForRevocation);\n        invalidStatusListCredential.credentialStatus.statusListCredential =\n          'invalid-statusListCredential';\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: invalidStatusListCredential})\n        });\n        shouldFailVerification({result, error, statusCode});\n      }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zXT_xl_jaf-pC9JYLtH0o",
+              "ctx": null,
+              "_testId": "urn:uuid:790b5778-f963-4f52-bbe3-039bf9d807ea",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST fail to verify a VC with invalid \"credentialStatus.statusListCredential\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 6899,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 54,
+              "state": "passed",
+              "speed": "medium"
+            },
+            {
+              "type": "test",
+              "title": "MUST fail to verify a VC with invalid \"credentialStatus.statusListCredential\"",
+              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const invalidStatusListCredential = klona(validVcForRevocation);\n        invalidStatusListCredential.credentialStatus.statusListCredential =\n          'invalid-statusListCredential';\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: invalidStatusListCredential})\n        });\n        shouldFailVerification({result, error, statusCode});\n      }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zPy1MmXXgwTUuQmIEuRpz",
+              "ctx": null,
+              "_testId": "urn:uuid:655df377-85a7-4e77-9870-397c77f4930b",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST fail to verify a VC with invalid \"credentialStatus.statusListCredential\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 10515,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 8,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "Expected no response from verifier: expected Response{ data: { …(2) }, …(3) } to not exist",
+                "showDiff": false,
+                "actual": {},
+                "operator": "notStrictEqual",
+                "stack": "AssertionError: Expected no response from verifier: expected Response{ data: { …(2) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at shouldFailVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:102:14)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:82:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "MUST fail to verify a VC with invalid \"credentialStatus.type\"",
+          "cells": [
+            {
+              "type": "test",
+              "title": "MUST fail to verify a VC with invalid \"credentialStatus.type\"",
+              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          const invalidCredentialStatusType = klona(validVcForRevocation);\n          invalidCredentialStatusType.credentialStatus.type = 'invalid-type';\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: invalidCredentialStatusType})\n          });\n          shouldFailVerification({result, error, statusCode});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zXT_xl_jaf-pC9JYLtH0o",
+              "ctx": null,
+              "_testId": "urn:uuid:e80b0c57-413d-4050-8f2a-10076a137929",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST fail to verify a VC with invalid \"credentialStatus.type\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 6953,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 49,
+              "state": "passed",
+              "speed": "medium"
+            },
+            {
+              "type": "test",
+              "title": "MUST fail to verify a VC with invalid \"credentialStatus.type\"",
+              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          const invalidCredentialStatusType = klona(validVcForRevocation);\n          invalidCredentialStatusType.credentialStatus.type = 'invalid-type';\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: invalidCredentialStatusType})\n          });\n          shouldFailVerification({result, error, statusCode});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zPy1MmXXgwTUuQmIEuRpz",
+              "ctx": null,
+              "_testId": "urn:uuid:5a1efe7c-e22c-4ce3-a11d-0c4625c8f80e",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST fail to verify a VC with invalid \"credentialStatus.type\""
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 10526,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 7,
+              "state": "failed",
+              "err": {}
+            }
+          ]
+        },
+        {
+          "id": "MUST fail to verify a revoked status list credential",
+          "cells": [
+            {
+              "type": "test",
+              "title": "MUST fail to verify a revoked status list credential",
+              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          // get the status of the VC\n          const statusInfo = await getCredentialStatus({\n            verifiableCredential: validVcForRevocation\n          });\n          statusInfo.status.should.equal(false);\n          // verification of the credential should pass\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: validVcForRevocation})\n          });\n          shouldPassVerification({result, error, statusCode});\n          // update the status of the VC and revoke it\n          const revokedVc = await updateStatus({\n            vc: validVcForRevocation, setStatusList: setRevocationStatusList,\n            publishStatusList: publishRevocationStatusList, statusInfo,\n            statusPurpose: 'revocation'\n          });\n          // try to verify the credential after revocation, should fail since it\n          // has now been revoked\n          const {\n            result: result2, error: err2, statusCode: statusCode2\n          } = await verifier.post({\n            json: createRequestBody({vc: revokedVc})\n          });\n          shouldFailVerification({\n            result: result2, error: err2, statusCode: statusCode2\n          });\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zXT_xl_jaf-pC9JYLtH0o",
+              "ctx": null,
+              "_testId": "urn:uuid:bed05599-84a2-49a9-bfea-618e0d41773a",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST fail to verify a revoked status list credential"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 7002,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 1080,
+              "state": "passed",
+              "speed": "slow"
+            },
+            {
+              "type": "test",
+              "title": "MUST fail to verify a revoked status list credential",
+              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          // get the status of the VC\n          const statusInfo = await getCredentialStatus({\n            verifiableCredential: validVcForRevocation\n          });\n          statusInfo.status.should.equal(false);\n          // verification of the credential should pass\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: validVcForRevocation})\n          });\n          shouldPassVerification({result, error, statusCode});\n          // update the status of the VC and revoke it\n          const revokedVc = await updateStatus({\n            vc: validVcForRevocation, setStatusList: setRevocationStatusList,\n            publishStatusList: publishRevocationStatusList, statusInfo,\n            statusPurpose: 'revocation'\n          });\n          // try to verify the credential after revocation, should fail since it\n          // has now been revoked\n          const {\n            result: result2, error: err2, statusCode: statusCode2\n          } = await verifier.post({\n            json: createRequestBody({vc: revokedVc})\n          });\n          shouldFailVerification({\n            result: result2, error: err2, statusCode: statusCode2\n          });\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zPy1MmXXgwTUuQmIEuRpz",
+              "ctx": null,
+              "_testId": "urn:uuid:ccd34415-01cd-4c09-b78b-c397419ea81c",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST fail to verify a revoked status list credential"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 10535,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 67,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "Expected response from verifier: expected undefined to exist",
+                "showDiff": false,
+                "operator": "strictEqual",
+                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:106:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "MUST fail to verify a suspended status list credential",
+          "cells": [
+            {
+              "type": "test",
+              "title": "MUST fail to verify a suspended status list credential",
+              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          // get the status of the VC\n          const statusInfo = await getCredentialStatus({\n            verifiableCredential: validVcForSuspension\n          });\n          statusInfo.status.should.equal(false);\n          // verification of the credential should pass\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: validVcForSuspension})\n          });\n          shouldPassVerification({result, error, statusCode});\n          // update the status of the VC and suspend it\n          const suspendedVc = await updateStatus({\n            vc: validVcForSuspension, setStatusList: setSuspensionStatusList,\n            publishStatusList: publishSuspensionStatusList, statusInfo,\n            statusPurpose: 'suspension'\n          });\n          // try to verify the credential after suspension, should fail since it\n          // has now been suspended\n          const {\n            result: result2, error: err2, statusCode: statusCode2\n          } = await verifier.post({\n            json: createRequestBody({vc: suspendedVc})\n          });\n          shouldFailVerification({\n            result: result2, error: err2, statusCode: statusCode2\n          });\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zXT_xl_jaf-pC9JYLtH0o",
+              "ctx": null,
+              "_testId": "urn:uuid:208314ab-9b15-45a4-96e3-dc11448ac4f3",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "Digital Bazaar",
+                "rowId": "MUST fail to verify a suspended status list credential"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 8083,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 1042,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "expected false to equal true",
+                "showDiff": true,
+                "actual": "false",
+                "expected": "true",
+                "operator": "strictEqual",
+                "stack": "AssertionError: expected false to equal true\n    at updateStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:107:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:138:31)"
+              }
+            },
+            {
+              "type": "test",
+              "title": "MUST fail to verify a suspended status list credential",
+              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          // get the status of the VC\n          const statusInfo = await getCredentialStatus({\n            verifiableCredential: validVcForSuspension\n          });\n          statusInfo.status.should.equal(false);\n          // verification of the credential should pass\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: validVcForSuspension})\n          });\n          shouldPassVerification({result, error, statusCode});\n          // update the status of the VC and suspend it\n          const suspendedVc = await updateStatus({\n            vc: validVcForSuspension, setStatusList: setSuspensionStatusList,\n            publishStatusList: publishSuspensionStatusList, statusInfo,\n            statusPurpose: 'suspension'\n          });\n          // try to verify the credential after suspension, should fail since it\n          // has now been suspended\n          const {\n            result: result2, error: err2, statusCode: statusCode2\n          } = await verifier.post({\n            json: createRequestBody({vc: suspendedVc})\n          });\n          shouldFailVerification({\n            result: result2, error: err2, statusCode: statusCode2\n          });\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
+              "parent": "zPy1MmXXgwTUuQmIEuRpz",
+              "ctx": null,
+              "_testId": "urn:uuid:285c2a33-c634-417b-90db-2353f29232e5",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "columnId": "mesur.io",
+                "rowId": "MUST fail to verify a suspended status list credential"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 10602,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 68,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "Expected response from verifier: expected undefined to exist",
+                "showDiff": false,
+                "operator": "strictEqual",
+                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:136:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "StatusList2021 Credentials (Interop \"statusPurpose: revocation\")",
+      "ctx": null,
+      "suites": [],
+      "root": false,
+      "pending": false,
+      "_retries": -1,
+      "_beforeEach": [],
+      "_beforeAll": [
+        {
+          "title": "\"before all\" hook in \"StatusList2021 Credentials (Interop \"statusPurpose: revocation\")\"",
+          "body": "async function() {\n        const [issuer] = endpoints.filter(\n          endpoint => endpoint.settings.tags.includes('Revocation'));\n        issuedVc = issueVc({issuer});\n      }",
+          "async": 0,
+          "sync": true,
+          "_timeout": 15000,
+          "_slow": 75,
+          "_retries": -1,
+          "timedOut": false,
+          "_currentRetry": 0,
+          "pending": false,
+          "type": "hook",
+          "parent": "RhviNkF-NvIZ9NtRRk-DP",
+          "ctx": null,
+          "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
+          "originalTitle": "\"before all\" hook",
+          "_events": {},
+          "_eventsCount": 1,
+          "timer": {
+            "_idleTimeout": -1,
+            "_idlePrev": null,
+            "_idleNext": null,
+            "_idleStart": 10671,
+            "_onTimeout": null,
+            "_repeat": null,
+            "_destroyed": true
+          },
+          "duration": 1,
+          "_error": null
+        },
+        {
+          "title": "\"before all\" hook in \"StatusList2021 Credentials (Interop \"statusPurpose: revocation\")\"",
+          "body": "async function() {\n        const [issuer] = endpoints.filter(\n          endpoint => endpoint.settings.tags.includes('Revocation'));\n        issuedVc = issueVc({issuer});\n      }",
+          "async": 0,
+          "sync": true,
+          "_timeout": 15000,
+          "_slow": 75,
+          "_retries": -1,
+          "timedOut": false,
+          "_currentRetry": 0,
+          "pending": false,
+          "type": "hook",
+          "parent": "RhviNkF-NvIZ9NtRRk-DP",
+          "ctx": null,
+          "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
+          "originalTitle": "\"before all\" hook",
+          "_events": {},
+          "_eventsCount": 1,
+          "timer": {
+            "_idleTimeout": -1,
+            "_idlePrev": null,
+            "_idleNext": null,
+            "_idleStart": 10673,
+            "_onTimeout": null,
+            "_repeat": null,
+            "_destroyed": true
+          },
+          "duration": 0,
+          "_error": null
+        }
+      ],
+      "_afterEach": [],
+      "_afterAll": [],
+      "_timeout": 15000,
+      "_slow": 75,
+      "_bail": false,
+      "_onlyTests": [],
+      "_onlySuites": [],
+      "delayed": false,
+      "parent": "VnifAVc5F71QJMLHlkp2n",
+      "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
+      "matrix": true,
+      "report": true,
+      "rowLabel": "Issuer",
+      "columnLabel": "Verifier",
+      "_testId": "urn:uuid:573c770c-d785-4a81-a888-5e4dce574601",
+      "columns": [
+        "Digital Bazaar",
+        "mesur.io"
+      ],
+      "rows": [
+        {
+          "id": "Digital Bazaar",
+          "cells": [
+            {
+              "type": "test",
+              "title": "Digital Bazaar should verify Digital Bazaar",
+              "body": "async function() {\n          this.test.cell = {rowId: issuerName, columnId: verifierName};\n          const {data: vc, error: err} = await issuedVc;\n          should.not.exist(err);\n          should.exist(vc);\n          const body = createRequestBody({vc});\n          const {result, error, statusCode} = await verifier.post({json: body});\n          shouldPassVerification({result, error, statusCode});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
+              "parent": "RhviNkF-NvIZ9NtRRk-DP",
+              "ctx": null,
+              "_testId": "urn:uuid:78fa3134-3d5c-47c8-919b-6941716c9f09",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "rowId": "Digital Bazaar",
+                "columnId": "Digital Bazaar"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 10680,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 326,
+              "state": "passed",
+              "speed": "slow"
+            },
+            {
+              "type": "test",
+              "title": "mesur.io should verify Digital Bazaar",
+              "body": "async function() {\n          this.test.cell = {rowId: issuerName, columnId: verifierName};\n          const {data: vc, error: err} = await issuedVc;\n          should.not.exist(err);\n          should.exist(vc);\n          const body = createRequestBody({vc});\n          const {result, error, statusCode} = await verifier.post({json: body});\n          shouldPassVerification({result, error, statusCode});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
+              "parent": "RhviNkF-NvIZ9NtRRk-DP",
+              "ctx": null,
+              "_testId": "urn:uuid:bcb5e7c3-d5d2-4221-8183-1b823e7af490",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "rowId": "Digital Bazaar",
+                "columnId": "mesur.io"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 11006,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 37,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "Expected response from verifier: expected undefined to exist",
+                "showDiff": false,
+                "operator": "strictEqual",
+                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:47:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mesur.io",
+          "cells": [
+            {
+              "type": "test",
+              "title": "Digital Bazaar should verify mesur.io",
+              "body": "async function() {\n          this.test.cell = {rowId: issuerName, columnId: verifierName};\n          const {data: vc, error: err} = await issuedVc;\n          should.not.exist(err);\n          should.exist(vc);\n          const body = createRequestBody({vc});\n          const {result, error, statusCode} = await verifier.post({json: body});\n          shouldPassVerification({result, error, statusCode});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
+              "parent": "RhviNkF-NvIZ9NtRRk-DP",
+              "ctx": null,
+              "_testId": "urn:uuid:47c87ebd-a442-43d5-a44f-ae3a22e5838a",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "rowId": "mesur.io",
+                "columnId": "Digital Bazaar"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 11045,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 49,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "Expected response from verifier: expected undefined to exist",
+                "showDiff": false,
+                "operator": "strictEqual",
+                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:47:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            },
+            {
+              "type": "test",
+              "title": "mesur.io should verify mesur.io",
+              "body": "async function() {\n          this.test.cell = {rowId: issuerName, columnId: verifierName};\n          const {data: vc, error: err} = await issuedVc;\n          should.not.exist(err);\n          should.exist(vc);\n          const body = createRequestBody({vc});\n          const {result, error, statusCode} = await verifier.post({json: body});\n          shouldPassVerification({result, error, statusCode});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
+              "parent": "RhviNkF-NvIZ9NtRRk-DP",
+              "ctx": null,
+              "_testId": "urn:uuid:2fa781ac-60d6-4951-8942-bc2e5e22ca53",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "rowId": "mesur.io",
+                "columnId": "mesur.io"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 11096,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 19,
+              "state": "passed",
+              "speed": "fast"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "StatusList2021 Credentials (Interop \"statusPurpose: suspension\")",
+      "ctx": null,
+      "suites": [],
+      "root": false,
+      "pending": false,
+      "_retries": -1,
+      "_beforeEach": [],
+      "_beforeAll": [
+        {
+          "title": "\"before all\" hook in \"StatusList2021 Credentials (Interop \"statusPurpose: suspension\")\"",
+          "body": "async function() {\n        const [issuer] = endpoints.filter(\n          endpoint => endpoint.settings.tags.includes('Suspension'));\n        issuedVc = issueVc({issuer});\n      }",
+          "async": 0,
+          "sync": true,
+          "_timeout": 15000,
+          "_slow": 75,
+          "_retries": -1,
+          "timedOut": false,
+          "_currentRetry": 0,
+          "pending": false,
+          "type": "hook",
+          "parent": "GEjdUjlaO4PPDHbStAOvU",
+          "ctx": null,
+          "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
+          "originalTitle": "\"before all\" hook",
+          "_events": {},
+          "_eventsCount": 1,
+          "timer": {
+            "_idleTimeout": -1,
+            "_idlePrev": null,
+            "_idleNext": null,
+            "_idleStart": 11115,
+            "_onTimeout": null,
+            "_repeat": null,
+            "_destroyed": true
+          },
+          "duration": 1,
+          "_error": null
+        },
+        {
+          "title": "\"before all\" hook in \"StatusList2021 Credentials (Interop \"statusPurpose: suspension\")\"",
+          "body": "async function() {\n        const [issuer] = endpoints.filter(\n          endpoint => endpoint.settings.tags.includes('Suspension'));\n        issuedVc = issueVc({issuer});\n      }",
+          "async": 0,
+          "sync": true,
+          "_timeout": 15000,
+          "_slow": 75,
+          "_retries": -1,
+          "timedOut": false,
+          "_currentRetry": 0,
+          "pending": false,
+          "type": "hook",
+          "parent": "GEjdUjlaO4PPDHbStAOvU",
+          "ctx": null,
+          "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
+          "originalTitle": "\"before all\" hook",
+          "_events": {},
+          "_eventsCount": 1,
+          "timer": {
+            "_idleTimeout": -1,
+            "_idlePrev": null,
+            "_idleNext": null,
+            "_idleStart": 11116,
+            "_onTimeout": null,
+            "_repeat": null,
+            "_destroyed": true
+          },
+          "duration": 0,
+          "_error": null
+        }
+      ],
+      "_afterEach": [],
+      "_afterAll": [],
+      "_timeout": 15000,
+      "_slow": 75,
+      "_bail": false,
+      "_onlyTests": [],
+      "_onlySuites": [],
+      "delayed": false,
+      "parent": "VnifAVc5F71QJMLHlkp2n",
+      "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
+      "matrix": true,
+      "report": true,
+      "rowLabel": "Issuer",
+      "columnLabel": "Verifier",
+      "_testId": "urn:uuid:e9074d6d-c931-41ff-a14e-bfd86be3b9d5",
+      "columns": [
+        "Digital Bazaar",
+        "mesur.io"
+      ],
+      "rows": [
+        {
+          "id": "Digital Bazaar",
+          "cells": [
+            {
+              "type": "test",
+              "title": "Digital Bazaar should verify Digital Bazaar",
+              "body": "async function() {\n          this.test.cell = {rowId: issuerName, columnId: verifierName};\n          const {data: vc, error: err} = await issuedVc;\n          should.not.exist(err);\n          should.exist(vc);\n          const body = createRequestBody({vc});\n          const {result, error, statusCode} = await verifier.post({json: body});\n          shouldPassVerification({result, error, statusCode});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
+              "parent": "GEjdUjlaO4PPDHbStAOvU",
+              "ctx": null,
+              "_testId": "urn:uuid:18a7a191-6a59-4c66-a688-645d789bdd15",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "rowId": "Digital Bazaar",
+                "columnId": "Digital Bazaar"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 11119,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 279,
+              "state": "passed",
+              "speed": "slow"
+            },
+            {
+              "type": "test",
+              "title": "mesur.io should verify Digital Bazaar",
+              "body": "async function() {\n          this.test.cell = {rowId: issuerName, columnId: verifierName};\n          const {data: vc, error: err} = await issuedVc;\n          should.not.exist(err);\n          should.exist(vc);\n          const body = createRequestBody({vc});\n          const {result, error, statusCode} = await verifier.post({json: body});\n          shouldPassVerification({result, error, statusCode});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
+              "parent": "GEjdUjlaO4PPDHbStAOvU",
+              "ctx": null,
+              "_testId": "urn:uuid:ce189377-5c41-459f-bec9-7d8738bbbd11",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "rowId": "Digital Bazaar",
+                "columnId": "mesur.io"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 11398,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 35,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "Expected response from verifier: expected undefined to exist",
+                "showDiff": false,
+                "operator": "strictEqual",
+                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:78:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mesur.io",
+          "cells": [
+            {
+              "type": "test",
+              "title": "Digital Bazaar should verify mesur.io",
+              "body": "async function() {\n          this.test.cell = {rowId: issuerName, columnId: verifierName};\n          const {data: vc, error: err} = await issuedVc;\n          should.not.exist(err);\n          should.exist(vc);\n          const body = createRequestBody({vc});\n          const {result, error, statusCode} = await verifier.post({json: body});\n          shouldPassVerification({result, error, statusCode});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
+              "parent": "GEjdUjlaO4PPDHbStAOvU",
+              "ctx": null,
+              "_testId": "urn:uuid:f26469f8-fa4e-4c92-bfd4-b1b05fbd78c8",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "rowId": "mesur.io",
+                "columnId": "Digital Bazaar"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 11433,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 46,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "Expected response from verifier: expected undefined to exist",
+                "showDiff": false,
+                "operator": "strictEqual",
+                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:78:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+              }
+            },
+            {
+              "type": "test",
+              "title": "mesur.io should verify mesur.io",
+              "body": "async function() {\n          this.test.cell = {rowId: issuerName, columnId: verifierName};\n          const {data: vc, error: err} = await issuedVc;\n          should.not.exist(err);\n          should.exist(vc);\n          const body = createRequestBody({vc});\n          const {result, error, statusCode} = await verifier.post({json: body});\n          shouldPassVerification({result, error, statusCode});\n        }",
+              "async": 0,
+              "sync": true,
+              "_timeout": 15000,
+              "_slow": 75,
+              "_retries": -1,
+              "timedOut": false,
+              "_currentRetry": 0,
+              "pending": false,
+              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
+              "parent": "GEjdUjlaO4PPDHbStAOvU",
+              "ctx": null,
+              "_testId": "urn:uuid:fd9ec693-414d-4853-ab00-bb60755e1f59",
+              "_events": {},
+              "_eventsCount": 1,
+              "cell": {
+                "rowId": "mesur.io",
+                "columnId": "mesur.io"
+              },
+              "timer": {
+                "_idleTimeout": -1,
+                "_idlePrev": null,
+                "_idleNext": null,
+                "_idleStart": 11480,
+                "_onTimeout": null,
+                "_repeat": null,
+                "_destroyed": true
+              },
+              "duration": 19,
+              "state": "passed",
+              "speed": "fast"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tables": [],
+  "summary": [],
+  "respecConfig": {
+    "specStatus": "unofficial",
+    "shortName": "status-list-2021-test-suite",
+    "subtitle": "Test Interoperability Report for Verifiable Credentials status",
+    "github": "https://github.com/w3c-ccg/status-list-2021-test-suite",
+    "edDraftURI": "https://w3c-ccg.github.io/status-list-2021-test-suite",
+    "doJsonLd": true,
+    "includePermalinks": false,
+    "editors": [
+      {
+        "name": "Tashi D. Gyeltshen",
+        "url": "https://github.com/jsAssassin",
+        "company": "Digital Bazaar",
+        "companyURL": "http://digitalbazaar.com/"
+      }
+    ],
+    "authors": [
+      {
+        "name": "Tashi D. Gyeltshen",
+        "url": "https://github.com/jsAssassin",
+        "company": "Digital Bazaar",
+        "companyURL": "http://digitalbazaar.com/"
+      },
+      {
+        "name": "Manu Sporny",
+        "url": "http://manu.sporny.org/",
+        "company": "Digital Bazaar",
+        "companyURL": "http://digitalbazaar.com/"
+      }
+    ]
+  },
+  "title": "Status List 2021 Interoperability Report 1.0",
+  "stats": [
+    "Tests passed 15/32 47%",
+    "Tests failed 17/32 53%",
+    "Failures 17",
+    "Tests skipped 0",
+    "Total tests 32"
+  ]
+}
