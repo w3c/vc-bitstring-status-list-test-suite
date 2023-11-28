@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@digitalbazaar/http-client": "^3.3.0",
-    "@digitalbazaar/mocha-w3c-interop-reporter": "^1.5.0",
+    "@digitalbazaar/mocha-w3c-interop-reporter": "^1.6.0",
     "@digitalbazaar/vc-status-list": "^7.0.0",
     "@digitalbazaar/vc-status-list-context": "^3.0.1",
     "@digitalcredentials/did-context": "^1.0.0",
@@ -40,13 +40,13 @@
     "klona": "^2.0.6",
     "mocha": "^10.2.0",
     "uuid": "^9.0.0",
-    "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations#update-db-implementations"
+    "vc-api-test-suite-implementations": "github:w3c-ccg/vc-api-test-suite-implementations"
   },
   "devDependencies": {
-    "eslint": "^8.33.0",
-    "eslint-config-digitalbazaar": "^4.2.0",
-    "eslint-plugin-jsdoc": "^39.8.0",
-    "eslint-plugin-unicorn": "^45.0.2"
+    "eslint": "^8.54.0",
+    "eslint-config-digitalbazaar": "^5.0.1",
+    "eslint-plugin-jsdoc": "^46.9.0",
+    "eslint-plugin-unicorn": "^49.0.0"
   },
   "bugs": {
     "url": "https://github.com/w3c-ccg/status-list-2021-test-suite/issues"
