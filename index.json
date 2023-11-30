@@ -22,9 +22,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "xOZK06lzLiVpsovK5I9HQ",
+              "parent": "j3Qn-D0YuP9yUS4M3xcnZ",
               "ctx": null,
-              "_testId": "urn:uuid:9af242a3-9c0d-41a6-87bc-e20f461375e9",
+              "_testId": "urn:uuid:4f7e41a4-335e-49b2-8f76-e5872eb836dc",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -35,12 +35,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2408,
+                "_idleStart": 1380,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 4,
+              "duration": 3,
               "state": "passed",
               "speed": "fast"
             },
@@ -57,9 +57,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "xOZK06lzLiVpsovK5I9HQ",
+              "parent": "j3Qn-D0YuP9yUS4M3xcnZ",
               "ctx": null,
-              "_testId": "urn:uuid:94930b7e-f211-440a-a3d5-c681323e3fd2",
+              "_testId": "urn:uuid:9550a9f3-99fa-45fa-b620-75ebf4c9a739",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -70,12 +70,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2409,
+                "_idleStart": 1381,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 118,
+              "duration": 307,
               "state": "passed",
               "speed": "slow"
             },
@@ -92,9 +92,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "xOZK06lzLiVpsovK5I9HQ",
+              "parent": "j3Qn-D0YuP9yUS4M3xcnZ",
               "ctx": null,
-              "_testId": "urn:uuid:aad70108-daeb-45fc-b3e8-b470e54c16ff",
+              "_testId": "urn:uuid:d1a1efb7-9afc-48e4-9b5b-89434bb6272a",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -105,14 +105,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2527,
+                "_idleStart": 1687,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 96,
+              "duration": 74,
               "state": "passed",
-              "speed": "slow"
+              "speed": "medium"
             }
           ],
           "root": false,
@@ -132,7 +132,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "xOZK06lzLiVpsovK5I9HQ",
+              "parent": "j3Qn-D0YuP9yUS4M3xcnZ",
               "ctx": null,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
               "originalTitle": "\"before all\" hook",
@@ -142,12 +142,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 398,
+                "_idleStart": 359,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 2006,
+              "duration": 1019,
               "_error": null
             }
           ],
@@ -159,9 +159,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "udzbMSYsog6T3f4-CnsqE",
+          "parent": "6DsHxuczvHfv7XajYI2BP",
           "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:f749988b-63c7-4f0f-81ec-a3f27635f601"
+          "_testId": "urn:uuid:df0d7440-fb48-4d1b-bbcb-66623ae60984"
         },
         {
           "title": "mesur.io",
@@ -181,9 +181,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "OYGkU8tuYfI3NHOQJ-EBo",
+              "parent": "pvxLjHjC3PfenTn-fkIVC",
               "ctx": null,
-              "_testId": "urn:uuid:d894d562-3a41-476f-b47a-05d41c34d39b",
+              "_testId": "urn:uuid:6a9b0df2-783d-43f3-8937-3002b5cb7266",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -194,7 +194,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3157,
+                "_idleStart": 2695,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -206,7 +206,7 @@
                 "message": "expected [ …(2) ] to be a superset of [ …(3) ]",
                 "showDiff": true,
                 "actual": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n]",
-                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/suites/ed25519-2020/v1\"\n]",
+                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/data-integrity/v2\"\n]",
                 "operator": "deepStrictEqual",
                 "stack": "AssertionError: expected [ …(2) ] to be a superset of [ …(3) ]\n    at testCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:23:41)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:43:11)\n    at process.processImmediate (node:internal/timers:478:21)"
               }
@@ -224,9 +224,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "OYGkU8tuYfI3NHOQJ-EBo",
+              "parent": "pvxLjHjC3PfenTn-fkIVC",
               "ctx": null,
-              "_testId": "urn:uuid:e1952864-6c37-4711-9600-8529a853dd9b",
+              "_testId": "urn:uuid:2fabf1fc-e45c-400f-8fca-37888f3d02fb",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -237,12 +237,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3160,
+                "_idleStart": 2698,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 196,
+              "duration": 185,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -263,12 +263,12 @@
                       "type": "StatusList2021"
                     },
                     "id": "https://vc.mesur.io/v1/credentials/status",
-                    "issuanceDate": "2023-11-26T05:11:12Z",
+                    "issuanceDate": "2023-11-30T14:03:05Z",
                     "issuer": "did:web:vc.mesur.io:v1",
                     "proof": {
-                      "created": "2023-11-26T05:11:12.507934005Z",
+                      "created": "2023-11-30T14:03:05.174406164Z",
                       "proofPurpose": "assertionMethod",
-                      "proofValue": "4_whR9qLlD-yX-lDU9QxZWUbJvTMN2jggkf743ZmC-AdlWNlriJFSpubQ67r6Hjvyq40PnPgnLjWp2FfUu2SAg",
+                      "proofValue": "LEM4-U7vpqJzG3kHuoGFGzJFTbWM5IndB1czKz82aTtE9-z8BaihQLXrMAEXS4uIcMjv3VsGXjZo7_tqH858DQ",
                       "type": "Ed25519Signature2018",
                       "verificationMethod": "did:key:z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV#z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV"
                     },
@@ -276,8 +276,8 @@
                       "VerifiableCredential",
                       "StatusList2021Credential"
                     ],
-                    "validFrom": "2023-11-26T05:11:12Z",
-                    "validUntil": "2023-11-27T05:11:12Z"
+                    "validFrom": "2023-11-30T14:03:05Z",
+                    "validUntil": "2023-12-01T14:03:05Z"
                   }
                 },
                 "stack": "AssertionError: expected { statusListCredential: { …(9) } } to have property '@context'\n    at testSlCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:67:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:50:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
@@ -296,9 +296,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "OYGkU8tuYfI3NHOQJ-EBo",
+              "parent": "pvxLjHjC3PfenTn-fkIVC",
               "ctx": null,
-              "_testId": "urn:uuid:0cf2b37a-b8fc-454c-a855-6965419cc9a9",
+              "_testId": "urn:uuid:2d599dc7-903a-4641-8e09-d4f89b315c2d",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -309,12 +309,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3357,
+                "_idleStart": 2884,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 108,
+              "duration": 61,
               "state": "failed",
               "err": {}
             }
@@ -336,7 +336,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "OYGkU8tuYfI3NHOQJ-EBo",
+              "parent": "pvxLjHjC3PfenTn-fkIVC",
               "ctx": null,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
               "originalTitle": "\"before all\" hook",
@@ -346,12 +346,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2624,
+                "_idleStart": 1762,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 533,
+              "duration": 933,
               "_error": null
             }
           ],
@@ -363,9 +363,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "udzbMSYsog6T3f4-CnsqE",
+          "parent": "6DsHxuczvHfv7XajYI2BP",
           "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:df2044b8-f662-4665-9734-bf1c5040f657"
+          "_testId": "urn:uuid:3da8788f-8bba-441b-b206-4f5900019316"
         }
       ],
       "root": false,
@@ -381,13 +381,13 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "9XwHjvoqNxoeORrp-al0b",
+      "parent": "HCw0JYF7l-d8VmfPJHOkG",
       "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Test Name",
       "columnLabel": "Issuer",
-      "_testId": "urn:uuid:e8817081-e441-4ad5-b4b7-3ebb5953aa43",
+      "_testId": "urn:uuid:bb8a25fd-fc59-4320-9be8-a5e93d7b6fd1",
       "columns": [
         "Digital Bazaar",
         "mesur.io"
@@ -409,9 +409,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "xOZK06lzLiVpsovK5I9HQ",
+              "parent": "j3Qn-D0YuP9yUS4M3xcnZ",
               "ctx": null,
-              "_testId": "urn:uuid:9af242a3-9c0d-41a6-87bc-e20f461375e9",
+              "_testId": "urn:uuid:4f7e41a4-335e-49b2-8f76-e5872eb836dc",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -422,12 +422,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2408,
+                "_idleStart": 1380,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 4,
+              "duration": 3,
               "state": "passed",
               "speed": "fast"
             },
@@ -444,9 +444,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "OYGkU8tuYfI3NHOQJ-EBo",
+              "parent": "pvxLjHjC3PfenTn-fkIVC",
               "ctx": null,
-              "_testId": "urn:uuid:d894d562-3a41-476f-b47a-05d41c34d39b",
+              "_testId": "urn:uuid:6a9b0df2-783d-43f3-8937-3002b5cb7266",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -457,7 +457,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3157,
+                "_idleStart": 2695,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -469,7 +469,7 @@
                 "message": "expected [ …(2) ] to be a superset of [ …(3) ]",
                 "showDiff": true,
                 "actual": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n]",
-                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/suites/ed25519-2020/v1\"\n]",
+                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/data-integrity/v2\"\n]",
                 "operator": "deepStrictEqual",
                 "stack": "AssertionError: expected [ …(2) ] to be a superset of [ …(3) ]\n    at testCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:23:41)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:43:11)\n    at process.processImmediate (node:internal/timers:478:21)"
               }
@@ -492,9 +492,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "xOZK06lzLiVpsovK5I9HQ",
+              "parent": "j3Qn-D0YuP9yUS4M3xcnZ",
               "ctx": null,
-              "_testId": "urn:uuid:94930b7e-f211-440a-a3d5-c681323e3fd2",
+              "_testId": "urn:uuid:9550a9f3-99fa-45fa-b620-75ebf4c9a739",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -505,12 +505,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2409,
+                "_idleStart": 1381,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 118,
+              "duration": 307,
               "state": "passed",
               "speed": "slow"
             },
@@ -527,9 +527,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "OYGkU8tuYfI3NHOQJ-EBo",
+              "parent": "pvxLjHjC3PfenTn-fkIVC",
               "ctx": null,
-              "_testId": "urn:uuid:e1952864-6c37-4711-9600-8529a853dd9b",
+              "_testId": "urn:uuid:2fabf1fc-e45c-400f-8fca-37888f3d02fb",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -540,12 +540,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3160,
+                "_idleStart": 2698,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 196,
+              "duration": 185,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -566,12 +566,12 @@
                       "type": "StatusList2021"
                     },
                     "id": "https://vc.mesur.io/v1/credentials/status",
-                    "issuanceDate": "2023-11-26T05:11:12Z",
+                    "issuanceDate": "2023-11-30T14:03:05Z",
                     "issuer": "did:web:vc.mesur.io:v1",
                     "proof": {
-                      "created": "2023-11-26T05:11:12.507934005Z",
+                      "created": "2023-11-30T14:03:05.174406164Z",
                       "proofPurpose": "assertionMethod",
-                      "proofValue": "4_whR9qLlD-yX-lDU9QxZWUbJvTMN2jggkf743ZmC-AdlWNlriJFSpubQ67r6Hjvyq40PnPgnLjWp2FfUu2SAg",
+                      "proofValue": "LEM4-U7vpqJzG3kHuoGFGzJFTbWM5IndB1czKz82aTtE9-z8BaihQLXrMAEXS4uIcMjv3VsGXjZo7_tqH858DQ",
                       "type": "Ed25519Signature2018",
                       "verificationMethod": "did:key:z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV#z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV"
                     },
@@ -579,8 +579,8 @@
                       "VerifiableCredential",
                       "StatusList2021Credential"
                     ],
-                    "validFrom": "2023-11-26T05:11:12Z",
-                    "validUntil": "2023-11-27T05:11:12Z"
+                    "validFrom": "2023-11-30T14:03:05Z",
+                    "validUntil": "2023-12-01T14:03:05Z"
                   }
                 },
                 "stack": "AssertionError: expected { statusListCredential: { …(9) } } to have property '@context'\n    at testSlCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:67:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:50:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
@@ -604,9 +604,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "xOZK06lzLiVpsovK5I9HQ",
+              "parent": "j3Qn-D0YuP9yUS4M3xcnZ",
               "ctx": null,
-              "_testId": "urn:uuid:aad70108-daeb-45fc-b3e8-b470e54c16ff",
+              "_testId": "urn:uuid:d1a1efb7-9afc-48e4-9b5b-89434bb6272a",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -617,14 +617,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2527,
+                "_idleStart": 1687,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 96,
+              "duration": 74,
               "state": "passed",
-              "speed": "slow"
+              "speed": "medium"
             },
             {
               "type": "test",
@@ -639,9 +639,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "OYGkU8tuYfI3NHOQJ-EBo",
+              "parent": "pvxLjHjC3PfenTn-fkIVC",
               "ctx": null,
-              "_testId": "urn:uuid:0cf2b37a-b8fc-454c-a855-6965419cc9a9",
+              "_testId": "urn:uuid:2d599dc7-903a-4641-8e09-d4f89b315c2d",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -652,12 +652,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3357,
+                "_idleStart": 2884,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 108,
+              "duration": 61,
               "state": "failed",
               "err": {}
             }
@@ -687,9 +687,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "SjQVHlyVp8ZpEK0bgJxwy",
+              "parent": "mWLZ5OGilm__HZCCE7HLU",
               "ctx": null,
-              "_testId": "urn:uuid:22d0c897-8323-4794-bb25-cd889b650fef",
+              "_testId": "urn:uuid:901cf6bb-1aaf-43b2-b6a1-c08be1434efb",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -700,7 +700,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4339,
+                "_idleStart": 4473,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -722,9 +722,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "SjQVHlyVp8ZpEK0bgJxwy",
+              "parent": "mWLZ5OGilm__HZCCE7HLU",
               "ctx": null,
-              "_testId": "urn:uuid:12962393-1493-4ec6-a48a-8af5367d751a",
+              "_testId": "urn:uuid:84d9853d-dd3d-4ef5-826a-42323a3e4dc5",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -735,12 +735,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4339,
+                "_idleStart": 4473,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 89,
+              "duration": 77,
               "state": "passed",
               "speed": "slow"
             },
@@ -757,9 +757,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "SjQVHlyVp8ZpEK0bgJxwy",
+              "parent": "mWLZ5OGilm__HZCCE7HLU",
               "ctx": null,
-              "_testId": "urn:uuid:8c32726f-417e-4999-8b5d-c21787f32338",
+              "_testId": "urn:uuid:7cf70003-dfa8-48d2-8715-7c757fe892b1",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -770,14 +770,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4428,
+                "_idleStart": 4551,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 91,
+              "duration": 72,
               "state": "passed",
-              "speed": "slow"
+              "speed": "medium"
             }
           ],
           "root": false,
@@ -797,7 +797,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "SjQVHlyVp8ZpEK0bgJxwy",
+              "parent": "mWLZ5OGilm__HZCCE7HLU",
               "ctx": null,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
               "originalTitle": "\"before all\" hook",
@@ -807,12 +807,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3465,
+                "_idleStart": 2945,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 873,
+              "duration": 1528,
               "_error": null
             }
           ],
@@ -824,9 +824,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "wD3ExrOATKTMLUhlThrPw",
+          "parent": "xGCPoOgwwJ89UYhMUDF2M",
           "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:28ddc17e-e119-4e6a-a8f5-5bde05c8ea7d"
+          "_testId": "urn:uuid:007c715e-416a-4b45-a57d-d84f4ed0039f"
         },
         {
           "title": "mesur.io",
@@ -846,9 +846,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "4_m__Euzu8AfRRJdn3Hc4",
+              "parent": "f09ywPaFgOPdreAeO234K",
               "ctx": null,
-              "_testId": "urn:uuid:6246d6c4-cc5d-4e66-a496-6c8047794bc3",
+              "_testId": "urn:uuid:f258b2d5-b1e0-4479-8789-ece02061bc2d",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -859,7 +859,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4598,
+                "_idleStart": 4691,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -871,7 +871,7 @@
                 "message": "expected [ …(2) ] to be a superset of [ …(3) ]",
                 "showDiff": true,
                 "actual": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n]",
-                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/suites/ed25519-2020/v1\"\n]",
+                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/data-integrity/v2\"\n]",
                 "operator": "deepStrictEqual",
                 "stack": "AssertionError: expected [ …(2) ] to be a superset of [ …(3) ]\n    at testCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:23:41)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:97:11)\n    at process.processImmediate (node:internal/timers:478:21)"
               }
@@ -889,9 +889,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "4_m__Euzu8AfRRJdn3Hc4",
+              "parent": "f09ywPaFgOPdreAeO234K",
               "ctx": null,
-              "_testId": "urn:uuid:9488c5f1-1fa7-43b3-bbb4-ddb7274536a2",
+              "_testId": "urn:uuid:5f42b3ae-a51d-4eed-8e82-a211b8bf03c4",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -902,12 +902,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4599,
+                "_idleStart": 4692,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 69,
+              "duration": 58,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -928,12 +928,12 @@
                       "type": "StatusList2021"
                     },
                     "id": "https://vc.mesur.io/v1/credentials/status",
-                    "issuanceDate": "2023-11-26T05:11:13Z",
+                    "issuanceDate": "2023-11-30T14:03:07Z",
                     "issuer": "did:web:vc.mesur.io:v1",
                     "proof": {
-                      "created": "2023-11-26T05:11:13.820247992Z",
+                      "created": "2023-11-30T14:03:07.058301876Z",
                       "proofPurpose": "assertionMethod",
-                      "proofValue": "jB0H8IPinyQ2rJ_hHd82uKUOMahZGn9K0TYUlfzsU_IwbCuex8-b4OMjZVroUGE-0gtQK5jIdx7qzhZ96OF3DQ",
+                      "proofValue": "riMO0PeenIjZbm7ZMMEV1sRuMwTWE5b0udAjSXIqmabaYrqzwlkeQDEOOkI5uxXH3G4s9nLLqya_8JiMLFhCAg",
                       "type": "Ed25519Signature2018",
                       "verificationMethod": "did:key:z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV#z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV"
                     },
@@ -941,8 +941,8 @@
                       "VerifiableCredential",
                       "StatusList2021Credential"
                     ],
-                    "validFrom": "2023-11-26T05:11:13Z",
-                    "validUntil": "2023-11-27T05:11:13Z"
+                    "validFrom": "2023-11-30T14:03:07Z",
+                    "validUntil": "2023-12-01T14:03:07Z"
                   }
                 },
                 "stack": "AssertionError: expected { statusListCredential: { …(9) } } to have property '@context'\n    at testSlCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:67:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:104:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
@@ -961,9 +961,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "4_m__Euzu8AfRRJdn3Hc4",
+              "parent": "f09ywPaFgOPdreAeO234K",
               "ctx": null,
-              "_testId": "urn:uuid:f583db2a-2635-49e9-bf8e-df0e15605b84",
+              "_testId": "urn:uuid:b2f50240-8870-4643-a18f-7278c323ac0b",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -974,12 +974,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4668,
+                "_idleStart": 4750,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 69,
+              "duration": 57,
               "state": "failed",
               "err": {}
             }
@@ -1001,7 +1001,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "4_m__Euzu8AfRRJdn3Hc4",
+              "parent": "f09ywPaFgOPdreAeO234K",
               "ctx": null,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
               "originalTitle": "\"before all\" hook",
@@ -1011,12 +1011,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4520,
+                "_idleStart": 4623,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 78,
+              "duration": 68,
               "_error": null
             }
           ],
@@ -1028,9 +1028,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "wD3ExrOATKTMLUhlThrPw",
+          "parent": "xGCPoOgwwJ89UYhMUDF2M",
           "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:0ce95f7f-b295-4a67-a605-f85b52157e33"
+          "_testId": "urn:uuid:35bf46aa-d93a-43af-871e-3179e0826d87"
         }
       ],
       "root": false,
@@ -1046,13 +1046,13 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "9XwHjvoqNxoeORrp-al0b",
+      "parent": "HCw0JYF7l-d8VmfPJHOkG",
       "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Test Name",
       "columnLabel": "Issuer",
-      "_testId": "urn:uuid:a5ab023d-b9bd-48be-ab9b-fd1e663b9775",
+      "_testId": "urn:uuid:464d1522-105a-428b-bfeb-9283455d5ca9",
       "columns": [
         "Digital Bazaar",
         "mesur.io"
@@ -1074,9 +1074,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "SjQVHlyVp8ZpEK0bgJxwy",
+              "parent": "mWLZ5OGilm__HZCCE7HLU",
               "ctx": null,
-              "_testId": "urn:uuid:22d0c897-8323-4794-bb25-cd889b650fef",
+              "_testId": "urn:uuid:901cf6bb-1aaf-43b2-b6a1-c08be1434efb",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1087,7 +1087,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4339,
+                "_idleStart": 4473,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1109,9 +1109,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "4_m__Euzu8AfRRJdn3Hc4",
+              "parent": "f09ywPaFgOPdreAeO234K",
               "ctx": null,
-              "_testId": "urn:uuid:6246d6c4-cc5d-4e66-a496-6c8047794bc3",
+              "_testId": "urn:uuid:f258b2d5-b1e0-4479-8789-ece02061bc2d",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1122,7 +1122,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4598,
+                "_idleStart": 4691,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1134,7 +1134,7 @@
                 "message": "expected [ …(2) ] to be a superset of [ …(3) ]",
                 "showDiff": true,
                 "actual": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n]",
-                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/suites/ed25519-2020/v1\"\n]",
+                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/data-integrity/v2\"\n]",
                 "operator": "deepStrictEqual",
                 "stack": "AssertionError: expected [ …(2) ] to be a superset of [ …(3) ]\n    at testCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:23:41)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:97:11)\n    at process.processImmediate (node:internal/timers:478:21)"
               }
@@ -1157,9 +1157,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "SjQVHlyVp8ZpEK0bgJxwy",
+              "parent": "mWLZ5OGilm__HZCCE7HLU",
               "ctx": null,
-              "_testId": "urn:uuid:12962393-1493-4ec6-a48a-8af5367d751a",
+              "_testId": "urn:uuid:84d9853d-dd3d-4ef5-826a-42323a3e4dc5",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1170,12 +1170,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4339,
+                "_idleStart": 4473,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 89,
+              "duration": 77,
               "state": "passed",
               "speed": "slow"
             },
@@ -1192,9 +1192,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "4_m__Euzu8AfRRJdn3Hc4",
+              "parent": "f09ywPaFgOPdreAeO234K",
               "ctx": null,
-              "_testId": "urn:uuid:9488c5f1-1fa7-43b3-bbb4-ddb7274536a2",
+              "_testId": "urn:uuid:5f42b3ae-a51d-4eed-8e82-a211b8bf03c4",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1205,12 +1205,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4599,
+                "_idleStart": 4692,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 69,
+              "duration": 58,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -1231,12 +1231,12 @@
                       "type": "StatusList2021"
                     },
                     "id": "https://vc.mesur.io/v1/credentials/status",
-                    "issuanceDate": "2023-11-26T05:11:13Z",
+                    "issuanceDate": "2023-11-30T14:03:07Z",
                     "issuer": "did:web:vc.mesur.io:v1",
                     "proof": {
-                      "created": "2023-11-26T05:11:13.820247992Z",
+                      "created": "2023-11-30T14:03:07.058301876Z",
                       "proofPurpose": "assertionMethod",
-                      "proofValue": "jB0H8IPinyQ2rJ_hHd82uKUOMahZGn9K0TYUlfzsU_IwbCuex8-b4OMjZVroUGE-0gtQK5jIdx7qzhZ96OF3DQ",
+                      "proofValue": "riMO0PeenIjZbm7ZMMEV1sRuMwTWE5b0udAjSXIqmabaYrqzwlkeQDEOOkI5uxXH3G4s9nLLqya_8JiMLFhCAg",
                       "type": "Ed25519Signature2018",
                       "verificationMethod": "did:key:z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV#z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV"
                     },
@@ -1244,8 +1244,8 @@
                       "VerifiableCredential",
                       "StatusList2021Credential"
                     ],
-                    "validFrom": "2023-11-26T05:11:13Z",
-                    "validUntil": "2023-11-27T05:11:13Z"
+                    "validFrom": "2023-11-30T14:03:07Z",
+                    "validUntil": "2023-12-01T14:03:07Z"
                   }
                 },
                 "stack": "AssertionError: expected { statusListCredential: { …(9) } } to have property '@context'\n    at testSlCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:67:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:104:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
@@ -1269,9 +1269,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "SjQVHlyVp8ZpEK0bgJxwy",
+              "parent": "mWLZ5OGilm__HZCCE7HLU",
               "ctx": null,
-              "_testId": "urn:uuid:8c32726f-417e-4999-8b5d-c21787f32338",
+              "_testId": "urn:uuid:7cf70003-dfa8-48d2-8715-7c757fe892b1",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1282,14 +1282,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4428,
+                "_idleStart": 4551,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 91,
+              "duration": 72,
               "state": "passed",
-              "speed": "slow"
+              "speed": "medium"
             },
             {
               "type": "test",
@@ -1304,9 +1304,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "4_m__Euzu8AfRRJdn3Hc4",
+              "parent": "f09ywPaFgOPdreAeO234K",
               "ctx": null,
-              "_testId": "urn:uuid:f583db2a-2635-49e9-bf8e-df0e15605b84",
+              "_testId": "urn:uuid:b2f50240-8870-4643-a18f-7278c323ac0b",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1317,12 +1317,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4668,
+                "_idleStart": 4750,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 69,
+              "duration": 57,
               "state": "failed",
               "err": {}
             }
@@ -1352,9 +1352,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "KzipUc3ggfZ-PzJ-gqc_-",
+              "parent": "PvAdvhIPwxSJHcYOdUvVP",
               "ctx": null,
-              "_testId": "urn:uuid:54c0d84b-2df0-4f27-a48c-c7428646cc5d",
+              "_testId": "urn:uuid:ba59ed43-abc1-4644-8996-00212364f090",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1365,12 +1365,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5276,
+                "_idleStart": 6559,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 886,
+              "duration": 823,
               "state": "passed",
               "speed": "slow"
             },
@@ -1387,9 +1387,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "KzipUc3ggfZ-PzJ-gqc_-",
+              "parent": "PvAdvhIPwxSJHcYOdUvVP",
               "ctx": null,
-              "_testId": "urn:uuid:5036c68b-6f0a-4102-9537-01b0813cb2dc",
+              "_testId": "urn:uuid:6425aac8-7c3a-4e7f-a1e5-a4dd00594d2e",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1400,7 +1400,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6162,
+                "_idleStart": 7382,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1422,9 +1422,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "KzipUc3ggfZ-PzJ-gqc_-",
+              "parent": "PvAdvhIPwxSJHcYOdUvVP",
               "ctx": null,
-              "_testId": "urn:uuid:6b94daf6-8e31-4be2-9a92-6bc285e5c9b3",
+              "_testId": "urn:uuid:7e9f98b6-60bf-423d-88e9-603629e2be39",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1435,12 +1435,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6355,
+                "_idleStart": 7575,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 105,
+              "duration": 109,
               "state": "passed",
               "speed": "slow"
             },
@@ -1457,9 +1457,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "KzipUc3ggfZ-PzJ-gqc_-",
+              "parent": "PvAdvhIPwxSJHcYOdUvVP",
               "ctx": null,
-              "_testId": "urn:uuid:e16f5e7f-88c5-46f1-8946-bfa4e5cc4f24",
+              "_testId": "urn:uuid:0bdadc26-288c-4d89-bbf3-b7834f4d5342",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1470,12 +1470,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6461,
+                "_idleStart": 7684,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 112,
+              "duration": 99,
               "state": "passed",
               "speed": "slow"
             },
@@ -1492,9 +1492,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "KzipUc3ggfZ-PzJ-gqc_-",
+              "parent": "PvAdvhIPwxSJHcYOdUvVP",
               "ctx": null,
-              "_testId": "urn:uuid:3dc62ec5-5f41-44e7-bc67-504b79285273",
+              "_testId": "urn:uuid:2d455831-3b1f-41d7-98ed-a85016d4d15f",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1505,22 +1505,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6574,
+                "_idleStart": 7783,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1213,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "expected false to equal true",
-                "showDiff": true,
-                "actual": "false",
-                "expected": "true",
-                "operator": "strictEqual",
-                "stack": "AssertionError: expected false to equal true\n    at updateStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:107:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:108:29)"
-              }
+              "duration": 1745,
+              "state": "passed",
+              "speed": "slow"
             },
             {
               "type": "test",
@@ -1535,9 +1527,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "KzipUc3ggfZ-PzJ-gqc_-",
+              "parent": "PvAdvhIPwxSJHcYOdUvVP",
               "ctx": null,
-              "_testId": "urn:uuid:f01d4102-63e9-4aa9-a95d-c2f3aeb39264",
+              "_testId": "urn:uuid:7c6b49d7-107e-404e-ba8b-d4794cd2b1fb",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1548,14 +1540,22 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 7787,
+                "_idleStart": 9529,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 2159,
-              "state": "passed",
-              "speed": "slow"
+              "duration": 1056,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "expected false to equal true",
+                "showDiff": true,
+                "actual": "false",
+                "expected": "true",
+                "operator": "strictEqual",
+                "stack": "AssertionError: expected false to equal true\n    at updateStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:107:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:138:31)"
+              }
             }
           ],
           "root": false,
@@ -1575,7 +1575,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "KzipUc3ggfZ-PzJ-gqc_-",
+              "parent": "PvAdvhIPwxSJHcYOdUvVP",
               "ctx": null,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
               "originalTitle": "\"before all\" hook",
@@ -1585,12 +1585,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4738,
+                "_idleStart": 4809,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 539,
+              "duration": 1750,
               "_error": null
             }
           ],
@@ -1602,9 +1602,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "GhJqdhhY1EwURkhg036Ha",
+          "parent": "4KUtmaZyrfko-o9egUk1G",
           "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-          "_testId": "urn:uuid:2d09ab9b-d232-436d-bd41-6e2510fccb37"
+          "_testId": "urn:uuid:5c788566-90ed-4cae-93b5-f58a8056f39b"
         },
         {
           "title": "mesur.io",
@@ -1624,9 +1624,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "6609qWP6g4iAwExGkaTnG",
+              "parent": "AEBIcrKeokQLbmk54sYmO",
               "ctx": null,
-              "_testId": "urn:uuid:12b3563e-ea7c-4b5a-8ce9-3db71672b332",
+              "_testId": "urn:uuid:58ab3c34-22a5-4001-b570-e692fae32f6e",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1637,12 +1637,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 10978,
+                "_idleStart": 11052,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 747,
+              "duration": 707,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -1665,9 +1665,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "6609qWP6g4iAwExGkaTnG",
+              "parent": "AEBIcrKeokQLbmk54sYmO",
               "ctx": null,
-              "_testId": "urn:uuid:51f69481-f4b8-4538-8bf3-89f9d5d43e5e",
+              "_testId": "urn:uuid:12b230ff-54ee-4e00-8a79-b570f68f5d89",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1678,12 +1678,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 11725,
+                "_idleStart": 11760,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 114,
+              "duration": 57,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -1706,9 +1706,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "6609qWP6g4iAwExGkaTnG",
+              "parent": "AEBIcrKeokQLbmk54sYmO",
               "ctx": null,
-              "_testId": "urn:uuid:f9a715bf-fef7-404e-be6b-e331b169b0cc",
+              "_testId": "urn:uuid:402b7166-3526-4322-b20d-bb666d142e9d",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1719,21 +1719,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 11841,
+                "_idleStart": 11818,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 65,
+              "duration": 57,
               "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected no response from verifier: expected Response{ data: { …(2) }, …(3) } to not exist",
-                "showDiff": false,
-                "actual": {},
-                "operator": "notStrictEqual",
-                "stack": "AssertionError: Expected no response from verifier: expected Response{ data: { …(2) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at shouldFailVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:102:14)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:82:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
+              "err": {}
             },
             {
               "type": "test",
@@ -1748,9 +1741,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "6609qWP6g4iAwExGkaTnG",
+              "parent": "AEBIcrKeokQLbmk54sYmO",
               "ctx": null,
-              "_testId": "urn:uuid:22a1071e-276a-4443-90d1-658cf4280005",
+              "_testId": "urn:uuid:4f31ad6c-b517-4e34-b864-30f71b6c6121",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1761,12 +1754,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 11907,
+                "_idleStart": 11875,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 65,
+              "duration": 55,
               "state": "failed",
               "err": {}
             },
@@ -1783,9 +1776,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "6609qWP6g4iAwExGkaTnG",
+              "parent": "AEBIcrKeokQLbmk54sYmO",
               "ctx": null,
-              "_testId": "urn:uuid:d24a8607-bcc3-4964-a656-e1a597305519",
+              "_testId": "urn:uuid:c01f2ca5-1d7b-4955-9491-c3525321fbff",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1796,12 +1789,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 11972,
+                "_idleStart": 11931,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 174,
+              "duration": 126,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -1824,9 +1817,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "6609qWP6g4iAwExGkaTnG",
+              "parent": "AEBIcrKeokQLbmk54sYmO",
               "ctx": null,
-              "_testId": "urn:uuid:cc18da9d-7b15-4d9c-a787-0291bf249063",
+              "_testId": "urn:uuid:11c2ec56-0f15-4148-b1c6-796ca24d6daa",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1837,12 +1830,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 12147,
+                "_idleStart": 12057,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 173,
+              "duration": 126,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -1870,7 +1863,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "6609qWP6g4iAwExGkaTnG",
+              "parent": "AEBIcrKeokQLbmk54sYmO",
               "ctx": null,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
               "originalTitle": "\"before all\" hook",
@@ -1880,12 +1873,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 9947,
+                "_idleStart": 10585,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1031,
+              "duration": 467,
               "_error": null
             }
           ],
@@ -1897,9 +1890,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "GhJqdhhY1EwURkhg036Ha",
+          "parent": "4KUtmaZyrfko-o9egUk1G",
           "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-          "_testId": "urn:uuid:570f23a0-2620-4df5-a9e7-b4c2508c40c2"
+          "_testId": "urn:uuid:d4d90685-7c80-43dd-9c87-7492f2ac360f"
         }
       ],
       "root": false,
@@ -1915,13 +1908,13 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "9XwHjvoqNxoeORrp-al0b",
+      "parent": "HCw0JYF7l-d8VmfPJHOkG",
       "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Test Name",
       "columnLabel": "Verifier",
-      "_testId": "urn:uuid:6b60f112-d727-4b04-b1eb-285e10e03061",
+      "_testId": "urn:uuid:a73e9bd3-821f-4e24-815c-120c8292d356",
       "columns": [
         "Digital Bazaar",
         "mesur.io"
@@ -1943,9 +1936,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "KzipUc3ggfZ-PzJ-gqc_-",
+              "parent": "PvAdvhIPwxSJHcYOdUvVP",
               "ctx": null,
-              "_testId": "urn:uuid:54c0d84b-2df0-4f27-a48c-c7428646cc5d",
+              "_testId": "urn:uuid:ba59ed43-abc1-4644-8996-00212364f090",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1956,12 +1949,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5276,
+                "_idleStart": 6559,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 886,
+              "duration": 823,
               "state": "passed",
               "speed": "slow"
             },
@@ -1978,9 +1971,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "6609qWP6g4iAwExGkaTnG",
+              "parent": "AEBIcrKeokQLbmk54sYmO",
               "ctx": null,
-              "_testId": "urn:uuid:12b3563e-ea7c-4b5a-8ce9-3db71672b332",
+              "_testId": "urn:uuid:58ab3c34-22a5-4001-b570-e692fae32f6e",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1991,12 +1984,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 10978,
+                "_idleStart": 11052,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 747,
+              "duration": 707,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -2024,9 +2017,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "KzipUc3ggfZ-PzJ-gqc_-",
+              "parent": "PvAdvhIPwxSJHcYOdUvVP",
               "ctx": null,
-              "_testId": "urn:uuid:5036c68b-6f0a-4102-9537-01b0813cb2dc",
+              "_testId": "urn:uuid:6425aac8-7c3a-4e7f-a1e5-a4dd00594d2e",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2037,7 +2030,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6162,
+                "_idleStart": 7382,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2059,9 +2052,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "6609qWP6g4iAwExGkaTnG",
+              "parent": "AEBIcrKeokQLbmk54sYmO",
               "ctx": null,
-              "_testId": "urn:uuid:51f69481-f4b8-4538-8bf3-89f9d5d43e5e",
+              "_testId": "urn:uuid:12b230ff-54ee-4e00-8a79-b570f68f5d89",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2072,12 +2065,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 11725,
+                "_idleStart": 11760,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 114,
+              "duration": 57,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -2105,9 +2098,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "KzipUc3ggfZ-PzJ-gqc_-",
+              "parent": "PvAdvhIPwxSJHcYOdUvVP",
               "ctx": null,
-              "_testId": "urn:uuid:6b94daf6-8e31-4be2-9a92-6bc285e5c9b3",
+              "_testId": "urn:uuid:7e9f98b6-60bf-423d-88e9-603629e2be39",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2118,12 +2111,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6355,
+                "_idleStart": 7575,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 105,
+              "duration": 109,
               "state": "passed",
               "speed": "slow"
             },
@@ -2140,9 +2133,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "6609qWP6g4iAwExGkaTnG",
+              "parent": "AEBIcrKeokQLbmk54sYmO",
               "ctx": null,
-              "_testId": "urn:uuid:f9a715bf-fef7-404e-be6b-e331b169b0cc",
+              "_testId": "urn:uuid:402b7166-3526-4322-b20d-bb666d142e9d",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2153,21 +2146,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 11841,
+                "_idleStart": 11818,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 65,
+              "duration": 57,
               "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected no response from verifier: expected Response{ data: { …(2) }, …(3) } to not exist",
-                "showDiff": false,
-                "actual": {},
-                "operator": "notStrictEqual",
-                "stack": "AssertionError: Expected no response from verifier: expected Response{ data: { …(2) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at shouldFailVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:102:14)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:82:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
+              "err": {}
             }
           ]
         },
@@ -2187,9 +2173,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "KzipUc3ggfZ-PzJ-gqc_-",
+              "parent": "PvAdvhIPwxSJHcYOdUvVP",
               "ctx": null,
-              "_testId": "urn:uuid:e16f5e7f-88c5-46f1-8946-bfa4e5cc4f24",
+              "_testId": "urn:uuid:0bdadc26-288c-4d89-bbf3-b7834f4d5342",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2200,12 +2186,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6461,
+                "_idleStart": 7684,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 112,
+              "duration": 99,
               "state": "passed",
               "speed": "slow"
             },
@@ -2222,9 +2208,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "6609qWP6g4iAwExGkaTnG",
+              "parent": "AEBIcrKeokQLbmk54sYmO",
               "ctx": null,
-              "_testId": "urn:uuid:22a1071e-276a-4443-90d1-658cf4280005",
+              "_testId": "urn:uuid:4f31ad6c-b517-4e34-b864-30f71b6c6121",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2235,12 +2221,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 11907,
+                "_idleStart": 11875,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 65,
+              "duration": 55,
               "state": "failed",
               "err": {}
             }
@@ -2262,9 +2248,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "KzipUc3ggfZ-PzJ-gqc_-",
+              "parent": "PvAdvhIPwxSJHcYOdUvVP",
               "ctx": null,
-              "_testId": "urn:uuid:3dc62ec5-5f41-44e7-bc67-504b79285273",
+              "_testId": "urn:uuid:2d455831-3b1f-41d7-98ed-a85016d4d15f",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2275,22 +2261,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6574,
+                "_idleStart": 7783,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1213,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "expected false to equal true",
-                "showDiff": true,
-                "actual": "false",
-                "expected": "true",
-                "operator": "strictEqual",
-                "stack": "AssertionError: expected false to equal true\n    at updateStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:107:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:108:29)"
-              }
+              "duration": 1745,
+              "state": "passed",
+              "speed": "slow"
             },
             {
               "type": "test",
@@ -2305,9 +2283,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "6609qWP6g4iAwExGkaTnG",
+              "parent": "AEBIcrKeokQLbmk54sYmO",
               "ctx": null,
-              "_testId": "urn:uuid:d24a8607-bcc3-4964-a656-e1a597305519",
+              "_testId": "urn:uuid:c01f2ca5-1d7b-4955-9491-c3525321fbff",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2318,12 +2296,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 11972,
+                "_idleStart": 11931,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 174,
+              "duration": 126,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -2351,9 +2329,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "KzipUc3ggfZ-PzJ-gqc_-",
+              "parent": "PvAdvhIPwxSJHcYOdUvVP",
               "ctx": null,
-              "_testId": "urn:uuid:f01d4102-63e9-4aa9-a95d-c2f3aeb39264",
+              "_testId": "urn:uuid:7c6b49d7-107e-404e-ba8b-d4794cd2b1fb",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2364,14 +2342,22 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 7787,
+                "_idleStart": 9529,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 2159,
-              "state": "passed",
-              "speed": "slow"
+              "duration": 1056,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "expected false to equal true",
+                "showDiff": true,
+                "actual": "false",
+                "expected": "true",
+                "operator": "strictEqual",
+                "stack": "AssertionError: expected false to equal true\n    at updateStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:107:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:138:31)"
+              }
             },
             {
               "type": "test",
@@ -2386,9 +2372,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "6609qWP6g4iAwExGkaTnG",
+              "parent": "AEBIcrKeokQLbmk54sYmO",
               "ctx": null,
-              "_testId": "urn:uuid:cc18da9d-7b15-4d9c-a787-0291bf249063",
+              "_testId": "urn:uuid:11c2ec56-0f15-4148-b1c6-796ca24d6daa",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2399,12 +2385,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 12147,
+                "_idleStart": 12057,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 173,
+              "duration": 126,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -2439,7 +2425,7 @@
           "_currentRetry": 0,
           "pending": false,
           "type": "hook",
-          "parent": "H27pbLt2WrmwMTtQfpD_p",
+          "parent": "l6gd-9GWRGEmE-2t14R-l",
           "ctx": null,
           "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
           "originalTitle": "\"before all\" hook",
@@ -2449,12 +2435,12 @@
             "_idleTimeout": -1,
             "_idlePrev": null,
             "_idleNext": null,
-            "_idleStart": 12322,
+            "_idleStart": 12185,
             "_onTimeout": null,
             "_repeat": null,
             "_destroyed": true
           },
-          "duration": 2,
+          "duration": 1,
           "_error": null
         },
         {
@@ -2469,7 +2455,7 @@
           "_currentRetry": 0,
           "pending": false,
           "type": "hook",
-          "parent": "H27pbLt2WrmwMTtQfpD_p",
+          "parent": "l6gd-9GWRGEmE-2t14R-l",
           "ctx": null,
           "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
           "originalTitle": "\"before all\" hook",
@@ -2479,12 +2465,12 @@
             "_idleTimeout": -1,
             "_idlePrev": null,
             "_idleNext": null,
-            "_idleStart": 12323,
+            "_idleStart": 12186,
             "_onTimeout": null,
             "_repeat": null,
             "_destroyed": true
           },
-          "duration": 0,
+          "duration": 1,
           "_error": null
         }
       ],
@@ -2496,13 +2482,13 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "9XwHjvoqNxoeORrp-al0b",
+      "parent": "HCw0JYF7l-d8VmfPJHOkG",
       "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Issuer",
       "columnLabel": "Verifier",
-      "_testId": "urn:uuid:444de544-e43f-48ee-a59e-a9b8c91d327f",
+      "_testId": "urn:uuid:c8917ea9-0f8d-488e-904d-5c9dce83fea8",
       "columns": [
         "Digital Bazaar",
         "mesur.io"
@@ -2524,9 +2510,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "H27pbLt2WrmwMTtQfpD_p",
+              "parent": "l6gd-9GWRGEmE-2t14R-l",
               "ctx": null,
-              "_testId": "urn:uuid:4c4cadae-8922-44c9-a8d4-03f091f8f672",
+              "_testId": "urn:uuid:926412ad-ca97-4c5a-8e5e-340ae639e949",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2537,12 +2523,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 12326,
+                "_idleStart": 12190,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 991,
+              "duration": 519,
               "state": "passed",
               "speed": "slow"
             },
@@ -2559,9 +2545,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "H27pbLt2WrmwMTtQfpD_p",
+              "parent": "l6gd-9GWRGEmE-2t14R-l",
               "ctx": null,
-              "_testId": "urn:uuid:d9142e43-e489-4780-a8f2-222d5362e287",
+              "_testId": "urn:uuid:68c37463-1ddf-4c51-a774-c7894b609bca",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2572,12 +2558,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 13318,
+                "_idleStart": 12709,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 93,
+              "duration": 56,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -2605,9 +2591,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "H27pbLt2WrmwMTtQfpD_p",
+              "parent": "l6gd-9GWRGEmE-2t14R-l",
               "ctx": null,
-              "_testId": "urn:uuid:361f8a04-9cde-4d8b-9b1b-9a802a133302",
+              "_testId": "urn:uuid:053c14d8-cddc-46a3-b383-bf3c6b55c61e",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2618,12 +2604,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 13412,
+                "_idleStart": 12765,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 110,
+              "duration": 121,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -2646,9 +2632,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "H27pbLt2WrmwMTtQfpD_p",
+              "parent": "l6gd-9GWRGEmE-2t14R-l",
               "ctx": null,
-              "_testId": "urn:uuid:2f683716-1011-4e14-826a-c374b6322100",
+              "_testId": "urn:uuid:6c46b0fa-6683-4d7d-a4e8-ae62f3de4568",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2659,12 +2645,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 13522,
+                "_idleStart": 12886,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 74,
+              "duration": 70,
               "state": "passed",
               "speed": "medium"
             }
@@ -2693,7 +2679,7 @@
           "_currentRetry": 0,
           "pending": false,
           "type": "hook",
-          "parent": "vT7BUIm4k2n24tzV27Pep",
+          "parent": "D3neR1MV_gElxxhmuVhCq",
           "ctx": null,
           "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
           "originalTitle": "\"before all\" hook",
@@ -2703,7 +2689,7 @@
             "_idleTimeout": -1,
             "_idlePrev": null,
             "_idleNext": null,
-            "_idleStart": 13597,
+            "_idleStart": 12957,
             "_onTimeout": null,
             "_repeat": null,
             "_destroyed": true
@@ -2723,7 +2709,7 @@
           "_currentRetry": 0,
           "pending": false,
           "type": "hook",
-          "parent": "vT7BUIm4k2n24tzV27Pep",
+          "parent": "D3neR1MV_gElxxhmuVhCq",
           "ctx": null,
           "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
           "originalTitle": "\"before all\" hook",
@@ -2733,7 +2719,7 @@
             "_idleTimeout": -1,
             "_idlePrev": null,
             "_idleNext": null,
-            "_idleStart": 13598,
+            "_idleStart": 12958,
             "_onTimeout": null,
             "_repeat": null,
             "_destroyed": true
@@ -2750,13 +2736,13 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "9XwHjvoqNxoeORrp-al0b",
+      "parent": "HCw0JYF7l-d8VmfPJHOkG",
       "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Issuer",
       "columnLabel": "Verifier",
-      "_testId": "urn:uuid:36c18947-c1a4-470c-9e43-df6e41782063",
+      "_testId": "urn:uuid:1829c9bb-e48f-45d9-8abe-df82f6bac009",
       "columns": [
         "Digital Bazaar",
         "mesur.io"
@@ -2778,9 +2764,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "vT7BUIm4k2n24tzV27Pep",
+              "parent": "D3neR1MV_gElxxhmuVhCq",
               "ctx": null,
-              "_testId": "urn:uuid:7e2e9746-7e85-4ea9-a10f-57b98ab85de7",
+              "_testId": "urn:uuid:f2056e9b-e021-4ab7-a185-304c91cb924d",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2791,12 +2777,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 13602,
+                "_idleStart": 12962,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 419,
+              "duration": 529,
               "state": "passed",
               "speed": "slow"
             },
@@ -2813,9 +2799,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "vT7BUIm4k2n24tzV27Pep",
+              "parent": "D3neR1MV_gElxxhmuVhCq",
               "ctx": null,
-              "_testId": "urn:uuid:62c417a7-21ed-4e43-8e85-1b9808068f58",
+              "_testId": "urn:uuid:baf7fa7f-1b7c-4e81-932d-c3c8d6f23a05",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2826,12 +2812,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 14021,
+                "_idleStart": 13492,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 94,
+              "duration": 56,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -2859,9 +2845,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "vT7BUIm4k2n24tzV27Pep",
+              "parent": "D3neR1MV_gElxxhmuVhCq",
               "ctx": null,
-              "_testId": "urn:uuid:176fb626-815a-4733-9df3-58af5ae3daf1",
+              "_testId": "urn:uuid:d4c0f0f5-9514-42fa-bd9d-4c1f83c243a5",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2872,12 +2858,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 14115,
+                "_idleStart": 13549,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 100,
+              "duration": 93,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -2900,9 +2886,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "vT7BUIm4k2n24tzV27Pep",
+              "parent": "D3neR1MV_gElxxhmuVhCq",
               "ctx": null,
-              "_testId": "urn:uuid:a0790de1-abc9-4596-9215-9134fabdaa09",
+              "_testId": "urn:uuid:84ec9a5d-e21c-4786-a1a1-9050b922082e",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2913,12 +2899,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 14215,
+                "_idleStart": 13642,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 75,
+              "duration": 72,
               "state": "passed",
               "speed": "medium"
             }
