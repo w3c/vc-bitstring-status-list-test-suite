@@ -5,7 +5,7 @@ import {
   createRequestBody, getCredentialStatus, issueVc, updateStatus
 } from './helpers.js';
 import {filterByTag, filterImplementations} from
-  'vc-api-test-suite-implementations';
+  'vc-test-suite-implementations';
 import {shouldFailVerification, shouldPassVerification} from './assertions.js';
 import {klona} from 'klona';
 
