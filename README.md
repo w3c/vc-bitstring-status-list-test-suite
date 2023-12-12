@@ -33,9 +33,12 @@ npm run generate-vcs
 ```
 
 ## Implementation
-To add your implementation to this test suite see the [README here.](https://github.com/w3c-ccg/vc-api-test-suite-implementations)
-Add the tag `StatusList2021` to the issuers and verifiers you want tested.
-To run the tests and to generate VCs, some implementations require client
-secrets that can be passed as env variables to the test script. To see which
-ones require client secrets, you can check the [vc-api-test-suite-implementations](https://github.com/w3c-ccg/vc-api-test-suite-implementations)
-library.
+
+To add your implementation to this test suite see the
+`w3c-ccg/vc-test-suite-implementations` [README](https://github.com/w3c-ccg/vc-test-suite-implementations/blob/main/README.md). Add the tags `StatusList2021` along with `Revocation` or
+`Suspension` to run your issuer and verifier against this tests suite.
+
+Note: To run the tests, some implementations require client secrets that can be
+passed as env variables to the test script. To see which ones require client
+secrets, you can check configs in the `w3c-ccg/vc-test-suite-implementations`
+repo.

@@ -5,7 +5,7 @@ import * as sl from '@digitalbazaar/vc-status-list';
 import {getSlc, issueVc} from './helpers.js';
 import {testCredential, testSlCredential} from './assertions.js';
 import chai from 'chai';
-import {filterByTag} from 'vc-api-test-suite-implementations';
+import {filterByTag} from 'vc-test-suite-implementations';
 
 const should = chai.should();
 

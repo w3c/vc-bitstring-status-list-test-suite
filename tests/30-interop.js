@@ -3,7 +3,7 @@
  */
 import {createRequestBody, issueVc} from './helpers.js';
 import chai from 'chai';
-import {endpoints} from 'vc-api-test-suite-implementations';
+import {endpoints} from 'vc-test-suite-implementations';
 import {shouldPassVerification} from './assertions.js';
 
 const should = chai.should();
