@@ -36,7 +36,7 @@ npm run generate-vcs
 
 To add your implementation to this test suite see the
 `w3c-ccg/vc-test-suite-implementations` [README](https://github.com/w3c-ccg/vc-test-suite-implementations/blob/main/README.md). Add the tags `StatusList2021` along with `Revocation` or
-`Suspension` to run your issuer and verifier against this tests suite.
+`Suspension` to run your issuer and verifier against this test suite.
 
 Note: To run the tests, some implementations require client secrets that can be
 passed as env variables to the test script. To see which ones require client
