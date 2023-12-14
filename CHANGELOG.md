@@ -1,5 +1,11 @@
 # w3c-ccg/status-list-2021-test-suite ChangeLog
 
+## 1.1.0 - 2023-12-14
+
+### Changed
+- Updated `vc-api-test-suite-implementations` package name to
+  `vc-test-suite-implementations`.
+
 ## 1.0.0 - 2023-11-10
 
 ### Added
