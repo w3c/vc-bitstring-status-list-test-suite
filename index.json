@@ -22,9 +22,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "I6L0jyg5NKVll_Vmj0hSE",
+              "parent": "5ueP4sI2C7x2CGOY5Drfa",
               "ctx": null,
-              "_testId": "urn:uuid:5676ef4c-f1e9-4792-be34-79184b9fab38",
+              "_testId": "urn:uuid:10ff8555-9f54-480a-94a3-f3d2a040bfc4",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -35,12 +35,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 1927,
+                "_idleStart": 2132,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 3,
+              "duration": 5,
               "state": "passed",
               "speed": "fast"
             },
@@ -57,9 +57,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "I6L0jyg5NKVll_Vmj0hSE",
+              "parent": "5ueP4sI2C7x2CGOY5Drfa",
               "ctx": null,
-              "_testId": "urn:uuid:5e53ea13-e32a-4d79-b082-026ba9377743",
+              "_testId": "urn:uuid:a3004813-6b3b-4df1-aba8-532bcbb7a465",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -70,14 +70,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 1928,
+                "_idleStart": 2133,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 357,
+              "duration": 61,
               "state": "passed",
-              "speed": "slow"
+              "speed": "medium"
             },
             {
               "type": "test",
@@ -92,9 +92,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "I6L0jyg5NKVll_Vmj0hSE",
+              "parent": "5ueP4sI2C7x2CGOY5Drfa",
               "ctx": null,
-              "_testId": "urn:uuid:e65acf09-0de0-4feb-abe9-b19ff4ee18e9",
+              "_testId": "urn:uuid:b2908479-8153-4f4a-8755-78f9acbfa5c5",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -105,14 +105,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2284,
+                "_idleStart": 2194,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 105,
+              "duration": 31,
               "state": "passed",
-              "speed": "slow"
+              "speed": "fast"
             }
           ],
           "root": false,
@@ -132,7 +132,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "I6L0jyg5NKVll_Vmj0hSE",
+              "parent": "5ueP4sI2C7x2CGOY5Drfa",
               "ctx": null,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
               "originalTitle": "\"before all\" hook",
@@ -142,12 +142,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 344,
+                "_idleStart": 397,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1581,
+              "duration": 1732,
               "_error": null
             }
           ],
@@ -159,213 +159,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "0U3_Ey6kefDCOJA1DikIQ",
+          "parent": "ggMcMMPTrjBxZt5nKNJuz",
           "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:8faa39d5-a2ab-4f1f-bf27-d251f17c6b3c"
-        },
-        {
-          "title": "mesur.io",
-          "ctx": null,
-          "suites": [],
-          "tests": [
-            {
-              "type": "test",
-              "title": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"revocation\" status purpose",
-              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          should.exist(issuerResponse);\n          should.not.exist(err);\n          issuerResponse.status.should.equal(201);\n          should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);\n          testCredential({credential: issuedVc});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "40HPbPvIaciA_YhGPBV4h",
-              "ctx": null,
-              "_testId": "urn:uuid:6576559c-940c-4726-9e04-6e6d0107e9f0",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"revocation\" status purpose"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 3058,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 1,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "expected [ …(2) ] to be a superset of [ …(3) ]",
-                "showDiff": true,
-                "actual": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n]",
-                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/data-integrity/v2\"\n]",
-                "operator": "deepStrictEqual",
-                "stack": "AssertionError: expected [ …(2) ] to be a superset of [ …(3) ]\n    at testCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:23:41)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:43:11)\n    at process.processImmediate (node:internal/timers:478:21)"
-              }
-            },
-            {
-              "type": "test",
-              "title": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\"",
-              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          const {slc} = await getSlc({issuedVc});\n          testSlCredential({slCredential: slc});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "40HPbPvIaciA_YhGPBV4h",
-              "ctx": null,
-              "_testId": "urn:uuid:34204647-424f-4daf-bcc1-0eee11758fdd",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\""
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 3061,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 239,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "expected { statusListCredential: { …(9) } } to have property '@context'",
-                "showDiff": false,
-                "actual": {
-                  "statusListCredential": {
-                    "@context": [
-                      "https://www.w3.org/2018/credentials/v1",
-                      "https://w3id.org/vc/status-list/2021/v1"
-                    ],
-                    "credentialSubject": {
-                      "encodedList": "H4sIAAAAAAAA/2IAAQ6GUTAKRsEoGAWjYBSMIAAIAAD//9cIqqwACAAA",
-                      "id": "https://vc.mesur.io/v1/credentials/status#list",
-                      "size": 1,
-                      "statusPurpose": "revocation",
-                      "ttl": 5000,
-                      "type": "StatusList2021"
-                    },
-                    "id": "https://vc.mesur.io/v1/credentials/status",
-                    "issuanceDate": "2023-12-10T05:11:16Z",
-                    "issuer": "did:web:vc.mesur.io:v1",
-                    "proof": {
-                      "created": "2023-12-10T05:11:16.330254233Z",
-                      "proofPurpose": "assertionMethod",
-                      "proofValue": "5x79il2bazWAKDGxbaVSka56oVR7hOX8_Mg8owSAyn8IsOk3-HnH4e1i-4lmiclzhQ68P-D6L33tANRdC28LAw",
-                      "type": "Ed25519Signature2018",
-                      "verificationMethod": "did:key:z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV#z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV"
-                    },
-                    "type": [
-                      "VerifiableCredential",
-                      "StatusList2021Credential"
-                    ],
-                    "validFrom": "2023-12-10T05:11:16Z",
-                    "validUntil": "2023-12-11T05:11:16Z"
-                  }
-                },
-                "stack": "AssertionError: expected { statusListCredential: { …(9) } } to have property '@context'\n    at testSlCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:67:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:50:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
-            },
-            {
-              "type": "test",
-              "title": "MUST be 16kb in size when \"encodedList\" is decoded",
-              "body": "async function() {\n            this.test.cell = {columnId: issuerName, rowId: this.test.title};\n            const {slc: {credentialSubject}} = await getSlc({issuedVc});\n            const {encodedList} = credentialSubject;\n            // Uncompress encodedList\n            const decoded = await sl.decodeList({encodedList});\n            should.exist(decoded);\n            // decoded size should be 16kb. For more info see\n            // `credentialSubject.encoded` in\n            // eslint-disable-next-line max-len\n            // https://w3c-ccg.github.io/vc-status-list-2021/#statuslist2021credential\n            const decodedSize = (decoded.length / 8) / 1024;\n            decodedSize.should.equal(16);\n          }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "40HPbPvIaciA_YhGPBV4h",
-              "ctx": null,
-              "_testId": "urn:uuid:f942fea5-f42b-4e0f-99cc-54c05ad12950",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST be 16kb in size when \"encodedList\" is decoded"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 3301,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 69,
-              "state": "failed",
-              "err": {}
-            }
-          ],
-          "root": false,
-          "pending": false,
-          "_retries": -1,
-          "_beforeEach": [],
-          "_beforeAll": [
-            {
-              "title": "\"before all\" hook in \"mesur.io\"",
-              "body": "async function() {\n          const issuer = issuers.find(issuer => issuer.tags.has('Revocation'));\n          const {result, error, data} = await issueVc({issuer});\n          err = error;\n          issuerResponse = result;\n          issuedVc = data;\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "type": "hook",
-              "parent": "40HPbPvIaciA_YhGPBV4h",
-              "ctx": null,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "originalTitle": "\"before all\" hook",
-              "_events": {},
-              "_eventsCount": 1,
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 2390,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 667,
-              "_error": null
-            }
-          ],
-          "_afterEach": [],
-          "_afterAll": [],
-          "_timeout": 15000,
-          "_slow": 75,
-          "_bail": false,
-          "_onlyTests": [],
-          "_onlySuites": [],
-          "delayed": false,
-          "parent": "0U3_Ey6kefDCOJA1DikIQ",
-          "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:93ba6397-1046-4ece-9e6a-0cb1941448c1"
+          "_testId": "urn:uuid:95542d43-2e64-4486-b008-048e2ef5e19d"
         }
       ],
       "root": false,
@@ -381,16 +177,15 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "rq2ZOdo2aKtvHg4K7gKCc",
+      "parent": "l3jvkTEGYbZE7kYsiC3-_",
       "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Test Name",
       "columnLabel": "Issuer",
-      "_testId": "urn:uuid:9ac582ce-3581-4f9f-ae01-e2e5bc50d9ab",
+      "_testId": "urn:uuid:a9c5a218-94b2-4299-8c5e-2ba69a64f174",
       "columns": [
-        "Digital Bazaar",
-        "mesur.io"
+        "Digital Bazaar"
       ],
       "rows": [
         {
@@ -409,9 +204,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "I6L0jyg5NKVll_Vmj0hSE",
+              "parent": "5ueP4sI2C7x2CGOY5Drfa",
               "ctx": null,
-              "_testId": "urn:uuid:5676ef4c-f1e9-4792-be34-79184b9fab38",
+              "_testId": "urn:uuid:10ff8555-9f54-480a-94a3-f3d2a040bfc4",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -422,57 +217,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 1927,
+                "_idleStart": 2132,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 3,
+              "duration": 5,
               "state": "passed",
               "speed": "fast"
-            },
-            {
-              "type": "test",
-              "title": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"revocation\" status purpose",
-              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          should.exist(issuerResponse);\n          should.not.exist(err);\n          issuerResponse.status.should.equal(201);\n          should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);\n          testCredential({credential: issuedVc});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "40HPbPvIaciA_YhGPBV4h",
-              "ctx": null,
-              "_testId": "urn:uuid:6576559c-940c-4726-9e04-6e6d0107e9f0",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"revocation\" status purpose"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 3058,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 1,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "expected [ …(2) ] to be a superset of [ …(3) ]",
-                "showDiff": true,
-                "actual": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n]",
-                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/data-integrity/v2\"\n]",
-                "operator": "deepStrictEqual",
-                "stack": "AssertionError: expected [ …(2) ] to be a superset of [ …(3) ]\n    at testCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:23:41)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:43:11)\n    at process.processImmediate (node:internal/timers:478:21)"
-              }
             }
           ]
         },
@@ -492,9 +244,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "I6L0jyg5NKVll_Vmj0hSE",
+              "parent": "5ueP4sI2C7x2CGOY5Drfa",
               "ctx": null,
-              "_testId": "urn:uuid:5e53ea13-e32a-4d79-b082-026ba9377743",
+              "_testId": "urn:uuid:a3004813-6b3b-4df1-aba8-532bcbb7a465",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -505,86 +257,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 1928,
+                "_idleStart": 2133,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 357,
+              "duration": 61,
               "state": "passed",
-              "speed": "slow"
-            },
-            {
-              "type": "test",
-              "title": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\"",
-              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          const {slc} = await getSlc({issuedVc});\n          testSlCredential({slCredential: slc});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "40HPbPvIaciA_YhGPBV4h",
-              "ctx": null,
-              "_testId": "urn:uuid:34204647-424f-4daf-bcc1-0eee11758fdd",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\""
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 3061,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 239,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "expected { statusListCredential: { …(9) } } to have property '@context'",
-                "showDiff": false,
-                "actual": {
-                  "statusListCredential": {
-                    "@context": [
-                      "https://www.w3.org/2018/credentials/v1",
-                      "https://w3id.org/vc/status-list/2021/v1"
-                    ],
-                    "credentialSubject": {
-                      "encodedList": "H4sIAAAAAAAA/2IAAQ6GUTAKRsEoGAWjYBSMIAAIAAD//9cIqqwACAAA",
-                      "id": "https://vc.mesur.io/v1/credentials/status#list",
-                      "size": 1,
-                      "statusPurpose": "revocation",
-                      "ttl": 5000,
-                      "type": "StatusList2021"
-                    },
-                    "id": "https://vc.mesur.io/v1/credentials/status",
-                    "issuanceDate": "2023-12-10T05:11:16Z",
-                    "issuer": "did:web:vc.mesur.io:v1",
-                    "proof": {
-                      "created": "2023-12-10T05:11:16.330254233Z",
-                      "proofPurpose": "assertionMethod",
-                      "proofValue": "5x79il2bazWAKDGxbaVSka56oVR7hOX8_Mg8owSAyn8IsOk3-HnH4e1i-4lmiclzhQ68P-D6L33tANRdC28LAw",
-                      "type": "Ed25519Signature2018",
-                      "verificationMethod": "did:key:z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV#z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV"
-                    },
-                    "type": [
-                      "VerifiableCredential",
-                      "StatusList2021Credential"
-                    ],
-                    "validFrom": "2023-12-10T05:11:16Z",
-                    "validUntil": "2023-12-11T05:11:16Z"
-                  }
-                },
-                "stack": "AssertionError: expected { statusListCredential: { …(9) } } to have property '@context'\n    at testSlCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:67:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:50:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
+              "speed": "medium"
             }
           ]
         },
@@ -604,9 +284,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "I6L0jyg5NKVll_Vmj0hSE",
+              "parent": "5ueP4sI2C7x2CGOY5Drfa",
               "ctx": null,
-              "_testId": "urn:uuid:e65acf09-0de0-4feb-abe9-b19ff4ee18e9",
+              "_testId": "urn:uuid:b2908479-8153-4f4a-8755-78f9acbfa5c5",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -617,49 +297,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2284,
+                "_idleStart": 2194,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 105,
+              "duration": 31,
               "state": "passed",
-              "speed": "slow"
-            },
-            {
-              "type": "test",
-              "title": "MUST be 16kb in size when \"encodedList\" is decoded",
-              "body": "async function() {\n            this.test.cell = {columnId: issuerName, rowId: this.test.title};\n            const {slc: {credentialSubject}} = await getSlc({issuedVc});\n            const {encodedList} = credentialSubject;\n            // Uncompress encodedList\n            const decoded = await sl.decodeList({encodedList});\n            should.exist(decoded);\n            // decoded size should be 16kb. For more info see\n            // `credentialSubject.encoded` in\n            // eslint-disable-next-line max-len\n            // https://w3c-ccg.github.io/vc-status-list-2021/#statuslist2021credential\n            const decodedSize = (decoded.length / 8) / 1024;\n            decodedSize.should.equal(16);\n          }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "40HPbPvIaciA_YhGPBV4h",
-              "ctx": null,
-              "_testId": "urn:uuid:f942fea5-f42b-4e0f-99cc-54c05ad12950",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST be 16kb in size when \"encodedList\" is decoded"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 3301,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 69,
-              "state": "failed",
-              "err": {}
+              "speed": "fast"
             }
           ]
         }
@@ -687,9 +332,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "eICW_66YwbzWSvqPajsIz",
+              "parent": "RA6XncCaHKhvOXka-7uYL",
               "ctx": null,
-              "_testId": "urn:uuid:e8078355-3c68-4699-98bf-61bf7743d4b5",
+              "_testId": "urn:uuid:df073285-c304-489c-8119-f1b26ba4765f",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -700,12 +345,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4578,
+                "_idleStart": 3209,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             },
@@ -722,9 +367,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "eICW_66YwbzWSvqPajsIz",
+              "parent": "RA6XncCaHKhvOXka-7uYL",
               "ctx": null,
-              "_testId": "urn:uuid:709e81bc-ab0a-4b77-b0d3-ca6a76847bbe",
+              "_testId": "urn:uuid:5901220c-ca68-4917-9b77-e2740ee24203",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -735,14 +380,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4579,
+                "_idleStart": 3209,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 98,
+              "duration": 31,
               "state": "passed",
-              "speed": "slow"
+              "speed": "fast"
             },
             {
               "type": "test",
@@ -757,9 +402,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "eICW_66YwbzWSvqPajsIz",
+              "parent": "RA6XncCaHKhvOXka-7uYL",
               "ctx": null,
-              "_testId": "urn:uuid:ae0449a1-470d-4f18-b860-c00d3992e6cc",
+              "_testId": "urn:uuid:d89818ce-86c9-43f2-8084-b3910158da6c",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -770,14 +415,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4676,
+                "_idleStart": 3241,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 85,
+              "duration": 49,
               "state": "passed",
-              "speed": "slow"
+              "speed": "medium"
             }
           ],
           "root": false,
@@ -797,7 +442,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "eICW_66YwbzWSvqPajsIz",
+              "parent": "RA6XncCaHKhvOXka-7uYL",
               "ctx": null,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
               "originalTitle": "\"before all\" hook",
@@ -807,12 +452,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3371,
+                "_idleStart": 2225,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1206,
+              "duration": 982,
               "_error": null
             }
           ],
@@ -824,213 +469,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "yWBumTuDb-kUpfhX4Tg5a",
+          "parent": "fQjysLxg6S36431SraqIi",
           "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:c7d80007-c825-475b-a37f-8a5b99f920a4"
-        },
-        {
-          "title": "mesur.io",
-          "ctx": null,
-          "suites": [],
-          "tests": [
-            {
-              "type": "test",
-              "title": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"suspension\" status purpose",
-              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          should.exist(issuerResponse);\n          should.not.exist(err);\n          issuerResponse.status.should.equal(201);\n          should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);\n          testCredential({credential: issuedVc});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "ZzMo7EVV6tSiBKytl1eLk",
-              "ctx": null,
-              "_testId": "urn:uuid:080589b7-ea0c-42e4-a40f-5f96f199100b",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"suspension\" status purpose"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 4839,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 0,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "expected [ …(2) ] to be a superset of [ …(3) ]",
-                "showDiff": true,
-                "actual": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n]",
-                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/data-integrity/v2\"\n]",
-                "operator": "deepStrictEqual",
-                "stack": "AssertionError: expected [ …(2) ] to be a superset of [ …(3) ]\n    at testCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:23:41)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:97:11)\n    at process.processImmediate (node:internal/timers:478:21)"
-              }
-            },
-            {
-              "type": "test",
-              "title": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\"",
-              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          const {slc} = await getSlc({issuedVc});\n          testSlCredential({slCredential: slc});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "ZzMo7EVV6tSiBKytl1eLk",
-              "ctx": null,
-              "_testId": "urn:uuid:6cac70a3-075d-4417-9001-c86758d03530",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\""
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 4840,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 68,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "expected { statusListCredential: { …(9) } } to have property '@context'",
-                "showDiff": false,
-                "actual": {
-                  "statusListCredential": {
-                    "@context": [
-                      "https://www.w3.org/2018/credentials/v1",
-                      "https://w3id.org/vc/status-list/2021/v1"
-                    ],
-                    "credentialSubject": {
-                      "encodedList": "H4sIAAAAAAAA/2IAAQ6GUTAKRsEoGAWjYBSMIAAIAAD//9cIqqwACAAA",
-                      "id": "https://vc.mesur.io/v1/credentials/status#list",
-                      "size": 1,
-                      "statusPurpose": "revocation",
-                      "ttl": 5000,
-                      "type": "StatusList2021"
-                    },
-                    "id": "https://vc.mesur.io/v1/credentials/status",
-                    "issuanceDate": "2023-12-10T05:11:17Z",
-                    "issuer": "did:web:vc.mesur.io:v1",
-                    "proof": {
-                      "created": "2023-12-10T05:11:17.953199217Z",
-                      "proofPurpose": "assertionMethod",
-                      "proofValue": "p12haJ5MjHybjcY_7AwRnveq9bo9bIMYfsLQfS2Xnvq4H10v_7qbk8yUWgiKDU_f-OAAQs4Ci2DOqZ-zqjakAw",
-                      "type": "Ed25519Signature2018",
-                      "verificationMethod": "did:key:z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV#z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV"
-                    },
-                    "type": [
-                      "VerifiableCredential",
-                      "StatusList2021Credential"
-                    ],
-                    "validFrom": "2023-12-10T05:11:17Z",
-                    "validUntil": "2023-12-11T05:11:17Z"
-                  }
-                },
-                "stack": "AssertionError: expected { statusListCredential: { …(9) } } to have property '@context'\n    at testSlCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:67:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:104:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
-            },
-            {
-              "type": "test",
-              "title": "MUST be 16kb in size when \"encodedList\" is decoded",
-              "body": "async function() {\n            this.test.cell = {columnId: issuerName, rowId: this.test.title};\n            const {slc: {credentialSubject}} = await getSlc({issuedVc});\n            const {encodedList} = credentialSubject;\n            // Uncompress encodedList\n            const decoded = await sl.decodeList({encodedList});\n            should.exist(decoded);\n            // decoded size should be 16kb\n            const decodedSize = (decoded.length / 8) / 1024;\n            decodedSize.should.equal(16);\n          }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "ZzMo7EVV6tSiBKytl1eLk",
-              "ctx": null,
-              "_testId": "urn:uuid:573c5c92-9ac8-4778-adc2-cf17d65f46fa",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST be 16kb in size when \"encodedList\" is decoded"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 4909,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 68,
-              "state": "failed",
-              "err": {}
-            }
-          ],
-          "root": false,
-          "pending": false,
-          "_retries": -1,
-          "_beforeEach": [],
-          "_beforeAll": [
-            {
-              "title": "\"before all\" hook in \"mesur.io\"",
-              "body": "async function() {\n          const issuer = issuers.find(issuer => issuer.tags.has('Suspension'));\n          const {result, error, data} = await issueVc({issuer});\n          err = error;\n          issuerResponse = result;\n          issuedVc = data;\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "type": "hook",
-              "parent": "ZzMo7EVV6tSiBKytl1eLk",
-              "ctx": null,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "originalTitle": "\"before all\" hook",
-              "_events": {},
-              "_eventsCount": 1,
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 4762,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 77,
-              "_error": null
-            }
-          ],
-          "_afterEach": [],
-          "_afterAll": [],
-          "_timeout": 15000,
-          "_slow": 75,
-          "_bail": false,
-          "_onlyTests": [],
-          "_onlySuites": [],
-          "delayed": false,
-          "parent": "yWBumTuDb-kUpfhX4Tg5a",
-          "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:ed4b63d2-a0c9-4b1e-8de9-763fab466a83"
+          "_testId": "urn:uuid:13a91b5e-ca25-4131-9d96-21d72a58dd84"
         }
       ],
       "root": false,
@@ -1046,16 +487,15 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "rq2ZOdo2aKtvHg4K7gKCc",
+      "parent": "l3jvkTEGYbZE7kYsiC3-_",
       "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Test Name",
       "columnLabel": "Issuer",
-      "_testId": "urn:uuid:0dc6b0e0-6551-4de5-8781-47be6e105025",
+      "_testId": "urn:uuid:3baa26d8-6102-4534-92be-b9de4d02d11d",
       "columns": [
-        "Digital Bazaar",
-        "mesur.io"
+        "Digital Bazaar"
       ],
       "rows": [
         {
@@ -1074,9 +514,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "eICW_66YwbzWSvqPajsIz",
+              "parent": "RA6XncCaHKhvOXka-7uYL",
               "ctx": null,
-              "_testId": "urn:uuid:e8078355-3c68-4699-98bf-61bf7743d4b5",
+              "_testId": "urn:uuid:df073285-c304-489c-8119-f1b26ba4765f",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1087,57 +527,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4578,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 1,
-              "state": "passed",
-              "speed": "fast"
-            },
-            {
-              "type": "test",
-              "title": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"suspension\" status purpose",
-              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          should.exist(issuerResponse);\n          should.not.exist(err);\n          issuerResponse.status.should.equal(201);\n          should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);\n          testCredential({credential: issuedVc});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "ZzMo7EVV6tSiBKytl1eLk",
-              "ctx": null,
-              "_testId": "urn:uuid:080589b7-ea0c-42e4-a40f-5f96f199100b",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST issue a VC with SL 2021 \"credentialStatus\" and \"suspension\" status purpose"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 4839,
+                "_idleStart": 3209,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
               "duration": 0,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "expected [ …(2) ] to be a superset of [ …(3) ]",
-                "showDiff": true,
-                "actual": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n]",
-                "expected": "[\n  \"https://www.w3.org/2018/credentials/v1\"\n  \"https://w3id.org/vc/status-list/2021/v1\"\n  \"https://w3id.org/security/data-integrity/v2\"\n]",
-                "operator": "deepStrictEqual",
-                "stack": "AssertionError: expected [ …(2) ] to be a superset of [ …(3) ]\n    at testCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:23:41)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:97:11)\n    at process.processImmediate (node:internal/timers:478:21)"
-              }
+              "state": "passed",
+              "speed": "fast"
             }
           ]
         },
@@ -1157,9 +554,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "eICW_66YwbzWSvqPajsIz",
+              "parent": "RA6XncCaHKhvOXka-7uYL",
               "ctx": null,
-              "_testId": "urn:uuid:709e81bc-ab0a-4b77-b0d3-ca6a76847bbe",
+              "_testId": "urn:uuid:5901220c-ca68-4917-9b77-e2740ee24203",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1170,86 +567,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4579,
+                "_idleStart": 3209,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 98,
+              "duration": 31,
               "state": "passed",
-              "speed": "slow"
-            },
-            {
-              "type": "test",
-              "title": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\"",
-              "body": "async function() {\n          this.test.cell = {columnId: issuerName, rowId: this.test.title};\n          const {slc} = await getSlc({issuedVc});\n          testSlCredential({slCredential: slc});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "ZzMo7EVV6tSiBKytl1eLk",
-              "ctx": null,
-              "_testId": "urn:uuid:6cac70a3-075d-4417-9001-c86758d03530",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST have correct properties when dereferencing \"credentialStatus.statusListCredential\""
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 4840,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 68,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "expected { statusListCredential: { …(9) } } to have property '@context'",
-                "showDiff": false,
-                "actual": {
-                  "statusListCredential": {
-                    "@context": [
-                      "https://www.w3.org/2018/credentials/v1",
-                      "https://w3id.org/vc/status-list/2021/v1"
-                    ],
-                    "credentialSubject": {
-                      "encodedList": "H4sIAAAAAAAA/2IAAQ6GUTAKRsEoGAWjYBSMIAAIAAD//9cIqqwACAAA",
-                      "id": "https://vc.mesur.io/v1/credentials/status#list",
-                      "size": 1,
-                      "statusPurpose": "revocation",
-                      "ttl": 5000,
-                      "type": "StatusList2021"
-                    },
-                    "id": "https://vc.mesur.io/v1/credentials/status",
-                    "issuanceDate": "2023-12-10T05:11:17Z",
-                    "issuer": "did:web:vc.mesur.io:v1",
-                    "proof": {
-                      "created": "2023-12-10T05:11:17.953199217Z",
-                      "proofPurpose": "assertionMethod",
-                      "proofValue": "p12haJ5MjHybjcY_7AwRnveq9bo9bIMYfsLQfS2Xnvq4H10v_7qbk8yUWgiKDU_f-OAAQs4Ci2DOqZ-zqjakAw",
-                      "type": "Ed25519Signature2018",
-                      "verificationMethod": "did:key:z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV#z6Mkf5p6p73kd57TRr2zWC1NuMUt3SjtYNANn9qjYXZPAYJV"
-                    },
-                    "type": [
-                      "VerifiableCredential",
-                      "StatusList2021Credential"
-                    ],
-                    "validFrom": "2023-12-10T05:11:17Z",
-                    "validUntil": "2023-12-11T05:11:17Z"
-                  }
-                },
-                "stack": "AssertionError: expected { statusListCredential: { …(9) } } to have property '@context'\n    at testSlCredential (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:67:28)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js:104:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
+              "speed": "fast"
             }
           ]
         },
@@ -1269,9 +594,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "eICW_66YwbzWSvqPajsIz",
+              "parent": "RA6XncCaHKhvOXka-7uYL",
               "ctx": null,
-              "_testId": "urn:uuid:ae0449a1-470d-4f18-b860-c00d3992e6cc",
+              "_testId": "urn:uuid:d89818ce-86c9-43f2-8084-b3910158da6c",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1282,49 +607,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4676,
+                "_idleStart": 3241,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 85,
+              "duration": 49,
               "state": "passed",
-              "speed": "slow"
-            },
-            {
-              "type": "test",
-              "title": "MUST be 16kb in size when \"encodedList\" is decoded",
-              "body": "async function() {\n            this.test.cell = {columnId: issuerName, rowId: this.test.title};\n            const {slc: {credentialSubject}} = await getSlc({issuedVc});\n            const {encodedList} = credentialSubject;\n            // Uncompress encodedList\n            const decoded = await sl.decodeList({encodedList});\n            should.exist(decoded);\n            // decoded size should be 16kb\n            const decodedSize = (decoded.length / 8) / 1024;\n            decodedSize.should.equal(16);\n          }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/10-issue.js",
-              "parent": "ZzMo7EVV6tSiBKytl1eLk",
-              "ctx": null,
-              "_testId": "urn:uuid:573c5c92-9ac8-4778-adc2-cf17d65f46fa",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST be 16kb in size when \"encodedList\" is decoded"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 4909,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 68,
-              "state": "failed",
-              "err": {}
+              "speed": "medium"
             }
           ]
         }
@@ -1352,9 +642,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "lv3yEcqVGHoVBqVOGBldv",
+              "parent": "NRQlyuRHGTOU4NVzi5HC1",
               "ctx": null,
-              "_testId": "urn:uuid:9b7c7df4-3949-49e1-ade0-dd0eed8e854b",
+              "_testId": "urn:uuid:18f8d555-a0c9-4b5f-8b1d-aa4dfaf5e00d",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1365,12 +655,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5491,
+                "_idleStart": 4613,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 733,
+              "duration": 766,
               "state": "passed",
               "speed": "slow"
             },
@@ -1387,9 +677,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "lv3yEcqVGHoVBqVOGBldv",
+              "parent": "NRQlyuRHGTOU4NVzi5HC1",
               "ctx": null,
-              "_testId": "urn:uuid:88d13579-13d0-48fb-9972-6289db109eac",
+              "_testId": "urn:uuid:4671cf31-74fd-4474-92a8-e876f0c427b0",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1400,12 +690,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6224,
+                "_idleStart": 5379,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 206,
+              "duration": 145,
               "state": "passed",
               "speed": "slow"
             },
@@ -1422,9 +712,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "lv3yEcqVGHoVBqVOGBldv",
+              "parent": "NRQlyuRHGTOU4NVzi5HC1",
               "ctx": null,
-              "_testId": "urn:uuid:64d8199f-8e54-48f2-b584-5c18a8c13163",
+              "_testId": "urn:uuid:f2377d94-e57f-47bd-9c4d-6801e59e148c",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1435,14 +725,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6430,
+                "_idleStart": 5525,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 113,
+              "duration": 63,
               "state": "passed",
-              "speed": "slow"
+              "speed": "medium"
             },
             {
               "type": "test",
@@ -1457,9 +747,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "lv3yEcqVGHoVBqVOGBldv",
+              "parent": "NRQlyuRHGTOU4NVzi5HC1",
               "ctx": null,
-              "_testId": "urn:uuid:8a30d0b9-4150-480c-859e-9803b7f6c5a4",
+              "_testId": "urn:uuid:00fcdd3f-b4a5-4114-88e9-d73524584a10",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1470,14 +760,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6543,
+                "_idleStart": 5588,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 108,
+              "duration": 56,
               "state": "passed",
-              "speed": "slow"
+              "speed": "medium"
             },
             {
               "type": "test",
@@ -1492,9 +782,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "lv3yEcqVGHoVBqVOGBldv",
+              "parent": "NRQlyuRHGTOU4NVzi5HC1",
               "ctx": null,
-              "_testId": "urn:uuid:df49ae5e-6f28-477e-a032-ec748d3fd2e7",
+              "_testId": "urn:uuid:d23a94f1-0033-4cb4-b376-80afd5b4c9af",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1505,14 +795,22 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6650,
+                "_idleStart": 5645,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 2077,
-              "state": "passed",
-              "speed": "slow"
+              "duration": 888,
+              "state": "failed",
+              "err": {
+                "name": "AssertionError",
+                "message": "expected false to equal true",
+                "showDiff": true,
+                "actual": "false",
+                "expected": "true",
+                "operator": "strictEqual",
+                "stack": "AssertionError: expected false to equal true\n    at updateStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:107:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:108:29)"
+              }
             },
             {
               "type": "test",
@@ -1527,9 +825,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "lv3yEcqVGHoVBqVOGBldv",
+              "parent": "NRQlyuRHGTOU4NVzi5HC1",
               "ctx": null,
-              "_testId": "urn:uuid:b325c382-e686-4908-9970-924c19a5e155",
+              "_testId": "urn:uuid:6b8c6623-e9d3-47a9-9595-32dd758f186c",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1540,12 +838,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 8728,
+                "_idleStart": 6536,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1751,
+              "duration": 1458,
               "state": "passed",
               "speed": "slow"
             }
@@ -1567,7 +865,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "lv3yEcqVGHoVBqVOGBldv",
+              "parent": "NRQlyuRHGTOU4NVzi5HC1",
               "ctx": null,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
               "originalTitle": "\"before all\" hook",
@@ -1577,12 +875,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4977,
+                "_idleStart": 3290,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 513,
+              "duration": 1323,
               "_error": null
             }
           ],
@@ -1594,297 +892,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "WjP00LsQJXfF16k6LNNRz",
+          "parent": "TS92UWk6Rk2N1ESHj3bsX",
           "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-          "_testId": "urn:uuid:b2a08ba0-a29e-4ff0-9156-27268306407b"
-        },
-        {
-          "title": "mesur.io",
-          "ctx": null,
-          "suites": [],
-          "tests": [
-            {
-              "type": "test",
-              "title": "MUST verify a valid \"StatusList2021Credential\" with \"revocation\" status purpose",
-              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: validVcForRevocation})\n        });\n        shouldPassVerification({result, error, statusCode});\n      }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "pAMPUWGlzlMokcQlK2Z-i",
-              "ctx": null,
-              "_testId": "urn:uuid:291e77a7-694f-4c23-be8c-923be39e4c60",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST verify a valid \"StatusList2021Credential\" with \"revocation\" status purpose"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 11594,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 476,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected response from verifier: expected undefined to exist",
-                "showDiff": false,
-                "operator": "strictEqual",
-                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:63:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
-            },
-            {
-              "type": "test",
-              "title": "MUST verify a valid \"StatusList2021Credential\" with \"suspension\"status purpose",
-              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: validVcForSuspension})\n        });\n        shouldPassVerification({result, error, statusCode});\n      }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "pAMPUWGlzlMokcQlK2Z-i",
-              "ctx": null,
-              "_testId": "urn:uuid:ceea0ba3-321e-4c03-98b1-6a27954b6877",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST verify a valid \"StatusList2021Credential\" with \"suspension\"status purpose"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 12070,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 66,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected response from verifier: expected undefined to exist",
-                "showDiff": false,
-                "operator": "strictEqual",
-                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:71:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
-            },
-            {
-              "type": "test",
-              "title": "MUST fail to verify a VC with invalid \"credentialStatus.statusListCredential\"",
-              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const invalidStatusListCredential = klona(validVcForRevocation);\n        invalidStatusListCredential.credentialStatus.statusListCredential =\n          'invalid-statusListCredential';\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: invalidStatusListCredential})\n        });\n        shouldFailVerification({result, error, statusCode});\n      }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "pAMPUWGlzlMokcQlK2Z-i",
-              "ctx": null,
-              "_testId": "urn:uuid:ea7c0b8b-43e5-4c36-90a1-7e265a398292",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST fail to verify a VC with invalid \"credentialStatus.statusListCredential\""
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 12137,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 66,
-              "state": "failed",
-              "err": {}
-            },
-            {
-              "type": "test",
-              "title": "MUST fail to verify a VC with invalid \"credentialStatus.type\"",
-              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          const invalidCredentialStatusType = klona(validVcForRevocation);\n          invalidCredentialStatusType.credentialStatus.type = 'invalid-type';\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: invalidCredentialStatusType})\n          });\n          shouldFailVerification({result, error, statusCode});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "pAMPUWGlzlMokcQlK2Z-i",
-              "ctx": null,
-              "_testId": "urn:uuid:aab05ee8-990f-4a38-8284-970964029d7a",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST fail to verify a VC with invalid \"credentialStatus.type\""
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 12204,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 68,
-              "state": "failed",
-              "err": {}
-            },
-            {
-              "type": "test",
-              "title": "MUST fail to verify a revoked status list credential",
-              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          // get the status of the VC\n          const statusInfo = await getCredentialStatus({\n            verifiableCredential: validVcForRevocation\n          });\n          statusInfo.status.should.equal(false);\n          // verification of the credential should pass\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: validVcForRevocation})\n          });\n          shouldPassVerification({result, error, statusCode});\n          // update the status of the VC and revoke it\n          const revokedVc = await updateStatus({\n            vc: validVcForRevocation, setStatusList: setRevocationStatusList,\n            publishStatusList: publishRevocationStatusList, statusInfo,\n            statusPurpose: 'revocation'\n          });\n          // try to verify the credential after revocation, should fail since it\n          // has now been revoked\n          const {\n            result: result2, error: err2, statusCode: statusCode2\n          } = await verifier.post({\n            json: createRequestBody({vc: revokedVc})\n          });\n          shouldFailVerification({\n            result: result2, error: err2, statusCode: statusCode2\n          });\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "pAMPUWGlzlMokcQlK2Z-i",
-              "ctx": null,
-              "_testId": "urn:uuid:2dfecc61-06df-46c3-92d1-a87caf7222ba",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST fail to verify a revoked status list credential"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 12271,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 154,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected response from verifier: expected undefined to exist",
-                "showDiff": false,
-                "operator": "strictEqual",
-                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:106:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
-            },
-            {
-              "type": "test",
-              "title": "MUST fail to verify a suspended status list credential",
-              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          // get the status of the VC\n          const statusInfo = await getCredentialStatus({\n            verifiableCredential: validVcForSuspension\n          });\n          statusInfo.status.should.equal(false);\n          // verification of the credential should pass\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: validVcForSuspension})\n          });\n          shouldPassVerification({result, error, statusCode});\n          // update the status of the VC and suspend it\n          const suspendedVc = await updateStatus({\n            vc: validVcForSuspension, setStatusList: setSuspensionStatusList,\n            publishStatusList: publishSuspensionStatusList, statusInfo,\n            statusPurpose: 'suspension'\n          });\n          // try to verify the credential after suspension, should fail since it\n          // has now been suspended\n          const {\n            result: result2, error: err2, statusCode: statusCode2\n          } = await verifier.post({\n            json: createRequestBody({vc: suspendedVc})\n          });\n          shouldFailVerification({\n            result: result2, error: err2, statusCode: statusCode2\n          });\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "pAMPUWGlzlMokcQlK2Z-i",
-              "ctx": null,
-              "_testId": "urn:uuid:a7bd35a9-7e16-4d16-9750-a4c324190325",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST fail to verify a suspended status list credential"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 12425,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 154,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected response from verifier: expected undefined to exist",
-                "showDiff": false,
-                "operator": "strictEqual",
-                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:136:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
-            }
-          ],
-          "root": false,
-          "pending": false,
-          "_retries": -1,
-          "_beforeEach": [],
-          "_beforeAll": [
-            {
-              "title": "\"before all\" hook in \"mesur.io\"",
-              "body": "async function() {\n        // get a VC issued by DB\n        const {match} = filterImplementations({filter: ({value}) => {\n          // FIXME: Make issuer name configurable via env variable\n          return value.settings.name === 'Digital Bazaar';\n        }});\n        const res = match.get('Digital Bazaar');\n        const {issuers, setStatusLists, publishStatusLists} = res;\n        setRevocationStatusList = setStatusLists.find(\n          issuer => issuer.tags.has('Revocation'));\n        setSuspensionStatusList = setStatusLists.find(\n          issuer => issuer.tags.has('Suspension'));\n        publishRevocationStatusList = publishStatusLists.find(\n          issuer => issuer.tags.has('Revocation'));\n        publishSuspensionStatusList = publishStatusLists.find(\n          issuer => issuer.tags.has('Suspension'));\n        const issuer1 = issuers.find(issuer => issuer.tags.has('Revocation'));\n        const {data: data1} = await issueVc({issuer: issuer1});\n        validVcForRevocation = data1;\n        const issuer2 = issuers.find(issuer => issuer.tags.has('Suspension'));\n        const {data: data2} = await issueVc({issuer: issuer2});\n        validVcForSuspension = data2;\n      }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "type": "hook",
-              "parent": "pAMPUWGlzlMokcQlK2Z-i",
-              "ctx": null,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "originalTitle": "\"before all\" hook",
-              "_events": {},
-              "_eventsCount": 1,
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 10479,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 1115,
-              "_error": null
-            }
-          ],
-          "_afterEach": [],
-          "_afterAll": [],
-          "_timeout": 15000,
-          "_slow": 75,
-          "_bail": false,
-          "_onlyTests": [],
-          "_onlySuites": [],
-          "delayed": false,
-          "parent": "WjP00LsQJXfF16k6LNNRz",
-          "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-          "_testId": "urn:uuid:c6af8f76-36d6-4f5a-912f-9958bdbc2277"
+          "_testId": "urn:uuid:06554385-733a-48d4-9751-31abf3205762"
         }
       ],
       "root": false,
@@ -1900,16 +910,15 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "rq2ZOdo2aKtvHg4K7gKCc",
+      "parent": "l3jvkTEGYbZE7kYsiC3-_",
       "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Test Name",
       "columnLabel": "Verifier",
-      "_testId": "urn:uuid:6c629d11-0724-4527-bd51-9e2624cd962f",
+      "_testId": "urn:uuid:e3337c6b-a033-4202-b1c2-40c2edd161c1",
       "columns": [
-        "Digital Bazaar",
-        "mesur.io"
+        "Digital Bazaar"
       ],
       "rows": [
         {
@@ -1928,9 +937,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "lv3yEcqVGHoVBqVOGBldv",
+              "parent": "NRQlyuRHGTOU4NVzi5HC1",
               "ctx": null,
-              "_testId": "urn:uuid:9b7c7df4-3949-49e1-ade0-dd0eed8e854b",
+              "_testId": "urn:uuid:18f8d555-a0c9-4b5f-8b1d-aa4dfaf5e00d",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1941,55 +950,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5491,
+                "_idleStart": 4613,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 733,
+              "duration": 766,
               "state": "passed",
               "speed": "slow"
-            },
-            {
-              "type": "test",
-              "title": "MUST verify a valid \"StatusList2021Credential\" with \"revocation\" status purpose",
-              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: validVcForRevocation})\n        });\n        shouldPassVerification({result, error, statusCode});\n      }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "pAMPUWGlzlMokcQlK2Z-i",
-              "ctx": null,
-              "_testId": "urn:uuid:291e77a7-694f-4c23-be8c-923be39e4c60",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST verify a valid \"StatusList2021Credential\" with \"revocation\" status purpose"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 11594,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 476,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected response from verifier: expected undefined to exist",
-                "showDiff": false,
-                "operator": "strictEqual",
-                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:63:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
             }
           ]
         },
@@ -2009,9 +977,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "lv3yEcqVGHoVBqVOGBldv",
+              "parent": "NRQlyuRHGTOU4NVzi5HC1",
               "ctx": null,
-              "_testId": "urn:uuid:88d13579-13d0-48fb-9972-6289db109eac",
+              "_testId": "urn:uuid:4671cf31-74fd-4474-92a8-e876f0c427b0",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2022,55 +990,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6224,
+                "_idleStart": 5379,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 206,
+              "duration": 145,
               "state": "passed",
               "speed": "slow"
-            },
-            {
-              "type": "test",
-              "title": "MUST verify a valid \"StatusList2021Credential\" with \"suspension\"status purpose",
-              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: validVcForSuspension})\n        });\n        shouldPassVerification({result, error, statusCode});\n      }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "pAMPUWGlzlMokcQlK2Z-i",
-              "ctx": null,
-              "_testId": "urn:uuid:ceea0ba3-321e-4c03-98b1-6a27954b6877",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST verify a valid \"StatusList2021Credential\" with \"suspension\"status purpose"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 12070,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 66,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected response from verifier: expected undefined to exist",
-                "showDiff": false,
-                "operator": "strictEqual",
-                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:71:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
             }
           ]
         },
@@ -2090,9 +1017,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "lv3yEcqVGHoVBqVOGBldv",
+              "parent": "NRQlyuRHGTOU4NVzi5HC1",
               "ctx": null,
-              "_testId": "urn:uuid:64d8199f-8e54-48f2-b584-5c18a8c13163",
+              "_testId": "urn:uuid:f2377d94-e57f-47bd-9c4d-6801e59e148c",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2103,49 +1030,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6430,
+                "_idleStart": 5525,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 113,
+              "duration": 63,
               "state": "passed",
-              "speed": "slow"
-            },
-            {
-              "type": "test",
-              "title": "MUST fail to verify a VC with invalid \"credentialStatus.statusListCredential\"",
-              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        const invalidStatusListCredential = klona(validVcForRevocation);\n        invalidStatusListCredential.credentialStatus.statusListCredential =\n          'invalid-statusListCredential';\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: invalidStatusListCredential})\n        });\n        shouldFailVerification({result, error, statusCode});\n      }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "pAMPUWGlzlMokcQlK2Z-i",
-              "ctx": null,
-              "_testId": "urn:uuid:ea7c0b8b-43e5-4c36-90a1-7e265a398292",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST fail to verify a VC with invalid \"credentialStatus.statusListCredential\""
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 12137,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 66,
-              "state": "failed",
-              "err": {}
+              "speed": "medium"
             }
           ]
         },
@@ -2165,9 +1057,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "lv3yEcqVGHoVBqVOGBldv",
+              "parent": "NRQlyuRHGTOU4NVzi5HC1",
               "ctx": null,
-              "_testId": "urn:uuid:8a30d0b9-4150-480c-859e-9803b7f6c5a4",
+              "_testId": "urn:uuid:00fcdd3f-b4a5-4114-88e9-d73524584a10",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2178,49 +1070,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6543,
+                "_idleStart": 5588,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 108,
+              "duration": 56,
               "state": "passed",
-              "speed": "slow"
-            },
-            {
-              "type": "test",
-              "title": "MUST fail to verify a VC with invalid \"credentialStatus.type\"",
-              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          const invalidCredentialStatusType = klona(validVcForRevocation);\n          invalidCredentialStatusType.credentialStatus.type = 'invalid-type';\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: invalidCredentialStatusType})\n          });\n          shouldFailVerification({result, error, statusCode});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "pAMPUWGlzlMokcQlK2Z-i",
-              "ctx": null,
-              "_testId": "urn:uuid:aab05ee8-990f-4a38-8284-970964029d7a",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST fail to verify a VC with invalid \"credentialStatus.type\""
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 12204,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 68,
-              "state": "failed",
-              "err": {}
+              "speed": "medium"
             }
           ]
         },
@@ -2240,9 +1097,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "lv3yEcqVGHoVBqVOGBldv",
+              "parent": "NRQlyuRHGTOU4NVzi5HC1",
               "ctx": null,
-              "_testId": "urn:uuid:df49ae5e-6f28-477e-a032-ec748d3fd2e7",
+              "_testId": "urn:uuid:d23a94f1-0033-4cb4-b376-80afd5b4c9af",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2253,54 +1110,21 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6650,
+                "_idleStart": 5645,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 2077,
-              "state": "passed",
-              "speed": "slow"
-            },
-            {
-              "type": "test",
-              "title": "MUST fail to verify a revoked status list credential",
-              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          // get the status of the VC\n          const statusInfo = await getCredentialStatus({\n            verifiableCredential: validVcForRevocation\n          });\n          statusInfo.status.should.equal(false);\n          // verification of the credential should pass\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: validVcForRevocation})\n          });\n          shouldPassVerification({result, error, statusCode});\n          // update the status of the VC and revoke it\n          const revokedVc = await updateStatus({\n            vc: validVcForRevocation, setStatusList: setRevocationStatusList,\n            publishStatusList: publishRevocationStatusList, statusInfo,\n            statusPurpose: 'revocation'\n          });\n          // try to verify the credential after revocation, should fail since it\n          // has now been revoked\n          const {\n            result: result2, error: err2, statusCode: statusCode2\n          } = await verifier.post({\n            json: createRequestBody({vc: revokedVc})\n          });\n          shouldFailVerification({\n            result: result2, error: err2, statusCode: statusCode2\n          });\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "pAMPUWGlzlMokcQlK2Z-i",
-              "ctx": null,
-              "_testId": "urn:uuid:2dfecc61-06df-46c3-92d1-a87caf7222ba",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST fail to verify a revoked status list credential"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 12271,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 154,
+              "duration": 888,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
-                "message": "Expected response from verifier: expected undefined to exist",
-                "showDiff": false,
+                "message": "expected false to equal true",
+                "showDiff": true,
+                "actual": "false",
+                "expected": "true",
                 "operator": "strictEqual",
-                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:106:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                "stack": "AssertionError: expected false to equal true\n    at updateStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:107:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:108:29)"
               }
             }
           ]
@@ -2321,9 +1145,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "lv3yEcqVGHoVBqVOGBldv",
+              "parent": "NRQlyuRHGTOU4NVzi5HC1",
               "ctx": null,
-              "_testId": "urn:uuid:b325c382-e686-4908-9970-924c19a5e155",
+              "_testId": "urn:uuid:6b8c6623-e9d3-47a9-9595-32dd758f186c",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2334,55 +1158,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 8728,
+                "_idleStart": 6536,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1751,
+              "duration": 1458,
               "state": "passed",
               "speed": "slow"
-            },
-            {
-              "type": "test",
-              "title": "MUST fail to verify a suspended status list credential",
-              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          // get the status of the VC\n          const statusInfo = await getCredentialStatus({\n            verifiableCredential: validVcForSuspension\n          });\n          statusInfo.status.should.equal(false);\n          // verification of the credential should pass\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: validVcForSuspension})\n          });\n          shouldPassVerification({result, error, statusCode});\n          // update the status of the VC and suspend it\n          const suspendedVc = await updateStatus({\n            vc: validVcForSuspension, setStatusList: setSuspensionStatusList,\n            publishStatusList: publishSuspensionStatusList, statusInfo,\n            statusPurpose: 'suspension'\n          });\n          // try to verify the credential after suspension, should fail since it\n          // has now been suspended\n          const {\n            result: result2, error: err2, statusCode: statusCode2\n          } = await verifier.post({\n            json: createRequestBody({vc: suspendedVc})\n          });\n          shouldFailVerification({\n            result: result2, error: err2, statusCode: statusCode2\n          });\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js",
-              "parent": "pAMPUWGlzlMokcQlK2Z-i",
-              "ctx": null,
-              "_testId": "urn:uuid:a7bd35a9-7e16-4d16-9750-a4c324190325",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "columnId": "mesur.io",
-                "rowId": "MUST fail to verify a suspended status list credential"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 12425,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 154,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected response from verifier: expected undefined to exist",
-                "showDiff": false,
-                "operator": "strictEqual",
-                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:136:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
             }
           ]
         }
@@ -2409,7 +1192,7 @@
           "_currentRetry": 0,
           "pending": false,
           "type": "hook",
-          "parent": "15_J2jX6o_YHfViO0JkIS",
+          "parent": "lPwLMlAyog5nbqEbJ5-9P",
           "ctx": null,
           "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
           "originalTitle": "\"before all\" hook",
@@ -2419,37 +1202,7 @@
             "_idleTimeout": -1,
             "_idlePrev": null,
             "_idleNext": null,
-            "_idleStart": 12580,
-            "_onTimeout": null,
-            "_repeat": null,
-            "_destroyed": true
-          },
-          "duration": 1,
-          "_error": null
-        },
-        {
-          "title": "\"before all\" hook in \"StatusList2021 Credentials (Interop \"statusPurpose: revocation\")\"",
-          "body": "async function() {\n        const [issuer] = endpoints.filter(\n          endpoint => endpoint.settings.tags.includes('Revocation'));\n        issuedVc = issueVc({issuer});\n      }",
-          "async": 0,
-          "sync": true,
-          "_timeout": 15000,
-          "_slow": 75,
-          "_retries": -1,
-          "timedOut": false,
-          "_currentRetry": 0,
-          "pending": false,
-          "type": "hook",
-          "parent": "15_J2jX6o_YHfViO0JkIS",
-          "ctx": null,
-          "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-          "originalTitle": "\"before all\" hook",
-          "_events": {},
-          "_eventsCount": 1,
-          "timer": {
-            "_idleTimeout": -1,
-            "_idlePrev": null,
-            "_idleNext": null,
-            "_idleStart": 12581,
+            "_idleStart": 7995,
             "_onTimeout": null,
             "_repeat": null,
             "_destroyed": true
@@ -2466,16 +1219,15 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "rq2ZOdo2aKtvHg4K7gKCc",
+      "parent": "l3jvkTEGYbZE7kYsiC3-_",
       "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Issuer",
       "columnLabel": "Verifier",
-      "_testId": "urn:uuid:25d3f03b-41c4-4810-9372-eb81f056dbab",
+      "_testId": "urn:uuid:6801156a-cbc4-4551-b172-6874ead2d38f",
       "columns": [
-        "Digital Bazaar",
-        "mesur.io"
+        "Digital Bazaar"
       ],
       "rows": [
         {
@@ -2494,9 +1246,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "15_J2jX6o_YHfViO0JkIS",
+              "parent": "lPwLMlAyog5nbqEbJ5-9P",
               "ctx": null,
-              "_testId": "urn:uuid:4fb34190-c9cb-4e6e-9655-9f2034db9c1b",
+              "_testId": "urn:uuid:5e120111-cd2d-4937-976a-4c13cafc610f",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2507,134 +1259,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 12586,
+                "_idleStart": 7999,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 432,
-              "state": "passed",
-              "speed": "slow"
-            },
-            {
-              "type": "test",
-              "title": "mesur.io should verify Digital Bazaar",
-              "body": "async function() {\n          this.test.cell = {rowId: issuerName, columnId: verifierName};\n          const {data: vc, error: err} = await issuedVc;\n          should.not.exist(err);\n          should.exist(vc);\n          const body = createRequestBody({vc});\n          const {result, error, statusCode} = await verifier.post({json: body});\n          shouldPassVerification({result, error, statusCode});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "15_J2jX6o_YHfViO0JkIS",
-              "ctx": null,
-              "_testId": "urn:uuid:55e47a9b-f8de-4e73-b6f3-d39475204b80",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "rowId": "Digital Bazaar",
-                "columnId": "mesur.io"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 13018,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 66,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected response from verifier: expected undefined to exist",
-                "showDiff": false,
-                "operator": "strictEqual",
-                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:47:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
-            }
-          ]
-        },
-        {
-          "id": "mesur.io",
-          "cells": [
-            {
-              "type": "test",
-              "title": "Digital Bazaar should verify mesur.io",
-              "body": "async function() {\n          this.test.cell = {rowId: issuerName, columnId: verifierName};\n          const {data: vc, error: err} = await issuedVc;\n          should.not.exist(err);\n          should.exist(vc);\n          const body = createRequestBody({vc});\n          const {result, error, statusCode} = await verifier.post({json: body});\n          shouldPassVerification({result, error, statusCode});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "15_J2jX6o_YHfViO0JkIS",
-              "ctx": null,
-              "_testId": "urn:uuid:ac4f9409-ecdb-4ac8-831a-56640e3e9027",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "rowId": "mesur.io",
-                "columnId": "Digital Bazaar"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 13086,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 101,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected response from verifier: expected undefined to exist",
-                "showDiff": false,
-                "operator": "strictEqual",
-                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:47:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
-            },
-            {
-              "type": "test",
-              "title": "mesur.io should verify mesur.io",
-              "body": "async function() {\n          this.test.cell = {rowId: issuerName, columnId: verifierName};\n          const {data: vc, error: err} = await issuedVc;\n          should.not.exist(err);\n          should.exist(vc);\n          const body = createRequestBody({vc});\n          const {result, error, statusCode} = await verifier.post({json: body});\n          shouldPassVerification({result, error, statusCode});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "15_J2jX6o_YHfViO0JkIS",
-              "ctx": null,
-              "_testId": "urn:uuid:7ef20d2d-9eca-4c06-8c6f-98ba92d76f0a",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "rowId": "mesur.io",
-                "columnId": "mesur.io"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 13187,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 82,
+              "duration": 276,
               "state": "passed",
               "speed": "slow"
             }
@@ -2663,7 +1293,7 @@
           "_currentRetry": 0,
           "pending": false,
           "type": "hook",
-          "parent": "AZ4bG0uVyIcA7Id7cZqxH",
+          "parent": "fLoWulS_sciGOrsF06iKj",
           "ctx": null,
           "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
           "originalTitle": "\"before all\" hook",
@@ -2673,42 +1303,12 @@
             "_idleTimeout": -1,
             "_idlePrev": null,
             "_idleNext": null,
-            "_idleStart": 13269,
+            "_idleStart": 8276,
             "_onTimeout": null,
             "_repeat": null,
             "_destroyed": true
           },
           "duration": 1,
-          "_error": null
-        },
-        {
-          "title": "\"before all\" hook in \"StatusList2021 Credentials (Interop \"statusPurpose: suspension\")\"",
-          "body": "async function() {\n        const [issuer] = endpoints.filter(\n          endpoint => endpoint.settings.tags.includes('Suspension'));\n        issuedVc = issueVc({issuer});\n      }",
-          "async": 0,
-          "sync": true,
-          "_timeout": 15000,
-          "_slow": 75,
-          "_retries": -1,
-          "timedOut": false,
-          "_currentRetry": 0,
-          "pending": false,
-          "type": "hook",
-          "parent": "AZ4bG0uVyIcA7Id7cZqxH",
-          "ctx": null,
-          "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-          "originalTitle": "\"before all\" hook",
-          "_events": {},
-          "_eventsCount": 1,
-          "timer": {
-            "_idleTimeout": -1,
-            "_idlePrev": null,
-            "_idleNext": null,
-            "_idleStart": 13270,
-            "_onTimeout": null,
-            "_repeat": null,
-            "_destroyed": true
-          },
-          "duration": 0,
           "_error": null
         }
       ],
@@ -2720,16 +1320,15 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "rq2ZOdo2aKtvHg4K7gKCc",
+      "parent": "l3jvkTEGYbZE7kYsiC3-_",
       "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Issuer",
       "columnLabel": "Verifier",
-      "_testId": "urn:uuid:374290d1-aefe-479a-b670-8968fc1a212d",
+      "_testId": "urn:uuid:922d8884-5edc-4c6f-9aaf-fe1387754e53",
       "columns": [
-        "Digital Bazaar",
-        "mesur.io"
+        "Digital Bazaar"
       ],
       "rows": [
         {
@@ -2748,9 +1347,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "AZ4bG0uVyIcA7Id7cZqxH",
+              "parent": "fLoWulS_sciGOrsF06iKj",
               "ctx": null,
-              "_testId": "urn:uuid:203dc7f3-475b-44a8-990a-d7151955f928",
+              "_testId": "urn:uuid:e0afa859-536e-4f1b-ba3e-d20a90a2b28f",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -2761,134 +1360,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 13274,
+                "_idleStart": 8279,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 370,
-              "state": "passed",
-              "speed": "slow"
-            },
-            {
-              "type": "test",
-              "title": "mesur.io should verify Digital Bazaar",
-              "body": "async function() {\n          this.test.cell = {rowId: issuerName, columnId: verifierName};\n          const {data: vc, error: err} = await issuedVc;\n          should.not.exist(err);\n          should.exist(vc);\n          const body = createRequestBody({vc});\n          const {result, error, statusCode} = await verifier.post({json: body});\n          shouldPassVerification({result, error, statusCode});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "AZ4bG0uVyIcA7Id7cZqxH",
-              "ctx": null,
-              "_testId": "urn:uuid:3a483f3a-2d68-4dd9-b9b5-ff864df64b08",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "rowId": "Digital Bazaar",
-                "columnId": "mesur.io"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 13644,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 67,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected response from verifier: expected undefined to exist",
-                "showDiff": false,
-                "operator": "strictEqual",
-                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:78:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
-            }
-          ]
-        },
-        {
-          "id": "mesur.io",
-          "cells": [
-            {
-              "type": "test",
-              "title": "Digital Bazaar should verify mesur.io",
-              "body": "async function() {\n          this.test.cell = {rowId: issuerName, columnId: verifierName};\n          const {data: vc, error: err} = await issuedVc;\n          should.not.exist(err);\n          should.exist(vc);\n          const body = createRequestBody({vc});\n          const {result, error, statusCode} = await verifier.post({json: body});\n          shouldPassVerification({result, error, statusCode});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "AZ4bG0uVyIcA7Id7cZqxH",
-              "ctx": null,
-              "_testId": "urn:uuid:2c637e03-ebe0-412f-b649-738a8b96220e",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "rowId": "mesur.io",
-                "columnId": "Digital Bazaar"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 13711,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 108,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected response from verifier: expected undefined to exist",
-                "showDiff": false,
-                "operator": "strictEqual",
-                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:110:10)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js:78:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
-            },
-            {
-              "type": "test",
-              "title": "mesur.io should verify mesur.io",
-              "body": "async function() {\n          this.test.cell = {rowId: issuerName, columnId: verifierName};\n          const {data: vc, error: err} = await issuedVc;\n          should.not.exist(err);\n          should.exist(vc);\n          const body = createRequestBody({vc});\n          const {result, error, statusCode} = await verifier.post({json: body});\n          shouldPassVerification({result, error, statusCode});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/30-interop.js",
-              "parent": "AZ4bG0uVyIcA7Id7cZqxH",
-              "ctx": null,
-              "_testId": "urn:uuid:d2bf8a2e-057a-43cd-8c53-51269fed74ca",
-              "_events": {},
-              "_eventsCount": 1,
-              "cell": {
-                "rowId": "mesur.io",
-                "columnId": "mesur.io"
-              },
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 13819,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 81,
+              "duration": 296,
               "state": "passed",
               "speed": "slow"
             }
@@ -2932,10 +1409,10 @@
   },
   "title": "Status List 2021 Interoperability Report 1.0",
   "stats": [
-    "Tests passed 16/32 50%",
-    "Tests failed 16/32 50%",
-    "Failures 16",
+    "Tests passed 13/14 92%",
+    "Tests failed 1/14 8%",
+    "Failures 1",
     "Tests skipped 0",
-    "Total tests 32"
+    "Total tests 14"
   ]
 }
