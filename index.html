@@ -97,7 +97,7 @@
       Total tests 14
       </p>
       <p>
-        These tests were run on <time>31 December 2023 at 5:11 am UTC</time>
+        These tests were run on <time>7 January 2024 at 5:11 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -707,6 +707,43 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST fail to verify a revoked status list credential</td>
                 <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                      <style>
+                       .hide {
+                         display: none;
+                       }
+                       .err {
+                         position: relative;
+                         z-index: 1;
+                         width: 50rem;
+                         right: calc(0% + 15rem);
+                         background: rgba(0, 0, 0, 0.0);
+                       }
+                       .no-space-around {
+                         margin: 0;
+                         padding: 0;
+                       }
+                       pre {
+                         width: 75%;
+                         white-space: pre-line;
+                         word-break: break-all;
+                         margin: 0;
+                         padding: 0;
+                         background: white;
+                       }
+                       code > span.hljs-attr {
+                         margin-left: 1rem;
+                       }
+                      </style>
+                    </div>
+                  </td>
+              </tr>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">MUST fail to verify a suspended status list credential</td>
+                <!--These contain if the test passed, failed, or was skipped-->
                   <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
@@ -740,47 +777,10 @@
                       <span class="err hide no-space-around">
                         <pre>{
                       "name": "AssertionError",
-                      "message": "Expected no response from verifier: expected Response{ data: { …(4) }, …(3) } to not exist",
-                      "stack": "AssertionError: Expected no response from verifier: expected Response{ data: { …(4) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at shouldFailVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:102:14)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:120:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                      "message": "expected false to equal true",
+                      "stack": "AssertionError: expected false to equal true\n    at updateStatus (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/helpers.js:107:17)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:138:31)"
                     }</pre>
                       </span>
-                    </div>
-                  </td>
-              </tr>
-              <tr>
-                <!--This is the name of the test-->
-                <td class="subtest">MUST fail to verify a suspended status list credential</td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                      <style>
-                       .hide {
-                         display: none;
-                       }
-                       .err {
-                         position: relative;
-                         z-index: 1;
-                         width: 50rem;
-                         right: calc(0% + 15rem);
-                         background: rgba(0, 0, 0, 0.0);
-                       }
-                       .no-space-around {
-                         margin: 0;
-                         padding: 0;
-                       }
-                       pre {
-                         width: 75%;
-                         white-space: pre-line;
-                         word-break: break-all;
-                         margin: 0;
-                         padding: 0;
-                         background: white;
-                       }
-                       code > span.hljs-attr {
-                         margin-left: 1rem;
-                       }
-                      </style>
                     </div>
                   </td>
               </tr>
