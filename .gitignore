@@ -9,6 +9,8 @@ results/
 mochawesome-report/
 TAGS
 config.json
+.localImplementationsConfig.cjs
+.vscode
 node_modules/
 package-lock.json
 *.vswp
