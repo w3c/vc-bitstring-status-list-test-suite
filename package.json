@@ -1,16 +1,16 @@
 {
-  "name": "status-list-2021-test-suite",
+  "name": "vc-bitstring-status-list-test-suite",
   "version": "0.1.0",
-  "description": "Interoperability Tests for StatusList2021",
+  "description": "Interoperability Tests for Bitstring Status List",
   "main": "/tests",
   "type": "module",
   "scripts": {
-    "test": "mocha tests --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options  abstract=\"$PWD/abstract.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",suiteLog='./suite.log',templateData=\"$PWD/reports/index.json\",title=\"Status List 2021 Interoperability Report 1.0\" --timeout 15000 --preserve-symlinks",
+    "test": "mocha tests --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options  abstract=\"$PWD/abstract.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",suiteLog='./suite.log',templateData=\"$PWD/reports/index.json\",title=\"VC Bitstring List Interoperability Report 1.0\" --timeout 15000 --preserve-symlinks",
     "lint": "eslint ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/w3c-ccg/status-list-2021-test-suite.git"
+    "url": "git+https://github.com/w3c-ccg/bitstring-status-list-test-suite.git"
   },
   "keywords": [
     "Test",
@@ -49,7 +49,7 @@
     "eslint-plugin-unicorn": "^49.0.0"
   },
   "bugs": {
-    "url": "https://github.com/w3c-ccg/status-list-2021-test-suite/issues"
+    "url": "https://github.com/w3c-ccg/bitstring-status-list-test-suite/issues"
   },
-  "homepage": "https://github.com/w3c-ccg/status-list-2021-test-suite#readme"
+  "homepage": "https://github.com/w3c-ccg/bitstring-status-list-test-suite#readme"
 }

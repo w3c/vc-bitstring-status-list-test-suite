@@ -22,7 +22,7 @@ export const testCredential = ({credential}) => {
   credential.should.have.property('@context');
   credential['@context'].should.include.members([
     'https://www.w3.org/2018/credentials/v1',
-    'https://w3id.org/vc/status-list/2021/v1',
+    'https://w3id.org/vc/bitstring-status-list/v1',
     'https://w3id.org/security/data-integrity/v2'
   ]);
   credential.should.have.property('type');
@@ -58,7 +58,7 @@ export const testCredential = ({credential}) => {
   ]);
   credential.credentialStatus.statusPurpose.should.be.oneOf(
     ['revocation', 'suspension']);
-  credential.credentialStatus.type.should.equal('StatusList2021Entry');
+  credential.credentialStatus.type.should.equal('BitstringStatusListEntry');
 };
 
 export const testSlCredential = ({slCredential}) => {
@@ -67,13 +67,13 @@ export const testSlCredential = ({slCredential}) => {
   slCredential.should.have.property('@context');
   slCredential['@context'].should.include.members([
     'https://www.w3.org/2018/credentials/v1',
-    'https://w3id.org/vc/status-list/2021/v1',
+    'https://w3id.org/vc/bitstring-status-list/v1',
     'https://w3id.org/security/data-integrity/v2'
   ]);
   slCredential.should.have.property('type');
   slCredential.type.should.be.an('array');
   slCredential.type.should.include.members(
-    ['VerifiableCredential', 'StatusList2021Credential']);
+    ['VerifiableCredential', 'BitstringStatusListCredential']);
   slCredential.should.have.property('id');
   slCredential.id.should.be.a('string');
   slCredential.should.have.property('credentialSubject');
@@ -83,7 +83,7 @@ export const testSlCredential = ({slCredential}) => {
   credentialSubject.id.should.be.a('string');
   credentialSubject.encodedList.should.be.a('string');
   credentialSubject.type.should.be.a('string');
-  credentialSubject.type.should.eql('StatusList2021');
+  credentialSubject.type.should.eql('BitstringStatusList');
   slCredential.should.have.property('issuer');
   const issuerType = typeof(slCredential.issuer);
   issuerType.should.be.oneOf(['string', 'object']);
