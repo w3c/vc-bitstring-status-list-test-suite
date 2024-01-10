@@ -1,7 +1,7 @@
 {
   "name": "vc-bitstring-status-list-test-suite",
   "version": "0.1.0",
-  "description": "Interoperability Tests for Bitstring Status List",
+  "description": "Interoperability Tests for VC Bitstring Status List",
   "main": "/tests",
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/w3c-ccg/bitstring-status-list-test-suite.git"
+    "url": "https://github.com/w3c-ccg/vc-bitstring-status-list-test-suite"
   },
   "keywords": [
     "Test",
@@ -49,7 +49,7 @@
     "eslint-plugin-unicorn": "^49.0.0"
   },
   "bugs": {
-    "url": "https://github.com/w3c-ccg/bitstring-status-list-test-suite/issues"
+    "url": "https://github.com/w3c-ccg/vc-bitstring-status-list-test-suite/issues"
   },
-  "homepage": "https://github.com/w3c-ccg/bitstring-status-list-test-suite#readme"
+  "homepage": "https://github.com/w3c-ccg/vc-bitstring-status-list-test-suite#readme"
 }
