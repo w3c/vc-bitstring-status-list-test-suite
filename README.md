@@ -1,4 +1,4 @@
-# Bitstring Status List Interoperability Test Suite
+# VC Bitstring Status List Interoperability Test Suite
 
 ## Table of Contents
 
@@ -11,7 +11,7 @@
 ## Background
 
 Provides interoperability tests for issuers and verifiers that support
-[VC Bitstring Status List](https://w3c-ccg.github.io/vc-bitstring-status-list/).
+[VC Bitstring Status List](https://w3c.github.io/vc-bitstring-status-list/).
 
 ## Install
 
