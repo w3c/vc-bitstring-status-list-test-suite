@@ -82,13 +82,13 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 13/14 92%
+      Tests passed 12/14 85%
       </p>
       <p>
-      Tests failed 1/14 8%
+      Tests failed 2/14 15%
       </p>
       <p>
-      Failures 1
+      Failures 2
       </p>
       <p>
       Tests skipped 0
@@ -97,7 +97,7 @@
       Total tests 14
       </p>
       <p>
-        These tests were run on <time>11 February 2024 at 5:10 am UTC</time>
+        These tests were run on <time>18 February 2024 at 5:10 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -751,8 +751,8 @@
                 <!--This is the name of the test-->
                 <td class="subtest">MUST fail to verify a suspended status list credential</td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <style>
                        .hide {
@@ -781,6 +781,13 @@
                          margin-left: 1rem;
                        }
                       </style>
+                      <span class="err hide no-space-around">
+                        <pre>{
+                      "name": "AssertionError",
+                      "message": "Expected no response from verifier: expected Response{ data: { …(4) }, …(3) } to not exist",
+                      "stack": "AssertionError: Expected no response from verifier: expected Response{ data: { …(4) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at shouldFailVerification (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/assertions.js:102:14)\n    at Context.<anonymous> (file:///home/runner/work/status-list-2021-test-suite/status-list-2021-test-suite/tests/20-verify.js:150:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+                    }</pre>
+                      </span>
                     </div>
                   </td>
               </tr>
