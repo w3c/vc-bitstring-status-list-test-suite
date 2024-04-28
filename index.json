@@ -22,9 +22,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "c0fXCOhpG7X0Ixiw-5dAs",
+              "parent": "dlYr4RLDxYnj_hze99wT2",
               "ctx": null,
-              "_testId": "urn:uuid:fcc54740-6958-4c7a-9363-464607cb7eb9",
+              "_testId": "urn:uuid:e568a3e9-2c66-41d6-a502-e8eea235c0d5",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -35,12 +35,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 1747,
+                "_idleStart": 2029,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 5,
+              "duration": 3,
               "state": "passed",
               "speed": "fast"
             },
@@ -57,9 +57,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "c0fXCOhpG7X0Ixiw-5dAs",
+              "parent": "dlYr4RLDxYnj_hze99wT2",
               "ctx": null,
-              "_testId": "urn:uuid:05ba7574-43b9-4340-bb54-5b187d595f1b",
+              "_testId": "urn:uuid:b278f7b0-7299-4252-8c03-53173bfd5bac",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -70,12 +70,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 1748,
+                "_idleStart": 2029,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 192,
+              "duration": 235,
               "state": "passed",
               "speed": "slow"
             },
@@ -92,9 +92,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "c0fXCOhpG7X0Ixiw-5dAs",
+              "parent": "dlYr4RLDxYnj_hze99wT2",
               "ctx": null,
-              "_testId": "urn:uuid:48dda9df-7921-4b7a-b96b-d1938a22593a",
+              "_testId": "urn:uuid:83203cdf-b875-4e5f-b3e8-dba435733d24",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -105,7 +105,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 1940,
+                "_idleStart": 2265,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -132,7 +132,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "c0fXCOhpG7X0Ixiw-5dAs",
+              "parent": "dlYr4RLDxYnj_hze99wT2",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
               "originalTitle": "\"before all\" hook",
@@ -142,12 +142,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 394,
+                "_idleStart": 340,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1350,
+              "duration": 1687,
               "_error": null
             }
           ],
@@ -159,9 +159,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "oZ83lKOSXZpqsBsLCKg5E",
+          "parent": "DAp8Mkn0_EwagEPN960Sx",
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:84f14c3c-902e-489e-b0fa-880c5c929ea1"
+          "_testId": "urn:uuid:9f742e2d-39ac-4533-b79c-136f24a4cf42"
         }
       ],
       "root": false,
@@ -177,13 +177,13 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "V-eNP8CWYAkzF10DDPpiV",
+      "parent": "-GtLJfn8Hr7CQcIXSWVqe",
       "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Test Name",
       "columnLabel": "Issuer",
-      "_testId": "urn:uuid:840475f7-51ce-4e5a-a8dc-d5b5c281cda9",
+      "_testId": "urn:uuid:4a4bdcce-0070-46b4-a5fd-c800ffd5ece7",
       "columns": [
         "Digital Bazaar"
       ],
@@ -204,9 +204,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "c0fXCOhpG7X0Ixiw-5dAs",
+              "parent": "dlYr4RLDxYnj_hze99wT2",
               "ctx": null,
-              "_testId": "urn:uuid:fcc54740-6958-4c7a-9363-464607cb7eb9",
+              "_testId": "urn:uuid:e568a3e9-2c66-41d6-a502-e8eea235c0d5",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -217,12 +217,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 1747,
+                "_idleStart": 2029,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 5,
+              "duration": 3,
               "state": "passed",
               "speed": "fast"
             }
@@ -244,9 +244,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "c0fXCOhpG7X0Ixiw-5dAs",
+              "parent": "dlYr4RLDxYnj_hze99wT2",
               "ctx": null,
-              "_testId": "urn:uuid:05ba7574-43b9-4340-bb54-5b187d595f1b",
+              "_testId": "urn:uuid:b278f7b0-7299-4252-8c03-53173bfd5bac",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -257,12 +257,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 1748,
+                "_idleStart": 2029,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 192,
+              "duration": 235,
               "state": "passed",
               "speed": "slow"
             }
@@ -284,9 +284,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "c0fXCOhpG7X0Ixiw-5dAs",
+              "parent": "dlYr4RLDxYnj_hze99wT2",
               "ctx": null,
-              "_testId": "urn:uuid:48dda9df-7921-4b7a-b96b-d1938a22593a",
+              "_testId": "urn:uuid:83203cdf-b875-4e5f-b3e8-dba435733d24",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -297,7 +297,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 1940,
+                "_idleStart": 2265,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -332,9 +332,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "TGTb3bdQyzsf2qZRrvzxQ",
+              "parent": "zym0kDXJfmO3_eGk0SAEY",
               "ctx": null,
-              "_testId": "urn:uuid:d2dbfcbb-e570-4f9c-8888-3f5f86e348f9",
+              "_testId": "urn:uuid:f32c9414-c288-410d-95f3-8f2e08e0c2c2",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -345,7 +345,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2998,
+                "_idleStart": 3488,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -367,9 +367,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "TGTb3bdQyzsf2qZRrvzxQ",
+              "parent": "zym0kDXJfmO3_eGk0SAEY",
               "ctx": null,
-              "_testId": "urn:uuid:4ad8624c-1ff1-4fd0-93cb-1f47fcfb4005",
+              "_testId": "urn:uuid:7984596a-6540-43d3-9740-d4f1df994acd",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -380,14 +380,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2998,
+                "_idleStart": 3488,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 45,
+              "duration": 36,
               "state": "passed",
-              "speed": "medium"
+              "speed": "fast"
             },
             {
               "type": "test",
@@ -402,9 +402,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "TGTb3bdQyzsf2qZRrvzxQ",
+              "parent": "zym0kDXJfmO3_eGk0SAEY",
               "ctx": null,
-              "_testId": "urn:uuid:bf2d4171-cfe0-4a6f-aac6-b39781187868",
+              "_testId": "urn:uuid:124104fa-afd7-493d-9bd0-b8f66be29165",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -415,12 +415,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3043,
+                "_idleStart": 3525,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 40,
+              "duration": 43,
               "state": "passed",
               "speed": "medium"
             }
@@ -442,7 +442,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "TGTb3bdQyzsf2qZRrvzxQ",
+              "parent": "zym0kDXJfmO3_eGk0SAEY",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
               "originalTitle": "\"before all\" hook",
@@ -452,12 +452,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 1988,
+                "_idleStart": 2314,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1008,
+              "duration": 1173,
               "_error": null
             }
           ],
@@ -469,9 +469,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "Wh5n7vERGykpVnvZTjdlP",
+          "parent": "scfU_nAvqKiXF02geBrpB",
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:bc68c566-21b9-4917-9597-6fc2e588c697"
+          "_testId": "urn:uuid:5161f53d-e3d5-42b7-a888-14b2d5143532"
         }
       ],
       "root": false,
@@ -487,13 +487,13 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "V-eNP8CWYAkzF10DDPpiV",
+      "parent": "-GtLJfn8Hr7CQcIXSWVqe",
       "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Test Name",
       "columnLabel": "Issuer",
-      "_testId": "urn:uuid:24a8c9bb-31b9-4e7c-ac28-5e84f9632ef8",
+      "_testId": "urn:uuid:c0d9fc2d-0b3b-4198-b06c-47edee06652d",
       "columns": [
         "Digital Bazaar"
       ],
@@ -514,9 +514,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "TGTb3bdQyzsf2qZRrvzxQ",
+              "parent": "zym0kDXJfmO3_eGk0SAEY",
               "ctx": null,
-              "_testId": "urn:uuid:d2dbfcbb-e570-4f9c-8888-3f5f86e348f9",
+              "_testId": "urn:uuid:f32c9414-c288-410d-95f3-8f2e08e0c2c2",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -527,7 +527,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2998,
+                "_idleStart": 3488,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -554,9 +554,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "TGTb3bdQyzsf2qZRrvzxQ",
+              "parent": "zym0kDXJfmO3_eGk0SAEY",
               "ctx": null,
-              "_testId": "urn:uuid:4ad8624c-1ff1-4fd0-93cb-1f47fcfb4005",
+              "_testId": "urn:uuid:7984596a-6540-43d3-9740-d4f1df994acd",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -567,14 +567,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2998,
+                "_idleStart": 3488,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 45,
+              "duration": 36,
               "state": "passed",
-              "speed": "medium"
+              "speed": "fast"
             }
           ]
         },
@@ -594,9 +594,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "TGTb3bdQyzsf2qZRrvzxQ",
+              "parent": "zym0kDXJfmO3_eGk0SAEY",
               "ctx": null,
-              "_testId": "urn:uuid:bf2d4171-cfe0-4a6f-aac6-b39781187868",
+              "_testId": "urn:uuid:124104fa-afd7-493d-9bd0-b8f66be29165",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -607,12 +607,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3043,
+                "_idleStart": 3525,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 40,
+              "duration": 43,
               "state": "passed",
               "speed": "medium"
             }
@@ -642,9 +642,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "wkUns0DLtHK5U55w_ifuS",
+              "parent": "lnVngdt5Ja8qX9FcFx8WW",
               "ctx": null,
-              "_testId": "urn:uuid:74485178-3efc-4606-9d5f-a9bab243835c",
+              "_testId": "urn:uuid:5d386a9f-b227-4441-8018-247461d57721",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -655,12 +655,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3504,
+                "_idleStart": 5283,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 605,
+              "duration": 1107,
               "state": "passed",
               "speed": "slow"
             },
@@ -677,9 +677,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "wkUns0DLtHK5U55w_ifuS",
+              "parent": "lnVngdt5Ja8qX9FcFx8WW",
               "ctx": null,
-              "_testId": "urn:uuid:4b13db54-31ea-48ef-a6eb-77f2a3effd64",
+              "_testId": "urn:uuid:4339aea7-add1-48ea-aa1b-2b19a9a02d2c",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -690,12 +690,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4110,
+                "_idleStart": 6390,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 578,
+              "duration": 908,
               "state": "passed",
               "speed": "slow"
             },
@@ -712,9 +712,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "wkUns0DLtHK5U55w_ifuS",
+              "parent": "lnVngdt5Ja8qX9FcFx8WW",
               "ctx": null,
-              "_testId": "urn:uuid:040e48fb-d218-4297-8ecf-5264b28649a4",
+              "_testId": "urn:uuid:a4081445-2081-4d16-86f2-5071364b8aea",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -725,12 +725,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4689,
+                "_idleStart": 7299,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 74,
+              "duration": 68,
               "state": "passed",
               "speed": "medium"
             },
@@ -747,9 +747,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "wkUns0DLtHK5U55w_ifuS",
+              "parent": "lnVngdt5Ja8qX9FcFx8WW",
               "ctx": null,
-              "_testId": "urn:uuid:58141f1d-7d88-45eb-bc6a-e7c471218003",
+              "_testId": "urn:uuid:3f477878-7bf7-4be6-9f3a-8c32e0c07a15",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -760,12 +760,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4763,
+                "_idleStart": 7367,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 63,
+              "duration": 59,
               "state": "passed",
               "speed": "medium"
             },
@@ -782,9 +782,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "wkUns0DLtHK5U55w_ifuS",
+              "parent": "lnVngdt5Ja8qX9FcFx8WW",
               "ctx": null,
-              "_testId": "urn:uuid:45616c1e-f9ec-45e1-8844-eda379443bc0",
+              "_testId": "urn:uuid:19d34925-3561-403b-a266-5bbdafd9de23",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -795,21 +795,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4826,
+                "_idleStart": 7425,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1555,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected no response from verifier: expected Response{ data: { …(4) }, …(3) } to not exist",
-                "showDiff": false,
-                "actual": {},
-                "operator": "notStrictEqual",
-                "stack": "AssertionError: Expected no response from verifier: expected Response{ data: { …(4) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at shouldFailVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:102:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js:120:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
+              "duration": 1150,
+              "state": "passed",
+              "speed": "slow"
             },
             {
               "type": "test",
@@ -824,9 +817,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "wkUns0DLtHK5U55w_ifuS",
+              "parent": "lnVngdt5Ja8qX9FcFx8WW",
               "ctx": null,
-              "_testId": "urn:uuid:7ebb9ef4-5ed7-42bb-a2ea-08a149b908ec",
+              "_testId": "urn:uuid:9af7ab2d-2634-409d-a0a1-12d60e8acd59",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -837,21 +830,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6384,
+                "_idleStart": 8576,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1514,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected no response from verifier: expected Response{ data: { …(4) }, …(3) } to not exist",
-                "showDiff": false,
-                "actual": {},
-                "operator": "notStrictEqual",
-                "stack": "AssertionError: Expected no response from verifier: expected Response{ data: { …(4) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at shouldFailVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:102:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js:150:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
+              "duration": 1206,
+              "state": "passed",
+              "speed": "slow"
             }
           ],
           "root": false,
@@ -871,7 +857,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "wkUns0DLtHK5U55w_ifuS",
+              "parent": "lnVngdt5Ja8qX9FcFx8WW",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
               "originalTitle": "\"before all\" hook",
@@ -881,12 +867,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3084,
+                "_idleStart": 3568,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 420,
+              "duration": 1715,
               "_error": null
             }
           ],
@@ -898,9 +884,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "KbAbZEt1FUlR34v_-3Dz5",
+          "parent": "ckZWASWCVn_5-QaGbGy_B",
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-          "_testId": "urn:uuid:2260fdb2-e9d7-44de-b54e-49900cf72da2"
+          "_testId": "urn:uuid:2ca4a128-7248-47d4-9840-6858645559d6"
         }
       ],
       "root": false,
@@ -916,13 +902,13 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "V-eNP8CWYAkzF10DDPpiV",
+      "parent": "-GtLJfn8Hr7CQcIXSWVqe",
       "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Test Name",
       "columnLabel": "Verifier",
-      "_testId": "urn:uuid:d95d1e94-d75e-40ba-bca5-7676e07cb02c",
+      "_testId": "urn:uuid:05d9bf90-8e72-420c-b4c3-c8c1f23c4eaf",
       "columns": [
         "Digital Bazaar"
       ],
@@ -943,9 +929,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "wkUns0DLtHK5U55w_ifuS",
+              "parent": "lnVngdt5Ja8qX9FcFx8WW",
               "ctx": null,
-              "_testId": "urn:uuid:74485178-3efc-4606-9d5f-a9bab243835c",
+              "_testId": "urn:uuid:5d386a9f-b227-4441-8018-247461d57721",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -956,12 +942,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3504,
+                "_idleStart": 5283,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 605,
+              "duration": 1107,
               "state": "passed",
               "speed": "slow"
             }
@@ -983,9 +969,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "wkUns0DLtHK5U55w_ifuS",
+              "parent": "lnVngdt5Ja8qX9FcFx8WW",
               "ctx": null,
-              "_testId": "urn:uuid:4b13db54-31ea-48ef-a6eb-77f2a3effd64",
+              "_testId": "urn:uuid:4339aea7-add1-48ea-aa1b-2b19a9a02d2c",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -996,12 +982,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4110,
+                "_idleStart": 6390,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 578,
+              "duration": 908,
               "state": "passed",
               "speed": "slow"
             }
@@ -1023,9 +1009,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "wkUns0DLtHK5U55w_ifuS",
+              "parent": "lnVngdt5Ja8qX9FcFx8WW",
               "ctx": null,
-              "_testId": "urn:uuid:040e48fb-d218-4297-8ecf-5264b28649a4",
+              "_testId": "urn:uuid:a4081445-2081-4d16-86f2-5071364b8aea",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1036,12 +1022,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4689,
+                "_idleStart": 7299,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 74,
+              "duration": 68,
               "state": "passed",
               "speed": "medium"
             }
@@ -1063,9 +1049,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "wkUns0DLtHK5U55w_ifuS",
+              "parent": "lnVngdt5Ja8qX9FcFx8WW",
               "ctx": null,
-              "_testId": "urn:uuid:58141f1d-7d88-45eb-bc6a-e7c471218003",
+              "_testId": "urn:uuid:3f477878-7bf7-4be6-9f3a-8c32e0c07a15",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1076,12 +1062,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4763,
+                "_idleStart": 7367,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 63,
+              "duration": 59,
               "state": "passed",
               "speed": "medium"
             }
@@ -1103,9 +1089,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "wkUns0DLtHK5U55w_ifuS",
+              "parent": "lnVngdt5Ja8qX9FcFx8WW",
               "ctx": null,
-              "_testId": "urn:uuid:45616c1e-f9ec-45e1-8844-eda379443bc0",
+              "_testId": "urn:uuid:19d34925-3561-403b-a266-5bbdafd9de23",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1116,21 +1102,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4826,
+                "_idleStart": 7425,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1555,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected no response from verifier: expected Response{ data: { …(4) }, …(3) } to not exist",
-                "showDiff": false,
-                "actual": {},
-                "operator": "notStrictEqual",
-                "stack": "AssertionError: Expected no response from verifier: expected Response{ data: { …(4) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at shouldFailVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:102:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js:120:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
+              "duration": 1150,
+              "state": "passed",
+              "speed": "slow"
             }
           ]
         },
@@ -1150,9 +1129,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "wkUns0DLtHK5U55w_ifuS",
+              "parent": "lnVngdt5Ja8qX9FcFx8WW",
               "ctx": null,
-              "_testId": "urn:uuid:7ebb9ef4-5ed7-42bb-a2ea-08a149b908ec",
+              "_testId": "urn:uuid:9af7ab2d-2634-409d-a0a1-12d60e8acd59",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1163,21 +1142,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6384,
+                "_idleStart": 8576,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1514,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected no response from verifier: expected Response{ data: { …(4) }, …(3) } to not exist",
-                "showDiff": false,
-                "actual": {},
-                "operator": "notStrictEqual",
-                "stack": "AssertionError: Expected no response from verifier: expected Response{ data: { …(4) }, …(3) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at shouldFailVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:102:14)\n    at Context.<anonymous> (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js:150:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
+              "duration": 1206,
+              "state": "passed",
+              "speed": "slow"
             }
           ]
         }
@@ -1204,7 +1176,7 @@
           "_currentRetry": 0,
           "pending": false,
           "type": "hook",
-          "parent": "UNpszjoL-2oliwWS6jVQq",
+          "parent": "azzL1ko9NsMrpMSF7ajU5",
           "ctx": null,
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
           "originalTitle": "\"before all\" hook",
@@ -1214,7 +1186,7 @@
             "_idleTimeout": -1,
             "_idlePrev": null,
             "_idleNext": null,
-            "_idleStart": 7899,
+            "_idleStart": 9782,
             "_onTimeout": null,
             "_repeat": null,
             "_destroyed": true
@@ -1231,13 +1203,13 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "V-eNP8CWYAkzF10DDPpiV",
+      "parent": "-GtLJfn8Hr7CQcIXSWVqe",
       "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Issuer",
       "columnLabel": "Verifier",
-      "_testId": "urn:uuid:42b39d17-351f-4c4b-8464-8be397530bbd",
+      "_testId": "urn:uuid:0897dd6b-2650-4027-9d6f-a151db93d3ac",
       "columns": [
         "Digital Bazaar"
       ],
@@ -1258,9 +1230,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
-              "parent": "UNpszjoL-2oliwWS6jVQq",
+              "parent": "azzL1ko9NsMrpMSF7ajU5",
               "ctx": null,
-              "_testId": "urn:uuid:736ddd58-dbb0-443a-a37a-8f3e625fd5cc",
+              "_testId": "urn:uuid:ef5b1353-f454-4e6d-836c-dd86194d9d28",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1271,12 +1243,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 7903,
+                "_idleStart": 9784,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 344,
+              "duration": 346,
               "state": "passed",
               "speed": "slow"
             }
@@ -1305,7 +1277,7 @@
           "_currentRetry": 0,
           "pending": false,
           "type": "hook",
-          "parent": "55aE87maxvsTQgyR7ae5T",
+          "parent": "9vNi2bIPoJJW7vcpONmeh",
           "ctx": null,
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
           "originalTitle": "\"before all\" hook",
@@ -1315,7 +1287,7 @@
             "_idleTimeout": -1,
             "_idlePrev": null,
             "_idleNext": null,
-            "_idleStart": 8248,
+            "_idleStart": 10130,
             "_onTimeout": null,
             "_repeat": null,
             "_destroyed": true
@@ -1332,13 +1304,13 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "V-eNP8CWYAkzF10DDPpiV",
+      "parent": "-GtLJfn8Hr7CQcIXSWVqe",
       "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Issuer",
       "columnLabel": "Verifier",
-      "_testId": "urn:uuid:2fdcb6fa-3d13-48e5-a8f9-32ffc4150aae",
+      "_testId": "urn:uuid:b8d7e3d1-611e-4ebb-9962-7d405014c3bc",
       "columns": [
         "Digital Bazaar"
       ],
@@ -1359,9 +1331,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
-              "parent": "55aE87maxvsTQgyR7ae5T",
+              "parent": "9vNi2bIPoJJW7vcpONmeh",
               "ctx": null,
-              "_testId": "urn:uuid:8bd2b2e7-a6f2-44c7-bfe4-f4959fcd77b0",
+              "_testId": "urn:uuid:5f95f18e-5e54-438c-9cf0-4980ac07013f",
               "_events": {},
               "_eventsCount": 1,
               "cell": {
@@ -1372,12 +1344,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 8250,
+                "_idleStart": 10134,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 755,
+              "duration": 310,
               "state": "passed",
               "speed": "slow"
             }
@@ -1421,9 +1393,9 @@
   },
   "title": "Status List 2021 Interoperability Report 1.0",
   "stats": [
-    "Tests passed 12/14 85%",
-    "Tests failed 2/14 15%",
-    "Failures 2",
+    "Tests passed 14/14 100%",
+    "Tests failed 0/14 0%",
+    "Failures 0",
     "Tests skipped 0",
     "Total tests 14"
   ]
