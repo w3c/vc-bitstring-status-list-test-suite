@@ -10,7 +10,7 @@ import https from 'https';
 import {klona} from 'klona';
 import {v4 as uuidv4} from 'uuid';
 const require = createRequire(import.meta.url);
-const validVc = require('../credentials/validVc.json');
+const validVc = require('./validVc.json');
 const agent = new https.Agent({rejectUnauthorized: false});
 
 const should = chai.should();
