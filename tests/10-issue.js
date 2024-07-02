@@ -27,7 +27,7 @@ describe('Issuers - BitstringStatusList',
         let err;
         let issuedVc;
         before(async function () {
-          const issuer = issuers.find(issuer => issuer.tags.has('Revocation'));
+          const issuer = issuers.find(issuer => issuer.tags.has('BitstringStatusList'));
           const { result, error, data } = await issueVc({ issuer });
           err = error;
           issuerResponse = result;
