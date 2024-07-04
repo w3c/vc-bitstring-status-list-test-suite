@@ -4,7 +4,7 @@
 import * as sl from '@digitalbazaar/vc-status-list';
 import { getSlc, issueVc } from './helpers.js';
 import { testCredential, testSlCredential } from './assertions.js';
-import chai from 'chai';
+import chai, { assert } from 'chai';
 import { filterByTag } from 'vc-test-suite-implementations';
 
 const should = chai.should();
@@ -32,6 +32,11 @@ describe('Issuers - BitstringStatusList',
           err = error;
           issuerResponse = result;
           issuedVc = data;
+          const credentialStatusType = typeof (issuedVc.credentialStatus);
+          if (credentialStatusType === 'object') {
+            // TODO make everything an array and test each status entry
+            // issuedVc.credentialStatus = [issuedVc.credentialStatus]
+          }
         });
         describe('BitstringStatusList Entry', function () {
           it('Any expression of the data model in this section MUST be expressed in a ' +
@@ -48,10 +53,10 @@ describe('Issuers - BitstringStatusList',
             'the status information associated with the verifiable credential. ' +
             'It MUST NOT be the URL for the status list.',
             async function () {
+              this.test.cell = { columnId: issuerName, rowId: this.test.title };
               if (!!issuedVc.credentialStatus.id) {
-                this.test.cell = { columnId: issuerName, rowId: this.test.title };
-                issuedVc.credentialStatus.id.should.be.a('string');
                 // TODO test for URI
+                issuedVc.credentialStatus.id.should.be.a('string');
               } else {
                 this.skip()
               };
@@ -59,10 +64,11 @@ describe('Issuers - BitstringStatusList',
           it('The type property MUST be BitstringStatusListEntry. ', async function () {
             this.test.cell = { columnId: issuerName, rowId: this.test.title };
             issuedVc.credentialStatus.should.contain.keys('type')
-            const credentialStatusType = typeof (issuedVc.credentialStatus.type);
-            credentialStatusType.should.be.oneOf(['string', 'array']);
+            // we are evaluating the type of the type property
+            const credentialStatusTypeType = typeof (issuedVc.credentialStatus.type);
+            credentialStatusTypeType.should.be.oneOf(['string', 'array']);
             // make everything an array and check if it contains 'BitstringStatusListEntry'
-            if (credentialStatusType === 'string') {
+            if (credentialStatusTypeType === 'string') {
               issuedVc.credentialStatus.type = [issuedVc.credentialStatus.type];
             }
             issuedVc.credentialStatus.type.should.include.members([
@@ -74,19 +80,6 @@ describe('Issuers - BitstringStatusList',
               this.test.cell = { columnId: issuerName, rowId: this.test.title };
               issuedVc.credentialStatus.should.contain.keys('statusPurpose');
               issuedVc.credentialStatus.statusPurpose.should.be.a('string');
-            });
-          it('While the value of the string is arbitrary, ' +
-            'the following values MUST be used for their intended purpose',
-            async function () {
-              if (issuedVc.credentialStatus.statusPurpose == 'revocation') {
-                this.test.cell = { columnId: issuerName, rowId: this.test.title };
-              } else if (issuedVc.credentialStatus.statusPurpose === 'suspension') {
-                this.test.cell = { columnId: issuerName, rowId: this.test.title };
-              } else if (issuedVc.credentialStatus.statusPurpose === 'message') {
-                this.test.cell = { columnId: issuerName, rowId: this.test.title };
-              } else {
-                this.skip()
-              };
             });
           it('The statusListIndex property MUST be an arbitrary size integer ' +
             'greater than or equal to 0, expressed as a string in base 10.',
@@ -104,45 +97,57 @@ describe('Issuers - BitstringStatusList',
               issuedVc.credentialStatus.statusListCredential.should.be.a('string');
               const statusListCredential = (await getSlc({ issuedVc })).slc;
               testSlCredential({slCredential: statusListCredential});
-              //   TODO fetch `statusListCredential` value directly?
             });
           it('statusSize MAY be provided.',
             // Note that this feature (statusSize) is currently at RISK
             async function () {
+              this.test.cell = { columnId: issuerName, rowId: this.test.title };
               if (!!issuedVc.credentialStatus.statusSize) {
-                this.test.cell = { columnId: issuerName, rowId: this.test.title };
                 it(' If present, statusSize MUST be an integer greater than zero.',
                   async function () {
                     this.test.cell = { columnId: issuerName, rowId: this.test.title };
                     issuedVc.credentialStatus.statusSize.should.be.a('number');
                     // TODO test for integer
+                    assert(Number.isInteger(issuedVc.credentialStatus.statusSize));
                     issuedVc.credentialStatus.statusSize.should.be.gt(0);
                   });
+                if (issuedVc.credentialStatus.statusSize.gt(1)) {
                 it(' If statusSize is provided and is greater than 1, \
                   then the property credentialStatus.statusMessage MUST be present',
                   async function () {
                     this.test.cell = { columnId: issuerName, rowId: this.test.title };
                     issuedVc.credentialStatus.should.contain.keys('statusMessage');
                   });
+                };
                 it('the number of status messages MUST equal the number of possible values.',
                   async function () {
                     this.test.cell = { columnId: issuerName, rowId: this.test.title };
+                    issuedVc.credentialStatus.statusSize.should.be.an('array');
+                    issuedVc.credentialStatus.statusSize.length.should.be.equal(issuedVc.credentialStatus.statusSize);
                   });
                 it('If present, the statusMessage property MUST be an array, \
                   the length of which MUST equal the number of possible status messages \
                   indicated by statusSize',
                   async function () {
                     this.test.cell = { columnId: issuerName, rowId: this.test.title };
+                    issuedVc.credentialStatus.statusSize.should.be.an('array');
+                    issuedVc.credentialStatus.statusSize.length.should.be.equal(issuedVc.credentialStatus.statusSize);
                   });
+                if (issuedVc.credentialStatus.statusSize.gt(1)) {
                 it('statusMessage MAY be present if statusSize is 1, \
                   and MUST be present if statusSize is greater than 1.',
                   async function () {
                     this.test.cell = { columnId: issuerName, rowId: this.test.title };
+                    issuedVc.credentialStatus.should.contain.keys('statusMessage');
                   });
+                };
                 it('If the statusMessage array is present, \
                   each element MUST contain the two properties described below',
                   async function () {
                     this.test.cell = { columnId: issuerName, rowId: this.test.title };
+                    // TODO this needs more testing: a string representing the hexadecimal value of the status prefixed with 0x
+                    issuedVc.credentialStatus.statusMessage.should.each.have.property('status').that.is.a('string');
+                    issuedVc.credentialStatus.statusMessage.should.each.have.property('message').that.is.a('string');
                   });
               } else {
                 this.skip()
@@ -156,7 +161,8 @@ describe('Issuers - BitstringStatusList',
                     [URL] which dereference to material related to the status.',
                   async function () {
                     this.test.cell = { columnId: issuerName, rowId: this.test.title };
-                    issuedVc.credentialStatus.statusReference.should.be.oneOf(['string', 'array']);
+                    const statusReferenceType = typeof (issuedVc.credentialStatus.statusReference);
+                    statusReferenceType.should.be.oneOf(['string', 'array']);
                     // TODO test for URLS
                   });
               } else {
@@ -201,16 +207,15 @@ describe('Issuers - BitstringStatusList',
             });
           it('The value of the purpose property of the status entry, ' +
             'statusPurpose, MUST be one or more strings.',
-            // One or more string?
             async function () {
               this.test.cell = { columnId: issuerName, rowId: this.test.title };
+              const statusPurposeType = typeof (statusListCredential.credentialSubject.statusPurpose);
+              statusPurposeType.should.be.oneOf(['string', 'object']);
+              if (statusPurposeType === ('object')) {
+                statusListCredential.credentialSubject.statusPurpose.should.be.an('array');
+                statusListCredential.credentialSubject.statusPurpose.forEach(item => chai.assert.isString(item));
+              };
             }
-          );
-          it('While the value of each string is arbitrary, '+
-              'the following values MUST be used for their intended purpose', 
-              async function() {
-                  this.test.cell = {columnId: issuerName, rowId: this.test.title};
-              }
           );
           it('The encodedList property of the credential subject MUST ' +
             'be a Multibase-encoded base64url (with no padding) [RFC4648] ' +
@@ -247,12 +252,9 @@ describe('Issuers - BitstringStatusList',
               this.test.cell = { columnId: issuerName, rowId: this.test.title };
               const {slc: {credentialSubject}} = await getSlc({issuedVc});
               const {encodedList} = credentialSubject;
-              // Uncompress encodedList
               const decoded = await sl.decodeList({encodedList});
               decoded.bitstring.bits[0].should.be.equal(0)
               decoded.bitstring.bits[decoded.bitstring.bits.length-1].should.be.equal(0)
-              // TODO test against reported lenght value?
-              // decoded.bitstring.bits[decoded.length-1].should.be.equal(0)
             }
           );
         });
