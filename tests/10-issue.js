@@ -117,7 +117,6 @@ describe('Issuers - BitstringStatusList',
               'string',
               'Expected statusListCredential to be a string.');
             const {slc} = await getSlc({issuedVc});
-            // const statusListCredential = (await getSlc({ issuedVc })).slc;
             testSlCredential({slCredential: slc});
           });
           it('statusSize MAY be provided.',
