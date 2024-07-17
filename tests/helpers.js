@@ -41,7 +41,6 @@ export const issueVc = async ({issuer}) => {
   const credential = klona(validVc);
   credential.id = `urn:uuid:${uuidv4()}`;
   credential.issuer = issuerId;
-  credential.issuanceDate = ISOTimeStamp();
   const body = {credential, options};
   return issuer.post({json: body});
 };

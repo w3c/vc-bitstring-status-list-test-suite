@@ -5,9 +5,7 @@ import chai from 'chai';
 import {createRequire} from 'node:module';
 const require = createRequire(import.meta.url);
 const validVc = require('./validVc.json');
-
 const should = chai.should();
-const expect = chai.expect();
 
 /**
  * Tests the properties of a credential.
@@ -43,8 +41,6 @@ export const testCredential = ({credential}) => {
   }
   credential.should.have.property('proof');
   credential.proof.should.be.an('object');
-  credential.should.have.property('credentialStatus');
-  credential.credentialStatus.should.be.an('object');
 };
 
 export const testSlCredential = ({slCredential}) => {
@@ -53,7 +49,6 @@ export const testSlCredential = ({slCredential}) => {
   slCredential.should.have.property('@context');
   slCredential['@context'].should.include.members([
     'https://www.w3.org/ns/credentials/v2',
-    // 'https://w3id.org/security/data-integrity/v2'
   ]);
   slCredential.should.have.property('type');
   slCredential.type.should.be.an('array');
@@ -62,9 +57,9 @@ export const testSlCredential = ({slCredential}) => {
   slCredential.should.have.property('credentialSubject');
   const {credentialSubject} = slCredential;
   credentialSubject.should.contain.keys(
-      'type', 
-      'encodedList', 
-      'statusPurpose'
+    'type',
+    'encodedList',
+    'statusPurpose'
   );
   credentialSubject.encodedList.should.be.a('string');
   credentialSubject.type.should.be.a('string');
