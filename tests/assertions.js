@@ -20,8 +20,7 @@ export const testCredential = ({credential}) => {
   credential.should.be.an('object');
   credential.should.have.property('@context');
   credential['@context'].should.include.members([
-    'https://www.w3.org/ns/credentials/v2',
-    // 'https://w3id.org/security/data-integrity/v2'
+    'https://www.w3.org/ns/credentials/v2'
   ]);
   credential.should.have.property('type');
   credential.type.should.be.an('array');

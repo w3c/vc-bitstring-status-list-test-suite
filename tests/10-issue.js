@@ -74,35 +74,29 @@ describe('Issuers - BitstringStatusList',
           });
           it('The type property MUST be BitstringStatusListEntry. ',
             async function() {
-              issuedVc.credentialStatus.hasOwnProperty('type',
-                'Expected credentialStatus to have a type.');
-              const credentialStatusTypeType = typeof (
-                issuedVc.credentialStatus.type);
-              credentialStatusTypeType.should.be.oneOf(['string', 'array'],
-                'Expected credentialStatus.type to be a string or array.');
-              if(credentialStatusTypeType === 'string') {
-                issuedVc.credentialStatus.type = [
-                  issuedVc.credentialStatus.type];
-              }
-              issuedVc.credentialStatus.type.includes(
+              issuedVc.credentialStatus.should.have.own.property(
+                'type').to.be.a('string',
+                'Expected credentialStatus.type to be a string.'
+              );
+              issuedVc.credentialStatus.should.be(
                 'BitstringStatusListEntry',
-                'Expected credentialStatus.type to be ' +
-                'BitstringStatusListEntry.');
+                'Expected credentialStatus.type to be BitstringStatusListEntry.'
+              );
             });
           it('The purpose of the status entry MUST be a string.',
             async function() {
-              issuedVc.credentialStatus.hasOwnProperty('statusPurpose',
-                'Expected credentialStatus.statusPurpose to exist.');
-              issuedVc.credentialStatus.statusPurpose.should.be.a('string',
-                'Expected credentialStatus.statusPurpose to be a string.');
+              issuedVc.credentialStatus.should.have.own.property(
+                'statusPurpose').to.be.a('string',
+                'Expected credentialStatus.statusPurpose to be a string.'
+              );
             });
           it('The statusListIndex property MUST be an arbitrary size integer ' +
             'greater than or equal to 0, expressed as a string in base 10.',
           async function() {
-            issuedVc.credentialStatus.hasOwnProperty('statusListIndex',
-              'Expected credentialStatus.statusListIndex to exist.');
-            issuedVc.credentialStatus.statusListIndex.should.be.a('number',
-              'Expected credentialStatus.statusListIndex to be an interger.');
+            issuedVc.credentialStatus.should.have.own.property(
+              'statusListIndex').to.be.a('number',
+              'Expected credentialStatus.statusListIndex to be an integer.'
+            );
             issuedVc.credentialStatus.statusListIndex.should.be.gte(0,
               'Expected credentialStatus.statusListIndex to be >= 0.');
             //   TODO check for base 10
@@ -110,12 +104,11 @@ describe('Issuers - BitstringStatusList',
           it('The statusListCredential property MUST be a URL to a ' +
             'verifiable credential.',
           async function() {
-            issuedVc.credentialStatus.hasOwnProperty(
-              'statusListCredential',
-              'Expected credentialStatus.statusListCredential to exist.');
-            issuedVc.credentialStatus.statusListCredential.should.be.a(
-              'string',
-              'Expected statusListCredential to be a string.');
+            // TODO check for URI
+            issuedVc.credentialStatus.should.have.own.property(
+              'statusListCredential').to.be.a('string',
+              'Expected credentialStatus.statusListCredential to be a URL.'
+            );
             const {slc} = await getSlc({issuedVc});
             testSlCredential({slCredential: slc});
           });
@@ -140,7 +133,7 @@ describe('Issuers - BitstringStatusList',
                   'then the property credentialStatus.statusMessage ' +
                   'MUST be present',
                   async function() {
-                    issuedVc.credentialStatus.hasOwnProperty(
+                    chai.expect(issuedVc.credentialStatus).to.contain.keys(
                       'statusMessage');
                   });
                 }
@@ -167,7 +160,8 @@ describe('Issuers - BitstringStatusList',
                   it('statusMessage MAY be present if statusSize is 1, ' +
                   'and MUST be present if statusSize is greater than 1.',
                   async function() {
-                    issuedVc.credentialStatus.hasOwnProperty(
+                    chai.expect(
+                      issuedVc.credentialStatus).to.contain.keys(
                       'statusMessage');
                   });
                 }
@@ -221,8 +215,8 @@ describe('Issuers - BitstringStatusList',
             'MUST express a type property that includes the ' +
             'BitstringStatusListCredential value.',
           async function() {
-            statusListCredential.hasOwnProperty('type',
-              'Expected credential status to have a type.');
+            chai.expect(
+              statusListCredential).to.contain.keys('type');
             statusListCredential.type.should.include.members([
               'BitstringStatusListCredential'
             ],
@@ -233,8 +227,8 @@ describe('Issuers - BitstringStatusList',
           it('The type of the credential subject, which is the status list, ' +
             'MUST be BitstringStatusList.',
           async function() {
-            statusListCredential.credentialSubject.hasOwnProperty('type',
-              'Expected credentialSubject to have a type.');
+            chai.expect(
+              statusListCredential.credentialSubject).to.contain.keys('type');
             const credentialSubjectType = typeof (
               statusListCredential.credentialSubject.type);
             credentialSubjectType.should.be.oneOf(['string', 'array'],
