@@ -259,7 +259,7 @@ describe('Issuers - BitstringStatusList',
               credentialSubject.statusPurpose.should.be.an(
                 'array');
               credentialSubject.statusPurpose.forEach(
-                item => chai.assert.isString(item));
+                item => item.should.be.a('string'));
             }
           }
           );
