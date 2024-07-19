@@ -191,7 +191,7 @@ describe('Issuers - BitstringStatusList',
             async function() {
               if(!!issuedVc.credentialStatus.statusReference) {
                 it('If present, its value MUST be a URL or an array of URLs ' +
-                    '[URL] which dereference to material related to the ' +
+                    '[URL] which dereference(s) to material related to the ' +
                     'status.',
                 async function() {
                   const statusReferenceType = typeof (
