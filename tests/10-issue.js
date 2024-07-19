@@ -254,7 +254,7 @@ describe('Issuers - BitstringStatusList',
             const statusPurposeType = typeof (
               statusListCredential.credentialSubject.statusPurpose);
             statusPurposeType.should.be.oneOf(['string', 'object']);
-            if(statusPurposeType === ('object')) {
+            if(statusPurposeType === 'object') {
               const credentialSubject = statusListCredential.credentialSubject;
               credentialSubject.statusPurpose.should.be.an(
                 'array');
