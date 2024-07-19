@@ -78,7 +78,7 @@ describe('Issuers - BitstringStatusList',
                 'type').to.be.a('string',
                 'Expected credentialStatus.type to be a string.'
               );
-              issuedVc.credentialStatus.should.be(
+              issuedVc.credentialStatus.type.should.equal(
                 'BitstringStatusListEntry',
                 'Expected credentialStatus.type to be BitstringStatusListEntry.'
               );
@@ -267,7 +267,9 @@ describe('Issuers - BitstringStatusList',
             const {encodedList} = credentialSubject;
             // Uncompress encodedList
             const decoded = await sl.decodeList({encodedList});
-            decoded.should.be.an('array');
+            should.exist(decoded,
+              'Expected encodedList to be a Multibase-encoded base64url' +
+              'representation of a GZIP-compressed bitstring.');
           }
           );
           it('The uncompressed bitstring MUST be at least 16KB in size.',
