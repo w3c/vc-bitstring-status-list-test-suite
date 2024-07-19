@@ -273,7 +273,7 @@ describe('Issuers - BitstringStatusList',
             const {encodedList} = credentialSubject;
             // Uncompress encodedList
             const decoded = await sl.decodeList({encodedList});
-            should.exist(decoded);
+            decoded.should.be.an('array');
           }
           );
           it('The uncompressed bitstring MUST be at least 16KB in size.',
