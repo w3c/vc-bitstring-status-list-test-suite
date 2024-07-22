@@ -38,8 +38,7 @@ describe('Issuers - BitstringStatusList',
           err = error;
           issuerResponse = result;
           issuedVc = data;
-          const credentialStatusType = typeof (issuedVc.credentialStatus);
-          if(credentialStatusType === 'object') {
+          if(typeof (issuedVc.credentialStatus) === 'object') {
             // TODO make everything an array and test each status entry
             // issuedVc.credentialStatus = [issuedVc.credentialStatus]
           }
@@ -99,12 +98,17 @@ describe('Issuers - BitstringStatusList',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20statusListIndex%20property%20MUST%20be%20an%20arbitrary%20size%20integer%20greater%20than%20or%20equal%20to%200%2C%20expressed%20as%20a%20string%20in%20base%2010';
             issuedVc.credentialStatus.should.have.own.property(
-              'statusListIndex').to.be.a('number',
-              'Expected credentialStatus.statusListIndex to be an integer.'
+              'statusListIndex').to.be.a('string',
+              'Expected statusListIndex to be a string.'
             );
-            issuedVc.credentialStatus.statusListIndex.should.be.gte(0,
+            assert(
+              String(parseInt(issuedVc.credentialStatus.statusListIndex)) ===
+              issuedVc.credentialStatus.statusListIndex,
+              'Expected statusSize value to be an integer ' +
+              'expressed as a string in base 10'
+            );
+            parseInt(issuedVc.credentialStatus.statusListIndex).should.be.gte(0,
               'Expected credentialStatus.statusListIndex to be >= 0.');
-            //   TODO check for base 10
           });
           it('The statusListCredential property MUST be a URL to a ' +
             'verifiable credential.',
@@ -154,9 +158,10 @@ describe('Issuers - BitstringStatusList',
                     issuedVc.credentialStatus.statusSize),
                   'Expected statusSize to be an integer.');
                   issuedVc.credentialStatus.statusSize.should.be.gt(0,
-                    'Expected statusSize to be >= 0.');
+                    'Expected statusSize to be > 0.');
                 });
-                if(issuedVc.credentialStatus.statusSize.gt(1)) {
+                if(Number.isInteger(issuedVc.credentialStatus.statusSize) &&
+                  issuedVc.credentialStatus.statusSize.gt(1)) {
                   it('If statusSize is provided and is greater than 1, ' +
                     'then the property credentialStatus.statusMessage ' +
                     'MUST be present',
@@ -187,7 +192,8 @@ describe('Issuers - BitstringStatusList',
                         'statusSize');
                   });
                 }
-                if(issuedVc.credentialStatus.statusSize.gt(1)) {
+                if(Number.isInteger(issuedVc.credentialStatus.statusSize) &&
+                issuedVc.credentialStatus.statusSize.gt(1)) {
                   it('statusMessage MAY be present if statusSize is 1, ' +
                   'and MUST be present if statusSize is greater than 1.',
                   async function() {
@@ -231,8 +237,14 @@ describe('Issuers - BitstringStatusList',
                   this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20its%20value%20MUST%20be%20a%20URL%20or%20an%20array%20of%20URLs%20%5BURL%5D%20which%20dereference%20to%20material%20related%20to%20the%20status';
                   const statusReferenceType = typeof (
                     issuedVc.credentialStatus.statusReference);
-                  statusReferenceType.should.be.oneOf(['string', 'array'],
+                  statusReferenceType.should.be.oneOf(['string', 'object'],
                     'Expected statusReference to be an string or an array.');
+                  if(statusReferenceType === 'object') {
+                    issuedVc.credentialStatus.statusReference.should.be.an(
+                      'array');
+                    issuedVc.credentialStatus.statusReference.forEach(
+                      item => item.should.be.a('string'));
+                  }
                   // TODO test for URLS
                 });
               } else {
@@ -269,11 +281,10 @@ describe('Issuers - BitstringStatusList',
               'type').to.be.an('array',
               'Expected type property to be a string or an array.'
             );
-            statusListCredential.type.should.include.members([
-              'BitstringStatusListCredential'
-            ],
-            'Expected credential status type to include ' +
-            'BitstringStatusListCredential.');
+            statusListCredential.type.should.include(
+              'BitstringStatusListCredential',
+              'Expected credential status type to include ' +
+              'BitstringStatusListCredential.');
           }
           );
           it('The type of the credential subject, which is the status list, ' +
@@ -332,7 +343,9 @@ describe('Issuers - BitstringStatusList',
               should.exist(decoded);
               // decoded size should be 16kb
               const decodedSize = (decoded.length / 8) / 1024;
-              decodedSize.should.be.gte(16);
+              decodedSize.should.be.gte(16,
+                'Expected bitstring to be at least 16KB in size.'
+              );
             }
           );
           it('The bitstring MUST be encoded such that the first index, ' +
