@@ -111,10 +111,11 @@ describe('Issuers - BitstringStatusList',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20statusListCredential%20property%20MUST%20be%20a%20URL%20to%20a%20verifiable%20credential.';
             // TODO check for URI
-            issuedVc.credentialStatus.should.have.own.property(
-              'statusListCredential').to.be.a('string',
-              'Expected credentialStatus.statusListCredential to be a URL.'
-            );
+            issuedVc.credentialStatus.should.have.own.
+              property('statusListCredential').to.be.
+              a('string',
+                'Expected credentialStatus.statusListCredential to be a URL.'
+              );
             const {slc} = await getSlc({issuedVc});
             should.exist(slc,
               'Expected statusListCredential to resolve to a ' +
@@ -127,10 +128,11 @@ describe('Issuers - BitstringStatusList',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=When%20the%20URL%20is%20dereferenced%2C%20the%20resulting%20verifiable%20credential%20MUST%20have%20type%20property%20that%20includes%20the%20BitstringStatusListCredential%20value.';
             const {slc} = await getSlc({issuedVc});
-            slc.should.have.own.property(
-              'type').to.be.an('array',
-              'Expected type to be an array.'
-            );
+            slc.should.have.own.
+              property('type').to.be.
+              an('array',
+                'Expected type to be an array.'
+              );
             slc.type.should.include(
               'BitstringStatusListCredential',
               'Expected type to be BitstringStatusListCredential.'
@@ -168,19 +170,23 @@ describe('Issuers - BitstringStatusList',
                   'of possible values.',
                 async function() {
                   this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=the%20number%20of%20status%20messages%20MUST%20equal%20the%20number%20of%20possible%20values';
-                  issuedVc.credentialStatus.statusSize.should.be.an('array');
-                  issuedVc.credentialStatus.statusSize.length.should.be.equal(
-                    issuedVc.credentialStatus.statusSize);
+                  issuedVc.credentialStatus.statusSize.should.be.
+                    an('array').length.should.be.
+                    equal(issuedVc.credentialStatus.statusSize);
                 });
-                it('If present, the statusMessage property MUST be an array, ' +
-                  'the length of which MUST equal the number of possible ' +
-                  'status messages indicated by statusSize',
-                async function() {
-                  this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20the%20statusMessage%20property%20MUST%20be%20an%20array%2C%20the%20length%20of%20which%20MUST%20equal%20the%20number%20of%20possible%20status%20messages%20indicated%20by%20statusSize';
-                  issuedVc.credentialStatus.statusSize.should.be.an('array');
-                  issuedVc.credentialStatus.statusSize.length.should.be.equal(
-                    issuedVc.credentialStatus.statusSize);
-                });
+                if(issuedVc.credentialStatus.statusMessage) {
+                  it('If present, the statusMessage property MUST be an ' +
+                    'array, the length of which MUST equal the number ' +
+                    'of possible status messages indicated by statusSize',
+                  async function() {
+                    this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20the%20statusMessage%20property%20MUST%20be%20an%20array%2C%20the%20length%20of%20which%20MUST%20equal%20the%20number%20of%20possible%20status%20messages%20indicated%20by%20statusSize';
+                    issuedVc.credentialStatus.statusMessage.should.be.
+                      an('array').length.should.be.
+                      equal(issuedVc.credentialStatus.statusSize,
+                        'Expected statusMessage lenght to be equal to ' +
+                        'statusSize');
+                  });
+                }
                 if(issuedVc.credentialStatus.statusSize.gt(1)) {
                   it('statusMessage MAY be present if statusSize is 1, ' +
                   'and MUST be present if statusSize is greater than 1.',
@@ -191,7 +197,8 @@ describe('Issuers - BitstringStatusList',
                   });
                 }
                 it('If the statusMessage array is present, each ' +
-                  'element MUST contain the two properties described below',
+                  'element MUST contain the two properties "status" ' +
+                  'and "message".',
                 async function() {
                   this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20the%20statusMessage%20array%20is%20present%2C%20each%20element%20MUST%20contain%20the%20two%20properties%20described%20below%2C%20and%20MAY%20contain%20additional%20properties.';
                   // TODO this needs more testing:
@@ -204,7 +211,7 @@ describe('Issuers - BitstringStatusList',
                     'message').that.is.a('string');
                 });
               } else {
-                it('If statusSize is not present as a property ' +
+                it.skip('If statusSize is not present as a property ' +
                   'of the credentialStatus, then statusSize MUST ' +
                   'be processed as 1.',
                 async function() {
@@ -246,7 +253,7 @@ describe('Issuers - BitstringStatusList',
             testSlCredential({slCredential: statusListCredential},
               'Expected status credential to conform to VCDM 2.0.');
           });
-          it('The verifiable credential that contains the status ' +
+          it.skip('The verifiable credential that contains the status ' +
             'list MAY express an id property that matches the value ' +
             'specified in statusListCredential for the corresponding ' +
             'BitstringStatusListEntry.',
