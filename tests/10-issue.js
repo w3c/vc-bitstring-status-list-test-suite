@@ -223,7 +223,7 @@ describe('Issuers - BitstringStatusList',
           it('An implementer MAY include the statusReference property.',
             async function() {
               this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=An%20implementer%20MAY%20include%20the%20statusReference%20property.';
-              if(!!issuedVc.credentialStatus.statusReference) {
+              if('statusReference' in issuedVc.credentialStatus) {
                 it('If present, its value MUST be a URL or an array of URLs ' +
                     '[URL] which dereference(s) to material related to the ' +
                     'status.',
