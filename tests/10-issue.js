@@ -142,7 +142,7 @@ describe('Issuers - BitstringStatusList',
             // Note that this feature (statusSize) is currently at RISK
             async function() {
               this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=statusSize%20MAY%20be%20provided.';
-              if(issuedVc.credentialStatus.statusSize) {
+              if('statusSize' in issuedVc.credentialStatus) {
                 it('If present, ' +
                   'statusSize MUST be an integer greater than zero.',
                 async function() {
