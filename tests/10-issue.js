@@ -182,7 +182,7 @@ describe('Issuers - BitstringStatusList',
                 if(issuedVc.credentialStatus.statusMessage) {
                   it('If present, the statusMessage property MUST be an ' +
                     'array, the length of which MUST equal the number ' +
-                    'of possible status messages indicated by statusSize',
+                    'of possible status messages indicated by statusSize.',
                   async function() {
                     this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20the%20statusMessage%20property%20MUST%20be%20an%20array%2C%20the%20length%20of%20which%20MUST%20equal%20the%20number%20of%20possible%20status%20messages%20indicated%20by%20statusSize';
                     issuedVc.credentialStatus.statusMessage.should.be.
