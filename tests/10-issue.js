@@ -189,7 +189,7 @@ describe('Issuers - BitstringStatusList',
                       an('array').length.should.be.
                       equal(issuedVc.credentialStatus.statusSize,
                         'Expected statusMessage lenght to be equal to ' +
-                        'statusSize');
+                        'statusSize.');
                   });
                 }
                 if(Number.isInteger(issuedVc.credentialStatus.statusSize) &&
