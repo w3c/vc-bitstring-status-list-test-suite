@@ -158,7 +158,7 @@ describe('Issuers - BitstringStatusList',
                     issuedVc.credentialStatus.statusSize),
                   'Expected statusSize to be an integer.');
                   issuedVc.credentialStatus.statusSize.should.be.gt(0,
-                    'Expected statusSize to be > 0.');
+                    'Expected statusSize to be greater than zero.');
                 });
                 if(Number.isInteger(issuedVc.credentialStatus.statusSize) &&
                   issuedVc.credentialStatus.statusSize.gt(1)) {
