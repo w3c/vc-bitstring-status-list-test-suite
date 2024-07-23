@@ -164,7 +164,7 @@ describe('Issuers - BitstringStatusList',
                   issuedVc.credentialStatus.statusSize.gt(1)) {
                   it('If statusSize is provided and is greater than 1, ' +
                     'then the property credentialStatus.statusMessage ' +
-                    'MUST be present',
+                    'MUST be present.',
                   async function() {
                     this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20statusSize%20is%20provided%20and%20is%20greater%20than%201%2C%20then%20the%20property%20credentialStatus.statusMessage%20MUST%20be%20present';
                     issuedVc.credentialStatus.should.have.own.property(
