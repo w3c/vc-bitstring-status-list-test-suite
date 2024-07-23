@@ -105,7 +105,7 @@ describe('Issuers - BitstringStatusList',
               String(parseInt(issuedVc.credentialStatus.statusListIndex)) ===
               issuedVc.credentialStatus.statusListIndex,
               'Expected statusSize value to be an integer ' +
-              'expressed as a string in base 10'
+              'expressed as a string in base 10.'
             );
             parseInt(issuedVc.credentialStatus.statusListIndex).should.be.gte(0,
               'Expected credentialStatus.statusListIndex to be >= 0.');
