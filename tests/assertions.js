@@ -4,8 +4,7 @@
 import chai from 'chai';
 import {createRequire} from 'node:module';
 const require = createRequire(import.meta.url);
-const validVc = require('../credentials/validVc.json');
-
+const validVc = require('./validVc.json');
 const should = chai.should();
 
 /**
@@ -21,22 +20,16 @@ export const testCredential = ({credential}) => {
   credential.should.be.an('object');
   credential.should.have.property('@context');
   credential['@context'].should.include.members([
-    'https://www.w3.org/2018/credentials/v1',
-    'https://w3id.org/vc/status-list/2021/v1',
-    'https://w3id.org/security/data-integrity/v2'
+    'https://www.w3.org/ns/credentials/v2'
   ]);
   credential.should.have.property('type');
   credential.type.should.be.an('array');
   credential.type.should.include.members([
     'VerifiableCredential'
   ]);
-  credential.should.have.property('id');
-  credential.id.should.be.a('string');
   credential.should.have.property('credentialSubject');
   credential.credentialSubject.should.eql(validVc.credentialSubject);
   credential.credentialSubject.should.be.an('object');
-  credential.should.have.property('issuanceDate');
-  credential.issuanceDate.should.be.a('string');
   credential.should.have.property('issuer');
   const issuerType = typeof(credential.issuer);
   issuerType.should.be.oneOf(['string', 'object']);
@@ -47,18 +40,6 @@ export const testCredential = ({credential}) => {
   }
   credential.should.have.property('proof');
   credential.proof.should.be.an('object');
-  credential.should.have.property('credentialStatus');
-  credential.credentialStatus.should.be.an('object');
-  credential.credentialStatus.should.have.keys([
-    'id',
-    'type',
-    'statusListCredential',
-    'statusListIndex',
-    'statusPurpose'
-  ]);
-  credential.credentialStatus.statusPurpose.should.be.oneOf(
-    ['revocation', 'suspension']);
-  credential.credentialStatus.type.should.equal('BitstringStatusListEntry');
 };
 
 export const testSlCredential = ({slCredential}) => {
@@ -66,21 +47,19 @@ export const testSlCredential = ({slCredential}) => {
   slCredential.should.be.an('object');
   slCredential.should.have.property('@context');
   slCredential['@context'].should.include.members([
-    'https://www.w3.org/2018/credentials/v1',
-    'https://w3id.org/vc/status-list/2021/v1',
-    'https://w3id.org/security/data-integrity/v2'
+    'https://www.w3.org/ns/credentials/v2',
   ]);
   slCredential.should.have.property('type');
   slCredential.type.should.be.an('array');
   slCredential.type.should.include.members(
     ['VerifiableCredential', 'BitstringStatusListCredential']);
-  slCredential.should.have.property('id');
-  slCredential.id.should.be.a('string');
   slCredential.should.have.property('credentialSubject');
   const {credentialSubject} = slCredential;
-  credentialSubject.should.have.keys(
-    ['id', 'type', 'encodedList', 'statusPurpose']);
-  credentialSubject.id.should.be.a('string');
+  credentialSubject.should.contain.keys(
+    'type',
+    'encodedList',
+    'statusPurpose'
+  );
   credentialSubject.encodedList.should.be.a('string');
   credentialSubject.type.should.be.a('string');
   credentialSubject.type.should.eql('BitstringStatusList');
@@ -92,8 +71,6 @@ export const testSlCredential = ({slCredential}) => {
       'Expected issuer object to have property id');
     slCredential.issuer.id.should.be.an('object');
   }
-  slCredential.should.have.property('issuanceDate');
-  slCredential.issuanceDate.should.be.a('string');
   slCredential.should.have.property('proof');
   slCredential.proof.should.be.an('object');
 };

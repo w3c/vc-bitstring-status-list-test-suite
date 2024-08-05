@@ -10,7 +10,7 @@ import https from 'https';
 import {klona} from 'klona';
 import {v4 as uuidv4} from 'uuid';
 const require = createRequire(import.meta.url);
-const validVc = require('../credentials/validVc.json');
+const validVc = require('./validVc.json');
 const agent = new https.Agent({rejectUnauthorized: false});
 
 const should = chai.should();
@@ -41,7 +41,6 @@ export const issueVc = async ({issuer}) => {
   const credential = klona(validVc);
   credential.id = `urn:uuid:${uuidv4()}`;
   credential.issuer = issuerId;
-  credential.issuanceDate = ISOTimeStamp();
   const body = {credential, options};
   return issuer.post({json: body});
 };
