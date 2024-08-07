@@ -36,9 +36,10 @@ npm run generate-vcs
 ## Implementation
 
 To add your implementation to this test suite see the
-`w3c-ccg/vc-test-suite-implementations` [README](https://github.com/w3c-ccg/vc-test-suite-implementations/blob/main/README.md). Add the tags
-`BitstringStatusList` along with `Revocation` or `Suspension` to run your
-issuer and verifier against this test suite.
+`w3c-ccg/vc-test-suite-implementations` [README](https://github.com/w3c-ccg/vc-test-suite-implementations/blob/main/README.md). Add the tag
+`BitstringStatusList` to run your issuer and verifier against this test suite.
+
+This test-suite leverages static status credential fixtures for testing verifiers implementations. These status credentials have the following indexes set to 1 `201` `94023` `57444`.
 
 Note: To run the tests, some implementations require client secrets that can be
 passed as env variables to the test script. To see which ones require client
