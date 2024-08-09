@@ -45,9 +45,8 @@ export const issueVc = async ({issuer}) => {
   return issuer.post({json: body});
 };
 
-export const getSlc = async ({issuedVc}) => {
-  const {credentialStatus: {statusListCredential}} = issuedVc;
-  const {document} = await documentLoader(statusListCredential);
+export const getSlc = async statusEntry => {
+  const {document} = await documentLoader(statusEntry.statusListCredential);
   return {slc: document};
 };
 
