@@ -70,7 +70,7 @@ describe('Issuers - BitstringStatusList',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20the%20value%20is%20expected%20to%20be%20a%20URL%20that%20identifies%20the%20status%20information%20associated%20with%20the%20verifiable%20credential.';
             for(statusEntry in statusEntries) {
-              if(!!statusEntries[statusEntry].id) {
+              if('id' in statusEntries[statusEntry]) {
                 // TODO test for URI
                 statusEntries[statusEntry].id.should.be.a('string',
                   'Expected credentialStatus.id to be a string.'
