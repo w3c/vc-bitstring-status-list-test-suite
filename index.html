@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-        <title>Status List 2021 Interoperability Report 1.0</title>
+        <title>VC Bitstring List Interoperability Report 1.0</title>
         <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
         <!--
           === NOTA BENE ===
@@ -13,10 +13,10 @@
           // set this in the config section
           var respecConfig = {
       "specStatus": "unofficial",
-      "shortName": "status-list-2021-test-suite",
+      "shortName": "vc-bitstring-status-list-test-suite",
       "subtitle": "Test Interoperability Report for Verifiable Credentials status",
-      "github": "https://github.com/w3c-ccg/status-list-2021-test-suite",
-      "edDraftURI": "https://w3c-ccg.github.io/status-list-2021-test-suite",
+      "github": "https://github.com/w3c-ccg/vc-bitstring-status-list-test-suite",
+      "edDraftURI": "https://w3c-ccg.github.io/vc-bitstring-status-list-test-suite",
       "doJsonLd": true,
       "includePermalinks": false,
       "editors": [
@@ -69,11 +69,94 @@
         </style>
   </head>
   <body>
+    <!-- these are not in <head> in order to override Respec injected styles -->
+    <style>
+      .hide {
+        display: none;
+      }
+      details.hide {
+        display: none;
+      }
+      details.err {
+        position: absolute;
+        z-index: 1;
+        white-space: nowrap;
+        background: white;
+        border: 1px solid darkgray;
+        text-align: left;
+        padding: .1em .5em;
+        box-shadow: 0 0 5px darkgray;
+        min-width: 25em;
+      }
+      details.err summary {
+        color: indianred;
+      }
+      .no-space-around {
+        margin: 0;
+        padding: 0;
+      }
+      pre {
+        width: 75%;
+        white-space: pre-line;
+        word-break: break-all;
+        margin: 0;
+        padding: 0;
+        background: white;
+      }
+      code > span.hljs-attr {
+        margin-left: 1rem;
+      }
+      .no-wrap {
+        white-space: nowrap;
+      }
+      td.optional {
+        background-color: #b9b7b7;
+      }
+      .text-right {
+        text-align: right;
+      }
+      .text-left {
+        text-align: left;
+      }
+      .text-center, th.text-center {
+        text-align: center;
+      }
+      .qr-code {
+        margin-left: 25px;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .small-font {
+        font-size: 0.75rem;
+      }
+      .highlight-on-hover:hover {
+        background-color: yellow;
+        cursor: default;
+      }
+      .highlight-on-hover:hover + .relative-pos > .err {
+        display: block;
+      }
+      pre, code.hljs {
+        overflow: auto;
+      }
+      .relative-pos {
+        position: relative;
+        width: 0.5rem;
+        height: 0.5rem;
+        z-index: 1;
+      }
+      .relative-pos:hover > .err {
+        display: block;
+      }
+    </style>
     <section id='abstract'>
      <p>
       The purpose of this test suite is to demonstrate a path to interoperability
-      for <a href="https://w3c-ccg.github.io/vc-status-list-2021/">StatusList2021
-      </a>.
+      for <a href="https://w3c.github.io/vc-bitstring-status-list/">Bitstring Status
+      List</a>.
       </p>
     </section>
     <section id="sotd">
@@ -82,36 +165,63 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 0/0 0%
+      Tests passed 13/16 81%
       </p>
       <p>
-      Tests failed 0/0 0%
+      Tests failed 4/16 25%
       </p>
       <p>
-      Failures 0
+      Failures 4
       </p>
       <p>
-      Tests skipped 0
+      Tests skipped 3
       </p>
       <p>
-      Total tests 0
+      Total tests 19
       </p>
       <p>
-        These tests were run on <time>16 June 2024 at 5:04 am UTC</time>
+        These tests were run on <time>11 August 2024 at 5:03 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
-        <ul>
-          <li>
-    ✓ - Success
-          </li>
-          <li>
-    ❌ - Error
-          </li>
-          <li>
-    — - Implementation explicitly does not support this feature
-          </li>
-        </ul>
+        <table>
+          <tr>
+            <td class="pending not-optional highlight-on-hover text-center">
+              <div class="highlight-on-hover">🚫</div>
+            </td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <td class="passed not-optional highlight-on-hover text-center">
+              <div class="highlight-on-hover">✓</div>
+            </td>
+            <td>Passed</td>
+          </tr>
+          <tr>
+            <td class="failed not-optional highlight-on-hover text-center">
+              <div class="highlight-on-hover">❌</div>
+            </td>
+            <td>Failed</td>
+          </tr>
+          <tr>
+            <td class="accessDenied not-optional highlight-on-hover text-center">
+              <div class="highlight-on-hover">⊘</div>
+            </td>
+            <td>Access Denied</td>
+          </tr>
+          <tr>
+            <td class="timeout not-optional highlight-on-hover text-center">
+              <div class="highlight-on-hover">⏱</div>
+            </td>
+            <td>Timeout</td>
+          </tr>
+          <tr>
+            <td class="notImplemented not-optional highlight-on-hover text-center">
+              <div class="highlight-on-hover">—</div>
+            </td>
+            <td>Not Implemented</td>
+          </tr>
+        </table>
       </section>
     
       <p>
@@ -120,55 +230,8 @@
     </section>
     <section id="conformance">
       <!--- This will take the tests and display them as matrices -->
-        <section class="informative" id="StatusList2021 Credentials (Issue &quot;statusPurpose: revocation&quot;)">
-          <h2>StatusList2021 Credentials (Issue &quot;statusPurpose: revocation&quot;)</h2>
-          <style>
-            .no-wrap {
-              white-space: nowrap;
-            }
-            td.optional {
-              background-color: #b9b7b7;
-            }
-           .text-right {
-              text-align: right;
-            }
-           .text-left {
-              text-align: left;
-            }
-           .text-center, th.text-center {
-             text-align: center;
-           }
-           .qr-code {
-             margin-left: 25px;
-           }
-           .row {
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-           }
-           .small-font {
-             font-size: 0.75rem;
-           }
-           .highlight-on-hover:hover {
-             background-color: yellow;
-             cursor: default;
-           }
-           .highlight-on-hover:hover + .relative-pos > .err {
-             display: block;
-           }
-           pre, code.hljs {
-             overflow: auto;
-           }
-           .relative-pos {
-             position: relative;
-             width: 0.5rem;
-             height: 0.5rem;
-             z-index: 1;
-           }
-           .relative-pos:hover > .err {
-             display: block;
-           }
-          </style>
+        <section class="informative" id="Issuers - BitstringStatusList">
+          <h2>Issuers - BitstringStatusList</h2>
           <div class="row">
             <table class="simple">
               <thead>
@@ -180,6 +243,7 @@
                   <span>&#8659;</span><span>Test Name</span>
                   </div>
                 </th>
+                    <th class="no-wrap small-font text-center">Open Security and Identity</th>
                 </thead>
               <tbody>
             </tbody>
@@ -194,129 +258,8 @@
             </div>
           </div>
         </section>
-        <section class="informative" id="StatusList2021 Credentials (Issue &quot;statusPurpose: suspension&quot;)">
-          <h2>StatusList2021 Credentials (Issue &quot;statusPurpose: suspension&quot;)</h2>
-          <style>
-            .no-wrap {
-              white-space: nowrap;
-            }
-            td.optional {
-              background-color: #b9b7b7;
-            }
-           .text-right {
-              text-align: right;
-            }
-           .text-left {
-              text-align: left;
-            }
-           .text-center, th.text-center {
-             text-align: center;
-           }
-           .qr-code {
-             margin-left: 25px;
-           }
-           .row {
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-           }
-           .small-font {
-             font-size: 0.75rem;
-           }
-           .highlight-on-hover:hover {
-             background-color: yellow;
-             cursor: default;
-           }
-           .highlight-on-hover:hover + .relative-pos > .err {
-             display: block;
-           }
-           pre, code.hljs {
-             overflow: auto;
-           }
-           .relative-pos {
-             position: relative;
-             width: 0.5rem;
-             height: 0.5rem;
-             z-index: 1;
-           }
-           .relative-pos:hover > .err {
-             display: block;
-           }
-          </style>
-          <div class="row">
-            <table class="simple">
-              <thead>
-                <th width="20%">
-                  <div class="text-right small-font">
-                  Issuer &#8658;
-                  </div>
-                  <div class="text-left small-font">
-                  <span>&#8659;</span><span>Test Name</span>
-                  </div>
-                </th>
-                </thead>
-              <tbody>
-            </tbody>
-            </table>
-          </div>
-          <div>
-            <div class="flex-center">
-              <div class="row">
-              </div>
-              <div class="">
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="informative" id="StatusList2021 Credentials (Verify)">
-          <h2>StatusList2021 Credentials (Verify)</h2>
-          <style>
-            .no-wrap {
-              white-space: nowrap;
-            }
-            td.optional {
-              background-color: #b9b7b7;
-            }
-           .text-right {
-              text-align: right;
-            }
-           .text-left {
-              text-align: left;
-            }
-           .text-center, th.text-center {
-             text-align: center;
-           }
-           .qr-code {
-             margin-left: 25px;
-           }
-           .row {
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-           }
-           .small-font {
-             font-size: 0.75rem;
-           }
-           .highlight-on-hover:hover {
-             background-color: yellow;
-             cursor: default;
-           }
-           .highlight-on-hover:hover + .relative-pos > .err {
-             display: block;
-           }
-           pre, code.hljs {
-             overflow: auto;
-           }
-           .relative-pos {
-             position: relative;
-             width: 0.5rem;
-             height: 0.5rem;
-             z-index: 1;
-           }
-           .relative-pos:hover > .err {
-             display: block;
-           }
-          </style>
+        <section class="informative" id="BitstringStatusList Credentials (Verify)">
+          <h2>BitstringStatusList Credentials (Verify)</h2>
           <div class="row">
             <table class="simple">
               <thead>
@@ -328,6 +271,7 @@
                   <span>&#8659;</span><span>Test Name</span>
                   </div>
                 </th>
+                    <th class="no-wrap small-font text-center">Open Security and Identity</th>
                 </thead>
               <tbody>
             </tbody>
@@ -342,55 +286,8 @@
             </div>
           </div>
         </section>
-        <section class="informative" id="StatusList2021 Credentials (Interop &quot;statusPurpose: revocation&quot;)">
-          <h2>StatusList2021 Credentials (Interop &quot;statusPurpose: revocation&quot;)</h2>
-          <style>
-            .no-wrap {
-              white-space: nowrap;
-            }
-            td.optional {
-              background-color: #b9b7b7;
-            }
-           .text-right {
-              text-align: right;
-            }
-           .text-left {
-              text-align: left;
-            }
-           .text-center, th.text-center {
-             text-align: center;
-           }
-           .qr-code {
-             margin-left: 25px;
-           }
-           .row {
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-           }
-           .small-font {
-             font-size: 0.75rem;
-           }
-           .highlight-on-hover:hover {
-             background-color: yellow;
-             cursor: default;
-           }
-           .highlight-on-hover:hover + .relative-pos > .err {
-             display: block;
-           }
-           pre, code.hljs {
-             overflow: auto;
-           }
-           .relative-pos {
-             position: relative;
-             width: 0.5rem;
-             height: 0.5rem;
-             z-index: 1;
-           }
-           .relative-pos:hover > .err {
-             display: block;
-           }
-          </style>
+        <section class="informative" id="BitstringStatusList Credentials (Interop &quot;statusPurpose: revocation&quot;)">
+          <h2>BitstringStatusList Credentials (Interop &quot;statusPurpose: revocation&quot;)</h2>
           <div class="row">
             <table class="simple">
               <thead>
@@ -402,8 +299,28 @@
                   <span>&#8659;</span><span>Issuer</span>
                   </div>
                 </th>
+                    <th class="no-wrap small-font text-center">Open Security and Identity</th>
                 </thead>
               <tbody>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">
+                    Open Security and Identity
+                </td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <details class="err hide">
+                        <summary>Cannot destructure property &#x27;settings&#x27; of &#x27;issuer&#x27; as it is undefined.:</summary>
+                        <pre>TypeError: Cannot destructure property &#x27;settings&#x27; of &#x27;issuer&#x27; as it is undefined.
+                        at issueVc (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/helpers.js:40:20)
+                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:36:18)
+                        at process.processImmediate (node:internal/timers:483:21)</pre>
+                      </details>
+                    </div>
+                  </td>
+              </tr>
             </tbody>
             </table>
           </div>
@@ -416,55 +333,8 @@
             </div>
           </div>
         </section>
-        <section class="informative" id="StatusList2021 Credentials (Interop &quot;statusPurpose: suspension&quot;)">
-          <h2>StatusList2021 Credentials (Interop &quot;statusPurpose: suspension&quot;)</h2>
-          <style>
-            .no-wrap {
-              white-space: nowrap;
-            }
-            td.optional {
-              background-color: #b9b7b7;
-            }
-           .text-right {
-              text-align: right;
-            }
-           .text-left {
-              text-align: left;
-            }
-           .text-center, th.text-center {
-             text-align: center;
-           }
-           .qr-code {
-             margin-left: 25px;
-           }
-           .row {
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-           }
-           .small-font {
-             font-size: 0.75rem;
-           }
-           .highlight-on-hover:hover {
-             background-color: yellow;
-             cursor: default;
-           }
-           .highlight-on-hover:hover + .relative-pos > .err {
-             display: block;
-           }
-           pre, code.hljs {
-             overflow: auto;
-           }
-           .relative-pos {
-             position: relative;
-             width: 0.5rem;
-             height: 0.5rem;
-             z-index: 1;
-           }
-           .relative-pos:hover > .err {
-             display: block;
-           }
-          </style>
+        <section class="informative" id="BitstringStatusList Credentials (Interop &quot;statusPurpose: suspension&quot;)">
+          <h2>BitstringStatusList Credentials (Interop &quot;statusPurpose: suspension&quot;)</h2>
           <div class="row">
             <table class="simple">
               <thead>
@@ -476,8 +346,28 @@
                   <span>&#8659;</span><span>Issuer</span>
                   </div>
                 </th>
+                    <th class="no-wrap small-font text-center">Open Security and Identity</th>
                 </thead>
               <tbody>
+              <tr>
+                <!--This is the name of the test-->
+                <td class="subtest">
+                    Open Security and Identity
+                </td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <details class="err hide">
+                        <summary>Cannot destructure property &#x27;settings&#x27; of &#x27;issuer&#x27; as it is undefined.:</summary>
+                        <pre>TypeError: Cannot destructure property &#x27;settings&#x27; of &#x27;issuer&#x27; as it is undefined.
+                        at issueVc (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/helpers.js:40:20)
+                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:67:18)
+                        at process.processImmediate (node:internal/timers:483:21)</pre>
+                      </details>
+                    </div>
+                  </td>
+              </tr>
             </tbody>
             </table>
           </div>
