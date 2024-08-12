@@ -77,7 +77,7 @@ describe('Issuers - BitstringStatusList',
                   'Expected credentialStatus.id to be a string.'
                 );
               } else {
-                if(statusEntry === statusEntries[statusEntries.lenght - 1]) {
+                if(statusEntry === statusEntries[statusEntries.length - 1]) {
                   this.test.cell.skipMessage = 'No id property included.';
                   this.skip();
                 } else {
@@ -182,7 +182,7 @@ describe('Issuers - BitstringStatusList',
                 statusEntry.statusSize.should.be.gt(0,
                   'Expected statusSize to be greater than zero.');
               } else {
-                if(statusEntry === statusEntries[statusEntries.lenght - 1]) {
+                if(statusEntry === statusEntries[statusEntries.length - 1]) {
                   this.test.cell.skipMessage = 'No statusSize property ' +
                   'included.';
                   this.skip();
@@ -204,7 +204,7 @@ describe('Issuers - BitstringStatusList',
                 statusEntry.should.have.own.property(
                   'statusMessage');
               } else {
-                if(statusEntry === statusEntries[statusEntries.lenght - 1]) {
+                if(statusEntry === statusEntries[statusEntries.length - 1]) {
                   this.test.cell.skipMessage = 'No statusSize property ' +
                   'included.';
                   this.skip();
@@ -225,7 +225,7 @@ describe('Issuers - BitstringStatusList',
                   an('array').length.should.be.
                   equal(statusEntry.statusSize);
               } else {
-                if(statusEntry === statusEntries[statusEntries.lenght - 1]) {
+                if(statusEntry === statusEntries[statusEntries.length - 1]) {
                   this.test.cell.skipMessage = 'No statusMessage property ' +
                   'included.';
                   this.skip();
@@ -246,10 +246,10 @@ describe('Issuers - BitstringStatusList',
                 statusEntry.statusMessage.should.be.
                   an('array').length.should.be.
                   equal(statusEntry.statusSize,
-                    'Expected statusMessage lenght to be equal to ' +
+                    'Expected statusMessage length to be equal to ' +
                     'statusSize.');
               } else {
-                if(statusEntry === statusEntries[statusEntries.lenght - 1]) {
+                if(statusEntry === statusEntries[statusEntries.length - 1]) {
                   this.test.cell.skipMessage = 'No statusMessage property ' +
                   'included.';
                   this.skip();
@@ -271,7 +271,7 @@ describe('Issuers - BitstringStatusList',
                 statusEntry.should.have.own.property(
                   'statusMessage');
               } else {
-                if(statusEntry === statusEntries[statusEntries.lenght - 1]) {
+                if(statusEntry === statusEntries[statusEntries.length - 1]) {
                   this.test.cell.skipMessage = 'No greater than 1 ' +
                   'statusSize property included.';
                   this.skip();
@@ -298,7 +298,7 @@ describe('Issuers - BitstringStatusList',
                   statusMessage.should.each.have.property(
                     'message').that.is.a('string');
               } else {
-                if(statusEntry === statusEntries[statusEntries.lenght - 1]) {
+                if(statusEntry === statusEntries[statusEntries.length - 1]) {
                   this.test.cell.skipMessage = 'No statusMessage ' +
                   'property included.';
                   this.skip();
@@ -327,7 +327,7 @@ describe('Issuers - BitstringStatusList',
                 }
                 // TODO test for URLS
               } else {
-                if(statusEntry === statusEntries[statusEntries.lenght - 1]) {
+                if(statusEntry === statusEntries[statusEntries.length - 1]) {
                   this.test.cell.skipMessage = 'No statusReference ' +
                   'property included.';
                   this.skip();
