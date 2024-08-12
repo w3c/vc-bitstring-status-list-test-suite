@@ -1,6 +1,7 @@
 /*!
  * Copyright (c) 2022-2023 Digital Bazaar, Inc. All rights reserved.
  */
+import * as sl from '@digitalbazaar/vc-status-list';
 import chai from 'chai';
 import {createRequire} from 'node:module';
 import {decodeList} from '@digitalbazaar/vc-status-list';
@@ -104,4 +105,22 @@ export async function updateStatus({
   const {status} = await getCredentialStatus({verifiableCredential: vc});
   status.should.equal(true);
   return vc;
+}
+
+export async function decodeSl({
+  encodedList
+}) {
+  let decoded;
+  let error;
+  console.log(encodedList);
+  try {
+    // Uncompress encodedList
+    decoded = await sl.decodedList({encodedList});
+  } catch(e) {
+    error = e;
+  }
+  should.not.exist(error,
+    'Expected encodedList to be a Multibase-encoded base64url' +
+    'representation of a GZIP-compressed bitstring.');
+  return decoded;
 }
