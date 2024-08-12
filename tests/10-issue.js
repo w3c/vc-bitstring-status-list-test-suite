@@ -388,6 +388,13 @@ describe('Issuers - BitstringStatusList Credential',
           'as defined in [VC-DATA-MODEL-2.0].',
         async function() {
           this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=When%20a%20status%20list%20verifiable%20credential%20is%20published%2C%20it%20MUST%20be%20a%20conforming%20document%2C%20as%20defined%20in%20%5BVC%2DDATA%2DMODEL%2D2.0%5D';
+          should.exist(issuerResponse,
+            'Expected an issuer response.');
+          should.not.exist(err,
+            'Expected no errors in the issuer response.');
+          issuerResponse.status.should.equal(201,
+            'Expected response http code 201.');
+          should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);
           for(statusListCredential of statusListCredentials) {
             testSlCredential({slCredential:
               statusListCredential},
