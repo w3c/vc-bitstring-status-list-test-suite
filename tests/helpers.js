@@ -1,7 +1,8 @@
 /*!
  * Copyright (c) 2022-2023 Digital Bazaar, Inc. All rights reserved.
  */
-import * as sl from '@digitalbazaar/vc-status-list';
+import * as base64url from 'base64url-universal';
+// import * as sl from '@digitalbazaar/vc-status-list';
 import chai from 'chai';
 import {createRequire} from 'node:module';
 import {decodeList} from '@digitalbazaar/vc-status-list';
@@ -9,6 +10,7 @@ import {documentLoader} from './documentLoader.js';
 import {httpClient} from '@digitalbazaar/http-client';
 import https from 'https';
 import {klona} from 'klona';
+import {ungzip} from 'pako';
 import {v4 as uuidv4} from 'uuid';
 const require = createRequire(import.meta.url);
 const validVc = require('./validVc.json');
@@ -107,15 +109,16 @@ export async function updateStatus({
   return vc;
 }
 
-export async function decodeSl({
-  encodedList
-}) {
+export async function decodeSl({encodedList}) {
+  encodedList[0].should.equal('u',
+    'Expected encodedList to be a Multibase-encoded ' +
+    'base64url value.'
+  );
   let decoded;
   let error;
-  console.log(encodedList);
   try {
     // Uncompress encodedList
-    decoded = await sl.decodedList({encodedList});
+    decoded = ungzip(base64url.decode(encodedList.substring(1)));
   } catch(e) {
     error = e;
   }
