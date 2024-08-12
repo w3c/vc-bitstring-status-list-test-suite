@@ -1,6 +1,8 @@
 /*!
  * Copyright (c) 2022-2023 Digital Bazaar, Inc. All rights reserved.
  */
+import * as base64url from 'base64url-universal';
+// import * as sl from '@digitalbazaar/vc-status-list';
 import chai from 'chai';
 import {createRequire} from 'node:module';
 import {decodeList} from '@digitalbazaar/vc-status-list';
@@ -8,6 +10,7 @@ import {documentLoader} from './documentLoader.js';
 import {httpClient} from '@digitalbazaar/http-client';
 import https from 'https';
 import {klona} from 'klona';
+import {ungzip} from 'pako';
 import {v4 as uuidv4} from 'uuid';
 const require = createRequire(import.meta.url);
 const validVc = require('./validVc.json');
@@ -45,9 +48,8 @@ export const issueVc = async ({issuer}) => {
   return issuer.post({json: body});
 };
 
-export const getSlc = async ({issuedVc}) => {
-  const {credentialStatus: {statusListCredential}} = issuedVc;
-  const {document} = await documentLoader(statusListCredential);
+export const getSlc = async statusEntry => {
+  const {document} = await documentLoader(statusEntry.statusListCredential);
   return {slc: document};
 };
 
@@ -105,4 +107,23 @@ export async function updateStatus({
   const {status} = await getCredentialStatus({verifiableCredential: vc});
   status.should.equal(true);
   return vc;
+}
+
+export async function decodeSl({encodedList}) {
+  encodedList[0].should.equal('u',
+    'Expected encodedList to be a Multibase-encoded ' +
+    'base64url value.'
+  );
+  let decoded;
+  let error;
+  try {
+    // Uncompress encodedList
+    decoded = ungzip(base64url.decode(encodedList.substring(1)));
+  } catch(e) {
+    error = e;
+  }
+  should.not.exist(error,
+    'Expected encodedList to be a Multibase-encoded base64url' +
+    'representation of a GZIP-compressed bitstring.');
+  return decoded;
 }
