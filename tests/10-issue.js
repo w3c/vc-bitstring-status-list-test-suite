@@ -25,12 +25,13 @@ describe('Issuers - BitstringStatusList',
       describe(issuerName, function() {
         let issuerResponse;
         let err;
-        let statusEntry;
         let issuedVc;
+        let statusEntry;
         let statusEntries;
         beforeEach(function() {
-          this.test.cell = {
-            columnId: issuerName, rowId: this.test.title
+          this.currentTest.cell = {
+            columnId: issuerName,
+            rowId: this.test.title
           };
         });
         before(async function() {
@@ -69,13 +70,14 @@ describe('Issuers - BitstringStatusList',
             'It MUST NOT be the URL for the status list.',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20the%20value%20is%20expected%20to%20be%20a%20URL%20that%20identifies%20the%20status%20information%20associated%20with%20the%20verifiable%20credential.';
-            for(statusEntry in statusEntries) {
-              if('id' in statusEntries[statusEntry]) {
+            for(statusEntry of statusEntries) {
+              if('id' in statusEntry) {
                 // TODO test for URI
-                statusEntries[statusEntry].id.should.be.a('string',
+                statusEntry.id.should.be.a('string',
                   'Expected credentialStatus.id to be a string.'
                 );
               } else {
+                this.test.cell.skipMessage = 'No id property included.';
                 this.skip();
               }
             }
@@ -83,12 +85,12 @@ describe('Issuers - BitstringStatusList',
           it('The type property MUST be BitstringStatusListEntry. ',
             async function() {
               this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20type%20property%20MUST%20be%20BitstringStatusListEntry.';
-              for(statusEntry in statusEntries) {
-                statusEntries[statusEntry].should.have.own.property(
+              for(statusEntry of statusEntries) {
+                statusEntry.should.have.own.property(
                   'type').to.be.a('string',
                   'Expected credentialStatus.type to be a string.'
                 );
-                statusEntries[statusEntry].type.should.equal(
+                statusEntry.type.should.equal(
                   'BitstringStatusListEntry',
                   'Expected credentialStatus.type to be ' +
                   'BitstringStatusListEntry.'
@@ -98,8 +100,8 @@ describe('Issuers - BitstringStatusList',
           it('The purpose of the status entry MUST be a string.',
             async function() {
               this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20purpose%20of%20the%20status%20entry%20MUST%20be%20a%20string';
-              for(statusEntry in statusEntries) {
-                statusEntries[statusEntry].should.have.own.property(
+              for(statusEntry of statusEntries) {
+                statusEntry.should.have.own.property(
                   'statusPurpose').to.be.a('string',
                   'Expected credentialStatus.statusPurpose to be a string.'
                 );
@@ -109,18 +111,18 @@ describe('Issuers - BitstringStatusList',
             'greater than or equal to 0, expressed as a string in base 10.',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20statusListIndex%20property%20MUST%20be%20an%20arbitrary%20size%20integer%20greater%20than%20or%20equal%20to%200%2C%20expressed%20as%20a%20string%20in%20base%2010';
-            for(statusEntry in statusEntries) {
-              statusEntries[statusEntry].should.have.own.property(
+            for(statusEntry of statusEntries) {
+              statusEntry.should.have.own.property(
                 'statusListIndex').to.be.a('string',
                 'Expected statusListIndex to be a string.'
               );
               assert(
-                String(parseInt(statusEntries[statusEntry].statusListIndex)) ===
-                statusEntries[statusEntry].statusListIndex,
+                String(parseInt(statusEntry.statusListIndex)) ===
+                statusEntry.statusListIndex,
                 'Expected statusSize value to be an integer ' +
                 'expressed as a string in base 10.'
               );
-              parseInt(statusEntries[statusEntry].statusListIndex).
+              parseInt(statusEntry.statusListIndex).
                 should.be.gte(0,
                   'Expected credentialStatus.statusListIndex to be >= 0.');
             }
@@ -130,14 +132,13 @@ describe('Issuers - BitstringStatusList',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20statusListCredential%20property%20MUST%20be%20a%20URL%20to%20a%20verifiable%20credential.';
             // TODO check for URI
-            for(statusEntry in statusEntries) {
-              statusEntries[statusEntry].should.have.own.
+            for(statusEntry of statusEntries) {
+              statusEntry.should.have.own.
                 property('statusListCredential').to.be.
                 a('string',
                   'Expected credentialStatus.statusListCredential to be a URL.'
                 );
-              const {slc} = await getSlc(statusEntries[statusEntry]);
-              console.log(statusEntries[statusEntry]);
+              const {slc} = await getSlc(statusEntry);
               should.exist(slc,
                 'Expected statusListCredential to resolve to a ' +
                 'Verifiable Credential');
@@ -149,8 +150,8 @@ describe('Issuers - BitstringStatusList',
             'BitstringStatusListCredential value.',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=When%20the%20URL%20is%20dereferenced%2C%20the%20resulting%20verifiable%20credential%20MUST%20have%20type%20property%20that%20includes%20the%20BitstringStatusListCredential%20value.';
-            for(statusEntry in statusEntries) {
-              const {slc} = await getSlc(statusEntries[statusEntry]);
+            for(statusEntry of statusEntries) {
+              const {slc} = await getSlc(statusEntry);
               slc.should.have.own.
                 property('type').to.be.
                 an('array',
@@ -166,17 +167,18 @@ describe('Issuers - BitstringStatusList',
             'statusSize MUST be an integer greater than zero.',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20statusSize%20MUST%20be%20an%20integer%20greater%20than%20zero.';
-            for(statusEntry in statusEntries) {
-              if('statusSize' in statusEntries[statusEntry]) {
-                statusEntries[statusEntry].statusSize.should.be.a('number',
+            for(statusEntry of statusEntries) {
+              if('statusSize' in statusEntry) {
+                statusEntry.statusSize.should.be.a('number',
                   'Expected statusSize to be an integer.');
                 // TODO test for integer
                 assert(Number.isInteger(
-                  statusEntries[statusEntry].statusSize),
+                  statusEntry.statusSize),
                 'Expected statusSize to be an integer.');
-                statusEntries[statusEntry].statusSize.should.be.gt(0,
+                statusEntry.statusSize.should.be.gt(0,
                   'Expected statusSize to be greater than zero.');
               } else {
+                this.test.cell.skipMessage = 'No statusSize property included.';
                 this.skip();
               }
             }
@@ -186,13 +188,14 @@ describe('Issuers - BitstringStatusList',
             'MUST be present.',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20statusSize%20is%20provided%20and%20is%20greater%20than%201%2C%20then%20the%20property%20credentialStatus.statusMessage%20MUST%20be%20present';
-            for(statusEntry in statusEntries) {
-              if('statusSize' in statusEntries[statusEntry] &&
-                Number.isInteger(statusEntries[statusEntry].statusSize) &&
-                statusEntries[statusEntry].statusSize.gt(1)) {
-                statusEntries[statusEntry].should.have.own.property(
+            for(statusEntry of statusEntries) {
+              if('statusSize' in statusEntry &&
+                Number.isInteger(statusEntry.statusSize) &&
+                statusEntry.statusSize.gt(1)) {
+                statusEntry.should.have.own.property(
                   'statusMessage');
               } else {
+                this.test.cell.skipMessage = 'No statusSize property included.';
                 this.skip();
               }
             }
@@ -201,13 +204,15 @@ describe('Issuers - BitstringStatusList',
             'of possible values.',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=the%20number%20of%20status%20messages%20MUST%20equal%20the%20number%20of%20possible%20values';
-            for(statusEntry in statusEntries) {
-              if('statusSize' in statusEntries[statusEntry] &&
-                'statusMessage' in statusEntries[statusEntry]) {
-                statusEntries[statusEntry].statusMessage.should.be.
+            for(statusEntry of statusEntries) {
+              if('statusSize' in statusEntry &&
+                'statusMessage' in statusEntry) {
+                statusEntry.statusMessage.should.be.
                   an('array').length.should.be.
-                  equal(statusEntries[statusEntry].statusSize);
+                  equal(statusEntry.statusSize);
               } else {
+                this.test.cell.skipMessage = 'No statusMessage property ' +
+                'included.';
                 this.skip();
               }
             }
@@ -217,15 +222,17 @@ describe('Issuers - BitstringStatusList',
             'of possible status messages indicated by statusSize.',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20the%20statusMessage%20property%20MUST%20be%20an%20array%2C%20the%20length%20of%20which%20MUST%20equal%20the%20number%20of%20possible%20status%20messages%20indicated%20by%20statusSize';
-            for(statusEntry in statusEntries) {
-              if('statusMessage' in statusEntries[statusEntry] &&
-                'statusSize' in statusEntries[statusEntry]) {
-                statusEntries[statusEntry].statusMessage.should.be.
+            for(statusEntry of statusEntries) {
+              if('statusMessage' in statusEntry &&
+                'statusSize' in statusEntry) {
+                statusEntry.statusMessage.should.be.
                   an('array').length.should.be.
-                  equal(statusEntries[statusEntry].statusSize,
+                  equal(statusEntry.statusSize,
                     'Expected statusMessage lenght to be equal to ' +
                     'statusSize.');
               } else {
+                this.test.cell.skipMessage = 'No statusMessage property ' +
+                'included.';
                 this.skip();
               }
             }
@@ -234,14 +241,16 @@ describe('Issuers - BitstringStatusList',
           'and MUST be present if statusSize is greater than 1.',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=statusMessage%20MAY%20be%20present%20if%20statusSize%20is%201%2C%20and%20MUST%20be%20present%20if%20statusSize%20is%20greater%20than%201';
-            for(statusEntry in statusEntries) {
-              if('statusSize' in statusEntries[statusEntry] &&
-                Number.isInteger(statusEntries[statusEntry].statusSize) &&
-                statusEntries[statusEntry].statusSize.gt(1)
+            for(statusEntry of statusEntries) {
+              if('statusSize' in statusEntry &&
+                Number.isInteger(statusEntry.statusSize) &&
+                statusEntry.statusSize.gt(1)
               ) {
-                statusEntries[statusEntry].should.have.own.property(
+                statusEntry.should.have.own.property(
                   'statusMessage');
               } else {
+                this.test.cell.skipMessage = 'No greater than 1 ' +
+                'statusSize property included.';
                 this.skip();
               }
             }
@@ -251,18 +260,20 @@ describe('Issuers - BitstringStatusList',
             'and "message".',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20the%20statusMessage%20array%20is%20present%2C%20each%20element%20MUST%20contain%20the%20two%20properties%20described%20below%2C%20and%20MAY%20contain%20additional%20properties.';
-            for(statusEntry in statusEntries) {
-              if('statusMessage' in statusEntries[statusEntry]) {
+            for(statusEntry of statusEntries) {
+              if('statusMessage' in statusEntry) {
                 // TODO this needs more testing:
                 // a string representing the hexadecimal
                 // value of the status prefixed with 0x
-                statusEntries[statusEntry].
+                statusEntry.
                   statusMessage.should.each.have.property(
                     'status').that.is.a('string');
-                statusEntries[statusEntry].
+                statusEntry.
                   statusMessage.should.each.have.property(
                     'message').that.is.a('string');
               } else {
+                this.test.cell.skipMessage = 'No statusMessage ' +
+                'property included.';
                 this.skip();
               }
             }
@@ -272,20 +283,22 @@ describe('Issuers - BitstringStatusList',
               'to the status.',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20its%20value%20MUST%20be%20a%20URL%20or%20an%20array%20of%20URLs%20%5BURL%5D%20which%20dereference%20to%20material%20related%20to%20the%20status';
-            for(statusEntry in statusEntries) {
-              if('statusReference' in statusEntries[statusEntry]) {
+            for(statusEntry of statusEntries) {
+              if('statusReference' in statusEntry) {
                 const statusReferenceType = typeof (
-                  statusEntries[statusEntry].statusReference);
+                  statusEntry.statusReference);
                 statusReferenceType.should.be.oneOf(['string', 'object'],
                   'Expected statusReference to be an string or an array.');
                 if(statusReferenceType === 'object') {
-                  statusEntries[statusEntry].statusReference.should.be.an(
+                  statusEntry.statusReference.should.be.an(
                     'array');
-                  statusEntries[statusEntry].statusReference.forEach(
+                  statusEntry.statusReference.forEach(
                     item => item.should.be.a('string'));
                 }
                 // TODO test for URLS
               } else {
+                this.test.cell.skipMessage = 'No statusReference ' +
+                'property included.';
                 this.skip();
               }
             }
@@ -296,9 +309,9 @@ describe('Issuers - BitstringStatusList',
           let statusListCredentials;
           before(async function() {
             statusListCredentials = [];
-            for(statusEntry in statusEntries) {
+            for(statusEntry of statusEntries) {
               statusListCredentials.push(
-                (await getSlc(statusEntries[statusEntry])).slc);
+                (await getSlc(statusEntry)).slc);
             }
           });
           it('When a status list verifiable credential is published, ' +
@@ -306,9 +319,9 @@ describe('Issuers - BitstringStatusList',
             'as defined in [VC-DATA-MODEL-2.0].',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=When%20a%20status%20list%20verifiable%20credential%20is%20published%2C%20it%20MUST%20be%20a%20conforming%20document%2C%20as%20defined%20in%20%5BVC%2DDATA%2DMODEL%2D2.0%5D';
-            for(statusListCredential in statusListCredentials) {
+            for(statusListCredential of statusListCredentials) {
               testSlCredential({slCredential:
-                statusListCredentials[statusListCredential]},
+                statusListCredential},
               'Expected status credential to conform to VCDM 2.0.');
             }
           });
@@ -324,13 +337,13 @@ describe('Issuers - BitstringStatusList',
             'BitstringStatusListCredential value.',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20verifiable%20credential%20that%20contains%20the%20status%20list%20MUST%20express%20a%20type%20property%20that%20includes%20the%20BitstringStatusListCredential%20value.';
-            for(statusListCredential in statusListCredentials) {
-              statusListCredentials[statusListCredential]
+            for(statusListCredential of statusListCredentials) {
+              statusListCredential
                 .should.have.own.property(
                   'type').to.be.an('array',
                   'Expected type property to be a string or an array.'
                 );
-              statusListCredentials[statusListCredential]
+              statusListCredential
                 .type.should.include(
                   'BitstringStatusListCredential',
                   'Expected credential status type to include ' +
@@ -342,13 +355,13 @@ describe('Issuers - BitstringStatusList',
             'MUST be BitstringStatusList.',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20type%20of%20the%20credential%20subject%2C%20which%20is%20the%20status%20list%2C%20MUST%20be%20BitstringStatusList.';
-            for(statusListCredential in statusListCredentials) {
-              statusListCredentials[statusListCredential].
+            for(statusListCredential of statusListCredentials) {
+              statusListCredential.
                 credentialSubject.should.have.own.property(
                   'type').to.be.a('string',
                   'Expected type property to be a string.'
                 );
-              statusListCredentials[statusListCredential].
+              statusListCredential.
                 credentialSubject.type.should.equal(
                   'BitstringStatusList',
                   'Expected credential status type to be ' +
@@ -360,14 +373,14 @@ describe('Issuers - BitstringStatusList',
             'statusPurpose, MUST be one or more strings.',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20value%20of%20the%20purpose%20property%20of%20the%20status%20entry%2C%20statusPurpose%2C%20MUST%20be%20one%20or%20more%20strings.';
-            for(statusListCredential in statusListCredentials) {
+            for(statusListCredential of statusListCredentials) {
               const statusPurposeType = typeof (
-                statusListCredentials[statusListCredential].
+                statusListCredential.
                   credentialSubject.statusPurpose);
               statusPurposeType.should.be.oneOf(['string', 'object']);
               if(statusPurposeType === 'object') {
                 const credentialSubject =
-                  statusListCredentials[statusListCredential].credentialSubject;
+                  statusListCredential.credentialSubject;
                 credentialSubject.statusPurpose.should.be.an(
                   'array');
                 credentialSubject.statusPurpose.forEach(
@@ -383,9 +396,9 @@ describe('Issuers - BitstringStatusList',
             'values.',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20encodedList%20property%20of%20the%20credential%20subject%20MUST%20be%20a%20Multibase%2Dencoded%20base64url%20(with%20no%20padding)%20%5BRFC4648%5D%20representation%20of%20the%20GZIP%2Dcompressed%20%5BRFC1952%5D%20bitstring%20values%20for%20the%20associated%20range%20of%20verifiable%20credential%20status%20values.';
-            for(statusListCredential in statusListCredentials) {
+            for(statusListCredential of statusListCredentials) {
               const credentialSubject =
-                statusListCredentials[statusListCredential].credentialSubject;
+                statusListCredential.credentialSubject;
               const {encodedList} = credentialSubject;
               // Uncompress encodedList
               const decoded = await sl.decodeList({encodedList});
@@ -398,9 +411,9 @@ describe('Issuers - BitstringStatusList',
           it('The uncompressed bitstring MUST be at least 16KB in size.',
             async function() {
               this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20uncompressed%20bitstring%20MUST%20be%20at%20least%2016KB%20in%20size.';
-              for(statusListCredential in statusListCredentials) {
+              for(statusListCredential of statusListCredentials) {
                 const credentialSubject =
-                  statusListCredentials[statusListCredential].credentialSubject;
+                  statusListCredential.credentialSubject;
                 const {encodedList} = credentialSubject;
                 // Uncompress encodedList
                 const decoded = await sl.decodeList({encodedList});
@@ -421,9 +434,9 @@ describe('Issuers - BitstringStatusList',
             'bit in the bitstring.',
           async function() {
             this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20bitstring%20MUST,Bitstring%20Encoding.';
-            for(statusListCredential in statusListCredentials) {
+            for(statusListCredential of statusListCredentials) {
               const credentialSubject =
-                statusListCredentials[statusListCredential].credentialSubject;
+                statusListCredential.credentialSubject;
               const {encodedList} = credentialSubject;
               const decoded = await sl.decodeList({encodedList});
               decoded.bitstring.bits[0].should.be.equal(0);
