@@ -25,7 +25,7 @@ function setupMatrix() {
   this.matrix = true;
   this.report = true;
   this.implemented = [...verifierMatches.keys()];
-  this.rowLabel = 'Test Name';
+  this.rowLabel = 'Issuer';
   this.columnLabel = 'Verifier';
 }
 
