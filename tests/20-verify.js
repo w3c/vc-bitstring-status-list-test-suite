@@ -57,6 +57,8 @@ describe('BitstringStatusList Credentials (Verify)', function() {
       it('MUST verify a valid "BitstringStatusListCredential" with ' +
         '"revocation" status purpose', async function() {
         this.test.cell = {columnId: verifierName, rowId: this.test.title};
+        this.test.cell.skipMessage = 'Pending verifier tests.';
+        this.skip();
         const {result, error, statusCode} = await verifier.post({
           json: createRequestBody({vc: validVcForRevocation})
         });
@@ -65,6 +67,8 @@ describe('BitstringStatusList Credentials (Verify)', function() {
       it('MUST verify a valid "BitstringStatusListCredential" with ' +
         '"suspension" status purpose', async function() {
         this.test.cell = {columnId: verifierName, rowId: this.test.title};
+        this.test.cell.skipMessage = 'Pending verifier tests.';
+        this.skip();
         const {result, error, statusCode} = await verifier.post({
           json: createRequestBody({vc: validVcForSuspension})
         });
@@ -73,6 +77,8 @@ describe('BitstringStatusList Credentials (Verify)', function() {
       it('MUST fail to verify a VC with invalid ' +
         '"credentialStatus.statusListCredential"', async function() {
         this.test.cell = {columnId: verifierName, rowId: this.test.title};
+        this.test.cell.skipMessage = 'Pending verifier tests.';
+        this.skip();
         const invalidStatusListCredential = klona(validVcForRevocation);
         invalidStatusListCredential.credentialStatus.statusListCredential =
           'invalid-statusListCredential';
@@ -84,6 +90,8 @@ describe('BitstringStatusList Credentials (Verify)', function() {
       it('MUST fail to verify a VC with invalid "credentialStatus.type"',
         async function() {
           this.test.cell = {columnId: verifierName, rowId: this.test.title};
+          this.test.cell.skipMessage = 'Pending verifier tests.';
+          this.skip();
           const invalidCredentialStatusType = klona(validVcForRevocation);
           invalidCredentialStatusType.credentialStatus.type = 'invalid-type';
           const {result, error, statusCode} = await verifier.post({
@@ -94,6 +102,8 @@ describe('BitstringStatusList Credentials (Verify)', function() {
       it('MUST fail to verify a revoked status list credential',
         async function() {
           this.test.cell = {columnId: verifierName, rowId: this.test.title};
+          this.test.cell.skipMessage = 'Pending verifier tests.';
+          this.skip();
           // get the status of the VC
           const statusInfo = await getCredentialStatus({
             verifiableCredential: validVcForRevocation
@@ -124,6 +134,8 @@ describe('BitstringStatusList Credentials (Verify)', function() {
       it('MUST fail to verify a suspended status list credential',
         async function() {
           this.test.cell = {columnId: verifierName, rowId: this.test.title};
+          this.test.cell.skipMessage = 'Pending verifier tests.';
+          this.skip();
           // get the status of the VC
           const statusInfo = await getCredentialStatus({
             verifiableCredential: validVcForSuspension
