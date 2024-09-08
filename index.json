@@ -22,9 +22,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:27026ad8-b148-4f40-a381-c3604c0cc2a7",
+              "_testId": "urn:uuid:f4692173-d3cf-4eff-a28c-ded6597646b6",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "Any expression of the data model in this section MUST be expressed in a conforming verifiable credential as defined in [VC-DATA-MODEL-2.0]."
@@ -36,12 +36,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2689,
+                "_idleStart": 2885,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 4,
+              "duration": 2,
               "state": "passed",
               "speed": "fast"
             },
@@ -58,9 +58,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:682a2fab-a6c0-44ca-bed7-37f203bcdfe6",
+              "_testId": "urn:uuid:3498f9b9-4ef4-4048-9e61-d3bfb605668c",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, the id value is expected to be a URL that identifies the status information associated with the verifiable credential. It MUST NOT be the URL for the status list."
@@ -72,12 +72,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2690,
+                "_idleStart": 2886,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             },
@@ -94,9 +94,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:e6416753-213a-4344-a49d-a20c140641fc",
+              "_testId": "urn:uuid:928b4b3e-c548-4833-929c-3fe558e8309f",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The type property MUST be BitstringStatusListEntry. "
@@ -108,7 +108,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2691,
+                "_idleStart": 2886,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -130,9 +130,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:0ca12f5f-ed71-40f7-a8c2-5e61f15bd697",
+              "_testId": "urn:uuid:73a46b03-5357-4042-bb33-0ed70e3a5474",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The purpose of the status entry MUST be a string."
@@ -144,12 +144,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2691,
+                "_idleStart": 2887,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             },
@@ -166,9 +166,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:e58894a3-b64b-4946-80f0-b7d152f9898f",
+              "_testId": "urn:uuid:fcd516d0-b905-4c21-a035-d3e173786401",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The statusListIndex property MUST be an arbitrary size integer greater than or equal to 0, expressed as a string in base 10."
@@ -180,12 +180,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2692,
+                "_idleStart": 2887,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             },
@@ -202,9 +202,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:01055c37-2111-4caa-9d43-f323992f92f9",
+              "_testId": "urn:uuid:fbd60e3a-c685-434b-91c9-3e6e9a890204",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The statusListCredential property MUST be a URL to a verifiable credential."
@@ -216,12 +216,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2693,
+                "_idleStart": 2888,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1156,
+              "duration": 1426,
               "state": "passed",
               "speed": "slow"
             },
@@ -238,9 +238,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:92f285f9-02ca-4ca7-bda7-0d3cc1e2da0e",
+              "_testId": "urn:uuid:65b3e7dd-a232-4b68-9414-310c0a3a848d",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "When the URL is dereferenced, the resulting verifiable credential MUST have type property that includes the BitstringStatusListCredential value."
@@ -252,14 +252,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3849,
+                "_idleStart": 4314,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 71,
+              "duration": 170,
               "state": "passed",
-              "speed": "medium"
+              "speed": "slow"
             },
             {
               "type": "test",
@@ -274,9 +274,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:fb70766e-29fb-405f-8aa6-55378950d6e4",
+              "_testId": "urn:uuid:c7b0101b-69dc-49b9-9447-a91c44a6beb8",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, statusSize MUST be an integer greater than zero.",
@@ -289,7 +289,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3920,
+                "_idleStart": 4484,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -310,9 +310,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:63278005-2bc1-4046-ade2-7b446fc9c2b8",
+              "_testId": "urn:uuid:cfb380b3-b1ea-4a3a-8d6b-08875ad35f71",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If statusSize is provided and is greater than 1, then the property credentialStatus.statusMessage MUST be present.",
@@ -325,12 +325,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3920,
+                "_idleStart": 4484,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "pending"
             },
             {
@@ -346,9 +346,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:a5cad833-647c-4ad5-acf9-cae98a52edd4",
+              "_testId": "urn:uuid:457f0a25-0833-4863-8dee-f42853058be6",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The number of status messages MUST equal the number of possible values.",
@@ -361,7 +361,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3921,
+                "_idleStart": 4485,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -382,9 +382,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:4eab193d-667f-4316-9382-6ce90b5b34ee",
+              "_testId": "urn:uuid:fb798a54-9c48-41e7-b845-1682045e34b4",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, the statusMessage property MUST be an array, the length of which MUST equal the number of possible status messages indicated by statusSize.",
@@ -397,12 +397,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3921,
+                "_idleStart": 4485,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "pending"
             },
             {
@@ -418,9 +418,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:4b369f20-6a61-4e0e-bc95-8544f848db78",
+              "_testId": "urn:uuid:b7e0e528-c434-4102-94c8-9e31c6f0ce82",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "statusMessage MAY be present if statusSize is 1, and MUST be present if statusSize is greater than 1.",
@@ -433,7 +433,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3921,
+                "_idleStart": 4485,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -454,9 +454,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:9e238020-e967-4d6a-a7a0-0a4567c40f6a",
+              "_testId": "urn:uuid:2d95c61f-f57c-4bed-ae72-f20439bc5107",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If the statusMessage array is present, each element MUST contain the two properties \"status\" and \"message\".",
@@ -469,7 +469,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3921,
+                "_idleStart": 4485,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -490,9 +490,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:c6b5dd4a-9247-4fd8-b764-54f6b5b72774",
+              "_testId": "urn:uuid:10eb2234-b06b-4859-9dea-cb6612fac810",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, the \"statusReference\" value MUST be a URL or an array of URLs [URL] which dereference(s) to material related to the status.",
@@ -505,12 +505,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3921,
+                "_idleStart": 4485,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "pending"
             }
           ],
@@ -530,7 +530,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
               "originalTitle": "\"before each\" hook: addPerTestMetadata",
@@ -553,7 +553,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
               "originalTitle": "\"before all\" hook",
@@ -563,12 +563,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 373,
+                "_idleStart": 331,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 2313,
+              "duration": 2552,
               "_error": null
             }
           ],
@@ -580,9 +580,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "WxMm0j2I3OShoy8qe1b8O",
+          "parent": "21G0_ovjAHx2BDSja1opw",
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:9ff5cc71-e868-45e3-a4c1-27db4be74bba"
+          "_testId": "urn:uuid:f1120f32-afb4-4328-bfdb-6f8185e93a9c"
         },
         {
           "title": "OpSecId",
@@ -602,9 +602,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:606366cf-c468-4a68-885a-608024d43479",
+              "_testId": "urn:uuid:10863bcc-3ae5-40bd-9b75-9057f6ed7b5f",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "Any expression of the data model in this section MUST be expressed in a conforming verifiable credential as defined in [VC-DATA-MODEL-2.0]."
@@ -616,12 +616,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4079,
+                "_idleStart": 4859,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             },
@@ -638,9 +638,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:ce55a5df-3dc8-4346-ac1c-271f66d503d7",
+              "_testId": "urn:uuid:46dc4a01-e012-4d9e-9058-e6a807fdf23f",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "If present, the id value is expected to be a URL that identifies the status information associated with the verifiable credential. It MUST NOT be the URL for the status list.",
@@ -653,7 +653,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4079,
+                "_idleStart": 4860,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -674,9 +674,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:863585f7-5a99-4e96-8dbf-3a9ce2eedc06",
+              "_testId": "urn:uuid:504d5af8-1533-44b7-9aee-e2f737bd1bd1",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The type property MUST be BitstringStatusListEntry. "
@@ -688,7 +688,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4080,
+                "_idleStart": 4860,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -710,9 +710,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:e56767b9-60af-41d3-bebf-53329d4c906b",
+              "_testId": "urn:uuid:80206d46-3aec-4fd4-8569-507cbd54e18e",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The purpose of the status entry MUST be a string."
@@ -724,7 +724,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4080,
+                "_idleStart": 4860,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -746,9 +746,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:4f855916-dca7-4b3b-9dba-a5bbe4a1ea7a",
+              "_testId": "urn:uuid:9af4f24f-4361-425d-a38c-a0c315c07e14",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The statusListIndex property MUST be an arbitrary size integer greater than or equal to 0, expressed as a string in base 10."
@@ -760,7 +760,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4081,
+                "_idleStart": 4861,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -769,11 +769,11 @@
               "state": "failed",
               "err": {
                 "name": "AssertionError",
-                "message": "Expected statusListIndex to be a string.: expected 96982 to be a string",
+                "message": "Expected statusListIndex to be a string.: expected 63874 to be a string",
                 "showDiff": false,
-                "actual": 96982,
+                "actual": 63874,
                 "operator": "strictEqual",
-                "stack": "AssertionError: Expected statusListIndex to be a string.: expected 96982 to be a string\n    at Context.<anonymous> (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js:129:40)\n    at process.processImmediate (node:internal/timers:483:21)"
+                "stack": "AssertionError: Expected statusListIndex to be a string.: expected 63874 to be a string\n    at Context.<anonymous> (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js:129:40)\n    at process.processImmediate (node:internal/timers:483:21)"
               }
             },
             {
@@ -789,9 +789,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:20bc8a25-4f93-4683-bf29-391999e860c9",
+              "_testId": "urn:uuid:90d19d43-49f4-4b20-8c76-166de58cd318",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The statusListCredential property MUST be a URL to a verifiable credential."
@@ -803,12 +803,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4083,
+                "_idleStart": 4864,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 88,
+              "duration": 251,
               "state": "passed",
               "speed": "slow"
             },
@@ -825,9 +825,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:d8b269cf-30ae-458c-a934-aa6f239764b0",
+              "_testId": "urn:uuid:eb23e786-09c7-403e-97da-31adf1e22ad7",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "When the URL is dereferenced, the resulting verifiable credential MUST have type property that includes the BitstringStatusListCredential value."
@@ -839,12 +839,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4171,
+                "_idleStart": 5115,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 8,
+              "duration": 12,
               "state": "passed",
               "speed": "fast"
             },
@@ -861,9 +861,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:beedd083-dcda-4c3c-b112-915b8db6f164",
+              "_testId": "urn:uuid:b0b40366-6c77-477b-9fbd-2f433a4300e8",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "If present, statusSize MUST be an integer greater than zero.",
@@ -876,7 +876,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4179,
+                "_idleStart": 5127,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -897,9 +897,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:21e2663b-82d5-4a15-89fc-bf21c980c225",
+              "_testId": "urn:uuid:1287ec48-74f4-43d3-9079-1e59eac03330",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "If statusSize is provided and is greater than 1, then the property credentialStatus.statusMessage MUST be present.",
@@ -912,7 +912,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4179,
+                "_idleStart": 5127,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -933,9 +933,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:8267f5d6-d178-4ee3-9971-c8b3a698b065",
+              "_testId": "urn:uuid:e278dd64-8707-478e-ab27-b3d5dc4f35e7",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The number of status messages MUST equal the number of possible values.",
@@ -948,7 +948,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4180,
+                "_idleStart": 5127,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -969,9 +969,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:ee587576-7d46-48d9-aca9-d53e5905b323",
+              "_testId": "urn:uuid:22224dcd-ea93-4e9f-bee0-56fc7a17bdb0",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "If present, the statusMessage property MUST be an array, the length of which MUST equal the number of possible status messages indicated by statusSize.",
@@ -984,7 +984,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4180,
+                "_idleStart": 5127,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1005,9 +1005,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:8b0427df-ff60-4fef-900f-a503e80f701d",
+              "_testId": "urn:uuid:be848069-623e-4ef4-bb73-4d8f62bdc189",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "statusMessage MAY be present if statusSize is 1, and MUST be present if statusSize is greater than 1.",
@@ -1020,7 +1020,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4180,
+                "_idleStart": 5127,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1041,9 +1041,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:0be84ca0-ca08-4009-9b75-747e7ccdd69d",
+              "_testId": "urn:uuid:03277468-2545-40da-9ffc-182912cb90f1",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "If the statusMessage array is present, each element MUST contain the two properties \"status\" and \"message\".",
@@ -1056,7 +1056,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4180,
+                "_idleStart": 5127,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1077,9 +1077,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:05a28eed-7cd2-456e-bbc4-52d63afe3a23",
+              "_testId": "urn:uuid:b370cf4b-b69e-464b-8d50-df36f6164994",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "If present, the \"statusReference\" value MUST be a URL or an array of URLs [URL] which dereference(s) to material related to the status.",
@@ -1092,7 +1092,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4180,
+                "_idleStart": 5127,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1117,7 +1117,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
               "originalTitle": "\"before each\" hook: addPerTestMetadata",
@@ -1140,7 +1140,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
               "originalTitle": "\"before all\" hook",
@@ -1150,12 +1150,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3922,
+                "_idleStart": 4486,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 157,
+              "duration": 373,
               "_error": null
             }
           ],
@@ -1167,9 +1167,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "WxMm0j2I3OShoy8qe1b8O",
+          "parent": "21G0_ovjAHx2BDSja1opw",
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:eda91c42-cfc7-4d15-826a-f9ba3075e8a7"
+          "_testId": "urn:uuid:68f85ef6-e4dd-4d8c-b499-792af1759a32"
         }
       ],
       "root": false,
@@ -1185,13 +1185,13 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "QTptfSjRH6PQZxAObYcl0",
+      "parent": "r1XO4JNePNtlz1U1IOi45",
       "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Test Name",
       "columnLabel": "Issuer",
-      "_testId": "urn:uuid:7bcaaaee-23ce-44c1-8a0b-7d438b169ba7",
+      "_testId": "urn:uuid:f3142772-5570-473a-a684-531289e1a149",
       "columns": [
         "Digital Bazaar",
         "OpSecId"
@@ -1214,9 +1214,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:27026ad8-b148-4f40-a381-c3604c0cc2a7",
+              "_testId": "urn:uuid:f4692173-d3cf-4eff-a28c-ded6597646b6",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "Any expression of the data model in this section MUST be expressed in a conforming verifiable credential as defined in [VC-DATA-MODEL-2.0]."
@@ -1228,12 +1228,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2689,
+                "_idleStart": 2885,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 4,
+              "duration": 2,
               "state": "passed",
               "speed": "fast"
             },
@@ -1250,9 +1250,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:606366cf-c468-4a68-885a-608024d43479",
+              "_testId": "urn:uuid:10863bcc-3ae5-40bd-9b75-9057f6ed7b5f",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "Any expression of the data model in this section MUST be expressed in a conforming verifiable credential as defined in [VC-DATA-MODEL-2.0]."
@@ -1264,12 +1264,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4079,
+                "_idleStart": 4859,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             }
@@ -1292,9 +1292,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:682a2fab-a6c0-44ca-bed7-37f203bcdfe6",
+              "_testId": "urn:uuid:3498f9b9-4ef4-4048-9e61-d3bfb605668c",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, the id value is expected to be a URL that identifies the status information associated with the verifiable credential. It MUST NOT be the URL for the status list."
@@ -1306,12 +1306,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2690,
+                "_idleStart": 2886,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             },
@@ -1328,9 +1328,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:ce55a5df-3dc8-4346-ac1c-271f66d503d7",
+              "_testId": "urn:uuid:46dc4a01-e012-4d9e-9058-e6a807fdf23f",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "If present, the id value is expected to be a URL that identifies the status information associated with the verifiable credential. It MUST NOT be the URL for the status list.",
@@ -1343,7 +1343,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4079,
+                "_idleStart": 4860,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1370,9 +1370,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:e6416753-213a-4344-a49d-a20c140641fc",
+              "_testId": "urn:uuid:928b4b3e-c548-4833-929c-3fe558e8309f",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The type property MUST be BitstringStatusListEntry. "
@@ -1384,7 +1384,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2691,
+                "_idleStart": 2886,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1406,9 +1406,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:863585f7-5a99-4e96-8dbf-3a9ce2eedc06",
+              "_testId": "urn:uuid:504d5af8-1533-44b7-9aee-e2f737bd1bd1",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The type property MUST be BitstringStatusListEntry. "
@@ -1420,7 +1420,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4080,
+                "_idleStart": 4860,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1448,9 +1448,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:0ca12f5f-ed71-40f7-a8c2-5e61f15bd697",
+              "_testId": "urn:uuid:73a46b03-5357-4042-bb33-0ed70e3a5474",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The purpose of the status entry MUST be a string."
@@ -1462,12 +1462,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2691,
+                "_idleStart": 2887,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             },
@@ -1484,9 +1484,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:e56767b9-60af-41d3-bebf-53329d4c906b",
+              "_testId": "urn:uuid:80206d46-3aec-4fd4-8569-507cbd54e18e",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The purpose of the status entry MUST be a string."
@@ -1498,7 +1498,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4080,
+                "_idleStart": 4860,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1526,9 +1526,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:e58894a3-b64b-4946-80f0-b7d152f9898f",
+              "_testId": "urn:uuid:fcd516d0-b905-4c21-a035-d3e173786401",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The statusListIndex property MUST be an arbitrary size integer greater than or equal to 0, expressed as a string in base 10."
@@ -1540,12 +1540,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2692,
+                "_idleStart": 2887,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             },
@@ -1562,9 +1562,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:4f855916-dca7-4b3b-9dba-a5bbe4a1ea7a",
+              "_testId": "urn:uuid:9af4f24f-4361-425d-a38c-a0c315c07e14",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The statusListIndex property MUST be an arbitrary size integer greater than or equal to 0, expressed as a string in base 10."
@@ -1576,7 +1576,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4081,
+                "_idleStart": 4861,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1585,11 +1585,11 @@
               "state": "failed",
               "err": {
                 "name": "AssertionError",
-                "message": "Expected statusListIndex to be a string.: expected 96982 to be a string",
+                "message": "Expected statusListIndex to be a string.: expected 63874 to be a string",
                 "showDiff": false,
-                "actual": 96982,
+                "actual": 63874,
                 "operator": "strictEqual",
-                "stack": "AssertionError: Expected statusListIndex to be a string.: expected 96982 to be a string\n    at Context.<anonymous> (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js:129:40)\n    at process.processImmediate (node:internal/timers:483:21)"
+                "stack": "AssertionError: Expected statusListIndex to be a string.: expected 63874 to be a string\n    at Context.<anonymous> (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js:129:40)\n    at process.processImmediate (node:internal/timers:483:21)"
               }
             }
           ]
@@ -1611,9 +1611,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:01055c37-2111-4caa-9d43-f323992f92f9",
+              "_testId": "urn:uuid:fbd60e3a-c685-434b-91c9-3e6e9a890204",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The statusListCredential property MUST be a URL to a verifiable credential."
@@ -1625,12 +1625,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 2693,
+                "_idleStart": 2888,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1156,
+              "duration": 1426,
               "state": "passed",
               "speed": "slow"
             },
@@ -1647,9 +1647,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:20bc8a25-4f93-4683-bf29-391999e860c9",
+              "_testId": "urn:uuid:90d19d43-49f4-4b20-8c76-166de58cd318",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The statusListCredential property MUST be a URL to a verifiable credential."
@@ -1661,12 +1661,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4083,
+                "_idleStart": 4864,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 88,
+              "duration": 251,
               "state": "passed",
               "speed": "slow"
             }
@@ -1689,9 +1689,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:92f285f9-02ca-4ca7-bda7-0d3cc1e2da0e",
+              "_testId": "urn:uuid:65b3e7dd-a232-4b68-9414-310c0a3a848d",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "When the URL is dereferenced, the resulting verifiable credential MUST have type property that includes the BitstringStatusListCredential value."
@@ -1703,14 +1703,14 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3849,
+                "_idleStart": 4314,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 71,
+              "duration": 170,
               "state": "passed",
-              "speed": "medium"
+              "speed": "slow"
             },
             {
               "type": "test",
@@ -1725,9 +1725,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:d8b269cf-30ae-458c-a934-aa6f239764b0",
+              "_testId": "urn:uuid:eb23e786-09c7-403e-97da-31adf1e22ad7",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "When the URL is dereferenced, the resulting verifiable credential MUST have type property that includes the BitstringStatusListCredential value."
@@ -1739,12 +1739,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4171,
+                "_idleStart": 5115,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 8,
+              "duration": 12,
               "state": "passed",
               "speed": "fast"
             }
@@ -1767,9 +1767,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:fb70766e-29fb-405f-8aa6-55378950d6e4",
+              "_testId": "urn:uuid:c7b0101b-69dc-49b9-9447-a91c44a6beb8",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, statusSize MUST be an integer greater than zero.",
@@ -1782,7 +1782,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3920,
+                "_idleStart": 4484,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1803,9 +1803,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:beedd083-dcda-4c3c-b112-915b8db6f164",
+              "_testId": "urn:uuid:b0b40366-6c77-477b-9fbd-2f433a4300e8",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "If present, statusSize MUST be an integer greater than zero.",
@@ -1818,7 +1818,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4179,
+                "_idleStart": 5127,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1845,9 +1845,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:63278005-2bc1-4046-ade2-7b446fc9c2b8",
+              "_testId": "urn:uuid:cfb380b3-b1ea-4a3a-8d6b-08875ad35f71",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If statusSize is provided and is greater than 1, then the property credentialStatus.statusMessage MUST be present.",
@@ -1860,12 +1860,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3920,
+                "_idleStart": 4484,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "pending"
             },
             {
@@ -1881,9 +1881,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:21e2663b-82d5-4a15-89fc-bf21c980c225",
+              "_testId": "urn:uuid:1287ec48-74f4-43d3-9079-1e59eac03330",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "If statusSize is provided and is greater than 1, then the property credentialStatus.statusMessage MUST be present.",
@@ -1896,7 +1896,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4179,
+                "_idleStart": 5127,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1923,9 +1923,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:a5cad833-647c-4ad5-acf9-cae98a52edd4",
+              "_testId": "urn:uuid:457f0a25-0833-4863-8dee-f42853058be6",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The number of status messages MUST equal the number of possible values.",
@@ -1938,7 +1938,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3921,
+                "_idleStart": 4485,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1959,9 +1959,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:8267f5d6-d178-4ee3-9971-c8b3a698b065",
+              "_testId": "urn:uuid:e278dd64-8707-478e-ab27-b3d5dc4f35e7",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The number of status messages MUST equal the number of possible values.",
@@ -1974,7 +1974,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4180,
+                "_idleStart": 5127,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2001,9 +2001,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:4eab193d-667f-4316-9382-6ce90b5b34ee",
+              "_testId": "urn:uuid:fb798a54-9c48-41e7-b845-1682045e34b4",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, the statusMessage property MUST be an array, the length of which MUST equal the number of possible status messages indicated by statusSize.",
@@ -2016,12 +2016,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3921,
+                "_idleStart": 4485,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "pending"
             },
             {
@@ -2037,9 +2037,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:ee587576-7d46-48d9-aca9-d53e5905b323",
+              "_testId": "urn:uuid:22224dcd-ea93-4e9f-bee0-56fc7a17bdb0",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "If present, the statusMessage property MUST be an array, the length of which MUST equal the number of possible status messages indicated by statusSize.",
@@ -2052,7 +2052,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4180,
+                "_idleStart": 5127,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2079,9 +2079,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:4b369f20-6a61-4e0e-bc95-8544f848db78",
+              "_testId": "urn:uuid:b7e0e528-c434-4102-94c8-9e31c6f0ce82",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "statusMessage MAY be present if statusSize is 1, and MUST be present if statusSize is greater than 1.",
@@ -2094,7 +2094,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3921,
+                "_idleStart": 4485,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2115,9 +2115,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:8b0427df-ff60-4fef-900f-a503e80f701d",
+              "_testId": "urn:uuid:be848069-623e-4ef4-bb73-4d8f62bdc189",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "statusMessage MAY be present if statusSize is 1, and MUST be present if statusSize is greater than 1.",
@@ -2130,7 +2130,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4180,
+                "_idleStart": 5127,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2157,9 +2157,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:9e238020-e967-4d6a-a7a0-0a4567c40f6a",
+              "_testId": "urn:uuid:2d95c61f-f57c-4bed-ae72-f20439bc5107",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If the statusMessage array is present, each element MUST contain the two properties \"status\" and \"message\".",
@@ -2172,7 +2172,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3921,
+                "_idleStart": 4485,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2193,9 +2193,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:0be84ca0-ca08-4009-9b75-747e7ccdd69d",
+              "_testId": "urn:uuid:03277468-2545-40da-9ffc-182912cb90f1",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "If the statusMessage array is present, each element MUST contain the two properties \"status\" and \"message\".",
@@ -2208,7 +2208,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4180,
+                "_idleStart": 5127,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2235,9 +2235,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "hSbQ9EunmFS_fFksepGDx",
+              "parent": "14TBFfCv2RW8ZVp7A8aB8",
               "ctx": null,
-              "_testId": "urn:uuid:c6b5dd4a-9247-4fd8-b764-54f6b5b72774",
+              "_testId": "urn:uuid:10eb2234-b06b-4859-9dea-cb6612fac810",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, the \"statusReference\" value MUST be a URL or an array of URLs [URL] which dereference(s) to material related to the status.",
@@ -2250,12 +2250,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3921,
+                "_idleStart": 4485,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "pending"
             },
             {
@@ -2271,9 +2271,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "0dMZaPVFn3iS4Shl3zQ9r",
+              "parent": "1G_3WPk-V_WogLWoUtoXa",
               "ctx": null,
-              "_testId": "urn:uuid:05a28eed-7cd2-456e-bbc4-52d63afe3a23",
+              "_testId": "urn:uuid:b370cf4b-b69e-464b-8d50-df36f6164994",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "If present, the \"statusReference\" value MUST be a URL or an array of URLs [URL] which dereference(s) to material related to the status.",
@@ -2286,7 +2286,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4180,
+                "_idleStart": 5127,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2320,9 +2320,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
-              "_testId": "urn:uuid:ffb7d1b1-9a36-4a44-bb68-25877eb36843",
+              "_testId": "urn:uuid:ac89aa81-00fa-41ef-8a20-04f00330b3e9",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "When a status list verifiable credential is published, it MUST be a conforming document, as defined in [VC-DATA-MODEL-2.0]."
@@ -2334,7 +2334,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5356,
+                "_idleStart": 5609,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2355,7 +2355,7 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
               "state": "pending"
             },
@@ -2372,9 +2372,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
-              "_testId": "urn:uuid:9288a2ad-da8f-443b-951a-5b61491a9d7c",
+              "_testId": "urn:uuid:79f4a5bd-faa7-4f71-a2b0-3c7d581f9a01",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The verifiable credential that contains the status list MUST express a type property that includes the BitstringStatusListCredential value."
@@ -2386,12 +2386,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5356,
+                "_idleStart": 5609,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             },
@@ -2408,9 +2408,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
-              "_testId": "urn:uuid:a4f64133-b7e4-47d8-978b-ad7f8d95655f",
+              "_testId": "urn:uuid:2a624d66-a9d9-4de2-b6e8-c462e6c06632",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The type of the credential subject, which is the status list, MUST be BitstringStatusList."
@@ -2422,7 +2422,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5356,
+                "_idleStart": 5609,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2444,9 +2444,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
-              "_testId": "urn:uuid:74f43f61-0c3f-48dc-92a1-11fd6ea72724",
+              "_testId": "urn:uuid:c15e5605-6311-44de-911d-eadfe6933f62",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The value of the purpose property of the status entry, statusPurpose, MUST be one or more strings."
@@ -2458,7 +2458,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5357,
+                "_idleStart": 5610,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2480,9 +2480,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
-              "_testId": "urn:uuid:c2dba1e7-d466-437e-9883-56d695b257c6",
+              "_testId": "urn:uuid:86c004c6-e978-4cc7-b4ca-ee51544dbeb3",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The encodedList property of the credential subject MUST be a Multibase-encoded base64url (with no padding) [RFC4648] representation of the GZIP-compressed [RFC1952] bitstring values for the associated range of verifiable credential status values."
@@ -2494,12 +2494,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5360,
+                "_idleStart": 5612,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 4,
+              "duration": 3,
               "state": "passed",
               "speed": "fast"
             },
@@ -2516,9 +2516,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
-              "_testId": "urn:uuid:16ba4bce-926d-449d-87db-bc840e42d592",
+              "_testId": "urn:uuid:547c30c9-da33-4343-89b7-d44f3006890a",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The uncompressed bitstring MUST be at least 16KB in size."
@@ -2530,12 +2530,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5362,
+                "_idleStart": 5614,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 2,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             },
@@ -2552,9 +2552,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
-              "_testId": "urn:uuid:3ff97a45-a817-4f97-bf88-58647eab8e12",
+              "_testId": "urn:uuid:abc0899b-d886-4d99-ad56-f45749e88e23",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The bitstring MUST be encoded such that the first index, with a value of zero (0), is located at the left-most bit in the bitstring and the last index, with a value of one less than the length of the bitstring (bitstring_length - 1), is located at the right-most bit in the bitstring.",
@@ -2567,7 +2567,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5363,
+                "_idleStart": 5615,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2592,7 +2592,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
               "originalTitle": "\"before each\" hook: addPerTestMetadata",
@@ -2615,7 +2615,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
               "originalTitle": "\"before all\" hook",
@@ -2625,12 +2625,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4180,
+                "_idleStart": 5128,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1175,
+              "duration": 480,
               "_error": null
             }
           ],
@@ -2642,9 +2642,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "OajGcMu4P4PSIrhjuXvit",
+          "parent": "KixWjLF2YdoTpRs-nGISf",
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:f2e8ab93-891b-4ee7-9db8-0a7f4cd0d359"
+          "_testId": "urn:uuid:48b47a81-09d3-42c1-8641-a89ad5269e31"
         },
         {
           "title": "OpSecId",
@@ -2664,9 +2664,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
-              "_testId": "urn:uuid:b2755a4e-86d9-4e3c-8026-d5ba8f2f333f",
+              "_testId": "urn:uuid:b7b1326e-8bee-4f89-8f47-7940f20db0d6",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "When a status list verifiable credential is published, it MUST be a conforming document, as defined in [VC-DATA-MODEL-2.0]."
@@ -2678,12 +2678,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5418,
+                "_idleStart": 5726,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             },
@@ -2699,7 +2699,7 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
               "state": "pending"
             },
@@ -2716,9 +2716,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
-              "_testId": "urn:uuid:ae93e8aa-8163-4a4a-a08c-68572e63e2e0",
+              "_testId": "urn:uuid:bd9e9985-1ff0-45d1-8400-3f659ad0b2f9",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The verifiable credential that contains the status list MUST express a type property that includes the BitstringStatusListCredential value."
@@ -2730,12 +2730,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5418,
+                "_idleStart": 5726,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             },
@@ -2752,9 +2752,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
-              "_testId": "urn:uuid:95108aed-9f22-4bb8-940b-24a8f3241835",
+              "_testId": "urn:uuid:77a994de-d06f-4815-a18c-be6172ce5912",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The type of the credential subject, which is the status list, MUST be BitstringStatusList."
@@ -2766,7 +2766,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5419,
+                "_idleStart": 5726,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2788,9 +2788,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
-              "_testId": "urn:uuid:d6ea0c17-e034-47f9-9497-2c8cda5f4be5",
+              "_testId": "urn:uuid:45a968a7-9c55-4e9a-8005-b0864dfd9254",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The value of the purpose property of the status entry, statusPurpose, MUST be one or more strings."
@@ -2802,12 +2802,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5419,
+                "_idleStart": 5727,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             },
@@ -2824,9 +2824,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
-              "_testId": "urn:uuid:ffa7636c-e6e3-491f-894d-32d2bbaa0411",
+              "_testId": "urn:uuid:b2f43a07-9549-40ef-ad6a-e5213c6b1b8f",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The encodedList property of the credential subject MUST be a Multibase-encoded base64url (with no padding) [RFC4648] representation of the GZIP-compressed [RFC1952] bitstring values for the associated range of verifiable credential status values."
@@ -2838,12 +2838,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5419,
+                "_idleStart": 5727,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             },
@@ -2860,9 +2860,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
-              "_testId": "urn:uuid:4f0d24d1-62ed-4db9-8f98-9b54d19f5b75",
+              "_testId": "urn:uuid:e5dbbb06-6f3c-4250-acce-33fad5f6941a",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The uncompressed bitstring MUST be at least 16KB in size."
@@ -2874,12 +2874,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5420,
+                "_idleStart": 5728,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             },
@@ -2896,9 +2896,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
-              "_testId": "urn:uuid:8fee216f-9d2e-4b45-a7c2-e60f3f935e35",
+              "_testId": "urn:uuid:ddb5e0ff-e1e8-4170-8266-bef73d2fc107",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The bitstring MUST be encoded such that the first index, with a value of zero (0), is located at the left-most bit in the bitstring and the last index, with a value of one less than the length of the bitstring (bitstring_length - 1), is located at the right-most bit in the bitstring.",
@@ -2911,12 +2911,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5420,
+                "_idleStart": 5728,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "pending"
             }
           ],
@@ -2936,7 +2936,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
               "originalTitle": "\"before each\" hook: addPerTestMetadata",
@@ -2959,7 +2959,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
               "originalTitle": "\"before all\" hook",
@@ -2969,12 +2969,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5363,
+                "_idleStart": 5615,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 55,
+              "duration": 110,
               "_error": null
             }
           ],
@@ -2986,9 +2986,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "OajGcMu4P4PSIrhjuXvit",
+          "parent": "KixWjLF2YdoTpRs-nGISf",
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:b1b11286-accb-41ef-849c-873b7d6fc528"
+          "_testId": "urn:uuid:037a0e83-510a-4d78-87a2-7459b1619fe5"
         }
       ],
       "root": false,
@@ -3004,13 +3004,13 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "QTptfSjRH6PQZxAObYcl0",
+      "parent": "r1XO4JNePNtlz1U1IOi45",
       "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Test Name",
       "columnLabel": "Issuer",
-      "_testId": "urn:uuid:77e730ef-9649-421d-aeb8-99ca46634273",
+      "_testId": "urn:uuid:749b3777-7d17-4cda-bdf5-59280685e27d",
       "columns": [
         "Digital Bazaar",
         "OpSecId"
@@ -3033,9 +3033,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
-              "_testId": "urn:uuid:ffb7d1b1-9a36-4a44-bb68-25877eb36843",
+              "_testId": "urn:uuid:ac89aa81-00fa-41ef-8a20-04f00330b3e9",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "When a status list verifiable credential is published, it MUST be a conforming document, as defined in [VC-DATA-MODEL-2.0]."
@@ -3047,7 +3047,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5356,
+                "_idleStart": 5609,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -3069,9 +3069,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
-              "_testId": "urn:uuid:b2755a4e-86d9-4e3c-8026-d5ba8f2f333f",
+              "_testId": "urn:uuid:b7b1326e-8bee-4f89-8f47-7940f20db0d6",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "When a status list verifiable credential is published, it MUST be a conforming document, as defined in [VC-DATA-MODEL-2.0]."
@@ -3083,12 +3083,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5418,
+                "_idleStart": 5726,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             }
@@ -3111,9 +3111,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
-              "_testId": "urn:uuid:9288a2ad-da8f-443b-951a-5b61491a9d7c",
+              "_testId": "urn:uuid:79f4a5bd-faa7-4f71-a2b0-3c7d581f9a01",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The verifiable credential that contains the status list MUST express a type property that includes the BitstringStatusListCredential value."
@@ -3125,12 +3125,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5356,
+                "_idleStart": 5609,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             },
@@ -3147,9 +3147,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
-              "_testId": "urn:uuid:ae93e8aa-8163-4a4a-a08c-68572e63e2e0",
+              "_testId": "urn:uuid:bd9e9985-1ff0-45d1-8400-3f659ad0b2f9",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The verifiable credential that contains the status list MUST express a type property that includes the BitstringStatusListCredential value."
@@ -3161,12 +3161,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5418,
+                "_idleStart": 5726,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             }
@@ -3189,9 +3189,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
-              "_testId": "urn:uuid:a4f64133-b7e4-47d8-978b-ad7f8d95655f",
+              "_testId": "urn:uuid:2a624d66-a9d9-4de2-b6e8-c462e6c06632",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The type of the credential subject, which is the status list, MUST be BitstringStatusList."
@@ -3203,7 +3203,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5356,
+                "_idleStart": 5609,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -3225,9 +3225,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
-              "_testId": "urn:uuid:95108aed-9f22-4bb8-940b-24a8f3241835",
+              "_testId": "urn:uuid:77a994de-d06f-4815-a18c-be6172ce5912",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The type of the credential subject, which is the status list, MUST be BitstringStatusList."
@@ -3239,7 +3239,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5419,
+                "_idleStart": 5726,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -3267,9 +3267,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
-              "_testId": "urn:uuid:74f43f61-0c3f-48dc-92a1-11fd6ea72724",
+              "_testId": "urn:uuid:c15e5605-6311-44de-911d-eadfe6933f62",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The value of the purpose property of the status entry, statusPurpose, MUST be one or more strings."
@@ -3281,7 +3281,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5357,
+                "_idleStart": 5610,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -3303,9 +3303,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
-              "_testId": "urn:uuid:d6ea0c17-e034-47f9-9497-2c8cda5f4be5",
+              "_testId": "urn:uuid:45a968a7-9c55-4e9a-8005-b0864dfd9254",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The value of the purpose property of the status entry, statusPurpose, MUST be one or more strings."
@@ -3317,12 +3317,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5419,
+                "_idleStart": 5727,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             }
@@ -3345,9 +3345,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
-              "_testId": "urn:uuid:c2dba1e7-d466-437e-9883-56d695b257c6",
+              "_testId": "urn:uuid:86c004c6-e978-4cc7-b4ca-ee51544dbeb3",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The encodedList property of the credential subject MUST be a Multibase-encoded base64url (with no padding) [RFC4648] representation of the GZIP-compressed [RFC1952] bitstring values for the associated range of verifiable credential status values."
@@ -3359,12 +3359,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5360,
+                "_idleStart": 5612,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 4,
+              "duration": 3,
               "state": "passed",
               "speed": "fast"
             },
@@ -3381,9 +3381,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
-              "_testId": "urn:uuid:ffa7636c-e6e3-491f-894d-32d2bbaa0411",
+              "_testId": "urn:uuid:b2f43a07-9549-40ef-ad6a-e5213c6b1b8f",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The encodedList property of the credential subject MUST be a Multibase-encoded base64url (with no padding) [RFC4648] representation of the GZIP-compressed [RFC1952] bitstring values for the associated range of verifiable credential status values."
@@ -3395,12 +3395,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5419,
+                "_idleStart": 5727,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             }
@@ -3423,9 +3423,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
-              "_testId": "urn:uuid:16ba4bce-926d-449d-87db-bc840e42d592",
+              "_testId": "urn:uuid:547c30c9-da33-4343-89b7-d44f3006890a",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The uncompressed bitstring MUST be at least 16KB in size."
@@ -3437,12 +3437,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5362,
+                "_idleStart": 5614,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 2,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             },
@@ -3459,9 +3459,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
-              "_testId": "urn:uuid:4f0d24d1-62ed-4db9-8f98-9b54d19f5b75",
+              "_testId": "urn:uuid:e5dbbb06-6f3c-4250-acce-33fad5f6941a",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The uncompressed bitstring MUST be at least 16KB in size."
@@ -3473,12 +3473,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5420,
+                "_idleStart": 5728,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             }
@@ -3501,9 +3501,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "3HklIsYLhmvO59Uin_Ult",
+              "parent": "DS_14-Dn4MfYhEyGNDICx",
               "ctx": null,
-              "_testId": "urn:uuid:3ff97a45-a817-4f97-bf88-58647eab8e12",
+              "_testId": "urn:uuid:abc0899b-d886-4d99-ad56-f45749e88e23",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The bitstring MUST be encoded such that the first index, with a value of zero (0), is located at the left-most bit in the bitstring and the last index, with a value of one less than the length of the bitstring (bitstring_length - 1), is located at the right-most bit in the bitstring.",
@@ -3516,7 +3516,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5363,
+                "_idleStart": 5615,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -3537,9 +3537,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "HfQnd8GwyrUm25a-F_0qd",
+              "parent": "Y7fX97ATuVRpREF9o_sNk",
               "ctx": null,
-              "_testId": "urn:uuid:8fee216f-9d2e-4b45-a7c2-e60f3f935e35",
+              "_testId": "urn:uuid:ddb5e0ff-e1e8-4170-8266-bef73d2fc107",
               "cell": {
                 "columnId": "OpSecId",
                 "rowId": "The bitstring MUST be encoded such that the first index, with a value of zero (0), is located at the left-most bit in the bitstring and the last index, with a value of one less than the length of the bitstring (bitstring_length - 1), is located at the right-most bit in the bitstring.",
@@ -3552,12 +3552,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5420,
+                "_idleStart": 5728,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "pending"
             }
           ]
@@ -3586,7 +3586,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "CqpWPPS1_4s_wjNKpqbXx",
+              "parent": "3c3YZZRTwXgiNlVdMbTEw",
               "ctx": null
             },
             {
@@ -3602,7 +3602,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "CqpWPPS1_4s_wjNKpqbXx",
+              "parent": "3c3YZZRTwXgiNlVdMbTEw",
               "ctx": null
             },
             {
@@ -3618,7 +3618,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "CqpWPPS1_4s_wjNKpqbXx",
+              "parent": "3c3YZZRTwXgiNlVdMbTEw",
               "ctx": null
             },
             {
@@ -3634,7 +3634,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "CqpWPPS1_4s_wjNKpqbXx",
+              "parent": "3c3YZZRTwXgiNlVdMbTEw",
               "ctx": null
             },
             {
@@ -3650,7 +3650,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "CqpWPPS1_4s_wjNKpqbXx",
+              "parent": "3c3YZZRTwXgiNlVdMbTEw",
               "ctx": null
             },
             {
@@ -3666,7 +3666,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "CqpWPPS1_4s_wjNKpqbXx",
+              "parent": "3c3YZZRTwXgiNlVdMbTEw",
               "ctx": null
             }
           ],
@@ -3687,7 +3687,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "CqpWPPS1_4s_wjNKpqbXx",
+              "parent": "3c3YZZRTwXgiNlVdMbTEw",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
               "originalTitle": "\"before all\" hook",
@@ -3697,12 +3697,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5421,
+                "_idleStart": 5729,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "_error": null,
               "state": "failed",
               "err": {}
@@ -3716,9 +3716,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "6z-8oyqPANrilF8lsJGzZ",
+          "parent": "TT6JSM2GirZXU85SN-Izo",
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-          "_testId": "urn:uuid:32728fb1-3e27-4466-bc6a-7e711e8cdf68"
+          "_testId": "urn:uuid:39e82f39-686d-4603-a44c-e958df4f6928"
         },
         {
           "title": "OpSecId",
@@ -3738,7 +3738,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "F9tnP6473HEEs6jDPp8Bd",
+              "parent": "__wQQZFnW5lAhT5MM9V0k",
               "ctx": null
             },
             {
@@ -3754,7 +3754,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "F9tnP6473HEEs6jDPp8Bd",
+              "parent": "__wQQZFnW5lAhT5MM9V0k",
               "ctx": null
             },
             {
@@ -3770,7 +3770,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "F9tnP6473HEEs6jDPp8Bd",
+              "parent": "__wQQZFnW5lAhT5MM9V0k",
               "ctx": null
             },
             {
@@ -3786,7 +3786,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "F9tnP6473HEEs6jDPp8Bd",
+              "parent": "__wQQZFnW5lAhT5MM9V0k",
               "ctx": null
             },
             {
@@ -3802,7 +3802,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "F9tnP6473HEEs6jDPp8Bd",
+              "parent": "__wQQZFnW5lAhT5MM9V0k",
               "ctx": null
             },
             {
@@ -3818,7 +3818,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "F9tnP6473HEEs6jDPp8Bd",
+              "parent": "__wQQZFnW5lAhT5MM9V0k",
               "ctx": null
             }
           ],
@@ -3839,7 +3839,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "F9tnP6473HEEs6jDPp8Bd",
+              "parent": "__wQQZFnW5lAhT5MM9V0k",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
               "originalTitle": "\"before all\" hook",
@@ -3849,12 +3849,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5421,
+                "_idleStart": 5729,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "_error": null,
               "state": "failed",
               "err": {}
@@ -3868,9 +3868,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "6z-8oyqPANrilF8lsJGzZ",
+          "parent": "TT6JSM2GirZXU85SN-Izo",
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-          "_testId": "urn:uuid:a98846c9-0c6f-48a1-b4a4-3b67798fe2b5"
+          "_testId": "urn:uuid:80837d9d-4299-4b52-8924-a996cddbc259"
         }
       ],
       "root": false,
@@ -3886,13 +3886,13 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "QTptfSjRH6PQZxAObYcl0",
+      "parent": "r1XO4JNePNtlz1U1IOi45",
       "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Test Name",
       "columnLabel": "Verifier",
-      "_testId": "urn:uuid:8a0274d0-82fc-44b2-be98-b1cb12408a5c",
+      "_testId": "urn:uuid:4ebe9372-5e63-4a81-92b0-cfd23661baec",
       "columns": [
         "Digital Bazaar",
         "OpSecId"
@@ -3919,7 +3919,7 @@
           "_currentRetry": 0,
           "pending": false,
           "type": "hook",
-          "parent": "7J__Na9U8rAlSwd3as2w1",
+          "parent": "dIZOkxglousJCn4HPlyCP",
           "ctx": null,
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
           "originalTitle": "\"before each\" hook: addPerTestMetadata",
@@ -3940,7 +3940,7 @@
           "_currentRetry": 0,
           "pending": false,
           "type": "hook",
-          "parent": "7J__Na9U8rAlSwd3as2w1",
+          "parent": "dIZOkxglousJCn4HPlyCP",
           "ctx": null,
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
           "originalTitle": "\"before each\" hook: addPerTestMetadata",
@@ -3963,7 +3963,7 @@
           "_currentRetry": 0,
           "pending": false,
           "type": "hook",
-          "parent": "7J__Na9U8rAlSwd3as2w1",
+          "parent": "dIZOkxglousJCn4HPlyCP",
           "ctx": null,
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
           "originalTitle": "\"before all\" hook",
@@ -3973,7 +3973,7 @@
             "_idleTimeout": -1,
             "_idlePrev": null,
             "_idleNext": null,
-            "_idleStart": 5422,
+            "_idleStart": 5730,
             "_onTimeout": null,
             "_repeat": null,
             "_destroyed": true
@@ -3993,7 +3993,7 @@
           "_currentRetry": 0,
           "pending": false,
           "type": "hook",
-          "parent": "7J__Na9U8rAlSwd3as2w1",
+          "parent": "dIZOkxglousJCn4HPlyCP",
           "ctx": null,
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
           "originalTitle": "\"before all\" hook",
@@ -4003,7 +4003,7 @@
             "_idleTimeout": -1,
             "_idlePrev": null,
             "_idleNext": null,
-            "_idleStart": 5423,
+            "_idleStart": 5731,
             "_onTimeout": null,
             "_repeat": null,
             "_destroyed": true
@@ -4020,13 +4020,13 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "QTptfSjRH6PQZxAObYcl0",
+      "parent": "r1XO4JNePNtlz1U1IOi45",
       "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Issuer",
       "columnLabel": "Verifier",
-      "_testId": "urn:uuid:374a22f8-c6cf-44be-b8a3-302cabfabc01",
+      "_testId": "urn:uuid:ca18bafc-6a85-488f-bf53-9e475085518f",
       "columns": [
         "Digital Bazaar",
         "OpSecId"
@@ -4048,9 +4048,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
-              "parent": "7J__Na9U8rAlSwd3as2w1",
+              "parent": "dIZOkxglousJCn4HPlyCP",
               "ctx": null,
-              "_testId": "urn:uuid:5b186519-3ff8-4ede-9764-cff8c7921deb",
+              "_testId": "urn:uuid:c4235c79-0de5-4ee6-b672-e1e789339a15",
               "cell": {
                 "rowId": "Digital Bazaar",
                 "columnId": "Digital Bazaar"
@@ -4061,12 +4061,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5430,
+                "_idleStart": 5736,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 466,
+              "duration": 2029,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -4089,9 +4089,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
-              "parent": "7J__Na9U8rAlSwd3as2w1",
+              "parent": "dIZOkxglousJCn4HPlyCP",
               "ctx": null,
-              "_testId": "urn:uuid:f0513f35-bb23-41e7-b43e-7e1025413315",
+              "_testId": "urn:uuid:2dfd4407-f4f7-4713-89bb-532e6040902f",
               "cell": {
                 "rowId": "Digital Bazaar",
                 "columnId": "OpSecId"
@@ -4102,12 +4102,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5897,
+                "_idleStart": 7766,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 31,
+              "duration": 79,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -4135,9 +4135,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
-              "parent": "7J__Na9U8rAlSwd3as2w1",
+              "parent": "dIZOkxglousJCn4HPlyCP",
               "ctx": null,
-              "_testId": "urn:uuid:48701791-6930-42ca-9b12-b8b2955fdee3",
+              "_testId": "urn:uuid:7ad015f7-67f3-4003-98fa-564cbc12714b",
               "cell": {
                 "rowId": "OpSecId",
                 "columnId": "Digital Bazaar"
@@ -4148,12 +4148,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5928,
+                "_idleStart": 7846,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 67,
+              "duration": 109,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -4176,9 +4176,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
-              "parent": "7J__Na9U8rAlSwd3as2w1",
+              "parent": "dIZOkxglousJCn4HPlyCP",
               "ctx": null,
-              "_testId": "urn:uuid:3b54e57a-ac63-46fb-918d-177d253e0235",
+              "_testId": "urn:uuid:0609cef3-2e64-437d-8a11-e2da1de864f1",
               "cell": {
                 "rowId": "OpSecId",
                 "columnId": "OpSecId"
@@ -4189,12 +4189,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5995,
+                "_idleStart": 7954,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 68,
+              "duration": 89,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
