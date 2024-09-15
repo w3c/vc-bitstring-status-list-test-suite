@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-        <title>VC Bitstring List Interoperability Report 1.0</title>
+        <title>VC Bitstring Status List Interoperability Report 1.0</title>
         <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
         <!--
           === NOTA BENE ===
@@ -12,11 +12,11 @@
         <script type="text/javascript" class="remove">
           // set this in the config section
           var respecConfig = {
-      "specStatus": "unofficial",
+      "specStatus": "base",
       "shortName": "vc-bitstring-status-list-test-suite",
       "subtitle": "Test Interoperability Report for Verifiable Credentials status",
-      "github": "https://github.com/w3c-ccg/vc-bitstring-status-list-test-suite",
-      "edDraftURI": "https://w3c-ccg.github.io/vc-bitstring-status-list-test-suite",
+      "github": "https://github.com/w3c/vc-bitstring-status-list-test-suite",
+      "edDraftURI": "https://w3c.github.io/vc-bitstring-status-list-test-suite",
       "doJsonLd": true,
       "includePermalinks": false,
       "editors": [
@@ -77,7 +77,7 @@
       details.hide {
         display: none;
       }
-      details.err {
+      .err {
         position: absolute;
         z-index: 1;
         white-space: nowrap;
@@ -88,6 +88,7 @@
         box-shadow: 0 0 5px darkgray;
         min-width: 25em;
       }
+      span.err,
       details.err summary {
         color: indianred;
       }
@@ -180,7 +181,7 @@
       Total tests 48
       </p>
       <p>
-        These tests were run on <time>8 September 2024 at 5:04 am UTC</time>
+        These tests were run on <time>15 September 2024 at 5:03 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -278,6 +279,7 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">No id property included.</span>
                     </div>
                   </td>
               </tr>
@@ -330,8 +332,8 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected statusListIndex to be a string.: expected 63874 to be a string:</summary>
-                        <pre>AssertionError: Expected statusListIndex to be a string.: expected 63874 to be a string
+                        <summary>Expected statusListIndex to be a string.: expected 24853 to be a string</summary>
+                        <pre>AssertionError: Expected statusListIndex to be a string.: expected 24853 to be a string
                         at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js:129:40)
                         at process.processImmediate (node:internal/timers:483:21)</pre>
                       </details>
@@ -381,11 +383,13 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">No statusSize property included.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">No statusSize property included.</span>
                     </div>
                   </td>
               </tr>
@@ -398,11 +402,13 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">No statusSize property included.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">No statusSize property included.</span>
                     </div>
                   </td>
               </tr>
@@ -415,11 +421,13 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">No statusMessage property included.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">No statusMessage property included.</span>
                     </div>
                   </td>
               </tr>
@@ -432,11 +440,13 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">No statusMessage property included.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">No statusMessage property included.</span>
                     </div>
                   </td>
               </tr>
@@ -449,11 +459,13 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">No greater than 1 statusSize property included.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">No greater than 1 statusSize property included.</span>
                     </div>
                   </td>
               </tr>
@@ -466,11 +478,13 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">No statusMessage property included.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">No statusMessage property included.</span>
                     </div>
                   </td>
               </tr>
@@ -483,11 +497,13 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">No statusReference property included.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">No statusReference property included.</span>
                     </div>
                   </td>
               </tr>
@@ -631,11 +647,13 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">Test needs to be validated.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
+                      <span class="err hide">Test needs to be validated.</span>
                     </div>
                   </td>
               </tr>
@@ -707,7 +725,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected response from verifier: expected undefined to exist:</summary>
+                        <summary>Expected response from verifier: expected undefined to exist</summary>
                         <pre>AssertionError: Expected response from verifier: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at shouldPassVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:87:10)
@@ -720,7 +738,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected response from verifier: expected undefined to exist:</summary>
+                        <summary>Expected response from verifier: expected undefined to exist</summary>
                         <pre>AssertionError: Expected response from verifier: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at shouldPassVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:87:10)
@@ -740,7 +758,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected response from verifier: expected undefined to exist:</summary>
+                        <summary>Expected response from verifier: expected undefined to exist</summary>
                         <pre>AssertionError: Expected response from verifier: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at shouldPassVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:87:10)
@@ -753,7 +771,7 @@
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
-                        <summary>Expected response from verifier: expected undefined to exist:</summary>
+                        <summary>Expected response from verifier: expected undefined to exist</summary>
                         <pre>AssertionError: Expected response from verifier: expected undefined to exist
                         at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
                         at shouldPassVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:87:10)
