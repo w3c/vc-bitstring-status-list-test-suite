@@ -5,303 +5,6 @@
       "ctx": null,
       "suites": [
         {
-          "title": "ACA-py",
-          "ctx": null,
-          "suites": [],
-          "tests": [
-            {
-              "type": "test",
-              "title": "Any expression of the data model in this section MUST be expressed in a conforming verifiable credential as defined in [VC-DATA-MODEL-2.0].",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=Any%20expression%20of%20the%20data%20model%20in%20this%20section%20MUST%20be%20expressed%20in%20a%20conforming%20verifiable%20credential%20as%20defined%20in%20%5BVC%2DDATA%2DMODEL%2D2.0%5D.';\n          should.exist(issuerResponse,\n            'Expected an issuer response.');\n          should.not.exist(err,\n            'Expected no errors in the issuer response.');\n          issuerResponse.status.should.equal(201,\n            'Expected response http code 201.');\n          should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);\n          testCredential({credential: issuedVc});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "If present, the id value is expected to be a URL that identifies the status information associated with the verifiable credential. It MUST NOT be the URL for the status list.",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20the%20value%20is%20expected%20to%20be%20a%20URL%20that%20identifies%20the%20status%20information%20associated%20with%20the%20verifiable%20credential.';\n          for(statusEntry of statusEntries) {\n            if('id' in statusEntry) {\n              // TODO test for URI\n              statusEntry.id.should.be.a('string',\n                'Expected credentialStatus.id to be a string.'\n              );\n            } else {\n              if(statusEntry === statusEntries[statusEntries.length - 1]) {\n                this.test.cell.skipMessage = 'No id property included.';\n                this.skip();\n              } else {\n                continue;\n              }\n            }\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "The type property MUST be BitstringStatusListEntry. ",
-              "body": "async function() {\n            this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20type%20property%20MUST%20be%20BitstringStatusListEntry.';\n            for(statusEntry of statusEntries) {\n              statusEntry.should.have.own.property(\n                'type').to.be.a('string',\n                'Expected credentialStatus.type to be a string.'\n              );\n              statusEntry.type.should.equal(\n                'BitstringStatusListEntry',\n                'Expected credentialStatus.type to be ' +\n                'BitstringStatusListEntry.'\n              );\n            }\n          }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "The purpose of the status entry MUST be a string.",
-              "body": "async function() {\n            this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20purpose%20of%20the%20status%20entry%20MUST%20be%20a%20string';\n            for(statusEntry of statusEntries) {\n              statusEntry.should.have.own.property(\n                'statusPurpose').to.be.a('string',\n                'Expected credentialStatus.statusPurpose to be a string.'\n              );\n            }\n          }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "The statusListIndex property MUST be an arbitrary size integer greater than or equal to 0, expressed as a string in base 10.",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20statusListIndex%20property%20MUST%20be%20an%20arbitrary%20size%20integer%20greater%20than%20or%20equal%20to%200%2C%20expressed%20as%20a%20string%20in%20base%2010';\n          for(statusEntry of statusEntries) {\n            statusEntry.should.have.own.property(\n              'statusListIndex').to.be.a('string',\n              'Expected statusListIndex to be a string.'\n            );\n            assert(\n              String(parseInt(statusEntry.statusListIndex)) ===\n              statusEntry.statusListIndex,\n              'Expected statusSize value to be an integer ' +\n              'expressed as a string in base 10.'\n            );\n            parseInt(statusEntry.statusListIndex).\n              should.be.gte(0,\n                'Expected credentialStatus.statusListIndex to be >= 0.');\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "The statusListCredential property MUST be a URL to a verifiable credential.",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20statusListCredential%20property%20MUST%20be%20a%20URL%20to%20a%20verifiable%20credential.';\n          // TODO check for URI\n          for(statusEntry of statusEntries) {\n            statusEntry.should.have.own.\n              property('statusListCredential').to.be.\n              a('string',\n                'Expected credentialStatus.statusListCredential to be a URL.'\n              );\n            const {slc} = await getSlc(statusEntry);\n            should.exist(slc,\n              'Expected statusListCredential to resolve to a ' +\n              'Verifiable Credential');\n            testSlCredential({slCredential: slc});\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "When the URL is dereferenced, the resulting verifiable credential MUST have type property that includes the BitstringStatusListCredential value.",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=When%20the%20URL%20is%20dereferenced%2C%20the%20resulting%20verifiable%20credential%20MUST%20have%20type%20property%20that%20includes%20the%20BitstringStatusListCredential%20value.';\n          for(statusEntry of statusEntries) {\n            const {slc} = await getSlc(statusEntry);\n            slc.should.have.own.\n              property('type').to.be.\n              an('array',\n                'Expected type to be an array.'\n              );\n            slc.type.should.include(\n              'BitstringStatusListCredential',\n              'Expected type to be BitstringStatusListCredential.'\n            );\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "If present, statusSize MUST be an integer greater than zero.",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20statusSize%20MUST%20be%20an%20integer%20greater%20than%20zero.';\n          for(statusEntry of statusEntries) {\n            if('statusSize' in statusEntry) {\n              statusEntry.statusSize.should.be.a('number',\n                'Expected statusSize to be an integer.');\n              // TODO test for integer\n              assert(Number.isInteger(\n                statusEntry.statusSize),\n              'Expected statusSize to be an integer.');\n              statusEntry.statusSize.should.be.gt(0,\n                'Expected statusSize to be greater than zero.');\n            } else {\n              if(statusEntry === statusEntries[statusEntries.length - 1]) {\n                this.test.cell.skipMessage = 'No statusSize property ' +\n                'included.';\n                this.skip();\n              } else {\n                continue;\n              }\n            }\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "If statusSize is provided and is greater than 1, then the property credentialStatus.statusMessage MUST be present.",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20statusSize%20is%20provided%20and%20is%20greater%20than%201%2C%20then%20the%20property%20credentialStatus.statusMessage%20MUST%20be%20present';\n          for(statusEntry of statusEntries) {\n            if('statusSize' in statusEntry &&\n              Number.isInteger(statusEntry.statusSize) &&\n              statusEntry.statusSize.gt(1)) {\n              statusEntry.should.have.own.property(\n                'statusMessage');\n            } else {\n              if(statusEntry === statusEntries[statusEntries.length - 1]) {\n                this.test.cell.skipMessage = 'No statusSize property ' +\n                'included.';\n                this.skip();\n              } else {\n                continue;\n              }\n            }\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "The number of status messages MUST equal the number of possible values.",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=the%20number%20of%20status%20messages%20MUST%20equal%20the%20number%20of%20possible%20values';\n          for(statusEntry of statusEntries) {\n            if('statusSize' in statusEntry &&\n              'statusMessage' in statusEntry) {\n              statusEntry.statusMessage.should.be.\n                an('array').length.should.be.\n                equal(statusEntry.statusSize);\n            } else {\n              if(statusEntry === statusEntries[statusEntries.length - 1]) {\n                this.test.cell.skipMessage = 'No statusMessage property ' +\n                'included.';\n                this.skip();\n              } else {\n                continue;\n              }\n            }\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "If present, the statusMessage property MUST be an array, the length of which MUST equal the number of possible status messages indicated by statusSize.",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20the%20statusMessage%20property%20MUST%20be%20an%20array%2C%20the%20length%20of%20which%20MUST%20equal%20the%20number%20of%20possible%20status%20messages%20indicated%20by%20statusSize';\n          for(statusEntry of statusEntries) {\n            if('statusMessage' in statusEntry &&\n              'statusSize' in statusEntry) {\n              statusEntry.statusMessage.should.be.\n                an('array').length.should.be.\n                equal(statusEntry.statusSize,\n                  'Expected statusMessage length to be equal to ' +\n                  'statusSize.');\n            } else {\n              if(statusEntry === statusEntries[statusEntries.length - 1]) {\n                this.test.cell.skipMessage = 'No statusMessage property ' +\n                'included.';\n                this.skip();\n              } else {\n                continue;\n              }\n            }\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "statusMessage MAY be present if statusSize is 1, and MUST be present if statusSize is greater than 1.",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=statusMessage%20MAY%20be%20present%20if%20statusSize%20is%201%2C%20and%20MUST%20be%20present%20if%20statusSize%20is%20greater%20than%201';\n          for(statusEntry of statusEntries) {\n            if('statusSize' in statusEntry &&\n              Number.isInteger(statusEntry.statusSize) &&\n              statusEntry.statusSize.gt(1)\n            ) {\n              statusEntry.should.have.own.property(\n                'statusMessage');\n            } else {\n              if(statusEntry === statusEntries[statusEntries.length - 1]) {\n                this.test.cell.skipMessage = 'No greater than 1 ' +\n                'statusSize property included.';\n                this.skip();\n              } else {\n                continue;\n              }\n            }\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "If the statusMessage array is present, each element MUST contain the two properties \"status\" and \"message\".",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20the%20statusMessage%20array%20is%20present%2C%20each%20element%20MUST%20contain%20the%20two%20properties%20described%20below%2C%20and%20MAY%20contain%20additional%20properties.';\n          for(statusEntry of statusEntries) {\n            if('statusMessage' in statusEntry) {\n              // TODO this needs more testing:\n              // a string representing the hexadecimal\n              // value of the status prefixed with 0x\n              statusEntry.\n                statusMessage.should.each.have.property(\n                  'status').that.is.a('string');\n              statusEntry.\n                statusMessage.should.each.have.property(\n                  'message').that.is.a('string');\n            } else {\n              if(statusEntry === statusEntries[statusEntries.length - 1]) {\n                this.test.cell.skipMessage = 'No statusMessage ' +\n                'property included.';\n                this.skip();\n              } else {\n                continue;\n              }\n            }\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "If present, the \"statusReference\" value MUST be a URL or an array of URLs [URL] which dereference(s) to material related to the status.",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20its%20value%20MUST%20be%20a%20URL%20or%20an%20array%20of%20URLs%20%5BURL%5D%20which%20dereference%20to%20material%20related%20to%20the%20status';\n          for(statusEntry of statusEntries) {\n            if('statusReference' in statusEntry) {\n              const statusReferenceType = typeof (\n                statusEntry.statusReference);\n              statusReferenceType.should.be.oneOf(['string', 'object'],\n                'Expected statusReference to be an string or an array.');\n              if(statusReferenceType === 'object') {\n                statusEntry.statusReference.should.be.an(\n                  'array');\n                statusEntry.statusReference.forEach(\n                  item => item.should.be.a('string'));\n              }\n              // TODO test for URLS\n            } else {\n              if(statusEntry === statusEntries[statusEntries.length - 1]) {\n                this.test.cell.skipMessage = 'No statusReference ' +\n                'property included.';\n                this.skip();\n              } else {\n                continue;\n              }\n            }\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null
-            }
-          ],
-          "root": false,
-          "pending": false,
-          "_retries": -1,
-          "_beforeEach": [
-            {
-              "title": "\"before each\" hook: addPerTestMetadata",
-              "body": "function addPerTestMetadata() {\n  // append test meta data to the it/test this.\n  this.currentTest.cell = {\n    columnId: this.currentTest.parent.title,\n    rowId: this.currentTest.title\n  };\n}",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "type": "hook",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js"
-            }
-          ],
-          "_beforeAll": [
-            {
-              "title": "\"before all\" hook for \"Any expression of the data model in this section MUST be expressed in a conforming verifiable credential as defined in [VC-DATA-MODEL-2.0].\"",
-              "body": "async function() {\n          const issuer = issuers.find(\n            issuer => issuer.tags.has('BitstringStatusList'));\n          const {result, error, data} = await issueVc({issuer});\n          err = error;\n          issuerResponse = result;\n          issuedVc = data;\n          if(issuedVc.hasOwnProperty('credentialStatus')) {\n            if(Array.isArray(issuedVc.credentialStatus)) {\n              statusEntries = issuedVc.credentialStatus;\n            } else {\n              statusEntries = [issuedVc.credentialStatus];\n            }\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "type": "hook",
-              "parent": "XbcVa9blNr0iRuA9nE7Ya",
-              "ctx": null,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "originalTitle": "\"before all\" hook",
-              "_events": {},
-              "_eventsCount": 1,
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 344,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 437,
-              "_error": null,
-              "state": "failed",
-              "err": {}
-            }
-          ],
-          "_afterEach": [],
-          "_afterAll": [],
-          "_timeout": 15000,
-          "_slow": 75,
-          "_bail": false,
-          "_onlyTests": [],
-          "_onlySuites": [],
-          "delayed": false,
-          "parent": "MEEUwXnl1jo-W-UngIXnZ",
-          "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:ff472e02-2e28-4669-9534-755544dbb7a0"
-        },
-        {
           "title": "Digital Bazaar",
           "ctx": null,
           "suites": [],
@@ -319,9 +22,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:822f34e0-457b-4721-b1b4-bc29d84e8904",
+              "_testId": "urn:uuid:61c428d2-8bcb-4b54-a281-a1028958ce38",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "Any expression of the data model in this section MUST be expressed in a conforming verifiable credential as defined in [VC-DATA-MODEL-2.0]."
@@ -333,12 +36,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3038,
+                "_idleStart": 2049,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 2,
+              "duration": 3,
               "state": "passed",
               "speed": "fast"
             },
@@ -355,9 +58,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:137e4068-e43b-4f48-945f-81219e014e72",
+              "_testId": "urn:uuid:318cf4d5-7110-4d8b-95b7-6bfe974742a4",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, the id value is expected to be a URL that identifies the status information associated with the verifiable credential. It MUST NOT be the URL for the status list."
@@ -369,7 +72,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3039,
+                "_idleStart": 2050,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -391,9 +94,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:7140103e-8e3d-4e26-b560-6de0a46824a5",
+              "_testId": "urn:uuid:3d1eb712-5850-42f3-b9d2-10192b778d6a",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The type property MUST be BitstringStatusListEntry. "
@@ -405,12 +108,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3039,
+                "_idleStart": 2050,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             },
@@ -427,9 +130,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:a95b2dfb-129b-4c01-b1b6-e4992921597c",
+              "_testId": "urn:uuid:7a9366bd-64cf-4c8a-be29-aaf15c362fd2",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The purpose of the status entry MUST be a string."
@@ -441,7 +144,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3040,
+                "_idleStart": 2051,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -463,9 +166,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:3405de31-924c-4333-bb37-ed3543de65b6",
+              "_testId": "urn:uuid:f2b4a489-3e5b-45b6-8880-db7e983252dd",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The statusListIndex property MUST be an arbitrary size integer greater than or equal to 0, expressed as a string in base 10."
@@ -477,12 +180,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3041,
+                "_idleStart": 2052,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             },
@@ -499,9 +202,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:8a772643-3797-475c-b239-a2fbac0fd183",
+              "_testId": "urn:uuid:a6d23238-b73a-4d19-94d4-be24cab5eb27",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The statusListCredential property MUST be a URL to a verifiable credential."
@@ -513,12 +216,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3041,
+                "_idleStart": 2052,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1814,
+              "duration": 1717,
               "state": "passed",
               "speed": "slow"
             },
@@ -535,9 +238,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:bdc7b8ab-c4c2-4c85-bc31-6cdb6a5f4dda",
+              "_testId": "urn:uuid:3958bf3d-890a-4251-a2bf-fa04e839b3ab",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "When the URL is dereferenced, the resulting verifiable credential MUST have type property that includes the BitstringStatusListCredential value."
@@ -549,12 +252,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4855,
+                "_idleStart": 3770,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 180,
+              "duration": 190,
               "state": "passed",
               "speed": "slow"
             },
@@ -571,9 +274,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:953426ba-a26a-42b5-87c9-80f36712bb8a",
+              "_testId": "urn:uuid:1ba2c806-3bdb-426f-bf9e-df6733fb7436",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, statusSize MUST be an integer greater than zero.",
@@ -586,7 +289,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5035,
+                "_idleStart": 3961,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -610,9 +313,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:1a8cba38-2276-49ee-819f-d9131f62e9c3",
+              "_testId": "urn:uuid:f0115622-2761-4676-89e1-faf2aaec2782",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If statusSize is provided and is greater than 1, then the property credentialStatus.statusMessage MUST be present.",
@@ -625,7 +328,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5035,
+                "_idleStart": 3962,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -649,9 +352,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:913542e2-a009-443c-8ee9-7c902f330a19",
+              "_testId": "urn:uuid:bd0e80a2-cf4c-4c5b-892d-50aa3bf4452f",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The number of status messages MUST equal the number of possible values.",
@@ -664,12 +367,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5035,
+                "_idleStart": 3962,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "pending",
               "err": {
                 "message": "No statusMessage property included."
@@ -688,9 +391,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:1bd833ce-9bfa-4860-af6a-e6937c8cea8c",
+              "_testId": "urn:uuid:051d67b3-b2a7-4086-b6bd-65ecaa23f987",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, the statusMessage property MUST be an array, the length of which MUST equal the number of possible status messages indicated by statusSize.",
@@ -703,7 +406,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5036,
+                "_idleStart": 3962,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -727,9 +430,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:f5d19cd1-6264-4594-98cb-545e2a4eee78",
+              "_testId": "urn:uuid:40200176-3111-44ad-9eb0-cb069f4c5975",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "statusMessage MAY be present if statusSize is 1, and MUST be present if statusSize is greater than 1.",
@@ -742,7 +445,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5036,
+                "_idleStart": 3962,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -766,9 +469,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:ece50de7-c240-4a97-8570-b3d071451b00",
+              "_testId": "urn:uuid:35cb0ee5-3df2-444a-997d-f6e542d10bfc",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If the statusMessage array is present, each element MUST contain the two properties \"status\" and \"message\".",
@@ -781,7 +484,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5036,
+                "_idleStart": 3962,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -805,9 +508,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:6b2afefe-009f-4d2e-90eb-f3f2c0b7ec04",
+              "_testId": "urn:uuid:9ccd13b8-87c9-4625-83d5-65f2ba866c33",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, the \"statusReference\" value MUST be a URL or an array of URLs [URL] which dereference(s) to material related to the status.",
@@ -820,7 +523,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5036,
+                "_idleStart": 3963,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -848,7 +551,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
               "originalTitle": "\"before each\" hook: addPerTestMetadata",
@@ -871,7 +574,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
               "originalTitle": "\"before all\" hook",
@@ -881,12 +584,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 783,
+                "_idleStart": 359,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 2252,
+              "duration": 1686,
               "_error": null
             }
           ],
@@ -898,9 +601,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "MEEUwXnl1jo-W-UngIXnZ",
+          "parent": "jlyYr93fYm2u2C8BEHh3D",
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:0ba15edb-1ca9-474f-ab68-a2656f5ff8ac"
+          "_testId": "urn:uuid:1a99a7b1-4435-4134-9e92-f983164cdcdc"
         }
       ],
       "root": false,
@@ -916,15 +619,14 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "nOMW_eRIWAdb7vLnpwffu",
+      "parent": "xH39FeaXEd5dUyjmYx8uW",
       "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Test Name",
       "columnLabel": "Issuer",
-      "_testId": "urn:uuid:f451b54e-7569-44c7-ac77-3e446f8442b5",
+      "_testId": "urn:uuid:46a844c7-cc2c-4f4c-b942-4acd3e7681de",
       "columns": [
-        "ACA-py",
         "Digital Bazaar"
       ],
       "rows": [
@@ -932,16 +634,6 @@
           "id": "Any expression of the data model in this section MUST be expressed in a conforming verifiable credential as defined in [VC-DATA-MODEL-2.0].",
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=Any%20expression%20of%20the%20data%20model%20in%20this%20section%20MUST%20be%20expressed%20in%20a%20conforming%20verifiable%20credential%20as%20defined%20in%20%5BVC%2DDATA%2DMODEL%2D2.0%5D.",
           "cells": [
-            {
-              "cell": {
-                "rowId": "Any expression of the data model in this section MUST be expressed in a conforming verifiable credential as defined in [VC-DATA-MODEL-2.0].",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
             {
               "type": "test",
               "title": "Any expression of the data model in this section MUST be expressed in a conforming verifiable credential as defined in [VC-DATA-MODEL-2.0].",
@@ -955,9 +647,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:822f34e0-457b-4721-b1b4-bc29d84e8904",
+              "_testId": "urn:uuid:61c428d2-8bcb-4b54-a281-a1028958ce38",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "Any expression of the data model in this section MUST be expressed in a conforming verifiable credential as defined in [VC-DATA-MODEL-2.0]."
@@ -969,12 +661,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3038,
+                "_idleStart": 2049,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 2,
+              "duration": 3,
               "state": "passed",
               "speed": "fast"
             }
@@ -984,16 +676,6 @@
           "id": "If present, the id value is expected to be a URL that identifies the status information associated with the verifiable credential. It MUST NOT be the URL for the status list.",
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20the%20value%20is%20expected%20to%20be%20a%20URL%20that%20identifies%20the%20status%20information%20associated%20with%20the%20verifiable%20credential.",
           "cells": [
-            {
-              "cell": {
-                "rowId": "If present, the id value is expected to be a URL that identifies the status information associated with the verifiable credential. It MUST NOT be the URL for the status list.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
             {
               "type": "test",
               "title": "If present, the id value is expected to be a URL that identifies the status information associated with the verifiable credential. It MUST NOT be the URL for the status list.",
@@ -1007,9 +689,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:137e4068-e43b-4f48-945f-81219e014e72",
+              "_testId": "urn:uuid:318cf4d5-7110-4d8b-95b7-6bfe974742a4",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, the id value is expected to be a URL that identifies the status information associated with the verifiable credential. It MUST NOT be the URL for the status list."
@@ -1021,7 +703,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3039,
+                "_idleStart": 2050,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1037,16 +719,6 @@
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20type%20property%20MUST%20be%20BitstringStatusListEntry.",
           "cells": [
             {
-              "cell": {
-                "rowId": "The type property MUST be BitstringStatusListEntry. ",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
-            {
               "type": "test",
               "title": "The type property MUST be BitstringStatusListEntry. ",
               "body": "async function() {\n            this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20type%20property%20MUST%20be%20BitstringStatusListEntry.';\n            for(statusEntry of statusEntries) {\n              statusEntry.should.have.own.property(\n                'type').to.be.a('string',\n                'Expected credentialStatus.type to be a string.'\n              );\n              statusEntry.type.should.equal(\n                'BitstringStatusListEntry',\n                'Expected credentialStatus.type to be ' +\n                'BitstringStatusListEntry.'\n              );\n            }\n          }",
@@ -1059,9 +731,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:7140103e-8e3d-4e26-b560-6de0a46824a5",
+              "_testId": "urn:uuid:3d1eb712-5850-42f3-b9d2-10192b778d6a",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The type property MUST be BitstringStatusListEntry. "
@@ -1073,12 +745,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3039,
+                "_idleStart": 2050,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             }
@@ -1088,16 +760,6 @@
           "id": "The purpose of the status entry MUST be a string.",
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20purpose%20of%20the%20status%20entry%20MUST%20be%20a%20string",
           "cells": [
-            {
-              "cell": {
-                "rowId": "The purpose of the status entry MUST be a string.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
             {
               "type": "test",
               "title": "The purpose of the status entry MUST be a string.",
@@ -1111,9 +773,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:a95b2dfb-129b-4c01-b1b6-e4992921597c",
+              "_testId": "urn:uuid:7a9366bd-64cf-4c8a-be29-aaf15c362fd2",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The purpose of the status entry MUST be a string."
@@ -1125,7 +787,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3040,
+                "_idleStart": 2051,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1141,16 +803,6 @@
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20statusListIndex%20property%20MUST%20be%20an%20arbitrary%20size%20integer%20greater%20than%20or%20equal%20to%200%2C%20expressed%20as%20a%20string%20in%20base%2010",
           "cells": [
             {
-              "cell": {
-                "rowId": "The statusListIndex property MUST be an arbitrary size integer greater than or equal to 0, expressed as a string in base 10.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
-            {
               "type": "test",
               "title": "The statusListIndex property MUST be an arbitrary size integer greater than or equal to 0, expressed as a string in base 10.",
               "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20statusListIndex%20property%20MUST%20be%20an%20arbitrary%20size%20integer%20greater%20than%20or%20equal%20to%200%2C%20expressed%20as%20a%20string%20in%20base%2010';\n          for(statusEntry of statusEntries) {\n            statusEntry.should.have.own.property(\n              'statusListIndex').to.be.a('string',\n              'Expected statusListIndex to be a string.'\n            );\n            assert(\n              String(parseInt(statusEntry.statusListIndex)) ===\n              statusEntry.statusListIndex,\n              'Expected statusSize value to be an integer ' +\n              'expressed as a string in base 10.'\n            );\n            parseInt(statusEntry.statusListIndex).\n              should.be.gte(0,\n                'Expected credentialStatus.statusListIndex to be >= 0.');\n          }\n        }",
@@ -1163,9 +815,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:3405de31-924c-4333-bb37-ed3543de65b6",
+              "_testId": "urn:uuid:f2b4a489-3e5b-45b6-8880-db7e983252dd",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The statusListIndex property MUST be an arbitrary size integer greater than or equal to 0, expressed as a string in base 10."
@@ -1177,12 +829,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3041,
+                "_idleStart": 2052,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             }
@@ -1192,16 +844,6 @@
           "id": "The statusListCredential property MUST be a URL to a verifiable credential.",
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20statusListCredential%20property%20MUST%20be%20a%20URL%20to%20a%20verifiable%20credential.",
           "cells": [
-            {
-              "cell": {
-                "rowId": "The statusListCredential property MUST be a URL to a verifiable credential.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
             {
               "type": "test",
               "title": "The statusListCredential property MUST be a URL to a verifiable credential.",
@@ -1215,9 +857,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:8a772643-3797-475c-b239-a2fbac0fd183",
+              "_testId": "urn:uuid:a6d23238-b73a-4d19-94d4-be24cab5eb27",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The statusListCredential property MUST be a URL to a verifiable credential."
@@ -1229,12 +871,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 3041,
+                "_idleStart": 2052,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1814,
+              "duration": 1717,
               "state": "passed",
               "speed": "slow"
             }
@@ -1244,16 +886,6 @@
           "id": "When the URL is dereferenced, the resulting verifiable credential MUST have type property that includes the BitstringStatusListCredential value.",
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=When%20the%20URL%20is%20dereferenced%2C%20the%20resulting%20verifiable%20credential%20MUST%20have%20type%20property%20that%20includes%20the%20BitstringStatusListCredential%20value.",
           "cells": [
-            {
-              "cell": {
-                "rowId": "When the URL is dereferenced, the resulting verifiable credential MUST have type property that includes the BitstringStatusListCredential value.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
             {
               "type": "test",
               "title": "When the URL is dereferenced, the resulting verifiable credential MUST have type property that includes the BitstringStatusListCredential value.",
@@ -1267,9 +899,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:bdc7b8ab-c4c2-4c85-bc31-6cdb6a5f4dda",
+              "_testId": "urn:uuid:3958bf3d-890a-4251-a2bf-fa04e839b3ab",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "When the URL is dereferenced, the resulting verifiable credential MUST have type property that includes the BitstringStatusListCredential value."
@@ -1281,12 +913,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 4855,
+                "_idleStart": 3770,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 180,
+              "duration": 190,
               "state": "passed",
               "speed": "slow"
             }
@@ -1296,16 +928,6 @@
           "id": "If present, statusSize MUST be an integer greater than zero.",
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20statusSize%20MUST%20be%20an%20integer%20greater%20than%20zero.",
           "cells": [
-            {
-              "cell": {
-                "rowId": "If present, statusSize MUST be an integer greater than zero.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
             {
               "type": "test",
               "title": "If present, statusSize MUST be an integer greater than zero.",
@@ -1319,9 +941,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:953426ba-a26a-42b5-87c9-80f36712bb8a",
+              "_testId": "urn:uuid:1ba2c806-3bdb-426f-bf9e-df6733fb7436",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, statusSize MUST be an integer greater than zero.",
@@ -1334,7 +956,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5035,
+                "_idleStart": 3961,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1352,16 +974,6 @@
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20statusSize%20is%20provided%20and%20is%20greater%20than%201%2C%20then%20the%20property%20credentialStatus.statusMessage%20MUST%20be%20present",
           "cells": [
             {
-              "cell": {
-                "rowId": "If statusSize is provided and is greater than 1, then the property credentialStatus.statusMessage MUST be present.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
-            {
               "type": "test",
               "title": "If statusSize is provided and is greater than 1, then the property credentialStatus.statusMessage MUST be present.",
               "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20statusSize%20is%20provided%20and%20is%20greater%20than%201%2C%20then%20the%20property%20credentialStatus.statusMessage%20MUST%20be%20present';\n          for(statusEntry of statusEntries) {\n            if('statusSize' in statusEntry &&\n              Number.isInteger(statusEntry.statusSize) &&\n              statusEntry.statusSize.gt(1)) {\n              statusEntry.should.have.own.property(\n                'statusMessage');\n            } else {\n              if(statusEntry === statusEntries[statusEntries.length - 1]) {\n                this.test.cell.skipMessage = 'No statusSize property ' +\n                'included.';\n                this.skip();\n              } else {\n                continue;\n              }\n            }\n          }\n        }",
@@ -1374,9 +986,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:1a8cba38-2276-49ee-819f-d9131f62e9c3",
+              "_testId": "urn:uuid:f0115622-2761-4676-89e1-faf2aaec2782",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If statusSize is provided and is greater than 1, then the property credentialStatus.statusMessage MUST be present.",
@@ -1389,7 +1001,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5035,
+                "_idleStart": 3962,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1407,16 +1019,6 @@
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=the%20number%20of%20status%20messages%20MUST%20equal%20the%20number%20of%20possible%20values",
           "cells": [
             {
-              "cell": {
-                "rowId": "The number of status messages MUST equal the number of possible values.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
-            {
               "type": "test",
               "title": "The number of status messages MUST equal the number of possible values.",
               "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=the%20number%20of%20status%20messages%20MUST%20equal%20the%20number%20of%20possible%20values';\n          for(statusEntry of statusEntries) {\n            if('statusSize' in statusEntry &&\n              'statusMessage' in statusEntry) {\n              statusEntry.statusMessage.should.be.\n                an('array').length.should.be.\n                equal(statusEntry.statusSize);\n            } else {\n              if(statusEntry === statusEntries[statusEntries.length - 1]) {\n                this.test.cell.skipMessage = 'No statusMessage property ' +\n                'included.';\n                this.skip();\n              } else {\n                continue;\n              }\n            }\n          }\n        }",
@@ -1429,9 +1031,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:913542e2-a009-443c-8ee9-7c902f330a19",
+              "_testId": "urn:uuid:bd0e80a2-cf4c-4c5b-892d-50aa3bf4452f",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The number of status messages MUST equal the number of possible values.",
@@ -1444,12 +1046,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5035,
+                "_idleStart": 3962,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 0,
+              "duration": 1,
               "state": "pending",
               "err": {
                 "message": "No statusMessage property included."
@@ -1461,16 +1063,6 @@
           "id": "If present, the statusMessage property MUST be an array, the length of which MUST equal the number of possible status messages indicated by statusSize.",
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20the%20statusMessage%20property%20MUST%20be%20an%20array%2C%20the%20length%20of%20which%20MUST%20equal%20the%20number%20of%20possible%20status%20messages%20indicated%20by%20statusSize",
           "cells": [
-            {
-              "cell": {
-                "rowId": "If present, the statusMessage property MUST be an array, the length of which MUST equal the number of possible status messages indicated by statusSize.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
             {
               "type": "test",
               "title": "If present, the statusMessage property MUST be an array, the length of which MUST equal the number of possible status messages indicated by statusSize.",
@@ -1484,9 +1076,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:1bd833ce-9bfa-4860-af6a-e6937c8cea8c",
+              "_testId": "urn:uuid:051d67b3-b2a7-4086-b6bd-65ecaa23f987",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, the statusMessage property MUST be an array, the length of which MUST equal the number of possible status messages indicated by statusSize.",
@@ -1499,7 +1091,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5036,
+                "_idleStart": 3962,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1517,16 +1109,6 @@
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=statusMessage%20MAY%20be%20present%20if%20statusSize%20is%201%2C%20and%20MUST%20be%20present%20if%20statusSize%20is%20greater%20than%201",
           "cells": [
             {
-              "cell": {
-                "rowId": "statusMessage MAY be present if statusSize is 1, and MUST be present if statusSize is greater than 1.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
-            {
               "type": "test",
               "title": "statusMessage MAY be present if statusSize is 1, and MUST be present if statusSize is greater than 1.",
               "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=statusMessage%20MAY%20be%20present%20if%20statusSize%20is%201%2C%20and%20MUST%20be%20present%20if%20statusSize%20is%20greater%20than%201';\n          for(statusEntry of statusEntries) {\n            if('statusSize' in statusEntry &&\n              Number.isInteger(statusEntry.statusSize) &&\n              statusEntry.statusSize.gt(1)\n            ) {\n              statusEntry.should.have.own.property(\n                'statusMessage');\n            } else {\n              if(statusEntry === statusEntries[statusEntries.length - 1]) {\n                this.test.cell.skipMessage = 'No greater than 1 ' +\n                'statusSize property included.';\n                this.skip();\n              } else {\n                continue;\n              }\n            }\n          }\n        }",
@@ -1539,9 +1121,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:f5d19cd1-6264-4594-98cb-545e2a4eee78",
+              "_testId": "urn:uuid:40200176-3111-44ad-9eb0-cb069f4c5975",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "statusMessage MAY be present if statusSize is 1, and MUST be present if statusSize is greater than 1.",
@@ -1554,7 +1136,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5036,
+                "_idleStart": 3962,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1572,16 +1154,6 @@
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20the%20statusMessage%20array%20is%20present%2C%20each%20element%20MUST%20contain%20the%20two%20properties%20described%20below%2C%20and%20MAY%20contain%20additional%20properties.",
           "cells": [
             {
-              "cell": {
-                "rowId": "If the statusMessage array is present, each element MUST contain the two properties \"status\" and \"message\".",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
-            {
               "type": "test",
               "title": "If the statusMessage array is present, each element MUST contain the two properties \"status\" and \"message\".",
               "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20the%20statusMessage%20array%20is%20present%2C%20each%20element%20MUST%20contain%20the%20two%20properties%20described%20below%2C%20and%20MAY%20contain%20additional%20properties.';\n          for(statusEntry of statusEntries) {\n            if('statusMessage' in statusEntry) {\n              // TODO this needs more testing:\n              // a string representing the hexadecimal\n              // value of the status prefixed with 0x\n              statusEntry.\n                statusMessage.should.each.have.property(\n                  'status').that.is.a('string');\n              statusEntry.\n                statusMessage.should.each.have.property(\n                  'message').that.is.a('string');\n            } else {\n              if(statusEntry === statusEntries[statusEntries.length - 1]) {\n                this.test.cell.skipMessage = 'No statusMessage ' +\n                'property included.';\n                this.skip();\n              } else {\n                continue;\n              }\n            }\n          }\n        }",
@@ -1594,9 +1166,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:ece50de7-c240-4a97-8570-b3d071451b00",
+              "_testId": "urn:uuid:35cb0ee5-3df2-444a-997d-f6e542d10bfc",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If the statusMessage array is present, each element MUST contain the two properties \"status\" and \"message\".",
@@ -1609,7 +1181,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5036,
+                "_idleStart": 3962,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1627,16 +1199,6 @@
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20its%20value%20MUST%20be%20a%20URL%20or%20an%20array%20of%20URLs%20%5BURL%5D%20which%20dereference%20to%20material%20related%20to%20the%20status",
           "cells": [
             {
-              "cell": {
-                "rowId": "If present, the \"statusReference\" value MUST be a URL or an array of URLs [URL] which dereference(s) to material related to the status.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
-            {
               "type": "test",
               "title": "If present, the \"statusReference\" value MUST be a URL or an array of URLs [URL] which dereference(s) to material related to the status.",
               "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20present%2C%20its%20value%20MUST%20be%20a%20URL%20or%20an%20array%20of%20URLs%20%5BURL%5D%20which%20dereference%20to%20material%20related%20to%20the%20status';\n          for(statusEntry of statusEntries) {\n            if('statusReference' in statusEntry) {\n              const statusReferenceType = typeof (\n                statusEntry.statusReference);\n              statusReferenceType.should.be.oneOf(['string', 'object'],\n                'Expected statusReference to be an string or an array.');\n              if(statusReferenceType === 'object') {\n                statusEntry.statusReference.should.be.an(\n                  'array');\n                statusEntry.statusReference.forEach(\n                  item => item.should.be.a('string'));\n              }\n              // TODO test for URLS\n            } else {\n              if(statusEntry === statusEntries[statusEntries.length - 1]) {\n                this.test.cell.skipMessage = 'No statusReference ' +\n                'property included.';\n                this.skip();\n              } else {\n                continue;\n              }\n            }\n          }\n        }",
@@ -1649,9 +1211,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "XeNJ4XihfMcnVTleQYRjz",
+              "parent": "XkiAeDva9UfmKpM5Fec1N",
               "ctx": null,
-              "_testId": "urn:uuid:6b2afefe-009f-4d2e-90eb-f3f2c0b7ec04",
+              "_testId": "urn:uuid:9ccd13b8-87c9-4625-83d5-65f2ba866c33",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "If present, the \"statusReference\" value MUST be a URL or an array of URLs [URL] which dereference(s) to material related to the status.",
@@ -1664,7 +1226,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5036,
+                "_idleStart": 3963,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -1684,206 +1246,6 @@
       "ctx": null,
       "suites": [
         {
-          "title": "ACA-py",
-          "ctx": null,
-          "suites": [],
-          "tests": [
-            {
-              "type": "test",
-              "title": "When a status list verifiable credential is published, it MUST be a conforming document, as defined in [VC-DATA-MODEL-2.0].",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=When%20a%20status%20list%20verifiable%20credential%20is%20published%2C%20it%20MUST%20be%20a%20conforming%20document%2C%20as%20defined%20in%20%5BVC%2DDATA%2DMODEL%2D2.0%5D';\n          should.exist(issuerResponse,\n            'Expected an issuer response.');\n          should.not.exist(err,\n            'Expected no errors in the issuer response.');\n          issuerResponse.status.should.equal(201,\n            'Expected response http code 201.');\n          should.exist(issuedVc, `Expected VC from ${issuerName} to exist.`);\n          for(statusListCredential of statusListCredentials) {\n            testSlCredential({slCredential:\n              statusListCredential},\n            'Expected status credential to conform to VCDM 2.0.');\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "qHkY9UT8-LcSVGrLS2_jQ",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "The verifiable credential that contains the status list MAY express an id property that matches the value specified in statusListCredential for the corresponding BitstringStatusListEntry.",
-              "body": "",
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": true,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "qHkY9UT8-LcSVGrLS2_jQ",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "The verifiable credential that contains the status list MUST express a type property that includes the BitstringStatusListCredential value.",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20verifiable%20credential%20that%20contains%20the%20status%20list%20MUST%20express%20a%20type%20property%20that%20includes%20the%20BitstringStatusListCredential%20value.';\n          for(statusListCredential of statusListCredentials) {\n            statusListCredential\n              .should.have.own.property(\n                'type').to.be.an('array',\n                'Expected type property to be a string or an array.'\n              );\n            statusListCredential\n              .type.should.include(\n                'BitstringStatusListCredential',\n                'Expected credential status type to include ' +\n                'BitstringStatusListCredential.');\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "qHkY9UT8-LcSVGrLS2_jQ",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "The type of the credential subject, which is the status list, MUST be BitstringStatusList.",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20type%20of%20the%20credential%20subject%2C%20which%20is%20the%20status%20list%2C%20MUST%20be%20BitstringStatusList.';\n          for(statusListCredential of statusListCredentials) {\n            statusListCredential.\n              credentialSubject.should.have.own.property(\n                'type').to.be.a('string',\n                'Expected type property to be a string.'\n              );\n            statusListCredential.\n              credentialSubject.type.should.equal(\n                'BitstringStatusList',\n                'Expected credential status type to be ' +\n                'BitstringStatusList.'\n              );\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "qHkY9UT8-LcSVGrLS2_jQ",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "The value of the purpose property of the status entry, statusPurpose, MUST be one or more strings.",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20value%20of%20the%20purpose%20property%20of%20the%20status%20entry%2C%20statusPurpose%2C%20MUST%20be%20one%20or%20more%20strings.';\n          for(statusListCredential of statusListCredentials) {\n            const statusPurposeType = typeof (\n              statusListCredential.\n                credentialSubject.statusPurpose);\n            statusPurposeType.should.be.oneOf(['string', 'object']);\n            if(statusPurposeType === 'object') {\n              const credentialSubject =\n                statusListCredential.credentialSubject;\n              credentialSubject.statusPurpose.should.be.an(\n                'array');\n              credentialSubject.statusPurpose.forEach(\n                item => item.should.be.a('string'));\n            }\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "qHkY9UT8-LcSVGrLS2_jQ",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "The encodedList property of the credential subject MUST be a Multibase-encoded base64url (with no padding) [RFC4648] representation of the GZIP-compressed [RFC1952] bitstring values for the associated range of verifiable credential status values.",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20encodedList%20property%20of%20the%20credential%20subject%20MUST%20be%20a%20Multibase%2Dencoded%20base64url%20(with%20no%20padding)%20%5BRFC4648%5D%20representation%20of%20the%20GZIP%2Dcompressed%20%5BRFC1952%5D%20bitstring%20values%20for%20the%20associated%20range%20of%20verifiable%20credential%20status%20values.';\n          for(statusListCredential of statusListCredentials) {\n            const credentialSubject =\n              statusListCredential.credentialSubject;\n            const {encodedList} = credentialSubject;\n            await decodeSl({encodedList});\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "qHkY9UT8-LcSVGrLS2_jQ",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "The uncompressed bitstring MUST be at least 16KB in size.",
-              "body": "async function() {\n            this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20uncompressed%20bitstring%20MUST%20be%20at%20least%2016KB%20in%20size.';\n            for(statusListCredential of statusListCredentials) {\n              const {encodedList} = statusListCredential.credentialSubject;\n              const decoded = await decodeSl({encodedList});\n              // decoded size should be 16kb\n              const decodedSize = (decoded.length / 100);\n              decodedSize.should.be.gte(16,\n                'Expected bitstring to be at least 16KB in size.'\n              );\n            }\n          }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "qHkY9UT8-LcSVGrLS2_jQ",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "The bitstring MUST be encoded such that the first index, with a value of zero (0), is located at the left-most bit in the bitstring and the last index, with a value of one less than the length of the bitstring (bitstring_length - 1), is located at the right-most bit in the bitstring.",
-              "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20bitstring%20MUST,Bitstring%20Encoding.';\n          this.test.cell.skipMessage = 'Test needs to be validated.';\n          this.skip();\n          for(statusListCredential of statusListCredentials) {\n            const {encodedList} = statusListCredential.credentialSubject;\n            const decoded = await decodeSl({encodedList});\n            decoded[0].should.be.equal(0,\n              'Expected the first index of the statusList to have ' +\n              'the value 0.'\n            );\n            decoded[\n              decoded.length - 1].should.be.equal(\n              decoded.length - 1,\n              'Expected the last index of the statusList to have ' +\n                'the value of the bitstring length minus 1.'\n            );\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "qHkY9UT8-LcSVGrLS2_jQ",
-              "ctx": null
-            }
-          ],
-          "root": false,
-          "pending": false,
-          "_retries": -1,
-          "_beforeEach": [
-            {
-              "title": "\"before each\" hook: addPerTestMetadata",
-              "body": "function addPerTestMetadata() {\n  // append test meta data to the it/test this.\n  this.currentTest.cell = {\n    columnId: this.currentTest.parent.title,\n    rowId: this.currentTest.title\n  };\n}",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "type": "hook",
-              "parent": "qHkY9UT8-LcSVGrLS2_jQ",
-              "ctx": null,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js"
-            }
-          ],
-          "_beforeAll": [
-            {
-              "title": "\"before all\" hook for \"When a status list verifiable credential is published, it MUST be a conforming document, as defined in [VC-DATA-MODEL-2.0].\"",
-              "body": "async function() {\n          const issuer = issuers.find(\n            issuer => issuer.tags.has('BitstringStatusList'));\n          const {result, error, data} = await issueVc({issuer});\n          err = error;\n          issuerResponse = result;\n          issuedVc = data;\n          if(issuedVc.hasOwnProperty('credentialStatus')) {\n            if(Array.isArray(issuedVc.credentialStatus)) {\n              statusEntries = issuedVc.credentialStatus;\n            } else {\n              statusEntries = [issuedVc.credentialStatus];\n            }\n          }\n          statusListCredentials = [];\n          for(statusEntry of statusEntries) {\n            statusListCredentials.push(\n              (await getSlc(statusEntry)).slc);\n          }\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "type": "hook",
-              "parent": "qHkY9UT8-LcSVGrLS2_jQ",
-              "ctx": null,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "originalTitle": "\"before all\" hook",
-              "_events": {},
-              "_eventsCount": 1,
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 5037,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 107,
-              "_error": null,
-              "state": "failed",
-              "err": {}
-            }
-          ],
-          "_afterEach": [],
-          "_afterAll": [],
-          "_timeout": 15000,
-          "_slow": 75,
-          "_bail": false,
-          "_onlyTests": [],
-          "_onlySuites": [],
-          "delayed": false,
-          "parent": "e9btTxXHRdsw3PvrHgEwp",
-          "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:b6eef312-06ab-416d-9480-b1e6e963d998"
-        },
-        {
           "title": "Digital Bazaar",
           "ctx": null,
           "suites": [],
@@ -1901,9 +1263,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
-              "_testId": "urn:uuid:77ac35f6-ab6e-4a32-9724-a0e3d74c3d82",
+              "_testId": "urn:uuid:d8b6f7b4-6510-4b4e-b1bc-d21daa4f350b",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "When a status list verifiable credential is published, it MUST be a conforming document, as defined in [VC-DATA-MODEL-2.0]."
@@ -1915,12 +1277,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5598,
+                "_idleStart": 5594,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 2,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             },
@@ -1936,7 +1298,7 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
               "state": "pending"
             },
@@ -1953,9 +1315,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
-              "_testId": "urn:uuid:fa063dae-a7b1-4c8c-a420-648ca289e6f8",
+              "_testId": "urn:uuid:85d50059-40f0-4c1e-91b5-d367bf57f6ec",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The verifiable credential that contains the status list MUST express a type property that includes the BitstringStatusListCredential value."
@@ -1967,12 +1329,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5599,
+                "_idleStart": 5595,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             },
@@ -1989,9 +1351,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
-              "_testId": "urn:uuid:b60acdbb-a90c-4079-81fb-429d9f61dada",
+              "_testId": "urn:uuid:6f69832f-59b7-46ce-b9cc-e253510e8e22",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The type of the credential subject, which is the status list, MUST be BitstringStatusList."
@@ -2003,7 +1365,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5599,
+                "_idleStart": 5595,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2025,9 +1387,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
-              "_testId": "urn:uuid:8e3859c9-37ed-4ea0-bc59-0059ec9eb9a4",
+              "_testId": "urn:uuid:986568d9-6f43-47e7-b0a5-f6fa7491733c",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The value of the purpose property of the status entry, statusPurpose, MUST be one or more strings."
@@ -2039,12 +1401,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5599,
+                "_idleStart": 5596,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             },
@@ -2061,9 +1423,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
-              "_testId": "urn:uuid:982ccf0e-210b-46ca-b7ab-816b7a8922f2",
+              "_testId": "urn:uuid:72d57126-cfe8-4ae6-a186-49d238bd1667",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The encodedList property of the credential subject MUST be a Multibase-encoded base64url (with no padding) [RFC4648] representation of the GZIP-compressed [RFC1952] bitstring values for the associated range of verifiable credential status values."
@@ -2075,7 +1437,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5602,
+                "_idleStart": 5599,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2097,9 +1459,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
-              "_testId": "urn:uuid:97523d07-d395-432c-8c40-9791465b1101",
+              "_testId": "urn:uuid:a2896ba7-ebab-4280-8c9e-7b7fdb232c72",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The uncompressed bitstring MUST be at least 16KB in size."
@@ -2111,7 +1473,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5604,
+                "_idleStart": 5601,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2133,9 +1495,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
-              "_testId": "urn:uuid:5f684a19-79fd-4f08-abc7-e67d7abc6471",
+              "_testId": "urn:uuid:52f7f691-d2e0-4063-8819-af9b6468f783",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The bitstring MUST be encoded such that the first index, with a value of zero (0), is located at the left-most bit in the bitstring and the last index, with a value of one less than the length of the bitstring (bitstring_length - 1), is located at the right-most bit in the bitstring.",
@@ -2148,12 +1510,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5605,
+                "_idleStart": 5602,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "pending",
               "err": {
                 "message": "Test needs to be validated."
@@ -2176,7 +1538,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
               "originalTitle": "\"before each\" hook: addPerTestMetadata",
@@ -2199,7 +1561,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
               "originalTitle": "\"before all\" hook",
@@ -2209,12 +1571,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5144,
+                "_idleStart": 3963,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 451,
+              "duration": 1629,
               "_error": null
             }
           ],
@@ -2226,9 +1588,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "e9btTxXHRdsw3PvrHgEwp",
+          "parent": "049ZwP6ylZSChu4U4VP9a",
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-          "_testId": "urn:uuid:8d60b6de-b78e-4fc0-8b6c-7c22efd2f40e"
+          "_testId": "urn:uuid:87f18b3d-d1a3-4bc0-a022-f1f6d57df900"
         }
       ],
       "root": false,
@@ -2244,15 +1606,14 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "nOMW_eRIWAdb7vLnpwffu",
+      "parent": "xH39FeaXEd5dUyjmYx8uW",
       "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Test Name",
       "columnLabel": "Issuer",
-      "_testId": "urn:uuid:49d819fb-3582-4f8f-9bc8-94594cdab6c5",
+      "_testId": "urn:uuid:b97ed345-bca0-4229-92fc-e442712ccc8f",
       "columns": [
-        "ACA-py",
         "Digital Bazaar"
       ],
       "rows": [
@@ -2260,16 +1621,6 @@
           "id": "When a status list verifiable credential is published, it MUST be a conforming document, as defined in [VC-DATA-MODEL-2.0].",
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=When%20a%20status%20list%20verifiable%20credential%20is%20published%2C%20it%20MUST%20be%20a%20conforming%20document%2C%20as%20defined%20in%20%5BVC%2DDATA%2DMODEL%2D2.0%5D",
           "cells": [
-            {
-              "cell": {
-                "rowId": "When a status list verifiable credential is published, it MUST be a conforming document, as defined in [VC-DATA-MODEL-2.0].",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
             {
               "type": "test",
               "title": "When a status list verifiable credential is published, it MUST be a conforming document, as defined in [VC-DATA-MODEL-2.0].",
@@ -2283,9 +1634,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
-              "_testId": "urn:uuid:77ac35f6-ab6e-4a32-9724-a0e3d74c3d82",
+              "_testId": "urn:uuid:d8b6f7b4-6510-4b4e-b1bc-d21daa4f350b",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "When a status list verifiable credential is published, it MUST be a conforming document, as defined in [VC-DATA-MODEL-2.0]."
@@ -2297,12 +1648,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5598,
+                "_idleStart": 5594,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 2,
+              "duration": 1,
               "state": "passed",
               "speed": "fast"
             }
@@ -2312,16 +1663,6 @@
           "id": "The verifiable credential that contains the status list MUST express a type property that includes the BitstringStatusListCredential value.",
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20verifiable%20credential%20that%20contains%20the%20status%20list%20MUST%20express%20a%20type%20property%20that%20includes%20the%20BitstringStatusListCredential%20value.",
           "cells": [
-            {
-              "cell": {
-                "rowId": "The verifiable credential that contains the status list MUST express a type property that includes the BitstringStatusListCredential value.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
             {
               "type": "test",
               "title": "The verifiable credential that contains the status list MUST express a type property that includes the BitstringStatusListCredential value.",
@@ -2335,9 +1676,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
-              "_testId": "urn:uuid:fa063dae-a7b1-4c8c-a420-648ca289e6f8",
+              "_testId": "urn:uuid:85d50059-40f0-4c1e-91b5-d367bf57f6ec",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The verifiable credential that contains the status list MUST express a type property that includes the BitstringStatusListCredential value."
@@ -2349,12 +1690,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5599,
+                "_idleStart": 5595,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             }
@@ -2364,16 +1705,6 @@
           "id": "The type of the credential subject, which is the status list, MUST be BitstringStatusList.",
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20type%20of%20the%20credential%20subject%2C%20which%20is%20the%20status%20list%2C%20MUST%20be%20BitstringStatusList.",
           "cells": [
-            {
-              "cell": {
-                "rowId": "The type of the credential subject, which is the status list, MUST be BitstringStatusList.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
             {
               "type": "test",
               "title": "The type of the credential subject, which is the status list, MUST be BitstringStatusList.",
@@ -2387,9 +1718,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
-              "_testId": "urn:uuid:b60acdbb-a90c-4079-81fb-429d9f61dada",
+              "_testId": "urn:uuid:6f69832f-59b7-46ce-b9cc-e253510e8e22",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The type of the credential subject, which is the status list, MUST be BitstringStatusList."
@@ -2401,7 +1732,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5599,
+                "_idleStart": 5595,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2417,16 +1748,6 @@
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20value%20of%20the%20purpose%20property%20of%20the%20status%20entry%2C%20statusPurpose%2C%20MUST%20be%20one%20or%20more%20strings.",
           "cells": [
             {
-              "cell": {
-                "rowId": "The value of the purpose property of the status entry, statusPurpose, MUST be one or more strings.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
-            {
               "type": "test",
               "title": "The value of the purpose property of the status entry, statusPurpose, MUST be one or more strings.",
               "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20value%20of%20the%20purpose%20property%20of%20the%20status%20entry%2C%20statusPurpose%2C%20MUST%20be%20one%20or%20more%20strings.';\n          for(statusListCredential of statusListCredentials) {\n            const statusPurposeType = typeof (\n              statusListCredential.\n                credentialSubject.statusPurpose);\n            statusPurposeType.should.be.oneOf(['string', 'object']);\n            if(statusPurposeType === 'object') {\n              const credentialSubject =\n                statusListCredential.credentialSubject;\n              credentialSubject.statusPurpose.should.be.an(\n                'array');\n              credentialSubject.statusPurpose.forEach(\n                item => item.should.be.a('string'));\n            }\n          }\n        }",
@@ -2439,9 +1760,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
-              "_testId": "urn:uuid:8e3859c9-37ed-4ea0-bc59-0059ec9eb9a4",
+              "_testId": "urn:uuid:986568d9-6f43-47e7-b0a5-f6fa7491733c",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The value of the purpose property of the status entry, statusPurpose, MUST be one or more strings."
@@ -2453,12 +1774,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5599,
+                "_idleStart": 5596,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast"
             }
@@ -2468,16 +1789,6 @@
           "id": "The encodedList property of the credential subject MUST be a Multibase-encoded base64url (with no padding) [RFC4648] representation of the GZIP-compressed [RFC1952] bitstring values for the associated range of verifiable credential status values.",
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20encodedList%20property%20of%20the%20credential%20subject%20MUST%20be%20a%20Multibase%2Dencoded%20base64url%20(with%20no%20padding)%20%5BRFC4648%5D%20representation%20of%20the%20GZIP%2Dcompressed%20%5BRFC1952%5D%20bitstring%20values%20for%20the%20associated%20range%20of%20verifiable%20credential%20status%20values.",
           "cells": [
-            {
-              "cell": {
-                "rowId": "The encodedList property of the credential subject MUST be a Multibase-encoded base64url (with no padding) [RFC4648] representation of the GZIP-compressed [RFC1952] bitstring values for the associated range of verifiable credential status values.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
             {
               "type": "test",
               "title": "The encodedList property of the credential subject MUST be a Multibase-encoded base64url (with no padding) [RFC4648] representation of the GZIP-compressed [RFC1952] bitstring values for the associated range of verifiable credential status values.",
@@ -2491,9 +1802,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
-              "_testId": "urn:uuid:982ccf0e-210b-46ca-b7ab-816b7a8922f2",
+              "_testId": "urn:uuid:72d57126-cfe8-4ae6-a186-49d238bd1667",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The encodedList property of the credential subject MUST be a Multibase-encoded base64url (with no padding) [RFC4648] representation of the GZIP-compressed [RFC1952] bitstring values for the associated range of verifiable credential status values."
@@ -2505,7 +1816,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5602,
+                "_idleStart": 5599,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2521,16 +1832,6 @@
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20uncompressed%20bitstring%20MUST%20be%20at%20least%2016KB%20in%20size.",
           "cells": [
             {
-              "cell": {
-                "rowId": "The uncompressed bitstring MUST be at least 16KB in size.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
-            {
               "type": "test",
               "title": "The uncompressed bitstring MUST be at least 16KB in size.",
               "body": "async function() {\n            this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20uncompressed%20bitstring%20MUST%20be%20at%20least%2016KB%20in%20size.';\n            for(statusListCredential of statusListCredentials) {\n              const {encodedList} = statusListCredential.credentialSubject;\n              const decoded = await decodeSl({encodedList});\n              // decoded size should be 16kb\n              const decodedSize = (decoded.length / 100);\n              decodedSize.should.be.gte(16,\n                'Expected bitstring to be at least 16KB in size.'\n              );\n            }\n          }",
@@ -2543,9 +1844,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
-              "_testId": "urn:uuid:97523d07-d395-432c-8c40-9791465b1101",
+              "_testId": "urn:uuid:a2896ba7-ebab-4280-8c9e-7b7fdb232c72",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The uncompressed bitstring MUST be at least 16KB in size."
@@ -2557,7 +1858,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5604,
+                "_idleStart": 5601,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2573,16 +1874,6 @@
           "link": "https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20bitstring%20MUST,Bitstring%20Encoding.",
           "cells": [
             {
-              "cell": {
-                "rowId": "The bitstring MUST be encoded such that the first index, with a value of zero (0), is located at the left-most bit in the bitstring and the last index, with a value of one less than the length of the bitstring (bitstring_length - 1), is located at the right-most bit in the bitstring.",
-                "colId": "ACA-py"
-              },
-              "state": "pending",
-              "err": {
-                "message": "Test skipped."
-              }
-            },
-            {
               "type": "test",
               "title": "The bitstring MUST be encoded such that the first index, with a value of zero (0), is located at the left-most bit in the bitstring and the last index, with a value of one less than the length of the bitstring (bitstring_length - 1), is located at the right-most bit in the bitstring.",
               "body": "async function() {\n          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20bitstring%20MUST,Bitstring%20Encoding.';\n          this.test.cell.skipMessage = 'Test needs to be validated.';\n          this.skip();\n          for(statusListCredential of statusListCredentials) {\n            const {encodedList} = statusListCredential.credentialSubject;\n            const decoded = await decodeSl({encodedList});\n            decoded[0].should.be.equal(0,\n              'Expected the first index of the statusList to have ' +\n              'the value 0.'\n            );\n            decoded[\n              decoded.length - 1].should.be.equal(\n              decoded.length - 1,\n              'Expected the last index of the statusList to have ' +\n                'the value of the bitstring length minus 1.'\n            );\n          }\n        }",
@@ -2595,9 +1886,9 @@
               "_currentRetry": 0,
               "pending": true,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-issue.js",
-              "parent": "wLVS4j4l2eiKdLA1Z-EVI",
+              "parent": "9p5dTQKqAkIizAbrdNrXY",
               "ctx": null,
-              "_testId": "urn:uuid:5f684a19-79fd-4f08-abc7-e67d7abc6471",
+              "_testId": "urn:uuid:52f7f691-d2e0-4063-8819-af9b6468f783",
               "cell": {
                 "columnId": "Digital Bazaar",
                 "rowId": "The bitstring MUST be encoded such that the first index, with a value of zero (0), is located at the left-most bit in the bitstring and the last index, with a value of one less than the length of the bitstring (bitstring_length - 1), is located at the right-most bit in the bitstring.",
@@ -2610,12 +1901,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5605,
+                "_idleStart": 5602,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 1,
+              "duration": 0,
               "state": "pending",
               "err": {
                 "message": "Test needs to be validated."
@@ -2629,158 +1920,6 @@
       "title": "BitstringStatusList Credentials (Verify)",
       "ctx": null,
       "suites": [
-        {
-          "title": "ACA-py",
-          "ctx": null,
-          "suites": [],
-          "tests": [
-            {
-              "type": "test",
-              "title": "MUST verify a valid \"BitstringStatusListCredential\" with \"revocation\" status purpose",
-              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        this.test.cell.skipMessage = 'Pending verifier tests.';\n        this.skip();\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: validVcForRevocation})\n        });\n        shouldPassVerification({result, error, statusCode});\n      }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "8o06qJEaPMFUtRDnaHPQn",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "MUST verify a valid \"BitstringStatusListCredential\" with \"suspension\" status purpose",
-              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        this.test.cell.skipMessage = 'Pending verifier tests.';\n        this.skip();\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: validVcForSuspension})\n        });\n        shouldPassVerification({result, error, statusCode});\n      }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "8o06qJEaPMFUtRDnaHPQn",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "MUST fail to verify a VC with invalid \"credentialStatus.statusListCredential\"",
-              "body": "async function() {\n        this.test.cell = {columnId: verifierName, rowId: this.test.title};\n        this.test.cell.skipMessage = 'Pending verifier tests.';\n        this.skip();\n        const invalidStatusListCredential = klona(validVcForRevocation);\n        invalidStatusListCredential.credentialStatus.statusListCredential =\n          'invalid-statusListCredential';\n        const {result, error, statusCode} = await verifier.post({\n          json: createRequestBody({vc: invalidStatusListCredential})\n        });\n        shouldFailVerification({result, error, statusCode});\n      }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "8o06qJEaPMFUtRDnaHPQn",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "MUST fail to verify a VC with invalid \"credentialStatus.type\"",
-              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          this.test.cell.skipMessage = 'Pending verifier tests.';\n          this.skip();\n          const invalidCredentialStatusType = klona(validVcForRevocation);\n          invalidCredentialStatusType.credentialStatus.type = 'invalid-type';\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: invalidCredentialStatusType})\n          });\n          shouldFailVerification({result, error, statusCode});\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "8o06qJEaPMFUtRDnaHPQn",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "MUST fail to verify a revoked status list credential",
-              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          this.test.cell.skipMessage = 'Pending verifier tests.';\n          this.skip();\n          // get the status of the VC\n          const statusInfo = await getCredentialStatus({\n            verifiableCredential: validVcForRevocation\n          });\n          statusInfo.status.should.equal(false);\n          // verification of the credential should pass\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: validVcForRevocation})\n          });\n          shouldPassVerification({result, error, statusCode});\n          // update the status of the VC and revoke it\n          const revokedVc = await updateStatus({\n            vc: validVcForRevocation, setStatusList: setRevocationStatusList,\n            publishStatusList: publishRevocationStatusList, statusInfo,\n            statusPurpose: 'revocation'\n          });\n          // try to verify the credential after revocation, should fail since it\n          // has now been revoked\n          const {\n            result: result2, error: err2, statusCode: statusCode2\n          } = await verifier.post({\n            json: createRequestBody({vc: revokedVc})\n          });\n          shouldFailVerification({\n            result: result2, error: err2, statusCode: statusCode2\n          });\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "8o06qJEaPMFUtRDnaHPQn",
-              "ctx": null
-            },
-            {
-              "type": "test",
-              "title": "MUST fail to verify a suspended status list credential",
-              "body": "async function() {\n          this.test.cell = {columnId: verifierName, rowId: this.test.title};\n          this.test.cell.skipMessage = 'Pending verifier tests.';\n          this.skip();\n          // get the status of the VC\n          const statusInfo = await getCredentialStatus({\n            verifiableCredential: validVcForSuspension\n          });\n          statusInfo.status.should.equal(false);\n          // verification of the credential should pass\n          const {result, error, statusCode} = await verifier.post({\n            json: createRequestBody({vc: validVcForSuspension})\n          });\n          shouldPassVerification({result, error, statusCode});\n          // update the status of the VC and suspend it\n          const suspendedVc = await updateStatus({\n            vc: validVcForSuspension, setStatusList: setSuspensionStatusList,\n            publishStatusList: publishSuspensionStatusList, statusInfo,\n            statusPurpose: 'suspension'\n          });\n          // try to verify the credential after suspension, should fail since it\n          // has now been suspended\n          const {\n            result: result2, error: err2, statusCode: statusCode2\n          } = await verifier.post({\n            json: createRequestBody({vc: suspendedVc})\n          });\n          shouldFailVerification({\n            result: result2, error: err2, statusCode: statusCode2\n          });\n        }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "8o06qJEaPMFUtRDnaHPQn",
-              "ctx": null
-            }
-          ],
-          "root": false,
-          "pending": false,
-          "_retries": -1,
-          "_beforeEach": [],
-          "_beforeAll": [
-            {
-              "title": "\"before all\" hook for \"MUST verify a valid \"BitstringStatusListCredential\" with \"revocation\" status purpose\"",
-              "body": "async function() {\n        // get a VC issued by DB\n        const {match} = filterImplementations({filter: ({value}) => {\n          // FIXME: Make issuer name configurable via env variable\n          return value.settings.name === 'Digital Bazaar';\n        }});\n        const res = match.get('Digital Bazaar');\n        const {issuers, setStatusLists, publishStatusLists} = res;\n        setRevocationStatusList = setStatusLists.find(\n          issuer => issuer.tags.has('Revocation'));\n        setSuspensionStatusList = setStatusLists.find(\n          issuer => issuer.tags.has('Suspension'));\n        publishRevocationStatusList = publishStatusLists.find(\n          issuer => issuer.tags.has('Revocation'));\n        publishSuspensionStatusList = publishStatusLists.find(\n          issuer => issuer.tags.has('Suspension'));\n        const issuer1 = issuers.find(issuer => issuer.tags.has('Revocation'));\n        const {data: data1} = await issueVc({issuer: issuer1});\n        validVcForRevocation = data1;\n        const issuer2 = issuers.find(issuer => issuer.tags.has('Suspension'));\n        const {data: data2} = await issueVc({issuer: issuer2});\n        validVcForSuspension = data2;\n      }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "type": "hook",
-              "parent": "8o06qJEaPMFUtRDnaHPQn",
-              "ctx": null,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "originalTitle": "\"before all\" hook",
-              "_events": {},
-              "_eventsCount": 1,
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 5606,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 0,
-              "_error": null,
-              "state": "failed",
-              "err": {}
-            }
-          ],
-          "_afterEach": [],
-          "_afterAll": [],
-          "_timeout": 15000,
-          "_slow": 75,
-          "_bail": false,
-          "_onlyTests": [],
-          "_onlySuites": [],
-          "delayed": false,
-          "parent": "8irRkFgrdFPgZCjSnxqwh",
-          "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-          "_testId": "urn:uuid:b4cec70d-e300-4304-bbe6-b90581e01244"
-        },
         {
           "title": "Digital Bazaar",
           "ctx": null,
@@ -2799,7 +1938,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "Znl-1pFki-QDryxnw65uT",
+              "parent": "M0m7hw7GiL0Z1vuSAwhPY",
               "ctx": null
             },
             {
@@ -2815,7 +1954,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "Znl-1pFki-QDryxnw65uT",
+              "parent": "M0m7hw7GiL0Z1vuSAwhPY",
               "ctx": null
             },
             {
@@ -2831,7 +1970,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "Znl-1pFki-QDryxnw65uT",
+              "parent": "M0m7hw7GiL0Z1vuSAwhPY",
               "ctx": null
             },
             {
@@ -2847,7 +1986,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "Znl-1pFki-QDryxnw65uT",
+              "parent": "M0m7hw7GiL0Z1vuSAwhPY",
               "ctx": null
             },
             {
@@ -2863,7 +2002,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "Znl-1pFki-QDryxnw65uT",
+              "parent": "M0m7hw7GiL0Z1vuSAwhPY",
               "ctx": null
             },
             {
@@ -2879,7 +2018,7 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-              "parent": "Znl-1pFki-QDryxnw65uT",
+              "parent": "M0m7hw7GiL0Z1vuSAwhPY",
               "ctx": null
             }
           ],
@@ -2900,7 +2039,7 @@
               "_currentRetry": 0,
               "pending": false,
               "type": "hook",
-              "parent": "Znl-1pFki-QDryxnw65uT",
+              "parent": "M0m7hw7GiL0Z1vuSAwhPY",
               "ctx": null,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
               "originalTitle": "\"before all\" hook",
@@ -2910,7 +2049,7 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 5607,
+                "_idleStart": 5603,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
@@ -2929,9 +2068,9 @@
           "_onlyTests": [],
           "_onlySuites": [],
           "delayed": false,
-          "parent": "8irRkFgrdFPgZCjSnxqwh",
+          "parent": "jm3I6BO6g-1MTbiTbC0co",
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
-          "_testId": "urn:uuid:8dffbf71-1acb-4bb7-ad15-8cb40a72bb6d"
+          "_testId": "urn:uuid:043129e1-0c77-425b-baad-a62dd7e31e02"
         }
       ],
       "root": false,
@@ -2947,15 +2086,14 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "nOMW_eRIWAdb7vLnpwffu",
+      "parent": "xH39FeaXEd5dUyjmYx8uW",
       "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-verify.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Test Name",
       "columnLabel": "Verifier",
-      "_testId": "urn:uuid:cc0b241d-f0d5-4084-aa67-daf1284652e1",
+      "_testId": "urn:uuid:3c69503f-d961-4576-b3e3-6959c8100ad4",
       "columns": [
-        "ACA-py",
         "Digital Bazaar"
       ],
       "rows": []
@@ -2980,28 +2118,7 @@
           "_currentRetry": 0,
           "pending": false,
           "type": "hook",
-          "parent": "pxaPTVMaW6pz-QcZurT5l",
-          "ctx": null,
-          "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
-          "originalTitle": "\"before each\" hook: addPerTestMetadata",
-          "_events": {},
-          "_eventsCount": 1,
-          "duration": 0,
-          "_error": null
-        },
-        {
-          "title": "\"before each\" hook: addPerTestMetadata in \"BitstringStatusList Credentials (Interop)\"",
-          "body": "function addPerTestMetadata() {\n  // append test meta data to the it/test this.\n  this.currentTest.cell = {\n    columnId: this.currentTest.parent.title,\n    rowId: this.currentTest.title\n  };\n}",
-          "async": 0,
-          "sync": true,
-          "_timeout": 15000,
-          "_slow": 75,
-          "_retries": -1,
-          "timedOut": false,
-          "_currentRetry": 0,
-          "pending": false,
-          "type": "hook",
-          "parent": "pxaPTVMaW6pz-QcZurT5l",
+          "parent": "rVxUw0bByiVzpvU6LUh46",
           "ctx": null,
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
           "originalTitle": "\"before each\" hook: addPerTestMetadata",
@@ -3024,7 +2141,7 @@
           "_currentRetry": 0,
           "pending": false,
           "type": "hook",
-          "parent": "pxaPTVMaW6pz-QcZurT5l",
+          "parent": "rVxUw0bByiVzpvU6LUh46",
           "ctx": null,
           "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
           "originalTitle": "\"before all\" hook",
@@ -3034,37 +2151,7 @@
             "_idleTimeout": -1,
             "_idlePrev": null,
             "_idleNext": null,
-            "_idleStart": 5607,
-            "_onTimeout": null,
-            "_repeat": null,
-            "_destroyed": true
-          },
-          "duration": 0,
-          "_error": null
-        },
-        {
-          "title": "\"before all\" hook in \"BitstringStatusList Credentials (Interop)\"",
-          "body": "async function() {\n      const [issuer] = endpoints.filter(\n        endpoint => endpoint.settings.tags.includes('BitstringStatusList'));\n      issuedVc = issueVc({issuer});\n    }",
-          "async": 0,
-          "sync": true,
-          "_timeout": 15000,
-          "_slow": 75,
-          "_retries": -1,
-          "timedOut": false,
-          "_currentRetry": 0,
-          "pending": false,
-          "type": "hook",
-          "parent": "pxaPTVMaW6pz-QcZurT5l",
-          "ctx": null,
-          "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
-          "originalTitle": "\"before all\" hook",
-          "_events": {},
-          "_eventsCount": 1,
-          "timer": {
-            "_idleTimeout": -1,
-            "_idlePrev": null,
-            "_idleNext": null,
-            "_idleStart": 5607,
+            "_idleStart": 5606,
             "_onTimeout": null,
             "_repeat": null,
             "_destroyed": true
@@ -3081,347 +2168,20 @@
       "_onlyTests": [],
       "_onlySuites": [],
       "delayed": false,
-      "parent": "nOMW_eRIWAdb7vLnpwffu",
+      "parent": "xH39FeaXEd5dUyjmYx8uW",
       "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
       "matrix": true,
       "report": true,
       "rowLabel": "Issuer",
       "columnLabel": "Verifier",
-      "_testId": "urn:uuid:8dfe68d9-5f97-4663-b8f4-78052e41ada7",
+      "_testId": "urn:uuid:9969cb53-98a1-488e-90bb-3f2cb8833429",
       "columns": [
-        "ACA-py",
         "Digital Bazaar"
       ],
       "rows": [
         {
-          "id": "ACA-py",
-          "cells": [
-            {
-              "type": "test",
-              "title": "ACA-py should verify ACA-py",
-              "body": "async function() {\n        this.test.cell = {rowId: issuerName, columnId: verifierName};\n        const {data: vc, error: err} = await issuedVc;\n        should.not.exist(err);\n        should.exist(vc);\n        const body = createRequestBody({vc});\n        const {result, error, statusCode} = await verifier.post({json: body});\n        shouldPassVerification({result, error, statusCode});\n      }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
-              "parent": "pxaPTVMaW6pz-QcZurT5l",
-              "ctx": null,
-              "_testId": "urn:uuid:4cf5b5f7-df7b-4883-a37b-ae9c6258da48",
-              "cell": {
-                "rowId": "ACA-py",
-                "columnId": "ACA-py"
-              },
-              "_events": {},
-              "_eventsCount": 1,
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 5616,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 95,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "expected HTTPError: Request failed with status cod… { …(5) } to not exist",
-                "showDiff": false,
-                "actual": {
-                  "response": {},
-                  "request": {},
-                  "options": {
-                    "credentials": "same-origin",
-                    "headers": {},
-                    "body": "{\"credential\":{\"@context\":[\"https://www.w3.org/ns/credentials/v2\"],\"type\":[\"VerifiableCredential\"],\"credentialSubject\":{\"id\":\"did:key:z6MkhTNL7i2etLerDK8Acz5t528giE5KA4p75T6ka1E1D74r\"},\"id\":\"urn:uuid:ae7d752d-273a-42c3-b95d-79266773b4d1\",\"issuer\":\"did:key:z6MkmiYjSToh5NdEf9xNuh5mDGXGYinzcAy1s4feRHtkEQJr\"},\"options\":{\"type\":\"Ed25519Signature2020\",\"credentialStatus\":{\"type\":\"BitstringStatusListEntry\",\"statusPurpose\":\"suspension\"}}}",
-                    "method": "POST",
-                    "json": {
-                      "credential": {
-                        "@context": [
-                          "https://www.w3.org/ns/credentials/v2"
-                        ],
-                        "type": [
-                          "VerifiableCredential"
-                        ],
-                        "credentialSubject": {
-                          "id": "did:key:z6MkhTNL7i2etLerDK8Acz5t528giE5KA4p75T6ka1E1D74r"
-                        },
-                        "id": "urn:uuid:ae7d752d-273a-42c3-b95d-79266773b4d1",
-                        "issuer": "did:key:z6MkmiYjSToh5NdEf9xNuh5mDGXGYinzcAy1s4feRHtkEQJr"
-                      },
-                      "options": {
-                        "type": "Ed25519Signature2020",
-                        "credentialStatus": {
-                          "type": "BitstringStatusListEntry",
-                          "statusPurpose": "suspension"
-                        }
-                      }
-                    },
-                    "agent": {
-                      "_events": {},
-                      "_eventsCount": 2,
-                      "defaultPort": 443,
-                      "protocol": "https:",
-                      "options": {
-                        "rejectUnauthorized": false,
-                        "noDelay": true,
-                        "path": null
-                      },
-                      "requests": {},
-                      "sockets": {},
-                      "freeSockets": {},
-                      "keepAliveMsecs": 1000,
-                      "keepAlive": false,
-                      "maxSockets": null,
-                      "maxFreeSockets": 256,
-                      "scheduling": "lifo",
-                      "maxTotalSockets": null,
-                      "totalSocketCount": 0,
-                      "maxCachedSessions": 100,
-                      "_sessionCache": {
-                        "map": {},
-                        "list": []
-                      }
-                    },
-                    "hooks": {
-                      "beforeRequest": [],
-                      "beforeRetry": [],
-                      "beforeError": [],
-                      "afterResponse": []
-                    },
-                    "prefixUrl": "",
-                    "retry": {
-                      "limit": 2,
-                      "methods": [
-                        "get",
-                        "put",
-                        "head",
-                        "delete",
-                        "options",
-                        "trace"
-                      ],
-                      "statusCodes": [
-                        408,
-                        413,
-                        429,
-                        500,
-                        502,
-                        503,
-                        504
-                      ],
-                      "afterStatusCodes": [
-                        413,
-                        429,
-                        503
-                      ],
-                      "maxRetryAfter": null,
-                      "backoffLimit": null
-                    },
-                    "throwHttpErrors": true,
-                    "timeout": 10000,
-                    "signal": {},
-                    "duplex": "half"
-                  },
-                  "name": "HTTPError",
-                  "requestUrl": "https://aca-py.test-suite.app/vc/credentials/issue",
-                  "status": 500
-                },
-                "operator": "notStrictEqual",
-                "stack": "AssertionError: expected HTTPError: Request failed with status cod… { …(5) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:57:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
-            },
-            {
-              "type": "test",
-              "title": "Digital Bazaar should verify ACA-py",
-              "body": "async function() {\n        this.test.cell = {rowId: issuerName, columnId: verifierName};\n        const {data: vc, error: err} = await issuedVc;\n        should.not.exist(err);\n        should.exist(vc);\n        const body = createRequestBody({vc});\n        const {result, error, statusCode} = await verifier.post({json: body});\n        shouldPassVerification({result, error, statusCode});\n      }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
-              "parent": "pxaPTVMaW6pz-QcZurT5l",
-              "ctx": null,
-              "_testId": "urn:uuid:e973679b-04ec-4020-b5fb-18fc92c5f6ce",
-              "cell": {
-                "rowId": "ACA-py",
-                "columnId": "Digital Bazaar"
-              },
-              "_events": {},
-              "_eventsCount": 1,
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 5714,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 0,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "expected HTTPError: Request failed with status cod… { …(5) } to not exist",
-                "showDiff": false,
-                "actual": {
-                  "response": {},
-                  "request": {},
-                  "options": {
-                    "credentials": "same-origin",
-                    "headers": {},
-                    "body": "{\"credential\":{\"@context\":[\"https://www.w3.org/ns/credentials/v2\"],\"type\":[\"VerifiableCredential\"],\"credentialSubject\":{\"id\":\"did:key:z6MkhTNL7i2etLerDK8Acz5t528giE5KA4p75T6ka1E1D74r\"},\"id\":\"urn:uuid:ae7d752d-273a-42c3-b95d-79266773b4d1\",\"issuer\":\"did:key:z6MkmiYjSToh5NdEf9xNuh5mDGXGYinzcAy1s4feRHtkEQJr\"},\"options\":{\"type\":\"Ed25519Signature2020\",\"credentialStatus\":{\"type\":\"BitstringStatusListEntry\",\"statusPurpose\":\"suspension\"}}}",
-                    "method": "POST",
-                    "json": {
-                      "credential": {
-                        "@context": [
-                          "https://www.w3.org/ns/credentials/v2"
-                        ],
-                        "type": [
-                          "VerifiableCredential"
-                        ],
-                        "credentialSubject": {
-                          "id": "did:key:z6MkhTNL7i2etLerDK8Acz5t528giE5KA4p75T6ka1E1D74r"
-                        },
-                        "id": "urn:uuid:ae7d752d-273a-42c3-b95d-79266773b4d1",
-                        "issuer": "did:key:z6MkmiYjSToh5NdEf9xNuh5mDGXGYinzcAy1s4feRHtkEQJr"
-                      },
-                      "options": {
-                        "type": "Ed25519Signature2020",
-                        "credentialStatus": {
-                          "type": "BitstringStatusListEntry",
-                          "statusPurpose": "suspension"
-                        }
-                      }
-                    },
-                    "agent": {
-                      "_events": {},
-                      "_eventsCount": 2,
-                      "defaultPort": 443,
-                      "protocol": "https:",
-                      "options": {
-                        "rejectUnauthorized": false,
-                        "noDelay": true,
-                        "path": null
-                      },
-                      "requests": {},
-                      "sockets": {},
-                      "freeSockets": {},
-                      "keepAliveMsecs": 1000,
-                      "keepAlive": false,
-                      "maxSockets": null,
-                      "maxFreeSockets": 256,
-                      "scheduling": "lifo",
-                      "maxTotalSockets": null,
-                      "totalSocketCount": 0,
-                      "maxCachedSessions": 100,
-                      "_sessionCache": {
-                        "map": {},
-                        "list": []
-                      }
-                    },
-                    "hooks": {
-                      "beforeRequest": [],
-                      "beforeRetry": [],
-                      "beforeError": [],
-                      "afterResponse": []
-                    },
-                    "prefixUrl": "",
-                    "retry": {
-                      "limit": 2,
-                      "methods": [
-                        "get",
-                        "put",
-                        "head",
-                        "delete",
-                        "options",
-                        "trace"
-                      ],
-                      "statusCodes": [
-                        408,
-                        413,
-                        429,
-                        500,
-                        502,
-                        503,
-                        504
-                      ],
-                      "afterStatusCodes": [
-                        413,
-                        429,
-                        503
-                      ],
-                      "maxRetryAfter": null,
-                      "backoffLimit": null
-                    },
-                    "throwHttpErrors": true,
-                    "timeout": 10000,
-                    "signal": {},
-                    "duplex": "half"
-                  },
-                  "name": "HTTPError",
-                  "requestUrl": "https://aca-py.test-suite.app/vc/credentials/issue",
-                  "status": 500
-                },
-                "operator": "notStrictEqual",
-                "stack": "AssertionError: expected HTTPError: Request failed with status cod… { …(5) } to not exist\n    at should.not.exist (node_modules/chai/lib/chai/interface/should.js:208:38)\n    at Context.<anonymous> (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:57:20)"
-              }
-            }
-          ]
-        },
-        {
           "id": "Digital Bazaar",
           "cells": [
-            {
-              "type": "test",
-              "title": "ACA-py should verify Digital Bazaar",
-              "body": "async function() {\n        this.test.cell = {rowId: issuerName, columnId: verifierName};\n        const {data: vc, error: err} = await issuedVc;\n        should.not.exist(err);\n        should.exist(vc);\n        const body = createRequestBody({vc});\n        const {result, error, statusCode} = await verifier.post({json: body});\n        shouldPassVerification({result, error, statusCode});\n      }",
-              "async": 0,
-              "sync": true,
-              "_timeout": 15000,
-              "_slow": 75,
-              "_retries": -1,
-              "timedOut": false,
-              "_currentRetry": 0,
-              "pending": false,
-              "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
-              "parent": "pxaPTVMaW6pz-QcZurT5l",
-              "ctx": null,
-              "_testId": "urn:uuid:740a2a2a-afda-4354-a89f-2f1f04d5cbc6",
-              "cell": {
-                "rowId": "Digital Bazaar",
-                "columnId": "ACA-py"
-              },
-              "_events": {},
-              "_eventsCount": 1,
-              "timer": {
-                "_idleTimeout": -1,
-                "_idlePrev": null,
-                "_idleNext": null,
-                "_idleStart": 5715,
-                "_onTimeout": null,
-                "_repeat": null,
-                "_destroyed": true
-              },
-              "duration": 1258,
-              "state": "failed",
-              "err": {
-                "name": "AssertionError",
-                "message": "Expected response from verifier: expected undefined to exist",
-                "showDiff": false,
-                "operator": "strictEqual",
-                "stack": "AssertionError: Expected response from verifier: expected undefined to exist\n    at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)\n    at shouldPassVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:87:10)\n    at Context.<anonymous> (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:61:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
-              }
-            },
             {
               "type": "test",
               "title": "Digital Bazaar should verify Digital Bazaar",
@@ -3435,9 +2195,9 @@
               "_currentRetry": 0,
               "pending": false,
               "file": "/home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js",
-              "parent": "pxaPTVMaW6pz-QcZurT5l",
+              "parent": "rVxUw0bByiVzpvU6LUh46",
               "ctx": null,
-              "_testId": "urn:uuid:b8ccf70a-7f68-40db-91f2-bf5f39518a5a",
+              "_testId": "urn:uuid:b1f0ef4a-5340-4c80-92b4-ee885a44e61b",
               "cell": {
                 "rowId": "Digital Bazaar",
                 "columnId": "Digital Bazaar"
@@ -3448,12 +2208,12 @@
                 "_idleTimeout": -1,
                 "_idlePrev": null,
                 "_idleNext": null,
-                "_idleStart": 6973,
+                "_idleStart": 5609,
                 "_onTimeout": null,
                 "_repeat": null,
                 "_destroyed": true
               },
-              "duration": 281,
+              "duration": 688,
               "state": "failed",
               "err": {
                 "name": "AssertionError",
@@ -3503,11 +2263,11 @@
   },
   "title": "VC Bitstring Status List Interoperability Report 1.0",
   "stats": [
-    "Tests passed 13/17 76%",
-    "Tests failed 8/17 48%",
-    "Failures 8",
+    "Tests passed 13/14 92%",
+    "Tests failed 2/14 15%",
+    "Failures 2",
     "Tests skipped 9",
-    "Total tests 26"
+    "Total tests 23"
   ],
   "statusMarkLabels": {
     "pending": {
