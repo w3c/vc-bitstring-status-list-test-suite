@@ -66,6 +66,10 @@
       justify-content: center;
       width: fit-content;
     }
+    .at-risk {
+      outline: thin #c45e0a solid;
+    }
+    
         </style>
   </head>
   <body>
@@ -166,22 +170,22 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 13/14 92%
+      Tests passed 26/30 86%
       </p>
       <p>
-      Tests failed 2/14 15%
+      Tests failed 6/30 20%
       </p>
       <p>
-      Failures 2
+      Failures 6
       </p>
       <p>
-      Tests skipped 9
+      Tests skipped 18
       </p>
       <p>
-      Total tests 23
+      Total tests 48
       </p>
       <p>
-        These tests were run on <time>29 September 2024 at 5:03 am UTC</time>
+        These tests were run on <time>6 October 2024 at 5:04 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -245,9 +249,10 @@
                   </div>
                 </th>
                     <th class="no-wrap small-font text-center">Digital Bazaar</th>
+                    <th class="no-wrap small-font text-center">Procivis One Core</th>
                 </thead>
               <tbody>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;Any%20expression%20of%20the%20data%20model%20in%20this%20section%20MUST%20be%20expressed%20in%20a%20conforming%20verifiable%20credential%20as%20defined%20in%20%5BVC%2DDATA%2DMODEL%2D2.0%5D.">Any expression of the data model in this section MUST be expressed in a conforming verifiable credential as defined in [VC-DATA-MODEL-2.0].</a>
@@ -258,8 +263,13 @@
                     <div class="relative-pos">
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;If%20present%2C%20the%20value%20is%20expected%20to%20be%20a%20URL%20that%20identifies%20the%20status%20information%20associated%20with%20the%20verifiable%20credential.">If present, the id value is expected to be a URL that identifies the status information associated with the verifiable credential. It MUST NOT be the URL for the status list.</a>
@@ -270,8 +280,13 @@
                     <div class="relative-pos">
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20type%20property%20MUST%20be%20BitstringStatusListEntry.">The type property MUST be BitstringStatusListEntry. </a>
@@ -282,8 +297,13 @@
                     <div class="relative-pos">
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20purpose%20of%20the%20status%20entry%20MUST%20be%20a%20string">The purpose of the status entry MUST be a string.</a>
@@ -294,8 +314,13 @@
                     <div class="relative-pos">
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20statusListIndex%20property%20MUST%20be%20an%20arbitrary%20size%20integer%20greater%20than%20or%20equal%20to%200%2C%20expressed%20as%20a%20string%20in%20base%2010">The statusListIndex property MUST be an arbitrary size integer greater than or equal to 0, expressed as a string in base 10.</a>
@@ -306,8 +331,13 @@
                     <div class="relative-pos">
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20statusListCredential%20property%20MUST%20be%20a%20URL%20to%20a%20verifiable%20credential.">The statusListCredential property MUST be a URL to a verifiable credential.</a>
@@ -318,8 +348,13 @@
                     <div class="relative-pos">
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;When%20the%20URL%20is%20dereferenced%2C%20the%20resulting%20verifiable%20credential%20MUST%20have%20type%20property%20that%20includes%20the%20BitstringStatusListCredential%20value.">When the URL is dereferenced, the resulting verifiable credential MUST have type property that includes the BitstringStatusListCredential value.</a>
@@ -330,8 +365,13 @@
                     <div class="relative-pos">
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="at-risk">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;If%20present%2C%20statusSize%20MUST%20be%20an%20integer%20greater%20than%20zero.">If present, statusSize MUST be an integer greater than zero.</a>
@@ -343,8 +383,14 @@
                       <span class="err hide">No statusSize property included.</span>
                     </div>
                   </td>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">No statusSize property included.</span>
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="at-risk">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;If%20statusSize%20is%20provided%20and%20is%20greater%20than%201%2C%20then%20the%20property%20credentialStatus.statusMessage%20MUST%20be%20present">If statusSize is provided and is greater than 1, then the property credentialStatus.statusMessage MUST be present.</a>
@@ -356,8 +402,14 @@
                       <span class="err hide">No statusSize property included.</span>
                     </div>
                   </td>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">No statusSize property included.</span>
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="at-risk">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;the%20number%20of%20status%20messages%20MUST%20equal%20the%20number%20of%20possible%20values">The number of status messages MUST equal the number of possible values.</a>
@@ -369,8 +421,14 @@
                       <span class="err hide">No statusMessage property included.</span>
                     </div>
                   </td>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">No statusMessage property included.</span>
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="at-risk">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;If%20present%2C%20the%20statusMessage%20property%20MUST%20be%20an%20array%2C%20the%20length%20of%20which%20MUST%20equal%20the%20number%20of%20possible%20status%20messages%20indicated%20by%20statusSize">If present, the statusMessage property MUST be an array, the length of which MUST equal the number of possible status messages indicated by statusSize.</a>
@@ -382,8 +440,14 @@
                       <span class="err hide">No statusMessage property included.</span>
                     </div>
                   </td>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">No statusMessage property included.</span>
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="at-risk">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;statusMessage%20MAY%20be%20present%20if%20statusSize%20is%201%2C%20and%20MUST%20be%20present%20if%20statusSize%20is%20greater%20than%201">statusMessage MAY be present if statusSize is 1, and MUST be present if statusSize is greater than 1.</a>
@@ -395,8 +459,14 @@
                       <span class="err hide">No greater than 1 statusSize property included.</span>
                     </div>
                   </td>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">No greater than 1 statusSize property included.</span>
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="at-risk">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;If%20the%20statusMessage%20array%20is%20present%2C%20each%20element%20MUST%20contain%20the%20two%20properties%20described%20below%2C%20and%20MAY%20contain%20additional%20properties.">If the statusMessage array is present, each element MUST contain the two properties &quot;status&quot; and &quot;message&quot;.</a>
@@ -408,13 +478,25 @@
                       <span class="err hide">No statusMessage property included.</span>
                     </div>
                   </td>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">No statusMessage property included.</span>
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="at-risk">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;If%20present%2C%20its%20value%20MUST%20be%20a%20URL%20or%20an%20array%20of%20URLs%20%5BURL%5D%20which%20dereference%20to%20material%20related%20to%20the%20status">If present, the &quot;statusReference&quot; value MUST be a URL or an array of URLs [URL] which dereference(s) to material related to the status.</a>
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">No statusReference property included.</span>
+                    </div>
+                  </td>
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
@@ -448,9 +530,10 @@
                   </div>
                 </th>
                     <th class="no-wrap small-font text-center">Digital Bazaar</th>
+                    <th class="no-wrap small-font text-center">Procivis One Core</th>
                 </thead>
               <tbody>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;When%20a%20status%20list%20verifiable%20credential%20is%20published%2C%20it%20MUST%20be%20a%20conforming%20document%2C%20as%20defined%20in%20%5BVC%2DDATA%2DMODEL%2D2.0%5D">When a status list verifiable credential is published, it MUST be a conforming document, as defined in [VC-DATA-MODEL-2.0].</a>
@@ -461,8 +544,13 @@
                     <div class="relative-pos">
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20verifiable%20credential%20that%20contains%20the%20status%20list%20MUST%20express%20a%20type%20property%20that%20includes%20the%20BitstringStatusListCredential%20value.">The verifiable credential that contains the status list MUST express a type property that includes the BitstringStatusListCredential value.</a>
@@ -473,8 +561,13 @@
                     <div class="relative-pos">
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20type%20of%20the%20credential%20subject%2C%20which%20is%20the%20status%20list%2C%20MUST%20be%20BitstringStatusList.">The type of the credential subject, which is the status list, MUST be BitstringStatusList.</a>
@@ -485,8 +578,13 @@
                     <div class="relative-pos">
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20value%20of%20the%20purpose%20property%20of%20the%20status%20entry%2C%20statusPurpose%2C%20MUST%20be%20one%20or%20more%20strings.">The value of the purpose property of the status entry, statusPurpose, MUST be one or more strings.</a>
@@ -497,8 +595,13 @@
                     <div class="relative-pos">
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20encodedList%20property%20of%20the%20credential%20subject%20MUST%20be%20a%20Multibase%2Dencoded%20base64url%20(with%20no%20padding)%20%5BRFC4648%5D%20representation%20of%20the%20GZIP%2Dcompressed%20%5BRFC1952%5D%20bitstring%20values%20for%20the%20associated%20range%20of%20verifiable%20credential%20status%20values.">The encodedList property of the credential subject MUST be a Multibase-encoded base64url (with no padding) [RFC4648] representation of the GZIP-compressed [RFC1952] bitstring values for the associated range of verifiable credential status values.</a>
@@ -509,8 +612,13 @@
                     <div class="relative-pos">
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20uncompressed%20bitstring%20MUST%20be%20at%20least%2016KB%20in%20size.">The uncompressed bitstring MUST be at least 16KB in size.</a>
@@ -521,13 +629,24 @@
                     <div class="relative-pos">
                     </div>
                   </td>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
               </tr>
-              <tr>
+              <tr class="at-risk">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20bitstring%20MUST,Bitstring%20Encoding.">The bitstring MUST be encoded such that the first index, with a value of zero (0), is located at the left-most bit in the bitstring and the last index, with a value of one less than the length of the bitstring (bitstring_length - 1), is located at the right-most bit in the bitstring.</a>
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">Test needs to be validated.</span>
+                    </div>
+                  </td>
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
@@ -561,6 +680,7 @@
                   </div>
                 </th>
                     <th class="no-wrap small-font text-center">Digital Bazaar</th>
+                    <th class="no-wrap small-font text-center">Procivis One Core</th>
                 </thead>
               <tbody>
             </tbody>
@@ -589,9 +709,10 @@
                   </div>
                 </th>
                     <th class="no-wrap small-font text-center">Digital Bazaar</th>
+                    <th class="no-wrap small-font text-center">Procivis One Core</th>
                 </thead>
               <tbody>
-              <tr>
+              <tr class="at-risk">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     Digital Bazaar
@@ -608,6 +729,102 @@
                         at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:61:9)
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
                       </details>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <details class="err hide">
+                        <summary>Cannot read properties of undefined (reading &#x27;should&#x27;)</summary>
+                        <pre>TypeError: Cannot read properties of undefined (reading &#x27;should&#x27;)
+                        at shouldPassVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:94:24)
+                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:61:9)
+                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
+                      </details>
+                    </div>
+                  </td>
+              </tr>
+              <tr class="at-risk">
+                <!--This is the name of the test-->
+                <td class="subtest">
+                    Procivis One Core
+                </td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <details class="err hide">
+                        <summary>Expected response from verifier: expected undefined to exist</summary>
+                        <pre>AssertionError: Expected response from verifier: expected undefined to exist
+                        at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
+                        at shouldPassVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:87:10)
+                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:61:9)
+                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
+                      </details>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <details class="err hide">
+                        <summary>Cannot read properties of undefined (reading &#x27;should&#x27;)</summary>
+                        <pre>TypeError: Cannot read properties of undefined (reading &#x27;should&#x27;)
+                        at shouldPassVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:94:24)
+                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:61:9)
+                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
+                      </details>
+                    </div>
+                  </td>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+          <div>
+            <div class="flex-center">
+              <div class="row">
+              </div>
+              <div class="">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="informative" id="At Risk">
+          <h2>At Risk</h2>
+          <div class="row">
+            <table class="simple">
+              <thead>
+                <th width="20%">
+                  <div class="text-right small-font">
+                  Reason &#8658;
+                  </div>
+                  <div class="text-left small-font">
+                  <span>&#8659;</span><span>Statement</span>
+                  </div>
+                </th>
+                    <th class="no-wrap small-font text-center">At least 2 passing implementations</th>
+                </thead>
+              <tbody>
+              <tr class="at-risk">
+                <!--This is the name of the test-->
+                <td class="subtest">
+                    Digital Bazaar
+                </td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
+              </tr>
+              <tr class="at-risk">
+                <!--This is the name of the test-->
+                <td class="subtest">
+                    Procivis One Core
+                </td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
                     </div>
                   </td>
               </tr>
