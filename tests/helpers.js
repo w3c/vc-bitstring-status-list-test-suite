@@ -9,14 +9,72 @@ import {decodeList} from '@digitalbazaar/vc-status-list';
 import {documentLoader} from './documentLoader.js';
 import {httpClient} from '@digitalbazaar/http-client';
 import https from 'https';
-import {klona} from 'klona';
 import {ungzip} from 'pako';
 import {v4 as uuidv4} from 'uuid';
 const require = createRequire(import.meta.url);
-const validVc = require('./validVc.json');
 const agent = new https.Agent({rejectUnauthorized: false});
 
 const should = chai.should();
+
+export function setupMatrix(match) {
+  // this will tell the report
+  // to make an interop matrix with this suite
+  this.matrix = true;
+  this.report = true;
+  this.implemented = [...match.keys()];
+  this.rowLabel = 'Test Name';
+  this.columnLabel = 'Implementer';
+}
+
+export function addPerTestMetadata() {
+  // append test meta data to the it/test this.
+  this.currentTest.cell = {
+    columnId: this.currentTest.parent.title,
+    rowId: this.currentTest.title
+  };
+}
+
+export function getStatusEntries(issuedVc) {
+  let statusEntries;
+  if(issuedVc.hasOwnProperty('credentialStatus')) {
+    if(Array.isArray(issuedVc.credentialStatus)) {
+      statusEntries = issuedVc.credentialStatus;
+    } else {
+      statusEntries = [issuedVc.credentialStatus];
+    }
+  }
+  return statusEntries;
+}
+
+export const getSlc = async statusEntry => {
+  const {document} = await documentLoader(statusEntry.statusListCredential);
+  return {slc: document};
+};
+
+export async function getStatusListCredentials(statusEntries) {
+  let statusEntry;
+  const statusListCredentials = [];
+  for(statusEntry of statusEntries) {
+    statusListCredentials.push(
+      (await getSlc(statusEntry)).slc);
+  }
+  return statusListCredentials;
+}
+
+export async function issueValidVc(endpoints, name) {
+  let issuedVc;
+  const credential = require('./validVc.json');
+  credential.id = `urn:uuid:${uuidv4()}`;
+  try {
+    issuedVc = await endpoints.issue(credential);
+  } catch(e) {
+    console.error(
+      `Issuer: ${name} failed to issue "credential-ok.json".`,
+      e
+    );
+  }
+  return issuedVc;
+}
 
 // Javascript's default ISO timestamp contains milliseconds.
 // This lops off the MS part of the UTC RFC3339 TimeStamp and replaces
@@ -37,20 +95,6 @@ export const getCredentialStatus = async ({verifiableCredential}) => {
     credentialStatus.statusListIndex, 10);
   const status = list.getStatus(statusListIndex);
   return {status, statusListCredential};
-};
-
-export const issueVc = async ({issuer}) => {
-  const {settings: {id: issuerId, options}} = issuer;
-  const credential = klona(validVc);
-  credential.id = `urn:uuid:${uuidv4()}`;
-  credential.issuer = issuerId;
-  const body = {credential, options};
-  return issuer.post({json: body});
-};
-
-export const getSlc = async statusEntry => {
-  const {document} = await documentLoader(statusEntry.statusListCredential);
-  return {slc: document};
 };
 
 /**
