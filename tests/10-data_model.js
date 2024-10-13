@@ -2,46 +2,36 @@
  * Copyright (c) 2022-2023 Digital Bazaar, Inc. All rights reserved.
  */
 // import * as sl from '@digitalbazaar/vc-status-list';
-import chai from 'chai';
+import {
+  addPerTestMetadata,
+  decodeSl, getSlc,
+  getStatusEntries,
+  getStatusListCredentials,
+  issueValidVc,
+  setupMatrix
+} from './helpers.js';
+import {testCredential, testSlCredential} from './assertions.js';
 import assert from 'node:assert/strict';
-import { addPerTestMetadata, decodeSl, getSlc, setupMatrix } from './helpers.js';
-import {createRequire} from 'module';
-import { testCredential, testSlCredential } from './assertions.js';
-import { filterByTag } from 'vc-test-suite-implementations';
-import { TestEndpoints } from './TestEndpoints.js';
+import chai from 'chai';
+import {filterByTag} from 'vc-test-suite-implementations';
+import {TestEndpoints} from './TestEndpoints.js';
 
 const should = chai.should();
 
-const require = createRequire(import.meta.url);
-
 const tag = 'BitstringStatusList';
-const { match } = filterByTag({ tags: [tag] });
+const {match} = filterByTag({tags: [tag]});
 
-describe('Data Model: BitstringStatusList Entry', function () {
+describe('Data Model: BitstringStatusList Entry', function() {
   setupMatrix.call(this, match);
-  for (const [name, implementation] of match) {
-    const endpoints = new TestEndpoints({ implementation, tag });
-    describe(name, function () {
+  for(const [name, implementation] of match) {
+    const endpoints = new TestEndpoints({implementation, tag});
+    describe(name, function() {
       let issuedVc;
       let statusEntry;
       let statusEntries;
-      before(async function () {
-        try {
-          issuedVc = await endpoints.issue(require(
-            './validVc.json'));
-        } catch (e) {
-          console.error(
-            `Issuer: ${name} failed to issue "credential-ok.json".`,
-            e
-          );
-        }
-        if (issuedVc.hasOwnProperty('credentialStatus')) {
-          if (Array.isArray(issuedVc.credentialStatus)) {
-            statusEntries = issuedVc.credentialStatus;
-          } else {
-            statusEntries = [issuedVc.credentialStatus];
-          }
-        }
+      before(async function() {
+        issuedVc = await issueValidVc(endpoints, name);
+        statusEntries = await getStatusEntries(issuedVc);
       });
       beforeEach(addPerTestMetadata);
       it('Any expression of the data model in this section ' +
@@ -49,7 +39,7 @@ describe('Data Model: BitstringStatusList Entry', function () {
         'as defined in [VC-DATA-MODEL-2.0].',
       async function() {
         this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=Any%20expression%20of%20the%20data%20model%20in%20this%20section%20MUST%20be%20expressed%20in%20a%20conforming%20verifiable%20credential%20as%20defined%20in%20%5BVC%2DDATA%2DMODEL%2D2.0%5D.';
-        testCredential({ credential: issuedVc });
+        testCredential({credential: issuedVc});
       });
       it('If present, the id value is expected to be a URL ' +
         'that identifies the status information associated ' +
@@ -162,7 +152,6 @@ describe('Data Model: BitstringStatusList Entry', function () {
           if('statusSize' in statusEntry) {
             statusEntry.statusSize.should.be.a('number',
               'Expected statusSize to be an integer.');
-            // TODO test for integer
             assert(Number.isInteger(
               statusEntry.statusSize),
             'Expected statusSize to be an integer.');
@@ -330,168 +319,149 @@ describe('Data Model: BitstringStatusList Entry', function () {
 
 describe('Data Model: BitstringStatusList Credential', function() {
   setupMatrix.call(this, match);
-  for (const [name, implementation] of match) {
-    const endpoints = new TestEndpoints({ implementation, tag });
-      describe(name, function() {
-        let issuedVc;
-        let statusEntry;
-        let statusEntries;
-        let statusListCredential;
-        let statusListCredentials;
-        before(async function() {
-          try {
-            issuedVc = await endpoints.issue(require(
-              './validVc.json'));
-          } catch (e) {
-            console.error(
-              `Issuer: ${name} failed to issue "credential-ok.json".`,
-              e
-            );
-          }
-          if(issuedVc.hasOwnProperty('credentialStatus')) {
-            if(Array.isArray(issuedVc.credentialStatus)) {
-              statusEntries = issuedVc.credentialStatus;
-            } else {
-              statusEntries = [issuedVc.credentialStatus];
-            }
-          }
-          statusListCredentials = [];
-          for(statusEntry of statusEntries) {
-            statusListCredentials.push(
-              (await getSlc(statusEntry)).slc);
-          }
-        });
-        beforeEach(addPerTestMetadata);
-        it('When a status list verifiable credential is published, ' +
+  for(const [name, implementation] of match) {
+    const endpoints = new TestEndpoints({implementation, tag});
+    describe(name, function() {
+      let issuedVc;
+      let statusEntries;
+      let statusListCredential;
+      let statusListCredentials;
+      before(async function() {
+        issuedVc = await issueValidVc(endpoints, name);
+        statusEntries = await getStatusEntries(issuedVc);
+        statusListCredentials = await getStatusListCredentials(statusEntries);
+      });
+      beforeEach(addPerTestMetadata);
+      it('When a status list verifiable credential is published, ' +
           'it MUST be a conforming document, ' +
           'as defined in [VC-DATA-MODEL-2.0].',
-        async function() {
-          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=When%20a%20status%20list%20verifiable%20credential%20is%20published%2C%20it%20MUST%20be%20a%20conforming%20document%2C%20as%20defined%20in%20%5BVC%2DDATA%2DMODEL%2D2.0%5D';
-          for(statusListCredential of statusListCredentials) {
-            testSlCredential({slCredential:
+      async function() {
+        this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=When%20a%20status%20list%20verifiable%20credential%20is%20published%2C%20it%20MUST%20be%20a%20conforming%20document%2C%20as%20defined%20in%20%5BVC%2DDATA%2DMODEL%2D2.0%5D';
+        for(statusListCredential of statusListCredentials) {
+          testSlCredential({slCredential:
               statusListCredential},
-            'Expected status credential to conform to VCDM 2.0.');
-          }
-        });
-        it.skip('The verifiable credential that contains the status ' +
+          'Expected status credential to conform to VCDM 2.0.');
+        }
+      });
+      it.skip('The verifiable credential that contains the status ' +
           'list MAY express an id property that matches the value ' +
           'specified in statusListCredential for the corresponding ' +
           'BitstringStatusListEntry.',
-        async function() {
-          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20verifiable%20credential%20that%20contains%20the%20status%20list%20MAY%20express%20an%20id%20property%20that%20matches%20the%20value%20specified%20in%20statusListCredential%20for%20the%20corresponding%20BitstringStatusListEntry';
-        });
-        it('The verifiable credential that contains the status list ' +
+      async function() {
+        this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20verifiable%20credential%20that%20contains%20the%20status%20list%20MAY%20express%20an%20id%20property%20that%20matches%20the%20value%20specified%20in%20statusListCredential%20for%20the%20corresponding%20BitstringStatusListEntry';
+      });
+      it('The verifiable credential that contains the status list ' +
           'MUST express a type property that includes the ' +
           'BitstringStatusListCredential value.',
-        async function() {
-          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20verifiable%20credential%20that%20contains%20the%20status%20list%20MUST%20express%20a%20type%20property%20that%20includes%20the%20BitstringStatusListCredential%20value.';
-          for(statusListCredential of statusListCredentials) {
-            statusListCredential
-              .should.have.own.property(
-                'type').to.be.an('array',
-                'Expected type property to be a string or an array.'
-              );
-            statusListCredential
-              .type.should.include(
-                'BitstringStatusListCredential',
-                'Expected credential status type to include ' +
+      async function() {
+        this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20verifiable%20credential%20that%20contains%20the%20status%20list%20MUST%20express%20a%20type%20property%20that%20includes%20the%20BitstringStatusListCredential%20value.';
+        for(statusListCredential of statusListCredentials) {
+          statusListCredential
+            .should.have.own.property(
+              'type').to.be.an('array',
+              'Expected type property to be a string or an array.'
+            );
+          statusListCredential
+            .type.should.include(
+              'BitstringStatusListCredential',
+              'Expected credential status type to include ' +
                 'BitstringStatusListCredential.');
-          }
         }
-        );
-        it('The type of the credential subject, which is the status list, ' +
+      }
+      );
+      it('The type of the credential subject, which is the status list, ' +
           'MUST be BitstringStatusList.',
-        async function() {
-          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20type%20of%20the%20credential%20subject%2C%20which%20is%20the%20status%20list%2C%20MUST%20be%20BitstringStatusList.';
-          for(statusListCredential of statusListCredentials) {
-            statusListCredential.
-              credentialSubject.should.have.own.property(
-                'type').to.be.a('string',
-                'Expected type property to be a string.'
-              );
-            statusListCredential.
-              credentialSubject.type.should.equal(
-                'BitstringStatusList',
-                'Expected credential status type to be ' +
+      async function() {
+        this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20type%20of%20the%20credential%20subject%2C%20which%20is%20the%20status%20list%2C%20MUST%20be%20BitstringStatusList.';
+        for(statusListCredential of statusListCredentials) {
+          statusListCredential.
+            credentialSubject.should.have.own.property(
+              'type').to.be.a('string',
+              'Expected type property to be a string.'
+            );
+          statusListCredential.
+            credentialSubject.type.should.equal(
+              'BitstringStatusList',
+              'Expected credential status type to be ' +
                 'BitstringStatusList.'
-              );
-          }
-        });
-        it('The value of the purpose property of the status entry, ' +
+            );
+        }
+      });
+      it('The value of the purpose property of the status entry, ' +
           'statusPurpose, MUST be one or more strings.',
-        async function() {
-          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20value%20of%20the%20purpose%20property%20of%20the%20status%20entry%2C%20statusPurpose%2C%20MUST%20be%20one%20or%20more%20strings.';
-          for(statusListCredential of statusListCredentials) {
-            const statusPurposeType = typeof (
-              statusListCredential.
-                credentialSubject.statusPurpose);
-            statusPurposeType.should.be.oneOf(['string', 'object']);
-            if(statusPurposeType === 'object') {
-              const credentialSubject =
+      async function() {
+        this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20value%20of%20the%20purpose%20property%20of%20the%20status%20entry%2C%20statusPurpose%2C%20MUST%20be%20one%20or%20more%20strings.';
+        for(statusListCredential of statusListCredentials) {
+          const statusPurposeType = typeof (
+            statusListCredential.
+              credentialSubject.statusPurpose);
+          statusPurposeType.should.be.oneOf(['string', 'object']);
+          if(statusPurposeType === 'object') {
+            const credentialSubject =
                 statusListCredential.credentialSubject;
-              credentialSubject.statusPurpose.should.be.an(
-                'array');
-              credentialSubject.statusPurpose.forEach(
-                item => item.should.be.a('string'));
-            }
+            credentialSubject.statusPurpose.should.be.an(
+              'array');
+            credentialSubject.statusPurpose.forEach(
+              item => item.should.be.a('string'));
           }
         }
-        );
-        it('The encodedList property of the credential subject MUST ' +
+      }
+      );
+      it('The encodedList property of the credential subject MUST ' +
           'be a Multibase-encoded base64url (with no padding) [RFC4648] ' +
           'representation of the GZIP-compressed [RFC1952] bitstring ' +
           'values for the associated range of verifiable credential status ' +
           'values.',
-        async function() {
-          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20encodedList%20property%20of%20the%20credential%20subject%20MUST%20be%20a%20Multibase%2Dencoded%20base64url%20(with%20no%20padding)%20%5BRFC4648%5D%20representation%20of%20the%20GZIP%2Dcompressed%20%5BRFC1952%5D%20bitstring%20values%20for%20the%20associated%20range%20of%20verifiable%20credential%20status%20values.';
-          for(statusListCredential of statusListCredentials) {
-            const credentialSubject =
+      async function() {
+        this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20encodedList%20property%20of%20the%20credential%20subject%20MUST%20be%20a%20Multibase%2Dencoded%20base64url%20(with%20no%20padding)%20%5BRFC4648%5D%20representation%20of%20the%20GZIP%2Dcompressed%20%5BRFC1952%5D%20bitstring%20values%20for%20the%20associated%20range%20of%20verifiable%20credential%20status%20values.';
+        for(statusListCredential of statusListCredentials) {
+          const credentialSubject =
               statusListCredential.credentialSubject;
-            const {encodedList} = credentialSubject;
-            await decodeSl({encodedList});
+          const {encodedList} = credentialSubject;
+          await decodeSl({encodedList});
+        }
+      }
+      );
+      it('The uncompressed bitstring MUST be at least 16KB in size.',
+        async function() {
+          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20uncompressed%20bitstring%20MUST%20be%20at%20least%2016KB%20in%20size.';
+          for(statusListCredential of statusListCredentials) {
+            const {encodedList} = statusListCredential.credentialSubject;
+            const decoded = await decodeSl({encodedList});
+            // decoded size should be 16kb
+            const decodedSize = (decoded.length / 100);
+            decodedSize.should.be.gte(16,
+              'Expected bitstring to be at least 16KB in size.'
+            );
           }
         }
-        );
-        it('The uncompressed bitstring MUST be at least 16KB in size.',
-          async function() {
-            this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20uncompressed%20bitstring%20MUST%20be%20at%20least%2016KB%20in%20size.';
-            for(statusListCredential of statusListCredentials) {
-              const {encodedList} = statusListCredential.credentialSubject;
-              const decoded = await decodeSl({encodedList});
-              // decoded size should be 16kb
-              const decodedSize = (decoded.length / 100);
-              decodedSize.should.be.gte(16,
-                'Expected bitstring to be at least 16KB in size.'
-              );
-            }
-          }
-        );
-        it('The bitstring MUST be encoded such that the first index, ' +
+      );
+      it('The bitstring MUST be encoded such that the first index, ' +
           'with a value of zero (0), is located at the left-most bit ' +
           'in the bitstring and the last index, with a value of ' +
           'one less than the length of the bitstring ' +
           '(bitstring_length - 1), is located at the right-most ' +
           'bit in the bitstring.',
-        async function() {
-          this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20bitstring%20MUST,Bitstring%20Encoding.';
-          this.test.cell.skipMessage = 'Test needs to be validated.';
-          this.skip();
-          for(statusListCredential of statusListCredentials) {
-            const {encodedList} = statusListCredential.credentialSubject;
-            const decoded = await decodeSl({encodedList});
-            decoded[0].should.be.equal(0,
-              'Expected the first index of the statusList to have ' +
+      async function() {
+        this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20bitstring%20MUST,Bitstring%20Encoding.';
+        this.test.cell.skipMessage = 'Test needs to be validated.';
+        this.skip();
+        for(statusListCredential of statusListCredentials) {
+          const {encodedList} = statusListCredential.credentialSubject;
+          const decoded = await decodeSl({encodedList});
+          decoded[0].should.be.equal(0,
+            'Expected the first index of the statusList to have ' +
               'the value 0.'
-            );
-            decoded[
-              decoded.length - 1].should.be.equal(
-              decoded.length - 1,
-              'Expected the last index of the statusList to have ' +
+          );
+          decoded[
+            decoded.length - 1].should.be.equal(
+            decoded.length - 1,
+            'Expected the last index of the statusList to have ' +
                 'the value of the bitstring length minus 1.'
-            );
-          }
+          );
         }
-        );
-      });
-    }
-  });
+      }
+      );
+    });
+  }
+});

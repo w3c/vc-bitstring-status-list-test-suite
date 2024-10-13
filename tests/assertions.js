@@ -2,7 +2,7 @@
  * Copyright (c) 2022-2023 Digital Bazaar, Inc. All rights reserved.
  */
 import chai from 'chai';
-import { createRequire } from 'node:module';
+import {createRequire} from 'node:module';
 const require = createRequire(import.meta.url);
 const validVc = require('./validVc.json');
 const should = chai.should();
@@ -15,7 +15,7 @@ const should = chai.should();
  *
  * @returns {undefined} Just returns on success.
  */
-export const testCredential = ({ credential }) => {
+export const testCredential = ({credential}) => {
   should.exist(credential, 'expected credential to exist');
   credential.should.be.an('object');
   credential.should.have.property('@context')
@@ -33,13 +33,13 @@ export const testCredential = ({ credential }) => {
   credential.should.have.property('issuer');
   const issuerType = typeof (credential.issuer);
   issuerType.should.be.oneOf(['string', 'object']);
-  if (issuerType === 'object') {
+  if(issuerType === 'object') {
     should.exist(credential.issuer.id)
       .and.to.be.an('object');
   }
 };
 
-export const testSlCredential = ({ slCredential }) => {
+export const testSlCredential = ({slCredential}) => {
   should.exist(slCredential, 'expected credential to exist');
   slCredential.should.be.an('object');
   slCredential.should.have.property('@context');
@@ -51,7 +51,7 @@ export const testSlCredential = ({ slCredential }) => {
   slCredential.type.should.include.members(
     ['VerifiableCredential', 'BitstringStatusListCredential']);
   slCredential.should.have.property('credentialSubject');
-  const { credentialSubject } = slCredential;
+  const {credentialSubject} = slCredential;
   credentialSubject.should.contain.keys(
     'type',
     'encodedList',
@@ -63,14 +63,14 @@ export const testSlCredential = ({ slCredential }) => {
   slCredential.should.have.property('issuer');
   const issuerType = typeof (slCredential.issuer);
   issuerType.should.be.oneOf(['string', 'object']);
-  if (issuerType === 'object') {
+  if(issuerType === 'object') {
     should.exist(slCredential.issuer.id,
       'Expected issuer object to have property id');
     slCredential.issuer.id.should.be.an('object');
   }
 };
 
-export const shouldFailVerification = ({ result, error, statusCode }) => {
+export const shouldFailVerification = ({result, error, statusCode}) => {
   should.not.exist(result, 'Expected no response from verifier');
   should.exist(error, 'Expected verifier to error');
   statusCode.should.equal(400, 'Expected status code 400');
@@ -78,7 +78,7 @@ export const shouldFailVerification = ({ result, error, statusCode }) => {
   error.data.verified.should.equal(false);
 };
 
-export const shouldPassVerification = ({ result, error, statusCode }) => {
+export const shouldPassVerification = ({result, error, statusCode}) => {
   should.exist(result, 'Expected response from verifier');
   should.not.exist(error, 'Expected verifier to not error');
   // verifier returns 200
