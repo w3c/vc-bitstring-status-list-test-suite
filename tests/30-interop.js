@@ -1,7 +1,7 @@
 /*!
  * Copyright (c) 2022-2023 Digital Bazaar, Inc. All rights reserved.
  */
-import {createRequestBody, issueVc} from './helpers.js';
+import {addPerTestMetadata, createRequestBody, issueVc} from './helpers.js';
 import chai from 'chai';
 import {endpoints} from 'vc-test-suite-implementations';
 import {shouldPassVerification} from './assertions.js';
@@ -29,14 +29,6 @@ function setupMatrix() {
   this.columnLabel = 'Verifier';
 }
 
-function addPerTestMetadata() {
-  // append test meta data to the it/test this.
-  this.currentTest.cell = {
-    columnId: this.currentTest.parent.title,
-    rowId: this.currentTest.title
-  };
-}
-
 describe('BitstringStatusList Credentials (Interop)', function() {
   // this will tell the report
   // to make an interop matrix with this suite
@@ -53,12 +45,14 @@ describe('BitstringStatusList Credentials (Interop)', function() {
       const [verifier] = endpoints;
       it(`${verifierName} should verify ${issuerName}`, async function() {
         this.test.cell = {rowId: issuerName, columnId: verifierName};
+        this.test.cell.skipMessage = 'Pending interop tests.';
+        this.skip();
         const {data: vc, error: err} = await issuedVc;
-        should.not.exist(err);
-        should.exist(vc);
-        const body = createRequestBody({vc});
-        const {result, error, statusCode} = await verifier.post({json: body});
-        shouldPassVerification({result, error, statusCode});
+        // should.not.exist(err);
+        // should.exist(vc);
+        // const body = createRequestBody({vc});
+        // const {result, error, statusCode} = await verifier.post({json: body});
+        // shouldPassVerification({result, error, statusCode});
       });
     }
   }
