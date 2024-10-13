@@ -1,12 +1,8 @@
 /*!
  * Copyright (c) 2022-2023 Digital Bazaar, Inc. All rights reserved.
  */
-import {addPerTestMetadata, createRequestBody, issueVc} from './helpers.js';
-import chai from 'chai';
+import {addPerTestMetadata} from './helpers.js';
 import {endpoints} from 'vc-test-suite-implementations';
-import {shouldPassVerification} from './assertions.js';
-
-const should = chai.should();
 
 // only use implementations with `BitstringStatusList` tags.
 const {match: issuerMatches} = endpoints.filterByTag({
@@ -33,25 +29,16 @@ describe('BitstringStatusList Credentials (Interop)', function() {
   // this will tell the report
   // to make an interop matrix with this suite
   setupMatrix.call(this);
-  for(const [issuerName, {endpoints}] of issuerMatches) {
-    let issuedVc;
+  for(const [issuerName] of issuerMatches) {
     beforeEach(addPerTestMetadata);
-    before(async function() {
-      const [issuer] = endpoints.filter(
-        endpoint => endpoint.settings.tags.includes('BitstringStatusList'));
-      issuedVc = issueVc({issuer});
-    });
-    for(const [verifierName, {endpoints}] of verifierMatches) {
-      const [verifier] = endpoints;
+    for(const [verifierName] of verifierMatches) {
       it(`${verifierName} should verify ${issuerName}`, async function() {
         this.test.cell = {rowId: issuerName, columnId: verifierName};
         this.test.cell.skipMessage = 'Pending interop tests.';
         this.skip();
-        const {data: vc, error: err} = await issuedVc;
         // should.not.exist(err);
         // should.exist(vc);
         // const body = createRequestBody({vc});
-        // const {result, error, statusCode} = await verifier.post({json: body});
         // shouldPassVerification({result, error, statusCode});
       });
     }
