@@ -29,11 +29,11 @@ export function setupMatrix(match) {
 }
 
 export function addPerTestMetadata() {
-    // append test meta data to the it/test this.
-    this.currentTest.cell = {
-        columnId: this.currentTest.parent.title,
-        rowId: this.currentTest.title
-    };
+  // append test meta data to the it/test this.
+  this.currentTest.cell = {
+    columnId: this.currentTest.parent.title,
+    rowId: this.currentTest.title
+  };
 }
 
 // Javascript's default ISO timestamp contains milliseconds.
