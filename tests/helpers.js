@@ -36,6 +36,20 @@ export function addPerTestMetadata() {
     };
 }
 
+export async function issueVc(endpoints, name) {
+    let issuedVc;
+    try {
+      issuedVc = await endpoints.issue(require(
+        './validVc.json'));
+    } catch (e) {
+      console.error(
+        `Issuer: ${name} failed to issue "credential-ok.json".`,
+        e
+      );
+    }
+    return issuedVc
+}
+
 // Javascript's default ISO timestamp contains milliseconds.
 // This lops off the MS part of the UTC RFC3339 TimeStamp and replaces
 // it with a terminal Z.
