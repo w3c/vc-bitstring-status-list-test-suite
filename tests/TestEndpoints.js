@@ -35,27 +35,10 @@ export class TestEndpoints {
 }
 
 export async function post(endpoint, object) {
-  const url = endpoint.settings.endpoint;
-  if(url.startsWith('https:')) {
-    // Use vc-test-suite-implementations for HTTPS requests.
-    const {data, error} = await endpoint.post({json: object});
-    if(error) {
-      throw error;
-    }
-    return data;
+  // Use vc-test-suite-implementations for HTTPS requests.
+  const {data, error} = await endpoint.post({json: object});
+  if(error) {
+    throw error;
   }
-  return fetch(endpoint.settings.endpoint, {
-    headers: {
-      'Content-type': 'application/json'
-    },
-    method: 'POST',
-    body: JSON.stringify(object)
-  })
-    .then(function(response) {
-      if(response.status >= 400) {
-        throw new Error('Error');
-      } else {
-        return response.json();
-      }
-    });
+  return data;
 }
