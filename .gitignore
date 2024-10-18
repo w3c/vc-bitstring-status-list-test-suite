@@ -18,3 +18,4 @@ config.json
 reports/**
 !.gitkeep
 localConfig.cjs
+allure-results/
