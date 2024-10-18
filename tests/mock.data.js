@@ -28,14 +28,13 @@ export const createRequestBody = ({issuer, vc = validVc}) => {
   };
 };
 
-export const createVerifyRequestBody = ({vc}) => {
-  const body = {
-    verifiableCredential: vc,
-    options: {
-      checks: ['proof'],
-    }
+export const createVerifyRequestBody = ({verifier, vc}) => {
+  const {settings: {options}} = verifier;
+  const verifiableCredential = vc;
+  return {
+    verifiableCredential,
+    options
   };
-  return body;
 };
 
 /**

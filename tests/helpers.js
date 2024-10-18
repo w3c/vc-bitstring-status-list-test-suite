@@ -1,7 +1,10 @@
 /*!
  * Copyright (c) 2022-2023 Digital Bazaar, Inc. All rights reserved.
  */
+
+import * as allure from 'allure-js-commons';
 import * as base64url from 'base64url-universal';
+import {ContentType} from 'allure-js-commons';
 // import * as sl from '@digitalbazaar/vc-status-list';
 import chai from 'chai';
 import {createRequire} from 'node:module';
@@ -170,4 +173,18 @@ export async function decodeSl({encodedList}) {
     'Expected encodedList to be a Multibase-encoded base64url' +
     'representation of a GZIP-compressed bitstring.');
   return decoded;
+}
+
+export async function addJsonAttachment(fileName, content) {
+  try {
+    // Temporarily disable the console log to avoid unnecessary info logs.
+    const consoleLog = console.log;
+    console.log = function() {};
+    await allure.attachment(
+      fileName,
+      JSON.stringify(content, null, 2),
+      ContentType.JSON
+    );
+    console.log = consoleLog;
+  } catch(err) {}
 }

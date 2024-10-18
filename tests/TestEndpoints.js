@@ -8,6 +8,7 @@ import {
   createRequestBody,
   createVerifyRequestBody
 } from './mock.data.js';
+import {addJsonAttachment} from './helpers.js';
 
 export class TestEndpoints {
   constructor({implementation, tag}) {
@@ -21,30 +22,29 @@ export class TestEndpoints {
   async issue(credential) {
     const {issuer} = this;
     const issueBody = createRequestBody({issuer, vc: credential});
-    const response = await post(issuer, issueBody);
-    return response?.verifiableCredential || response;
+    await addJsonAttachment('Request', issueBody);
+    const response = post(issuer, issueBody);
+    await addJsonAttachment('Response', response);
+    return response;
   }
   async verify(vc) {
     const {verifier} = this;
-    const verifyBody = createVerifyRequestBody({vc});
-    const result = await post(verifier, verifyBody);
+    const verifyBody = createVerifyRequestBody({verifier, vc});
+    await addJsonAttachment('Request', verifyBody);
+    const result = post(this.verifier, verifyBody);
+    if(result?.errors?.length) {
+      throw result.errors[0];
+    }
+    await addJsonAttachment('Response', result);
     return result;
   }
 }
 
 export async function post(endpoint, object) {
-  return fetch(endpoint.settings.endpoint, {
-    headers: {
-      'Content-type': 'application/json'
-    },
-    method: 'POST',
-    body: JSON.stringify(object)
-  })
-    .then(function(response) {
-      if(response.status >= 400) {
-        throw new Error('Error');
-      } else {
-        return response.json();
-      }
-    });
+  // Use vc-test-suite-implementations for HTTPS requests.
+  const {data, error} = await endpoint.post({json: object});
+  if(error) {
+    throw error;
+  }
+  return data;
 }
