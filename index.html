@@ -170,22 +170,22 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 26/30 86%
+      Tests passed 26/26 100%
       </p>
       <p>
-      Tests failed 6/30 20%
+      Tests failed 0/26 0%
       </p>
       <p>
-      Failures 6
+      Failures 0
       </p>
       <p>
-      Tests skipped 18
+      Tests skipped 34
       </p>
       <p>
-      Total tests 48
+      Total tests 60
       </p>
       <p>
-        These tests were run on <time>13 October 2024 at 5:04 am UTC</time>
+        These tests were run on <time>20 October 2024 at 5:04 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -235,14 +235,14 @@
     </section>
     <section id="conformance">
       <!--- This will take the tests and display them as matrices -->
-        <section class="informative" id="Issuers - BitstringStatusList Entry">
-          <h2>Issuers - BitstringStatusList Entry</h2>
+        <section class="informative" id="Data Model: BitstringStatusList Entry">
+          <h2>Data Model: BitstringStatusList Entry</h2>
           <div class="row">
             <table class="simple">
               <thead>
                 <th width="20%">
                   <div class="text-right small-font">
-                  Issuer &#8658;
+                  Implementer &#8658;
                   </div>
                   <div class="text-left small-font">
                   <span>&#8659;</span><span>Test Name</span>
@@ -516,14 +516,14 @@
             </div>
           </div>
         </section>
-        <section class="informative" id="Issuers - BitstringStatusList Credential">
-          <h2>Issuers - BitstringStatusList Credential</h2>
+        <section class="informative" id="Data Model: BitstringStatusList Credential">
+          <h2>Data Model: BitstringStatusList Credential</h2>
           <div class="row">
             <table class="simple">
               <thead>
                 <th width="20%">
                   <div class="text-right small-font">
-                  Issuer &#8658;
+                  Implementer &#8658;
                   </div>
                   <div class="text-left small-font">
                   <span>&#8659;</span><span>Test Name</span>
@@ -673,7 +673,7 @@
               <thead>
                 <th width="20%">
                   <div class="text-right small-font">
-                  Verifier &#8658;
+                  Implementer &#8658;
                   </div>
                   <div class="text-left small-font">
                   <span>&#8659;</span><span>Test Name</span>
@@ -683,6 +683,120 @@
                     <th class="no-wrap small-font text-center">Procivis One Core</th>
                 </thead>
               <tbody>
+              <tr class="at-risk">
+                <!--This is the name of the test-->
+                <td class="subtest">
+                    MUST verify a valid &quot;BitstringStatusListCredential&quot; with &quot;revocation&quot; status purpose
+                </td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">Pending verifier tests.</span>
+                    </div>
+                  </td>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">Pending verifier tests.</span>
+                    </div>
+                  </td>
+              </tr>
+              <tr class="at-risk">
+                <!--This is the name of the test-->
+                <td class="subtest">
+                    MUST verify a valid &quot;BitstringStatusListCredential&quot; with &quot;suspension&quot; status purpose
+                </td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">Pending verifier tests.</span>
+                    </div>
+                  </td>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">Pending verifier tests.</span>
+                    </div>
+                  </td>
+              </tr>
+              <tr class="at-risk">
+                <!--This is the name of the test-->
+                <td class="subtest">
+                    MUST fail to verify a VC with invalid &quot;credentialStatus.statusListCredential&quot;
+                </td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">Pending verifier tests.</span>
+                    </div>
+                  </td>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">Pending verifier tests.</span>
+                    </div>
+                  </td>
+              </tr>
+              <tr class="at-risk">
+                <!--This is the name of the test-->
+                <td class="subtest">
+                    MUST fail to verify a VC with invalid &quot;credentialStatus.type&quot;
+                </td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">Pending verifier tests.</span>
+                    </div>
+                  </td>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">Pending verifier tests.</span>
+                    </div>
+                  </td>
+              </tr>
+              <tr class="at-risk">
+                <!--This is the name of the test-->
+                <td class="subtest">
+                    MUST fail to verify a revoked status list credential
+                </td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">Pending verifier tests.</span>
+                    </div>
+                  </td>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">Pending verifier tests.</span>
+                    </div>
+                  </td>
+              </tr>
+              <tr class="at-risk">
+                <!--This is the name of the test-->
+                <td class="subtest">
+                    MUST fail to verify a suspended status list credential
+                </td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">Pending verifier tests.</span>
+                    </div>
+                  </td>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
+                    <div class="relative-pos">
+                      <span class="err hide">Pending verifier tests.</span>
+                    </div>
+                  </td>
+              </tr>
             </tbody>
             </table>
           </div>
@@ -718,29 +832,16 @@
                     Digital Bazaar
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Expected response from verifier: expected undefined to exist</summary>
-                        <pre>AssertionError: Expected response from verifier: expected undefined to exist
-                        at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
-                        at shouldPassVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:87:10)
-                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:61:9)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
-                      </details>
+                      <span class="err hide">Pending interop tests.</span>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot read properties of undefined (reading &#x27;should&#x27;)</summary>
-                        <pre>TypeError: Cannot read properties of undefined (reading &#x27;should&#x27;)
-                        at shouldPassVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:94:24)
-                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:61:9)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
-                      </details>
+                      <span class="err hide">Pending interop tests.</span>
                     </div>
                   </td>
               </tr>
@@ -750,81 +851,16 @@
                     Procivis One Core
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Expected response from verifier: expected undefined to exist</summary>
-                        <pre>AssertionError: Expected response from verifier: expected undefined to exist
-                        at should.exist (node_modules/chai/lib/chai/interface/should.js:144:34)
-                        at shouldPassVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:87:10)
-                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:61:9)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
-                      </details>
+                      <span class="err hide">Pending interop tests.</span>
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="pending not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot read properties of undefined (reading &#x27;should&#x27;)</summary>
-                        <pre>TypeError: Cannot read properties of undefined (reading &#x27;should&#x27;)
-                        at shouldPassVerification (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:94:24)
-                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:61:9)
-                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
-                      </details>
-                    </div>
-                  </td>
-              </tr>
-            </tbody>
-            </table>
-          </div>
-          <div>
-            <div class="flex-center">
-              <div class="row">
-              </div>
-              <div class="">
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="informative" id="At Risk">
-          <h2>At Risk</h2>
-          <div class="row">
-            <table class="simple">
-              <thead>
-                <th width="20%">
-                  <div class="text-right small-font">
-                  Reason &#8658;
-                  </div>
-                  <div class="text-left small-font">
-                  <span>&#8659;</span><span>Statement</span>
-                  </div>
-                </th>
-                    <th class="no-wrap small-font text-center">At least 2 passing implementations</th>
-                </thead>
-              <tbody>
-              <tr class="at-risk">
-                <!--This is the name of the test-->
-                <td class="subtest">
-                    Digital Bazaar
-                </td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                    </div>
-                  </td>
-              </tr>
-              <tr class="at-risk">
-                <!--This is the name of the test-->
-                <td class="subtest">
-                    Procivis One Core
-                </td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
+                      <span class="err hide">Pending interop tests.</span>
                     </div>
                   </td>
               </tr>
