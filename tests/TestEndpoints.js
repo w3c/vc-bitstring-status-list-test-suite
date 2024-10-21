@@ -8,7 +8,6 @@ import {
   createRequestBody,
   createVerifyRequestBody
 } from './mock.data.js';
-import {addJsonAttachment} from './helpers.js';
 
 export class TestEndpoints {
   constructor({implementation, tag}) {
@@ -22,20 +21,16 @@ export class TestEndpoints {
   async issue(credential) {
     const {issuer} = this;
     const issueBody = createRequestBody({issuer, vc: credential});
-    await addJsonAttachment('Request', issueBody);
     const response = post(issuer, issueBody);
-    await addJsonAttachment('Response', response);
     return response;
   }
   async verify(vc) {
     const {verifier} = this;
     const verifyBody = createVerifyRequestBody({verifier, vc});
-    await addJsonAttachment('Request', verifyBody);
     const result = post(this.verifier, verifyBody);
     if(result?.errors?.length) {
       throw result.errors[0];
     }
-    await addJsonAttachment('Response', result);
     return result;
   }
 }

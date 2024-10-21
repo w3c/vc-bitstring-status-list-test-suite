@@ -42,8 +42,6 @@
     "vc-test-suite-implementations": "github:w3c/vc-test-suite-implementations"
   },
   "devDependencies": {
-    "allure-commandline": "^2.30.0",
-    "allure-mocha": "^3.0.5",
     "eslint": "^8.54.0",
     "eslint-config-digitalbazaar": "^5.0.1",
     "eslint-plugin-jsdoc": "^46.9.0",
@@ -53,11 +51,5 @@
   "bugs": {
     "url": "https://github.com/w3c/vc-bitstring-status-list-test-suite/issues"
   },
-  "homepage": "https://github.com/w3c/vc-bitstring-status-list-test-suite#readme",
-  "mocha": {
-    "reporter": "allure-mocha",
-    "reporterOptions": [
-      "resultsDir=allure-results"
-    ]
-  }
+  "homepage": "https://github.com/w3c/vc-bitstring-status-list-test-suite#readme"
 }
