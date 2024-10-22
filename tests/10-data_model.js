@@ -2,17 +2,21 @@
  * Copyright (c) 2022-2023 Digital Bazaar, Inc. All rights reserved.
  */
 // import * as sl from '@digitalbazaar/vc-status-list';
-import {addPerTestMetadata, decodeSl, getSlc, setupMatrix} from './helpers.js';
+import {
+  addPerTestMetadata,
+  decodeSl, getSlc,
+  getStatusEntries,
+  getStatusListCredentials,
+  issueValidVc,
+  setupMatrix
+} from './helpers.js';
 import {testCredential, testSlCredential} from './assertions.js';
 import assert from 'node:assert/strict';
 import chai from 'chai';
-import {createRequire} from 'module';
 import {filterByTag} from 'vc-test-suite-implementations';
 import {TestEndpoints} from './TestEndpoints.js';
 
 const should = chai.should();
-
-const require = createRequire(import.meta.url);
 
 const tag = 'BitstringStatusList';
 const {match} = filterByTag({tags: [tag]});
@@ -26,22 +30,8 @@ describe('Data Model: BitstringStatusList Entry', function() {
       let statusEntry;
       let statusEntries;
       before(async function() {
-        try {
-          issuedVc = await endpoints.issue(require(
-            './validVc.json'));
-        } catch(e) {
-          console.error(
-            `Issuer: ${name} failed to issue "credential-ok.json".`,
-            e
-          );
-        }
-        if(issuedVc.hasOwnProperty('credentialStatus')) {
-          if(Array.isArray(issuedVc.credentialStatus)) {
-            statusEntries = issuedVc.credentialStatus;
-          } else {
-            statusEntries = [issuedVc.credentialStatus];
-          }
-        }
+        issuedVc = await issueValidVc(endpoints, name);
+        statusEntries = await getStatusEntries(issuedVc);
       });
       beforeEach(addPerTestMetadata);
       it('Any expression of the data model in this section ' +
@@ -333,32 +323,13 @@ describe('Data Model: BitstringStatusList Credential', function() {
     const endpoints = new TestEndpoints({implementation, tag});
     describe(name, function() {
       let issuedVc;
-      let statusEntry;
       let statusEntries;
       let statusListCredential;
       let statusListCredentials;
       before(async function() {
-        try {
-          issuedVc = await endpoints.issue(require(
-            './validVc.json'));
-        } catch(e) {
-          console.error(
-            `Issuer: ${name} failed to issue "credential-ok.json".`,
-            e
-          );
-        }
-        if(issuedVc.hasOwnProperty('credentialStatus')) {
-          if(Array.isArray(issuedVc.credentialStatus)) {
-            statusEntries = issuedVc.credentialStatus;
-          } else {
-            statusEntries = [issuedVc.credentialStatus];
-          }
-        }
-        statusListCredentials = [];
-        for(statusEntry of statusEntries) {
-          statusListCredentials.push(
-            (await getSlc(statusEntry)).slc);
-        }
+        issuedVc = await issueValidVc(endpoints, name);
+        statusEntries = await getStatusEntries(issuedVc);
+        statusListCredentials = await getStatusListCredentials(statusEntries);
       });
       beforeEach(addPerTestMetadata);
       it('When a status list verifiable credential is published, ' +

@@ -38,7 +38,6 @@
     "ed25519-signature-2020-context": "^1.1.0",
     "jsonld-document-loader": "^2.0.0",
     "klona": "^2.0.6",
-    "mocha": "^10.2.0",
     "uuid": "^9.0.0",
     "vc-test-suite-implementations": "github:w3c/vc-test-suite-implementations"
   },
@@ -46,7 +45,8 @@
     "eslint": "^8.54.0",
     "eslint-config-digitalbazaar": "^5.0.1",
     "eslint-plugin-jsdoc": "^46.9.0",
-    "eslint-plugin-unicorn": "^49.0.0"
+    "eslint-plugin-unicorn": "^49.0.0",
+    "mocha": "^10.7.3"
   },
   "bugs": {
     "url": "https://github.com/w3c/vc-bitstring-status-list-test-suite/issues"
