@@ -21,11 +21,12 @@ export class TestEndpoints {
   async issue(credential) {
     const {issuer} = this;
     const issueBody = createRequestBody({issuer, vc: credential});
-    const response = await post(issuer, issueBody);
-    return response?.verifiableCredential || response;
+    const response = post(issuer, issueBody);
+    return response;
   }
   async verify(vc) {
-    const verifyBody = createVerifyRequestBody({vc});
+    const {verifier} = this;
+    const verifyBody = createVerifyRequestBody({verifier, vc});
     const result = post(this.verifier, verifyBody);
     if(result?.errors?.length) {
       throw result.errors[0];

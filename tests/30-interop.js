@@ -1,45 +1,39 @@
 /*!
  * Copyright (c) 2022-2023 Digital Bazaar, Inc. All rights reserved.
  */
-import {addPerTestMetadata} from './helpers.js';
-import {endpoints} from 'vc-test-suite-implementations';
+import {addPerTestMetadata, issueValidVc} from './helpers.js';
+import assert from 'node:assert/strict';
+import {filterByTag} from 'vc-test-suite-implementations';
+import {TestEndpoints} from './TestEndpoints.js';
 
 // only use implementations with `BitstringStatusList` tags.
-const {match: issuerMatches} = endpoints.filterByTag({
-  property: 'issuers',
-  tags: ['BitstringStatusList']
-});
-
-const {match: verifierMatches} = endpoints.filterByTag({
-  property: 'verifiers',
-  tags: ['BitstringStatusList']
-});
+const tag = 'BitstringStatusList';
+const {match} = filterByTag({tags: [tag]});
 
 function setupMatrix() {
   // this will tell the report
   // to make an interop matrix with this suite
   this.matrix = true;
   this.report = true;
-  this.implemented = [...verifierMatches.keys()];
+  this.implemented = [...match.keys()];
   this.rowLabel = 'Issuer';
   this.columnLabel = 'Verifier';
 }
 
-describe('BitstringStatusList Credentials (Interop)', function() {
-  // this will tell the report
-  // to make an interop matrix with this suite
-  setupMatrix.call(this);
-  for(const [issuerName] of issuerMatches) {
+describe('Interop', function() {
+  setupMatrix.call(this, match);
+  for(const [issuerName, implementation] of match) {
+    const endpoints = new TestEndpoints({implementation, tag});
+    let issuedVc;
     beforeEach(addPerTestMetadata);
-    for(const [verifierName] of verifierMatches) {
+    before(async function() {
+      issuedVc = await issueValidVc(endpoints, issuerName);
+    });
+    for(const [verifierName, implementation] of match) {
+      const endpoints = new TestEndpoints({implementation, tag});
       it(`${verifierName} should verify ${issuerName}`, async function() {
         this.test.cell = {rowId: issuerName, columnId: verifierName};
-        this.test.cell.skipMessage = 'Pending interop tests.';
-        this.skip();
-        // should.not.exist(err);
-        // should.exist(vc);
-        // const body = createRequestBody({vc});
-        // shouldPassVerification({result, error, statusCode});
+        await assert.doesNotReject(endpoints.verify(issuedVc));
       });
     }
   }
