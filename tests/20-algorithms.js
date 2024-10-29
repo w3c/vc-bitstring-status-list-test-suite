@@ -34,7 +34,9 @@ describe('Algorithm', function() {
         'statements, a MALFORMED_VALUE_ERROR MUST be raised.',
       async function() {
         this.test.link = '';
-        const credential = require('./validVc.json');
+        const credential = JSON.parse(
+          JSON.stringify(require('./validVc.json'))
+        );
 
         // Create a negative fixture
         credential.statusEntry = {
