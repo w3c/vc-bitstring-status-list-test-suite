@@ -34,7 +34,7 @@ describe('Algorithm', function() {
         'statements, a MALFORMED_VALUE_ERROR MUST be raised.',
       async function() {
         this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20an%20implementation%20of%20any%20of%20the%20algorithms%20in%20this%20section%20processes%20a%20property%20defined%20in%20Section%202.%20Data%20Model%20whose%20value%20is%20malformed%20due%20to%20not%20complying%20with%20associated%20%22MUST%22%20statements%2C%20a%20MALFORMED_VALUE_ERROR%20MUST%20be%20raised.';
-        const credential = require('./validVc.json');
+        const credential = structuredClone(require('./validVc.json'));
 
         // Create a negative fixture
         credential.statusEntry = {
