@@ -20,7 +20,7 @@ function setupMatrix() {
   this.columnLabel = 'Verifier';
 }
 
-describe('Interop', function() {
+describe('BitstringStatusList (interop)', function() {
   setupMatrix.call(this, match);
   for(const [issuerName, implementation] of match) {
     const endpoints = new TestEndpoints({implementation, tag});
