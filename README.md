@@ -15,13 +15,13 @@ Provides interoperability tests for issuers and verifiers that support
 
 ## Install
 
-```js
+```sh
 npm i
 ```
 
 ## Usage
 
-```
+```sh
 npm test
 ```
 
@@ -29,18 +29,13 @@ npm test
 
 To generate new test data use this command:
 
-```js
+```sh
 npm run generate-vcs
 ```
 
 ## Implementation
 
 To add your implementation to this test suite see the
-`w3c-ccg/vc-test-suite-implementations` [README](https://github.com/w3c-ccg/vc-test-suite-implementations/blob/main/README.md). Add the tags
+`w3c/vc-test-suite-implementations` [README](https://github.com/w3c/vc-test-suite-implementations/blob/main/README.md). Add the tags
 `BitstringStatusList` along with `Revocation` or `Suspension` to run your
 issuer and verifier against this test suite.
-
-Note: To run the tests, some implementations require client secrets that can be
-passed as env variables to the test script. To see which ones require client
-secrets, you can check configs in the `w3c-ccg/vc-test-suite-implementations`
-repo.
