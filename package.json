@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha tests --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options  abstract=\"$PWD/abstract.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",suiteLog='./suite.log',templateData=\"$PWD/reports/index.json\",title=\"VC Bitstring Status List Interoperability Report 1.0\" --timeout 15000 --preserve-symlinks",
+    "test-allure": "npx mocha tests/ -R allure-mocha -O 'resultsDir=allure-results'",
     "lint": "eslint ."
   },
   "repository": {
@@ -42,11 +43,12 @@
     "vc-test-suite-implementations": "github:w3c/vc-test-suite-implementations"
   },
   "devDependencies": {
+    "allure-mocha": "^3.0.6",
     "eslint": "^8.54.0",
     "eslint-config-digitalbazaar": "^5.0.1",
     "eslint-plugin-jsdoc": "^46.9.0",
     "eslint-plugin-unicorn": "^49.0.0",
-    "mocha": "^10.7.3"
+    "mocha": "^10.8.2"
   },
   "bugs": {
     "url": "https://github.com/w3c/vc-bitstring-status-list-test-suite/issues"
