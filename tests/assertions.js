@@ -34,8 +34,7 @@ export const testCredential = ({credential}) => {
   const issuerType = typeof (credential.issuer);
   issuerType.should.be.oneOf(['string', 'object']);
   if(issuerType === 'object') {
-    should.exist(credential.issuer.id)
-      .and.to.be.an('object');
+    credential.issuer.should.have.property('id').that.is.a('string');
   }
 };
 
