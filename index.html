@@ -170,13 +170,13 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-      Tests passed 116/173 67%
+      Tests passed 117/173 67%
       </p>
       <p>
-      Tests failed 60/173 35%
+      Tests failed 59/173 35%
       </p>
       <p>
-      Failures 60
+      Failures 59
       </p>
       <p>
       Tests skipped 83
@@ -185,7 +185,7 @@
       Total tests 256
       </p>
       <p>
-        These tests were run on <time>6 December 2024 at 3:52 pm UTC</time>
+        These tests were run on <time>6 December 2024 at 5:50 pm UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -280,16 +280,9 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Cannot read properties of undefined (reading &#x27;and&#x27;)</summary>
-                        <pre>TypeError: Cannot read properties of undefined (reading &#x27;and&#x27;)
-                        at testCredential (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:38:7)
-                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-data_model.js:42:9)
-                        at process.processImmediate (node:internal/timers:483:21)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -2499,9 +2492,9 @@
                     <div class="relative-pos">
                       <details class="err hide">
                         <summary>Got unwanted rejection.
-                    Actual message: &quot;[{&#x27;type&#x27;: &#x27;list_type&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;list[DataIntegrityProof]&#x27;), &#x27;msg&#x27;: &#x27;Input should be a valid list&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;z3tBu4fdq1tNwVRwazFMJ3FFD7SLVbWdNRfYwDsL7FEFn2b8YAKqoMT3Wc2J2hsG3iNiVPnqquphjTAjWow8d3VMg&#x27;}}, {&#x27;type&#x27;: &#x27;missing&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;DataIntegrityProof&#x27;, &#x27;cryptosuite&#x27;), &#x27;msg&#x27;: &#x27;Field required&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;z3tBu4fdq1tNwVRwazFMJ3FFD7SLVbWdNRfYwDsL7FEFn2b8YAKqoMT3Wc2J2hsG3iNiVPnqquphjTAjWow8d3VMg&#x27;}}]&quot;</summary>
+                    Actual message: &quot;[{&#x27;type&#x27;: &#x27;list_type&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;list[DataIntegrityProof]&#x27;), &#x27;msg&#x27;: &#x27;Input should be a valid list&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;z3NzgGDG45cw8fUJAUJt1ED28aJRgSjYWtzhcqkSrAtAyHBUPyDtmTzNmB4HrVpDfKqknMGNAPAQNJZcFzerm6XDu&#x27;}}, {&#x27;type&#x27;: &#x27;missing&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;DataIntegrityProof&#x27;, &#x27;cryptosuite&#x27;), &#x27;msg&#x27;: &#x27;Field required&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;z3NzgGDG45cw8fUJAUJt1ED28aJRgSjYWtzhcqkSrAtAyHBUPyDtmTzNmB4HrVpDfKqknMGNAPAQNJZcFzerm6XDu&#x27;}}]&quot;</summary>
                         <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;[{&#x27;type&#x27;: &#x27;list_type&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;list[DataIntegrityProof]&#x27;), &#x27;msg&#x27;: &#x27;Input should be a valid list&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;z3tBu4fdq1tNwVRwazFMJ3FFD7SLVbWdNRfYwDsL7FEFn2b8YAKqoMT3Wc2J2hsG3iNiVPnqquphjTAjWow8d3VMg&#x27;}}, {&#x27;type&#x27;: &#x27;missing&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;DataIntegrityProof&#x27;, &#x27;cryptosuite&#x27;), &#x27;msg&#x27;: &#x27;Field required&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;z3tBu4fdq1tNwVRwazFMJ3FFD7SLVbWdNRfYwDsL7FEFn2b8YAKqoMT3Wc2J2hsG3iNiVPnqquphjTAjWow8d3VMg&#x27;}}]&quot;
+                    Actual message: &quot;[{&#x27;type&#x27;: &#x27;list_type&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;list[DataIntegrityProof]&#x27;), &#x27;msg&#x27;: &#x27;Input should be a valid list&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;z3NzgGDG45cw8fUJAUJt1ED28aJRgSjYWtzhcqkSrAtAyHBUPyDtmTzNmB4HrVpDfKqknMGNAPAQNJZcFzerm6XDu&#x27;}}, {&#x27;type&#x27;: &#x27;missing&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;DataIntegrityProof&#x27;, &#x27;cryptosuite&#x27;), &#x27;msg&#x27;: &#x27;Field required&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;z3NzgGDG45cw8fUJAUJt1ED28aJRgSjYWtzhcqkSrAtAyHBUPyDtmTzNmB4HrVpDfKqknMGNAPAQNJZcFzerm6XDu&#x27;}}]&quot;
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
                         at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:36:9)</pre>
                       </details>
