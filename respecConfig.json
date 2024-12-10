@@ -6,10 +6,6 @@
   "edDraftURI": "https://w3c.github.io/vc-bitstring-status-list-test-suite",
   "doJsonLd": true,
   "includePermalinks": false,
-  "editors": [
-    { "name": "Tashi D. Gyeltshen", "url": "https://github.com/jsAssassin",
-      "company": "Digital Bazaar", "companyURL": "http://digitalbazaar.com/" }
-  ],
   "authors": [
     { "name": "Tashi D. Gyeltshen", "url": "https://github.com/jsAssassin",
       "company": "Digital Bazaar", "companyURL": "http://digitalbazaar.com/" },
