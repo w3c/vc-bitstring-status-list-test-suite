@@ -12,6 +12,7 @@
         <script type="text/javascript" class="remove">
           // set this in the config section
           var respecConfig = {
+      "group": "vc",
       "specStatus": "base",
       "shortName": "vc-bitstring-status-list-test-suite",
       "subtitle": "Test Interoperability Report for Verifiable Credentials status",
@@ -19,15 +20,13 @@
       "edDraftURI": "https://w3c.github.io/vc-bitstring-status-list-test-suite",
       "doJsonLd": true,
       "includePermalinks": false,
-      "editors": [
-        {
-          "name": "Tashi D. Gyeltshen",
-          "url": "https://github.com/jsAssassin",
-          "company": "Digital Bazaar",
-          "companyURL": "http://digitalbazaar.com/"
-        }
-      ],
       "authors": [
+        {
+          "name": "Patrick St. Louis",
+          "url": "https://github.com/PatStLouis",
+          "company": "OpSecId",
+          "companyURL": "https://github.com/OpSecId"
+        },
         {
           "name": "Tashi D. Gyeltshen",
           "url": "https://github.com/jsAssassin",
@@ -185,7 +184,7 @@
       Total tests 256
       </p>
       <p>
-        These tests were run on <time>8 December 2024 at 5:05 am UTC</time>
+        These tests were run on <time>10 December 2024 at 8:01 pm UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -1998,8 +1997,8 @@
             </div>
           </div>
         </section>
-        <section class="informative" id="Interop">
-          <h2>Interop</h2>
+        <section class="informative" id="BitstringStatusList (interop)">
+          <h2>BitstringStatusList (interop)</h2>
           <div class="row">
             <table class="simple">
               <thead>
@@ -2472,9 +2471,9 @@
                     <div class="relative-pos">
                       <details class="err hide">
                         <summary>Got unwanted rejection.
-                    Actual message: &quot;[{&#x27;type&#x27;: &#x27;list_type&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;list[DataIntegrityProof]&#x27;), &#x27;msg&#x27;: &#x27;Input should be a valid list&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;z3rpxbHiwLbmKFy1zGzXMUQcMgFagpCkP3L1id93kmYBxEmrnGX3EF1HX1Y5dNVW3F3DxP6Si8WBZRFCb9FQVNf8s&#x27;}}, {&#x27;type&#x27;: &#x27;missing&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;DataIntegrityProof&#x27;, &#x27;cryptosuite&#x27;), &#x27;msg&#x27;: &#x27;Field required&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;z3rpxbHiwLbmKFy1zGzXMUQcMgFagpCkP3L1id93kmYBxEmrnGX3EF1HX1Y5dNVW3F3DxP6Si8WBZRFCb9FQVNf8s&#x27;}}]&quot;</summary>
+                    Actual message: &quot;[{&#x27;type&#x27;: &#x27;list_type&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;list[DataIntegrityProof]&#x27;), &#x27;msg&#x27;: &#x27;Input should be a valid list&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;zfnpoQQQKKfz8sp8XsaJoqVSrp7PWrPGiRMQdWkJuUEPymKzkGEmUL3JPe2VGHMztdgaGfiVu4hFP8PGr3USLUX3&#x27;}}, {&#x27;type&#x27;: &#x27;missing&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;DataIntegrityProof&#x27;, &#x27;cryptosuite&#x27;), &#x27;msg&#x27;: &#x27;Field required&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;zfnpoQQQKKfz8sp8XsaJoqVSrp7PWrPGiRMQdWkJuUEPymKzkGEmUL3JPe2VGHMztdgaGfiVu4hFP8PGr3USLUX3&#x27;}}]&quot;</summary>
                         <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;[{&#x27;type&#x27;: &#x27;list_type&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;list[DataIntegrityProof]&#x27;), &#x27;msg&#x27;: &#x27;Input should be a valid list&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;z3rpxbHiwLbmKFy1zGzXMUQcMgFagpCkP3L1id93kmYBxEmrnGX3EF1HX1Y5dNVW3F3DxP6Si8WBZRFCb9FQVNf8s&#x27;}}, {&#x27;type&#x27;: &#x27;missing&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;DataIntegrityProof&#x27;, &#x27;cryptosuite&#x27;), &#x27;msg&#x27;: &#x27;Field required&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;z3rpxbHiwLbmKFy1zGzXMUQcMgFagpCkP3L1id93kmYBxEmrnGX3EF1HX1Y5dNVW3F3DxP6Si8WBZRFCb9FQVNf8s&#x27;}}]&quot;
+                    Actual message: &quot;[{&#x27;type&#x27;: &#x27;list_type&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;list[DataIntegrityProof]&#x27;), &#x27;msg&#x27;: &#x27;Input should be a valid list&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;zfnpoQQQKKfz8sp8XsaJoqVSrp7PWrPGiRMQdWkJuUEPymKzkGEmUL3JPe2VGHMztdgaGfiVu4hFP8PGr3USLUX3&#x27;}}, {&#x27;type&#x27;: &#x27;missing&#x27;, &#x27;loc&#x27;: (&#x27;body&#x27;, &#x27;verifiableCredential&#x27;, &#x27;proof&#x27;, &#x27;DataIntegrityProof&#x27;, &#x27;cryptosuite&#x27;), &#x27;msg&#x27;: &#x27;Field required&#x27;, &#x27;input&#x27;: {&#x27;type&#x27;: &#x27;Ed25519Signature2020&#x27;, &#x27;verificationMethod&#x27;: &#x27;did:key:z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD#z6MkgYAGxLBSXa6Ygk1PnUbK2F7zya8juE9nfsZhrvY7c9GD&#x27;, &#x27;proofPurpose&#x27;: &#x27;assertionMethod&#x27;, &#x27;proofValue&#x27;: &#x27;zfnpoQQQKKfz8sp8XsaJoqVSrp7PWrPGiRMQdWkJuUEPymKzkGEmUL3JPe2VGHMztdgaGfiVu4hFP8PGr3USLUX3&#x27;}}]&quot;
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
                         at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:36:9)</pre>
                       </details>
@@ -2682,30 +2681,6 @@
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;If%20present%2C%20its%20value%20MUST%20be%20a%20URL%20or%20an%20array%20of%20URLs%20%5BURL%5D%20which%20dereference%20to%20material%20related%20to%20the%20status">If present, the &quot;statusReference&quot; value MUST be a URL or an array of URLs [URL] which dereference(s) to material related to the status.</a>
-                </td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                    </div>
-                  </td>
-              </tr>
-              <tr class="at-risk">
-                <!--This is the name of the test-->
-                <td class="subtest">
-                    apicatalog.com
-                </td>
-                <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
-                    <div class="relative-pos">
-                    </div>
-                  </td>
-              </tr>
-              <tr class="at-risk">
-                <!--This is the name of the test-->
-                <td class="subtest">
-                    Gen Digital
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="failed not-optional highlight-on-hover text-center">
