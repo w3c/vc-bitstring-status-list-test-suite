@@ -15,13 +15,13 @@ Provides interoperability tests for issuers and verifiers that support
 
 ## Install
 
-```js
+```sh
 npm i
 ```
 
 ## Usage
 
-```
+```sh
 npm test
 ```
 
@@ -29,7 +29,7 @@ npm test
 
 To generate new test data use this command:
 
-```js
+```sh
 npm run generate-vcs
 ```
 
