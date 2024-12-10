@@ -1,4 +1,5 @@
 {
+  "group": "vc",
   "specStatus": "base",
   "shortName": "vc-bitstring-status-list-test-suite",
   "subtitle": "Test Interoperability Report for Verifiable Credentials status",
