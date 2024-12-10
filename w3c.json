@@ -1,5 +1,5 @@
 {
-    "group":      "wg/vc"
-,   "contacts":   ["iherman"]
-,   "repo-type":  "tests"
+    "group":      "wg/vc",
+    "contacts":   ["iherman"],
+    "repo-type":  "tests"
 }
