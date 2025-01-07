@@ -8,11 +8,13 @@
   "doJsonLd": true,
   "includePermalinks": false,
   "authors": [
+    { "name": "Tashi D. Gyeltshen", "url": "https://github.com/jsAssassin",
+      "company": "Digital Bazaar, Inc.", "companyURL": "https://digitalbazaar.com/" },
     { "name": "Patrick St. Louis", "url": "https://github.com/PatStLouis",
       "company": "OpSecId", "companyURL": "https://github.com/OpSecId" },
-    { "name": "Tashi D. Gyeltshen", "url": "https://github.com/jsAssassin",
-      "company": "Digital Bazaar", "companyURL": "http://digitalbazaar.com/" },
-    { "name": "Manu Sporny", "url": "http://manu.sporny.org/",
-      "company": "Digital Bazaar", "companyURL": "http://digitalbazaar.com/" }
+    { "name": "Benjamin Young", "url": "https://github.com/BigBlueHat",
+      "company": "Digital Bazaar, Inc.", "companyURL": "https://digitalbazaar.com/" },
+    { "name": "Andrew Jones", "url": "https://github.com/aljones15",
+      "company": "Digital Bazaar, Inc.", "companyURL": "https://digitalbazaar.com/" }
     ]
 }
