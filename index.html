@@ -169,7 +169,7 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-        These tests were run on <time>5 January 2025 at 5:05 am UTC</time>
+        These tests were run on <time>12 January 2025 at 5:05 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -589,9 +589,18 @@
                     <div class="relative-pos">
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
+                      <details class="err hide">
+                        <summary>NotFoundError</summary>
+                        <pre>Error: NotFoundError
+                        at Object.get (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/documentLoader.js:20:13)
+                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                        at async JsonLdDocumentLoader.documentLoader (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/node_modules/jsonld-document-loader/lib/JsonLdDocumentLoader.js:97:20)
+                        at async getSlc (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/helpers.js:51:22)
+                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-data_model.js:135:25)</pre>
+                      </details>
                     </div>
                   </td>
               </tr>
@@ -2129,9 +2138,9 @@
                     <div class="relative-pos">
                       <details class="err hide">
                         <summary>Got unwanted rejection.
-                    Actual message: &quot;invalid-value[credential]: fill credential status from raw: should be json object but got [map[id:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z1AERHrY9eCESjR6rHkVWiTRV#87040 statusListCredential:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z1AERHrY9eCESjR6rHkVWiTRV statusListIndex:87040 statusPurpose:revocation type:BitstringStatusListEntry] map[id:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z19xnH8WTRuuRSG85NwNihm9R#87040 statusListCredential:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z19xnH8WTRuuRSG85NwNihm9R statusListIndex:87040 statusPurpose:suspension type:BitstringStatusListEntry]]&quot;</summary>
+                    Actual message: &quot;invalid-value[credential]: fill credential status from raw: should be json object but got [map[id:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z1AERHrY9eCESjR6rHkVWiTRV#74949 statusListCredential:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z1AERHrY9eCESjR6rHkVWiTRV statusListIndex:74949 statusPurpose:revocation type:BitstringStatusListEntry] map[id:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z19xnH8WTRuuRSG85NwNihm9R#74949 statusListCredential:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z19xnH8WTRuuRSG85NwNihm9R statusListIndex:74949 statusPurpose:suspension type:BitstringStatusListEntry]]&quot;</summary>
                         <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;invalid-value[credential]: fill credential status from raw: should be json object but got [map[id:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z1AERHrY9eCESjR6rHkVWiTRV#87040 statusListCredential:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z1AERHrY9eCESjR6rHkVWiTRV statusListIndex:87040 statusPurpose:revocation type:BitstringStatusListEntry] map[id:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z19xnH8WTRuuRSG85NwNihm9R#87040 statusListCredential:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z19xnH8WTRuuRSG85NwNihm9R statusListIndex:87040 statusPurpose:suspension type:BitstringStatusListEntry]]&quot;
+                    Actual message: &quot;invalid-value[credential]: fill credential status from raw: should be json object but got [map[id:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z1AERHrY9eCESjR6rHkVWiTRV#74949 statusListCredential:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z1AERHrY9eCESjR6rHkVWiTRV statusListIndex:74949 statusPurpose:revocation type:BitstringStatusListEntry] map[id:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z19xnH8WTRuuRSG85NwNihm9R#74949 statusListCredential:https://sandbox.platform.veres.dev/statuses/z19vnKFKrDW3thUvrnx44uq2d/status-lists/z19xnH8WTRuuRSG85NwNihm9R statusListIndex:74949 statusPurpose:suspension type:BitstringStatusListEntry]]&quot;
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
                         at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:36:9)</pre>
                       </details>
@@ -2515,9 +2524,9 @@
                     <div class="relative-pos">
                       <details class="err hide">
                         <summary>Got unwanted rejection.
-                    Actual message: &quot;invalid-value[credential]: fill credential status from raw: should be json object but got [map[statusListCredential:https://mhhigzgqu6.ap-south-1.awsapprunner.com/status-list/revocation/0 statusListIndex:127 statusPurpose:revocation type:BitstringStatusListEntry] map[statusListCredential:https://mhhigzgqu6.ap-south-1.awsapprunner.com/status-list/suspension/0 statusListIndex:127 statusPurpose:suspension type:BitstringStatusListEntry]]&quot;</summary>
+                    Actual message: &quot;invalid-value[credential]: fill credential status from raw: should be json object but got [map[statusListCredential:https://mhhigzgqu6.ap-south-1.awsapprunner.com/status-list/revocation/0 statusListIndex:143 statusPurpose:revocation type:BitstringStatusListEntry] map[statusListCredential:https://mhhigzgqu6.ap-south-1.awsapprunner.com/status-list/suspension/0 statusListIndex:143 statusPurpose:suspension type:BitstringStatusListEntry]]&quot;</summary>
                         <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;invalid-value[credential]: fill credential status from raw: should be json object but got [map[statusListCredential:https://mhhigzgqu6.ap-south-1.awsapprunner.com/status-list/revocation/0 statusListIndex:127 statusPurpose:revocation type:BitstringStatusListEntry] map[statusListCredential:https://mhhigzgqu6.ap-south-1.awsapprunner.com/status-list/suspension/0 statusListIndex:127 statusPurpose:suspension type:BitstringStatusListEntry]]&quot;
+                    Actual message: &quot;invalid-value[credential]: fill credential status from raw: should be json object but got [map[statusListCredential:https://mhhigzgqu6.ap-south-1.awsapprunner.com/status-list/revocation/0 statusListIndex:143 statusPurpose:revocation type:BitstringStatusListEntry] map[statusListCredential:https://mhhigzgqu6.ap-south-1.awsapprunner.com/status-list/suspension/0 statusListIndex:143 statusPurpose:suspension type:BitstringStatusListEntry]]&quot;
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
                         at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:36:9)</pre>
                       </details>
