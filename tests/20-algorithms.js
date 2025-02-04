@@ -181,26 +181,3 @@ describe('Algorithm: Bitstring Expansion Algorithm', function() {
   }
 });
 
-describe('Algorithm: Processing Errors', function() {
-  setupMatrix.call(this, match);
-  for(const [name, implementation] of match) {
-    const endpoints = new TestEndpoints({implementation, tag});
-    describe(name, function() {
-      before(async function() {
-      });
-      beforeEach(addPerTestMetadata);
-      it('The type value of the error object MUST be a URL that ' +
-        'starts with the value https://www.w3.org/ns/credentials/status-list# ' +
-        'and ends with the value in the section listed below.',
-      async function() {
-        this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20type%20value%20of%20the%20error%20object%20MUST%20be%20a%20URL%20that%20starts%20with%20the%20value%20https%3A//www.w3.org/ns/credentials/status%2Dlist%23%20and%20ends%20with%20the%20value%20in%20the%20section%20listed%20below.';
-        this.test.cell.skipMessage = 'Missing negative test fixtures.';
-        this.skip();
-        await assert.rejects(endpoints.verify({}));
-        // STATUS_RETRIEVAL_ERROR
-        // STATUS_VERIFICATION_ERROR
-        // STATUS_LIST_LENGTH_ERROR
-      });
-    });
-  }
-});
