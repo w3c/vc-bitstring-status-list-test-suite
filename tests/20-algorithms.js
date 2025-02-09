@@ -96,35 +96,6 @@ describe('Algorithm: Validate Algorithm', function() {
         await assert.doesNotReject(endpoints.verify(issuedVc));
         // TODO add negative verifier tests
       });
-      it('If the credentialIndex multiplied by the size is a value ' +
-        'outside of the range of the bitstring, a RANGE_ERROR MUST ' +
-        'be raised.',
-      async function() {
-        this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=Let%20status%20be%20the%20value%20in%20the%20bitstring%20at%20the%20position%20indicated%20by%20the%20credentialIndex%20multiplied%20by%20the%20size.%20If%20the%20credentialIndex%20multiplied%20by%20the%20size%20is%20a%20value%20outside%20of%20the%20range%20of%20the%20bitstring%2C%20a%20RANGE_ERROR%20MUST%20be%20raised.';
-        this.test.cell.skipMessage = 'Missing negative test fixtures.';
-        this.skip();
-      });
-      it('When a statusListCredential URL is dereferenced, ' +
-        'server implementations MAY provide a mechanism to dereference ' +
-        'the status list as of a particular point in time If such a feature ' +
-        'is supported, and if query parameters are supported by ' +
-        'the URL scheme, then the name of the query parameter MUST ' +
-        'be timestamp and the value MUST be a valid URL-encoded ' +
-        '[XMLSCHEMA11-2] dateTimeStamp string value.',
-      async function() {
-        this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=If%20such%20a%20feature%20is%20supported%2C%20and%20if%20query%20parameters%20are%20supported%20by%20the%20URL%20scheme%2C%20then%20the%20name%20of%20the%20query%20parameter%20MUST%20be%20timestamp%20and%20the%20value%20MUST%20be%20a%20valid%20URL%2Dencoded%20%5BXMLSCHEMA11%2D2%5D%20dateTimeStamp%20string%20value.';
-        this.test.cell.skipMessage = 'No feature support.';
-        this.skip();
-      });
-      it('The result of dereferencing such a timestamp-parameterized ' +
-        'URL MUST be either a status list credential containing the ' +
-        'status list as it existed at the given point in time, or a ' +
-        'STATUS_RETRIEVAL_ERROR.',
-      async function() {
-        this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20result%20of%20dereferencing%20such%20a%20timestamp%2Dparameterized%20URL%20MUST%20be%20either%20a%20status%20list%20credential%20containing%20the%20status%20list%20as%20it%20existed%20at%20the%20given%20point%20in%20time%2C%20or%20a%20STATUS_RETRIEVAL_ERROR.';
-        this.test.cell.skipMessage = 'No feature support.';
-        this.skip();
-      });
     });
   }
 });
