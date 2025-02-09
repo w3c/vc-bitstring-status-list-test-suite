@@ -436,32 +436,6 @@ describe('Data Model: BitstringStatusList Credential', function() {
           }
         }
       );
-      it('The bitstring MUST be encoded such that the first index, ' +
-          'with a value of zero (0), is located at the left-most bit ' +
-          'in the bitstring and the last index, with a value of ' +
-          'one less than the length of the bitstring ' +
-          '(bitstring_length - 1), is located at the right-most ' +
-          'bit in the bitstring.',
-      async function() {
-        this.test.link = 'https://www.w3.org/TR/vc-bitstring-status-list/#:~:text=The%20bitstring%20MUST,Bitstring%20Encoding.';
-        this.test.cell.skipMessage = 'Test needs to be validated.';
-        this.skip();
-        for(statusListCredential of statusListCredentials) {
-          const {encodedList} = statusListCredential.credentialSubject;
-          const decoded = await decodeSl({encodedList});
-          decoded[0].should.be.equal(0,
-            'Expected the first index of the statusList to have ' +
-              'the value 0.'
-          );
-          decoded[
-            decoded.length - 1].should.be.equal(
-            decoded.length - 1,
-            'Expected the last index of the statusList to have ' +
-                'the value of the bitstring length minus 1.'
-          );
-        }
-      }
-      );
     });
   }
 });
