@@ -175,7 +175,7 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-        These tests were run on <time>10 February 2025 at 3:41 pm UTC</time>
+        These tests were run on <time>10 February 2025 at 4:08 pm UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -253,10 +253,16 @@
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;Any%20expression%20of%20the%20data%20model%20in%20this%20section%20MUST%20be%20expressed%20in%20a%20conforming%20verifiable%20credential%20as%20defined%20in%20%5BVC%2DDATA%2DMODEL%2D2.0%5D.">Any expression of the data model in this section MUST be expressed in a conforming verifiable credential as defined in [VC-DATA-MODEL-2.0].</a>
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="pending not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">🚫</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
-                      <span class="err hide">Test skipped.</span>
+                      <details class="err hide">
+                        <summary>expected &#x27;https://www.w3.org/ns/credentials/v2&#x27; to be an array</summary>
+                        <pre>AssertionError: expected &#x27;https://www.w3.org/ns/credentials/v2&#x27; to be an array
+                        at testCredential (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:22:16)
+                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-data_model.js:42:9)
+                        at process.processImmediate (node:internal/timers:483:21)</pre>
+                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -296,10 +302,9 @@
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;If%20present%2C%20the%20value%20is%20expected%20to%20be%20a%20URL%20that%20identifies%20the%20status%20information%20associated%20with%20the%20verifiable%20credential.">If present, the id value is expected to be a URL that identifies the status information associated with the verifiable credential. It MUST NOT be the URL for the status list.</a>
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="pending not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">🚫</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <span class="err hide">Test skipped.</span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -340,10 +345,9 @@
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20type%20property%20MUST%20be%20BitstringStatusListEntry.">The type property MUST be BitstringStatusListEntry. </a>
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="pending not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">🚫</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <span class="err hide">Test skipped.</span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -383,10 +387,9 @@
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20purpose%20of%20the%20status%20entry%20MUST%20be%20a%20string">The purpose of the status entry MUST be a string.</a>
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="pending not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">🚫</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <span class="err hide">Test skipped.</span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -426,10 +429,9 @@
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20statusListIndex%20property%20MUST%20be%20an%20arbitrary%20size%20integer%20greater%20than%20or%20equal%20to%200%2C%20expressed%20as%20a%20string%20in%20base%2010">The statusListIndex property MUST be an arbitrary size integer greater than or equal to 0, expressed as a string in base 10.</a>
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="pending not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">🚫</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <span class="err hide">Test skipped.</span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -469,10 +471,16 @@
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20statusListCredential%20property%20MUST%20be%20a%20URL%20to%20a%20verifiable%20credential.">The statusListCredential property MUST be a URL to a verifiable credential.</a>
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="pending not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">🚫</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
-                      <span class="err hide">Test skipped.</span>
+                      <details class="err hide">
+                        <summary>expected &#x27;https://www.w3.org/ns/credentials/v2&#x27; to be an array</summary>
+                        <pre>AssertionError: expected &#x27;https://www.w3.org/ns/credentials/v2&#x27; to be an array
+                        at testSlCredential (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/assertions.js:45:43)
+                        at Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/10-data_model.js:126:11)
+                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)</pre>
+                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -520,10 +528,9 @@
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;When%20the%20URL%20is%20dereferenced%2C%20the%20resulting%20verifiable%20credential%20MUST%20have%20type%20property%20that%20includes%20the%20BitstringStatusListCredential%20value.">When the URL is dereferenced, the resulting verifiable credential MUST have type property that includes the BitstringStatusListCredential value.</a>
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="pending not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">🚫</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <span class="err hide">Test skipped.</span>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -574,7 +581,7 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
-                      <span class="err hide">Test skipped.</span>
+                      <span class="err hide">No statusSize property included.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
@@ -623,7 +630,7 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
-                      <span class="err hide">Test skipped.</span>
+                      <span class="err hide">No statusSize property included.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
@@ -672,7 +679,7 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
-                      <span class="err hide">Test skipped.</span>
+                      <span class="err hide">No statusMessage property included.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
@@ -721,7 +728,7 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
-                      <span class="err hide">Test skipped.</span>
+                      <span class="err hide">No statusMessage property included.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
@@ -770,7 +777,7 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
-                      <span class="err hide">Test skipped.</span>
+                      <span class="err hide">No greater than 1 statusSize property included.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
@@ -819,7 +826,7 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
-                      <span class="err hide">Test skipped.</span>
+                      <span class="err hide">No statusMessage property included.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
@@ -868,7 +875,7 @@
                   <td class="pending not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">🚫</div>
                     <div class="relative-pos">
-                      <span class="err hide">Test skipped.</span>
+                      <span class="err hide">No statusReference property included.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
@@ -1413,17 +1420,9 @@
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20following%20process%2C%20or%20one%20generating%20the%20exact%20output%2C%20MUST%20be%20followed%20when%20validating%20a%20verifiable%20credential%20that%20is%20contained%20in%20a%20BitstringStatusListCredential">The following process, or one generating the exact output, MUST be followed when validating a verifiable credential that is contained in a BitstringStatusListCredential</a>
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;</summary>
-                        <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;
-                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-algorithms.js:96:9)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -1582,17 +1581,9 @@
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;The%20following%20process%2C%20or%20one%20generating%20the%20exact%20output%2C%20MUST%20be%20followed%20when%20expanding%20a%20compressed%20status%20list%20bitstring.">The following process, or one generating the exact output, MUST be followed when expanding a compressed status list bitstring.</a>
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;</summary>
-                        <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;
-                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/20-algorithms.js:148:9)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -1668,23 +1659,15 @@
                     <th class="no-wrap small-font text-center">Trential</th>
                 </thead>
               <tbody>
-              <tr class="at-risk">
+              <tr class="confirmed">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     apicatalog.com
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;</summary>
-                        <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;
-                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:36:9)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -1764,17 +1747,9 @@
                     Digital Bazaar
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;</summary>
-                        <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;
-                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:36:9)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -1843,9 +1818,9 @@
                     <div class="relative-pos">
                       <details class="err hide">
                         <summary>Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;</summary>
+                    Actual message: &quot;UnknownVerificationMethod&quot;</summary>
                         <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;
+                    Actual message: &quot;UnknownVerificationMethod&quot;
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
                         at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:36:9)</pre>
                       </details>
@@ -1925,9 +1900,9 @@
                     <div class="relative-pos">
                       <details class="err hide">
                         <summary>Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;</summary>
+                    Actual message: &quot;Request failed with status code 400 Bad Request&quot;</summary>
                         <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;
+                    Actual message: &quot;Request failed with status code 400 Bad Request&quot;
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
                         at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:36:9)</pre>
                       </details>
@@ -2002,17 +1977,9 @@
                     Procivis One Core
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;</summary>
-                        <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;
-                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:36:9)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -2081,9 +2048,9 @@
                     <div class="relative-pos">
                       <details class="err hide">
                         <summary>Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;</summary>
+                    Actual message: &quot;MissingCreated&quot;</summary>
                         <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;
+                    Actual message: &quot;MissingCreated&quot;
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
                         at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:36:9)</pre>
                       </details>
@@ -2102,6 +2069,7 @@
                     Actual message: &quot;Request to &quot;https://krakend-k8s-dev3.dev.dts-dsa.com/vcs/verifier/profiles/f3c5e456-2528-4821-9516-e062392f6ead/v1.latest/credentials/verify&quot; timed out.&quot;</summary>
                         <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
                     Actual message: &quot;Request to &quot;https://krakend-k8s-dev3.dev.dts-dsa.com/vcs/verifier/profiles/f3c5e456-2528-4821-9516-e062392f6ead/v1.latest/credentials/verify&quot; timed out.&quot;
+                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
                         at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:36:9)</pre>
                       </details>
                     </div>
@@ -2149,17 +2117,9 @@
                     Trential
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;</summary>
-                        <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;A non-empty JSON Pointer must begin with a &#x27;/&#x27;&quot;
-                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:36:9)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
