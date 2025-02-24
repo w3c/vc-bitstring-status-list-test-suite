@@ -269,10 +269,10 @@ describe('Data Model: BitstringStatusList Entry', function() {
             // TODO this needs more testing:
             // a string representing the hexadecimal
             // value of the status prefixed with 0x
-              statusEntry.statusMessage.forEach((message) => {
-                message.should.have.property("status").that.is.a("string");
-                message.should.have.property("message").that.is.a("string");
-              });
+            statusEntry.statusMessage.forEach(message => {
+              message.should.have.property('status').that.is.a('string');
+              message.should.have.property('message').that.is.a('string');
+            });
           } else {
             if(statusEntry === statusEntries[statusEntries.length - 1]) {
               this.test.cell.skipMessage = 'No statusMessage ' +
