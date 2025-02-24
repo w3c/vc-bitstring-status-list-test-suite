@@ -176,7 +176,7 @@ describe('Data Model: BitstringStatusList Entry', function() {
         for(statusEntry of statusEntries) {
           if('statusSize' in statusEntry &&
             Number.isInteger(statusEntry.statusSize) &&
-            statusEntry.statusSize.gt(1)) {
+            statusEntry.statusSize.should.be.gt(1)) {
             statusEntry.should.have.own.property(
               'statusMessage');
           } else {
@@ -198,7 +198,8 @@ describe('Data Model: BitstringStatusList Entry', function() {
           if('statusSize' in statusEntry &&
             'statusMessage' in statusEntry) {
             statusEntry.statusMessage.should.be.
-              an('array').length.should.be.
+              an('array');
+            statusEntry.statusMessage.length.should.be.
               equal(statusEntry.statusSize);
           } else {
             if(statusEntry === statusEntries[statusEntries.length - 1]) {
@@ -220,7 +221,8 @@ describe('Data Model: BitstringStatusList Entry', function() {
           if('statusMessage' in statusEntry &&
             'statusSize' in statusEntry) {
             statusEntry.statusMessage.should.be.
-              an('array').length.should.be.
+              an('array');
+            statusEntry.statusMessage.length.should.be.
               equal(statusEntry.statusSize,
                 'Expected statusMessage length to be equal to ' +
                 'statusSize.');
@@ -242,7 +244,7 @@ describe('Data Model: BitstringStatusList Entry', function() {
         for(statusEntry of statusEntries) {
           if('statusSize' in statusEntry &&
             Number.isInteger(statusEntry.statusSize) &&
-            statusEntry.statusSize.gt(1)
+            statusEntry.statusSize.should.be.gt(1)
           ) {
             statusEntry.should.have.own.property(
               'statusMessage');
@@ -267,12 +269,10 @@ describe('Data Model: BitstringStatusList Entry', function() {
             // TODO this needs more testing:
             // a string representing the hexadecimal
             // value of the status prefixed with 0x
-            statusEntry.
-              statusMessage.should.each.have.property(
-                'status').that.is.a('string');
-            statusEntry.
-              statusMessage.should.each.have.property(
-                'message').that.is.a('string');
+              statusEntry.statusMessage.forEach((message) => {
+                message.should.have.property("status").that.is.a("string");
+                message.should.have.property("message").that.is.a("string");
+              });
           } else {
             if(statusEntry === statusEntries[statusEntries.length - 1]) {
               this.test.cell.skipMessage = 'No statusMessage ' +
