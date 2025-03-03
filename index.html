@@ -168,6 +168,12 @@
       for <a href="https://w3c.github.io/vc-bitstring-status-list/">Bitstring Status
       List</a>.
       </p>
+      <p>
+        In addition to the test results below,
+        <a href="https://github.com/w3c/vc-bitstring-status-list-test-suite/issues/61">Tradeverifyd reports</a>
+        a successful implemention of every feature, including the ability to
+        host multiple statuses in a single list.
+      </p>
     </section>
     <section id="sotd">
     </section>
@@ -175,7 +181,7 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-        These tests were run on <time>2 March 2025 at 5:06 am UTC</time>
+        These tests were run on <time>3 March 2025 at 8:55 pm UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -956,10 +962,9 @@
                       <span class="err hide">No statusReference property included.</span>
                     </div>
                   </td>
-                  <td class="pending not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">🚫</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <span class="err hide">No statusReference property included.</span>
                     </div>
                   </td>
                   <td class="pending not-optional highlight-on-hover text-center">
@@ -1886,17 +1891,9 @@
                     Digital Bazaar
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
-                  <td class="failed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">❌</div>
+                  <td class="passed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">✓</div>
                     <div class="relative-pos">
-                      <details class="err hide">
-                        <summary>Got unwanted rejection.
-                    Actual message: &quot;Request to &quot;https://us-central1-api-catalog.cloudfunctions.net/vc-api-verify&quot; timed out.&quot;</summary>
-                        <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;Request to &quot;https://us-central1-api-catalog.cloudfunctions.net/vc-api-verify&quot; timed out.&quot;
-                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:36:9)</pre>
-                      </details>
                     </div>
                   </td>
                   <td class="passed not-optional highlight-on-hover text-center">
@@ -2549,6 +2546,18 @@
                 <!--This is the name of the test-->
                 <td class="subtest">
                     <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;If%20the%20statusMessage%20array%20is%20present%2C%20each%20element%20MUST%20contain%20the%20two%20properties%20described%20below%2C%20and%20MAY%20contain%20additional%20properties.">If the statusMessage array is present, each element MUST contain the two properties &quot;status&quot; and &quot;message&quot;.</a>
+                </td>
+                <!--These contain if the test passed, failed, or was skipped-->
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                    </div>
+                  </td>
+              </tr>
+              <tr class="at-risk">
+                <!--This is the name of the test-->
+                <td class="subtest">
+                    <a href="https://www.w3.org/TR/vc-bitstring-status-list/#:~:text&#x3D;If%20present%2C%20its%20value%20MUST%20be%20a%20URL%20or%20an%20array%20of%20URLs%20%5BURL%5D%20which%20dereference%20to%20material%20related%20to%20the%20status">If present, the &quot;statusReference&quot; value MUST be a URL or an array of URLs [URL] which dereference(s) to material related to the status.</a>
                 </td>
                 <!--These contain if the test passed, failed, or was skipped-->
                   <td class="failed not-optional highlight-on-hover text-center">
