@@ -10,6 +10,8 @@ import {TestEndpoints} from './TestEndpoints.js';
 const tag = 'BitstringStatusList';
 const {match} = filterByTag({tags: [tag]});
 
+// NOTE: this setupMatrix differs from the one in `./helpers.js` as it sets
+// the `rowLabel` also since this is an interop suite.
 function setupMatrix() {
   // this will tell the report
   // to make an interop matrix with this suite

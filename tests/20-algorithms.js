@@ -21,7 +21,7 @@ const tag = 'BitstringStatusList';
 const {match} = filterByTag({tags: [tag]});
 
 describe('Algorithm', function() {
-  setupMatrix.call(this, match);
+  setupMatrix.call(this, match, 'Issuer');
   for(const [name, implementation] of match) {
     const endpoints = new TestEndpoints({implementation, tag});
     describe(name, function() {
@@ -52,7 +52,7 @@ describe('Algorithm', function() {
 });
 
 describe('Algorithm: Generate Algorithm', function() {
-  setupMatrix.call(this, match);
+  setupMatrix.call(this, match, 'Issuer');
   for(const [name, implementation] of match) {
     const endpoints = new TestEndpoints({implementation, tag});
     describe(name, function() {
@@ -79,7 +79,7 @@ describe('Algorithm: Generate Algorithm', function() {
 });
 
 describe('Algorithm: Validate Algorithm', function() {
-  setupMatrix.call(this, match);
+  setupMatrix.call(this, match, 'Verifier');
   for(const [name, implementation] of match) {
     const endpoints = new TestEndpoints({implementation, tag});
     describe(name, function() {
@@ -101,7 +101,7 @@ describe('Algorithm: Validate Algorithm', function() {
 });
 
 describe('Algorithm: Bitstring Generation Algorithm', function() {
-  setupMatrix.call(this, match);
+  setupMatrix.call(this, match, 'Issuer');
   for(const [name, implementation] of match) {
     const endpoints = new TestEndpoints({implementation, tag});
     describe(name, function() {
@@ -131,7 +131,7 @@ describe('Algorithm: Bitstring Generation Algorithm', function() {
 });
 
 describe('Algorithm: Bitstring Expansion Algorithm', function() {
-  setupMatrix.call(this, match);
+  setupMatrix.call(this, match, 'Verifier');
   for(const [name, implementation] of match) {
     const endpoints = new TestEndpoints({implementation, tag});
     describe(name, function() {
