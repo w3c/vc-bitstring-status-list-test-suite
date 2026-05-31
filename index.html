@@ -199,7 +199,7 @@
     <section class="informative" id="conformance-testing-results">
       <h2> Conformance Testing Results </h2>
       <p>
-        These tests were run on <time>24 May 2026 at 6:19 am UTC</time>
+        These tests were run on <time>31 May 2026 at 6:31 am UTC</time>
       </p>
       <section class="informative" id="Key">
         <h3>Key</h3>
@@ -2283,7 +2283,7 @@
                     </div>
                   </td>
               </tr>
-              <tr class="confirmed">
+              <tr class="at-risk">
                 <!--This is the name of the test-->
                 <td class="subtest">
                     OpSecId
@@ -2294,17 +2294,25 @@
                     <div class="relative-pos">
                       <details class="err hide">
                         <summary>Got unwanted rejection.
-                    Actual message: &quot;Request failed with status code 400 Bad Request&quot;</summary>
+                    Actual message: &quot;UnknownModel&quot;</summary>
                         <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;Request failed with status code 400 Bad Request&quot;
+                    Actual message: &quot;UnknownModel&quot;
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
                         at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:38:9)</pre>
                       </details>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
+                      <details class="err hide">
+                        <summary>Got unwanted rejection.
+                    Actual message: &quot;A validation error occurred in the &#x27;Verify Credential Body&#x27; validator.&quot;</summary>
+                        <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
+                    Actual message: &quot;A validation error occurred in the &#x27;Verify Credential Body&#x27; validator.&quot;
+                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:38:9)</pre>
+                      </details>
                     </div>
                   </td>
                   <td class="failed not-optional highlight-on-hover text-center">
@@ -2333,19 +2341,14 @@
                       </details>
                     </div>
                   </td>
-                  <td class="passed not-optional highlight-on-hover text-center">
-                    <div class= "highlight-on-hover">✓</div>
-                    <div class="relative-pos">
-                    </div>
-                  </td>
                   <td class="failed not-optional highlight-on-hover text-center">
                     <div class= "highlight-on-hover">❌</div>
                     <div class="relative-pos">
                       <details class="err hide">
                         <summary>Got unwanted rejection.
-                    Actual message: &quot;Request failed with status code 400 Bad Request&quot;</summary>
+                    Actual message: &quot;Request failed with status code 500 Internal Server Error&quot;</summary>
                         <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;Request failed with status code 400 Bad Request&quot;
+                    Actual message: &quot;Request failed with status code 500 Internal Server Error&quot;
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
                         at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:38:9)</pre>
                       </details>
@@ -2369,9 +2372,22 @@
                     <div class="relative-pos">
                       <details class="err hide">
                         <summary>Got unwanted rejection.
-                    Actual message: &quot;unsupported cryptosuite&quot;</summary>
+                    Actual message: &quot;Request failed with status code 400 Bad Request&quot;</summary>
                         <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
-                    Actual message: &quot;unsupported cryptosuite&quot;
+                    Actual message: &quot;Request failed with status code 400 Bad Request&quot;
+                        at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+                        at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:38:9)</pre>
+                      </details>
+                    </div>
+                  </td>
+                  <td class="failed not-optional highlight-on-hover text-center">
+                    <div class= "highlight-on-hover">❌</div>
+                    <div class="relative-pos">
+                      <details class="err hide">
+                        <summary>Got unwanted rejection.
+                    Actual message: &quot;undefined verifiableCredential&quot;</summary>
+                        <pre>AssertionError [ERR_ASSERTION]: Got unwanted rejection.
+                    Actual message: &quot;undefined verifiableCredential&quot;
                         at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
                         at async Context.&lt;anonymous&gt; (file:///home/runner/work/vc-bitstring-status-list-test-suite/vc-bitstring-status-list-test-suite/tests/30-interop.js:38:9)</pre>
                       </details>
