@@ -30,7 +30,7 @@
   "dependencies": {
     "@digitalbazaar/http-client": "^3.3.0",
     "@digitalbazaar/mocha-w3c-interop-reporter": "^1.6.0",
-    "@digitalbazaar/vc-status-list": "^7.0.0",
+    "@digitalbazaar/vc-status-list": "^8.0.1",
     "@digitalbazaar/vc-status-list-context": "^3.0.1",
     "@digitalcredentials/did-context": "^1.0.0",
     "chai": "^4.3.7",
@@ -38,7 +38,7 @@
     "ed25519-signature-2020-context": "^1.1.0",
     "jsonld-document-loader": "^2.0.0",
     "klona": "^2.0.6",
-    "uuid": "^9.0.0",
+    "uuid": "^14.0.1",
     "vc-test-suite-implementations": "github:w3c/vc-test-suite-implementations"
   },
   "devDependencies": {
@@ -46,7 +46,7 @@
     "eslint-config-digitalbazaar": "^5.0.1",
     "eslint-plugin-jsdoc": "^46.9.0",
     "eslint-plugin-unicorn": "^49.0.0",
-    "mocha": "^10.7.3"
+    "mocha": "^11.7.6"
   },
   "bugs": {
     "url": "https://github.com/w3c/vc-bitstring-status-list-test-suite/issues"
