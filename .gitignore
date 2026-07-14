@@ -12,7 +12,6 @@ config.json
 .localImplementationsConfig.cjs
 .vscode
 node_modules/
-package-lock.json
 *.vswp
 config.json
 reports/**
