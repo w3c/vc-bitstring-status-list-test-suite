@@ -25,7 +25,7 @@
     "url": "https://digitalbazaar.com/"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "dependencies": {
     "@digitalbazaar/http-client": "^3.3.0",
