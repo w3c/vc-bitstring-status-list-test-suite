@@ -10,8 +10,8 @@ import {decodeList} from '@digitalbazaar/vc-status-list';
 import {documentLoader} from './documentLoader.js';
 import {httpClient} from '@digitalbazaar/http-client';
 import https from 'https';
+import {randomUUID} from 'node:crypto';
 import {ungzip} from 'pako';
-import {v4 as uuidv4} from 'uuid';
 const require = createRequire(import.meta.url);
 const agent = new https.Agent({rejectUnauthorized: false});
 
@@ -65,7 +65,7 @@ export async function getStatusListCredentials(statusEntries) {
 export async function issueValidVc(endpoints, name) {
   let issuedVc;
   const credential = require('./validVc.json');
-  credential.id = `urn:uuid:${uuidv4()}`;
+  credential.id = `urn:uuid:${randomUUID()}`;
   try {
     issuedVc = await endpoints.issue(credential);
   } catch(e) {
