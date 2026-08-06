@@ -176,7 +176,7 @@ describe('Data Model: BitstringStatusList Entry', function() {
         for(statusEntry of statusEntries) {
           if('statusSize' in statusEntry &&
             Number.isInteger(statusEntry.statusSize) &&
-            statusEntry.statusSize.should.be.gt(1)) {
+            statusEntry.statusSize > 1) {
             statusEntry.should.have.own.property(
               'statusMessage');
           } else {
@@ -244,7 +244,7 @@ describe('Data Model: BitstringStatusList Entry', function() {
         for(statusEntry of statusEntries) {
           if('statusSize' in statusEntry &&
             Number.isInteger(statusEntry.statusSize) &&
-            statusEntry.statusSize.should.be.gt(1)
+            statusEntry.statusSize > 1
           ) {
             statusEntry.should.have.own.property(
               'statusMessage');
