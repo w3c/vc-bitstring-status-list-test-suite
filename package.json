@@ -5,7 +5,7 @@
   "main": "/tests",
   "type": "module",
   "scripts": {
-    "pretest": "npm update vc-test-suite-implementations",
+    "pretest": "npm install vc-test-suite-implementations@github:w3c/vc-test-suite-implementations#main --no-save",
     "test": "mocha tests --reporter @digitalbazaar/mocha-w3c-interop-reporter --reporter-options  abstract=\"$PWD/abstract.hbs\",reportDir=\"$PWD/reports\",respec=\"$PWD/respecConfig.json\",suiteLog='./suite.log',templateData=\"$PWD/reports/index.json\",title=\"VC Bitstring Status List Interoperability Report 1.0\" --timeout 15000 --preserve-symlinks",
     "lint": "eslint ."
   },
@@ -39,7 +39,7 @@
     "ed25519-signature-2020-context": "^1.1.0",
     "jsonld-document-loader": "^2.0.0",
     "klona": "^2.0.6",
-    "vc-test-suite-implementations": "github:w3c/vc-test-suite-implementations"
+    "vc-test-suite-implementations": "github:w3c/vc-test-suite-implementations#main"
   },
   "devDependencies": {
     "eslint": "^8.54.0",
